@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{63783BC6-3104-484E-A7E3-422401478153}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoffeeManagementSoftware</RootNamespace>
+    <AssemblyName>CoffeeManagementSoftware</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.2" />
+    <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.Utils.v17.2" />
+    <Reference Include="DevExpress.Sparkline.v17.2.Core" />
+    <Reference Include="DevExpress.XtraEditors.v17.2" />
+    <Reference Include="DevExpress.Printing.v17.2.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\beer2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\bida.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\card2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\cocktail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\coke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\cream.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\chair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\cheff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\chips_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\dinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\dinner2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\game.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\girl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\karaoke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Mai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\mario_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\massage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\menu2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\mushroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\pan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\present.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\phonographe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\seat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\table2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\table3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\wine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\wizard.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
