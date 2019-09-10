@@ -6,3 +6,4 @@ D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\
 D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.csproj.GenerateResource.Cache
 D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe
 D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.pdb
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe.licenses

@@ -15,5 +15,10 @@ namespace CoffeeManagementSoftware
         {
             InitializeComponent();
         }
+
+        private void tSBUseService_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

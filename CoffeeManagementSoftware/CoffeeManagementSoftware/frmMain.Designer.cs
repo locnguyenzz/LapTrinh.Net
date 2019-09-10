@@ -34,7 +34,6 @@
             this.heToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cơToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tạoMớiCơSởDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.saoLưuCơSởDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phụcHồiCơSởDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -91,10 +90,25 @@
             this.đăngKýBảnQuyềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinBảnQuyềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tSBUseService = new System.Windows.Forms.ToolStripButton();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tSBUseService = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.tSBMangamentSale = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.tSBStatisticalSales = new System.Windows.Forms.ToolStripButton();
+            this.tSBStatisticalGoods = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.tSBFastNote = new System.Windows.Forms.ToolStripButton();
+            this.tSBTips = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
+            this.tSBReport = new System.Windows.Forms.ToolStripButton();
+            this.tSBExit = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -130,35 +144,30 @@
             // 
             this.cơToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tạoMớiCơSởDữLiệuToolStripMenuItem,
-            this.toolStripMenuItem3,
+            this.toolStripSeparator10,
             this.saoLưuCơSởDữLiệuToolStripMenuItem,
             this.phụcHồiCơSởDữLiệuToolStripMenuItem});
+            this.cơToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Database_16x16;
             this.cơToolStripMenuItem.Name = "cơToolStripMenuItem";
             this.cơToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.cơToolStripMenuItem.Text = "Cơ sở dữ liệu....";
+            this.cơToolStripMenuItem.Text = "&Cơ sở dữ liệu....";
             // 
             // tạoMớiCơSởDữLiệuToolStripMenuItem
             // 
             this.tạoMớiCơSởDữLiệuToolStripMenuItem.Name = "tạoMớiCơSởDữLiệuToolStripMenuItem";
-            this.tạoMớiCơSởDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.tạoMớiCơSởDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.tạoMớiCơSởDữLiệuToolStripMenuItem.Text = "Tạo mới cơ sở dữ liệu";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(221, 22);
-            this.toolStripMenuItem3.Text = ".................................................";
             // 
             // saoLưuCơSởDữLiệuToolStripMenuItem
             // 
             this.saoLưuCơSởDữLiệuToolStripMenuItem.Name = "saoLưuCơSởDữLiệuToolStripMenuItem";
-            this.saoLưuCơSởDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.saoLưuCơSởDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.saoLưuCơSởDữLiệuToolStripMenuItem.Text = "Sao lưu cơ sở dữ liệu";
             // 
             // phụcHồiCơSởDữLiệuToolStripMenuItem
             // 
             this.phụcHồiCơSởDữLiệuToolStripMenuItem.Name = "phụcHồiCơSởDữLiệuToolStripMenuItem";
-            this.phụcHồiCơSởDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.phụcHồiCơSởDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.phụcHồiCơSởDữLiệuToolStripMenuItem.Text = "Phục hồi cơ sở dữ liệu";
             // 
             // toolStripSeparator1
@@ -179,16 +188,18 @@
             // 
             // đăngXuấtKhỏiHệThốngToolStripMenuItem
             // 
+            this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Outbox_16x16;
             this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Name = "đăngXuấtKhỏiHệThốngToolStripMenuItem";
             this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Text = "Đăng xuất khỏi hệ thống";
+            this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Text = "Đă&ng xuất khỏi hệ thống";
             // 
             // thoátKhỏiHệThốngToolStripMenuItem
             // 
             this.thoátKhỏiHệThốngToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.thoátKhỏiHệThốngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Cancel_16x16;
             this.thoátKhỏiHệThốngToolStripMenuItem.Name = "thoátKhỏiHệThốngToolStripMenuItem";
             this.thoátKhỏiHệThốngToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.thoátKhỏiHệThốngToolStripMenuItem.Text = "Thoát khỏi hệ thống";
+            this.thoátKhỏiHệThốngToolStripMenuItem.Text = "&Thoát khỏi hệ thống";
             // 
             // hoạtĐộngToolStripMenuItem
             // 
@@ -211,6 +222,7 @@
             // 
             // danhMụcKháchHàngToolStripMenuItem
             // 
+            this.danhMụcKháchHàngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Customer_16x16;
             this.danhMụcKháchHàngToolStripMenuItem.Name = "danhMụcKháchHàngToolStripMenuItem";
             this.danhMụcKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.danhMụcKháchHàngToolStripMenuItem.Text = "Danh mục khách hàng";
@@ -524,20 +536,23 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tSBUseService});
+            this.tSBUseService,
+            this.tSBMangamentSale,
+            this.toolStripSeparator11,
+            this.tSBStatisticalSales,
+            this.tSBStatisticalGoods,
+            this.toolStripSeparator12,
+            this.tSBFastNote,
+            this.tSBTips,
+            this.toolStripSeparator13,
+            this.tSBReport,
+            this.tSBExit,
+            this.toolStripSeparator14});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1115, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tSBUseService
-            // 
-            this.tSBUseService.Image = global::CoffeeManagementSoftware.Properties.Resources.wizard;
-            this.tSBUseService.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBUseService.Name = "tSBUseService";
-            this.tSBUseService.Size = new System.Drawing.Size(113, 22);
-            this.tSBUseService.Text = "Sử dụng dịch vụ";
             // 
             // imageList1
             // 
@@ -580,13 +595,119 @@
             this.imageList1.Images.SetKeyName(34, "wine.png");
             this.imageList1.Images.SetKeyName(35, "wizard.png");
             // 
+            // tSBUseService
+            // 
+            this.tSBUseService.Image = global::CoffeeManagementSoftware.Properties.Resources.User_16x16;
+            this.tSBUseService.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBUseService.Name = "tSBUseService";
+            this.tSBUseService.Size = new System.Drawing.Size(113, 22);
+            this.tSBUseService.Text = "Sử dụng dịch vụ";
+            this.tSBUseService.Click += new System.EventHandler(this.tSBUseService_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(188, 6);
+            // 
+            // tSBMangamentSale
+            // 
+            this.tSBMangamentSale.Image = global::CoffeeManagementSoftware.Properties.Resources.BOSaleItem_16x16;
+            this.tSBMangamentSale.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBMangamentSale.Name = "tSBMangamentSale";
+            this.tSBMangamentSale.Size = new System.Drawing.Size(121, 22);
+            this.tSBMangamentSale.Text = "Quản lý bán hàng";
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tSBStatisticalSales
+            // 
+            this.tSBStatisticalSales.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBStatisticalSales.Image = ((System.Drawing.Image)(resources.GetObject("tSBStatisticalSales.Image")));
+            this.tSBStatisticalSales.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBStatisticalSales.Name = "tSBStatisticalSales";
+            this.tSBStatisticalSales.Size = new System.Drawing.Size(23, 22);
+            this.tSBStatisticalSales.Text = "Thống kê doanh thu";
+            // 
+            // tSBStatisticalGoods
+            // 
+            this.tSBStatisticalGoods.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tSBStatisticalGoods.Image = global::CoffeeManagementSoftware.Properties.Resources.Column2_16x16;
+            this.tSBStatisticalGoods.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBStatisticalGoods.Name = "tSBStatisticalGoods";
+            this.tSBStatisticalGoods.Size = new System.Drawing.Size(23, 22);
+            this.tSBStatisticalGoods.Text = "Thống kê đồ ăn, uống";
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tSBFastNote
+            // 
+            this.tSBFastNote.Image = global::CoffeeManagementSoftware.Properties.Resources.Notes_16x16;
+            this.tSBFastNote.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBFastNote.Name = "tSBFastNote";
+            this.tSBFastNote.Size = new System.Drawing.Size(105, 22);
+            this.tSBFastNote.Text = "Ghi chú nhanh";
+            // 
+            // tSBTips
+            // 
+            this.tSBTips.Image = global::CoffeeManagementSoftware.Properties.Resources.Suggestion_16x16;
+            this.tSBTips.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBTips.Name = "tSBTips";
+            this.tSBTips.Size = new System.Drawing.Size(70, 22);
+            this.tSBTips.Text = "Mẹo vặt";
+            // 
+            // toolStripSeparator13
+            // 
+            this.toolStripSeparator13.Name = "toolStripSeparator13";
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tSBReport
+            // 
+            this.tSBReport.Image = ((System.Drawing.Image)(resources.GetObject("tSBReport.Image")));
+            this.tSBReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBReport.Name = "tSBReport";
+            this.tSBReport.Size = new System.Drawing.Size(69, 22);
+            this.tSBReport.Text = "Báo cáo";
+            // 
+            // tSBExit
+            // 
+            this.tSBExit.Image = global::CoffeeManagementSoftware.Properties.Resources.Close_16x16;
+            this.tSBExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBExit.Name = "tSBExit";
+            this.tSBExit.Size = new System.Drawing.Size(58, 22);
+            this.tSBExit.Text = "Thoát";
+            // 
+            // toolStripSeparator14
+            // 
+            this.toolStripSeparator14.Name = "toolStripSeparator14";
+            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 25);
+            // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.simpleButton1.Location = new System.Drawing.Point(292, 164);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "simpleButton1";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1115, 465);
+            this.ClientSize = new System.Drawing.Size(1115, 562);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.simpleButton1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -596,6 +717,7 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -621,7 +743,6 @@
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem tạoMớiCơSởDữLiệuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem saoLưuCơSởDữLiệuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem phụcHồiCơSởDữLiệuToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -666,6 +787,20 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinBảnQuyềnToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton tSBUseService;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripButton tSBMangamentSale;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripButton tSBStatisticalSales;
+        private System.Windows.Forms.ToolStripButton tSBStatisticalGoods;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripButton tSBFastNote;
+        private System.Windows.Forms.ToolStripButton tSBTips;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator13;
+        private System.Windows.Forms.ToolStripButton tSBReport;
+        private System.Windows.Forms.ToolStripButton tSBExit;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
 
     }
 }

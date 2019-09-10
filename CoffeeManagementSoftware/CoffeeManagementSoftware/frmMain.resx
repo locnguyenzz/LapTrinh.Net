@@ -131,7 +131,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADM
-        LwAAAk1TRnQBSQFMAgEBJAEAATABAAEQAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        LwAAAk1TRnQBSQFMAgEBJAEAASgBAAEoAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAAaADAAEBAQABCAYAASgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -339,6 +339,44 @@
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tSBStatisticalSales.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALFSURBVDhPZZLrS5NxFMefv6UXUtisFMmE7EJEb4qgdxWa
+        QiA6s9lE1NQslRFOzQsRSanTpc1d8LbmvGdl5iWKLJGgRPEyN919e/Zs387vN6cvevF5Ds/zO+d7vs85
+        P6G5c2G0uXMRTRrGAqexI8Y8nrVHaWhjzKH+9RzqXn3hqFtnR4Wa5x8RAaLQ4yD+R2QfIMyJoLLxPYSq
+        lg/8oz8gwRcIERK8PIZ49PL36DeP/5AwqVQ0TEF40jzNBVaH+jB57Rz+9JvgpYTffUYMXk7BitEAjy8E
+        t1/ET2MvetISsaTXQSKB8voJCMwGszN59SJs/RpYLyRi5Hwy+tKSsGFqhzFVBmtqAqwpMmhPy7BmaIP2
+        bCIkKYxS9TiE8vopbmflbTcGz8RjuUcLN3X88UaL7qQ4fNdq4PIG4fSKWOzSoFV2BPOaDogkUPx0DEKZ
+        eoLbcVECS4rBRDxk20VxzyMSQc6umyIhhsIoUo1AKKkdR0iK8KJYotsnos60jIS8YaiNy1zcQUUcV5Sg
+        KKGwxgqBqQRJjSmzAzvBCpIUVrycWceJXAvMn9ew4wxEuzMXrgDfkuKxBYKSVAJimNtiLmxOP8paF3Cp
+        aBTHcyyQt8zherEVN0pGkNc4g6OZeqi6v9HaQ8h/ZI4KMAe1hl+QyS24UjIGZdMsthx+OKmbwx3Azp4f
+        A9N/cSxLjxfTqzh51wh/cF+goMpC/xNGcgFZ/rSOU/JhPgsbFdn2AtimyHCQ7equr4hL16Garj67WHkV
+        QxAUle9ITYJKt4T4bDNUPUu86/auH1sMh4+zTeyQCDuz0zxc1CT34QCE/Aozv5p2dkiwQ5bMijbpNzZ5
+        PGTDzvDyYeaUkoC8fIjvnE0+Br8L1IER2z+HBr1LDqIbCyC7uB9CZqHRnKU0IVNpxB0i44EBGQUGpCv0
+        nNv3ew+4lR9Dh5v3GDrzP9R+UCRcfiHOAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="tSBReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKZSURBVDhPjZLZTxNRFIcnGhWXv8y4RBNflIhLVFxZRA0i
+        IJEgArWlBQptgZZWgiCoAQoV7JRCK7YUNNEgmPikBkoLLS1dpsvPc++wSOKDD9/M3Mz5fffMPSM0mnxi
+        k2UOGjNjlqPu2sIHeg+VkTEDZecMnnd4OfX6Dw5BEPYKNVo3soAMXbbvu8huAmQ4WVSpJ0GCfUJ1s4u/
+        MPbPIpZIQTE0j3yDF9cMHs5VvQdXGDoPLhO1b+eRIUulyikLnjRNcUFHnw+xeAq5Wg9sP1J4KkY4NWL0
+        r+cITitdSJOgQulggv0Ca4W11N47gygJyns+U9EUTimmcFIxiRMNThyvd+JY3QSOPpvAfbMP6XQGZQqR
+        CQ4IFUonb8nw0otoTMJyMIzfy0HOL8ZSED+XAtssrYQhkaC0zi4LyhUO3pK+x4sICdYZGxLCjGgSIWLw
+        3SdoTe8xYPUhFElCSmXwoHacCXKEhw0iUuks2ro9FExSSA7K4QTWKGDoduDrdz9aOsexup5EUkrjXs2Y
+        LCihh4SUgbb7Iy9eowL9Cwc0HWNoIgLhBHQWB6ziItTtNvhDcWzEJRQ8HmGCgzsCyzTZExydRcSXRT/U
+        BhsCoQTazHYMiwtQ6f8hKK62IZ5Mo9k8zXcLUEFrl512XIBSN8oD7PuH7bRuG4F/LcbP6nallQkOCUVV
+        o9igH0jT5cYK7bbCAkY5oKDA8mocLcZxWn9DQ6uV1jGs0zndfDTEBIeFgsoRPn+Nyc1Rm1xQG91oNLp2
+        0ymjIthkbpRtCm5VWKmlFB/dFvIIZVgxhx1wRJ4KO6f80kFZkFfYa79U8gYXS17jApF3dwB5xQM4X9TP
+        yS18xTlXsEUfzt7pw5nrFpEEOQT9Tcy0w5H/hMLCnj8wOeLcaWgIBgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="xtraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>347, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAQEAAAAEAIAAoQgAAFgAAACgAAABAAAAAgAAAAAEAIAAAAAAAAEAAABMLAAATCwAAAAAAAAAA

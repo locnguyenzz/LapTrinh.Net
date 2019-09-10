@@ -37,6 +37,7 @@
     <Reference Include="DevExpress.Data.v17.2" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
     <Reference Include="System" />
@@ -62,6 +63,7 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -83,6 +85,45 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\3DLine_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\3DLine_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\AddFile_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\AddFile_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\AddItem_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\AddItem_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\AddNewDataSource_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\AddNewDataSource_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Apply_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Apply_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\Banner.png" />
   </ItemGroup>
   <ItemGroup>
@@ -98,10 +139,40 @@
     <None Include="img\bida.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\BOOrder_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\BOOrder_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\BOSaleItem_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\BOSaleItem_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Cancel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\card.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\card2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Clear_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Clear_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Close_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Close_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\cocktail.png" />
@@ -113,7 +184,31 @@
     <None Include="img\coke.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Column2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Column2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Convert_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Convert_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\cream.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Currency2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Currency2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Customer_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\chair.png" />
@@ -125,19 +220,70 @@
     <None Include="img\chips_64.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Database_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Database_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\DeleteDataSource_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\DeleteDataSource_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\DeleteList2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\DeleteList2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\dinner.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\dinner2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\EditTask_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\EditTask_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Employee_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Employee_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\game.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\gold.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\girl.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\ImportImage_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\ImportImage_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\karaoke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\karaoke2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Lookup&amp;Reference_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Lookup&amp;Reference_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\Mai.png" />
@@ -155,7 +301,28 @@
     <None Include="img\menu2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\move-option.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\mushroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Next_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Next_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Notes_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Notes_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Outbox_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Outbox_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\pan.png" />
@@ -164,10 +331,55 @@
     <None Include="img\present.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Prev_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Prev_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\phonographe.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Refresh_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Refresh_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Refresh2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Refresh2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Remove_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Remove_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Report_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Report_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Reset2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Reset2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\seat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Suggestion_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Suggestion_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\table.png" />
@@ -179,7 +391,34 @@
     <None Include="img\table3.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="img\Team_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Team_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="img\ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\ticket_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Trash_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\Trash_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\User_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\User_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\UserGroup_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\UserGroup_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="img\wine.png" />
