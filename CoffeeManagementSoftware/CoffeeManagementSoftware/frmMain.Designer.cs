@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem1 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.heToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cơToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tạoMớiCơSởDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.saoLưuCơSởDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phụcHồiCơSởDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -90,9 +95,7 @@
             this.đăngKýBảnQuyềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinBảnQuyềnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tSBUseService = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.tSBMangamentSale = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.tSBStatisticalSales = new System.Windows.Forms.ToolStripButton();
@@ -104,6 +107,7 @@
             this.tSBReport = new System.Windows.Forms.ToolStripButton();
             this.tSBExit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.menuStrip1.SuspendLayout();
@@ -157,6 +161,11 @@
             this.tạoMớiCơSởDữLiệuToolStripMenuItem.Name = "tạoMớiCơSởDữLiệuToolStripMenuItem";
             this.tạoMớiCơSởDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.tạoMớiCơSởDữLiệuToolStripMenuItem.Text = "Tạo mới cơ sở dữ liệu";
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(188, 6);
             // 
             // saoLưuCơSởDữLiệuToolStripMenuItem
             // 
@@ -229,18 +238,21 @@
             // 
             // xétDuyệtNângMứcThànhViênToolStripMenuItem
             // 
+            this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xétDuyệtNângMứcThànhViênToolStripMenuItem.Image")));
             this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Name = "xétDuyệtNângMứcThànhViênToolStripMenuItem";
             this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Text = "Xét duyệt nâng mức thành viên";
             // 
             // danhMụcMặtHàngToolStripMenuItem
             // 
+            this.danhMụcMặtHàngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.coffee;
             this.danhMụcMặtHàngToolStripMenuItem.Name = "danhMụcMặtHàngToolStripMenuItem";
             this.danhMụcMặtHàngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.danhMụcMặtHàngToolStripMenuItem.Text = "Danh mục mặt hàng";
             // 
             // danhMụcBànGhếKhuVựcToolStripMenuItem
             // 
+            this.danhMụcBànGhếKhuVựcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhMụcBànGhếKhuVựcToolStripMenuItem.Image")));
             this.danhMụcBànGhếKhuVựcToolStripMenuItem.Name = "danhMụcBànGhếKhuVựcToolStripMenuItem";
             this.danhMụcBànGhếKhuVựcToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.danhMụcBànGhếKhuVựcToolStripMenuItem.Text = "Danh mục bàn ghế, khu vực";
@@ -252,6 +264,7 @@
             // 
             // sửDụngDịchVụToolStripMenuItem
             // 
+            this.sửDụngDịchVụToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.User_16x16;
             this.sửDụngDịchVụToolStripMenuItem.Name = "sửDụngDịchVụToolStripMenuItem";
             this.sửDụngDịchVụToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.sửDụngDịchVụToolStripMenuItem.Text = "Sử dụng dịch vụ";
@@ -263,30 +276,35 @@
             // 
             // quảnLýBánHàngToolStripMenuItem
             // 
+            this.quảnLýBánHàngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.BOSaleItem_16x16;
             this.quảnLýBánHàngToolStripMenuItem.Name = "quảnLýBánHàngToolStripMenuItem";
             this.quảnLýBánHàngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.quảnLýBánHàngToolStripMenuItem.Text = "Quản lý bán hàng";
             // 
             // kiểmSoátSốOrderToolStripMenuItem
             // 
+            this.kiểmSoátSốOrderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kiểmSoátSốOrderToolStripMenuItem.Image")));
             this.kiểmSoátSốOrderToolStripMenuItem.Name = "kiểmSoátSốOrderToolStripMenuItem";
             this.kiểmSoátSốOrderToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.kiểmSoátSốOrderToolStripMenuItem.Text = "Kiểm soát số order";
             // 
             // lưuVếtHoạtĐộngToolStripMenuItem
             // 
+            this.lưuVếtHoạtĐộngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lưuVếtHoạtĐộngToolStripMenuItem.Image")));
             this.lưuVếtHoạtĐộngToolStripMenuItem.Name = "lưuVếtHoạtĐộngToolStripMenuItem";
             this.lưuVếtHoạtĐộngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.lưuVếtHoạtĐộngToolStripMenuItem.Text = "Lưu vết hoạt động";
             // 
             // thôngKêDoanhThuToolStripMenuItem
             // 
+            this.thôngKêDoanhThuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thôngKêDoanhThuToolStripMenuItem.Image")));
             this.thôngKêDoanhThuToolStripMenuItem.Name = "thôngKêDoanhThuToolStripMenuItem";
             this.thôngKêDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.thôngKêDoanhThuToolStripMenuItem.Text = "Thông kê doanh thu";
             // 
             // thốngKêĐồĂnuốngToolStripMenuItem
             // 
+            this.thốngKêĐồĂnuốngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thốngKêĐồĂnuốngToolStripMenuItem.Image")));
             this.thốngKêĐồĂnuốngToolStripMenuItem.Name = "thốngKêĐồĂnuốngToolStripMenuItem";
             this.thốngKêĐồĂnuốngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.thốngKêĐồĂnuốngToolStripMenuItem.Text = "Thống kê đồ ăn, uống";
@@ -304,6 +322,7 @@
             // 
             // danhSáchNhàCungCấpToolStripMenuItem
             // 
+            this.danhSáchNhàCungCấpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhSáchNhàCungCấpToolStripMenuItem.Image")));
             this.danhSáchNhàCungCấpToolStripMenuItem.Name = "danhSáchNhàCungCấpToolStripMenuItem";
             this.danhSáchNhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.danhSáchNhàCungCấpToolStripMenuItem.Text = "Danh sách nhà cung cấp";
@@ -554,47 +573,6 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Banner.png");
-            this.imageList1.Images.SetKeyName(1, "basket.png");
-            this.imageList1.Images.SetKeyName(2, "beer.png");
-            this.imageList1.Images.SetKeyName(3, "beer2.png");
-            this.imageList1.Images.SetKeyName(4, "bida.png");
-            this.imageList1.Images.SetKeyName(5, "card.png");
-            this.imageList1.Images.SetKeyName(6, "card2.png");
-            this.imageList1.Images.SetKeyName(7, "cocktail.png");
-            this.imageList1.Images.SetKeyName(8, "coffee.png");
-            this.imageList1.Images.SetKeyName(9, "coke.png");
-            this.imageList1.Images.SetKeyName(10, "cream.png");
-            this.imageList1.Images.SetKeyName(11, "chair.png");
-            this.imageList1.Images.SetKeyName(12, "cheff.png");
-            this.imageList1.Images.SetKeyName(13, "chips_64.png");
-            this.imageList1.Images.SetKeyName(14, "dinner.png");
-            this.imageList1.Images.SetKeyName(15, "dinner2.png");
-            this.imageList1.Images.SetKeyName(16, "game.png");
-            this.imageList1.Images.SetKeyName(17, "girl.png");
-            this.imageList1.Images.SetKeyName(18, "karaoke.png");
-            this.imageList1.Images.SetKeyName(19, "Logo.ico");
-            this.imageList1.Images.SetKeyName(20, "Mai.png");
-            this.imageList1.Images.SetKeyName(21, "mario_64.png");
-            this.imageList1.Images.SetKeyName(22, "massage.png");
-            this.imageList1.Images.SetKeyName(23, "menu.png");
-            this.imageList1.Images.SetKeyName(24, "menu2.png");
-            this.imageList1.Images.SetKeyName(25, "mushroom.png");
-            this.imageList1.Images.SetKeyName(26, "pan.png");
-            this.imageList1.Images.SetKeyName(27, "present.png");
-            this.imageList1.Images.SetKeyName(28, "phonographe.png");
-            this.imageList1.Images.SetKeyName(29, "seat.png");
-            this.imageList1.Images.SetKeyName(30, "table.png");
-            this.imageList1.Images.SetKeyName(31, "table2.png");
-            this.imageList1.Images.SetKeyName(32, "table3.png");
-            this.imageList1.Images.SetKeyName(33, "ticket.png");
-            this.imageList1.Images.SetKeyName(34, "wine.png");
-            this.imageList1.Images.SetKeyName(35, "wizard.png");
-            // 
             // tSBUseService
             // 
             this.tSBUseService.Image = global::CoffeeManagementSoftware.Properties.Resources.User_16x16;
@@ -603,11 +581,6 @@
             this.tSBUseService.Size = new System.Drawing.Size(113, 22);
             this.tSBUseService.Text = "Sử dụng dịch vụ";
             this.tSBUseService.Click += new System.EventHandler(this.tSBUseService_Click);
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(188, 6);
             // 
             // tSBMangamentSale
             // 
@@ -687,16 +660,68 @@
             this.toolStripSeparator14.Name = "toolStripSeparator14";
             this.toolStripSeparator14.Size = new System.Drawing.Size(6, 25);
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "Banner.png");
+            this.imageList1.Images.SetKeyName(1, "basket.png");
+            this.imageList1.Images.SetKeyName(2, "beer.png");
+            this.imageList1.Images.SetKeyName(3, "beer2.png");
+            this.imageList1.Images.SetKeyName(4, "bida.png");
+            this.imageList1.Images.SetKeyName(5, "card.png");
+            this.imageList1.Images.SetKeyName(6, "card2.png");
+            this.imageList1.Images.SetKeyName(7, "cocktail.png");
+            this.imageList1.Images.SetKeyName(8, "coffee.png");
+            this.imageList1.Images.SetKeyName(9, "coke.png");
+            this.imageList1.Images.SetKeyName(10, "cream.png");
+            this.imageList1.Images.SetKeyName(11, "chair.png");
+            this.imageList1.Images.SetKeyName(12, "cheff.png");
+            this.imageList1.Images.SetKeyName(13, "chips_64.png");
+            this.imageList1.Images.SetKeyName(14, "dinner.png");
+            this.imageList1.Images.SetKeyName(15, "dinner2.png");
+            this.imageList1.Images.SetKeyName(16, "game.png");
+            this.imageList1.Images.SetKeyName(17, "girl.png");
+            this.imageList1.Images.SetKeyName(18, "karaoke.png");
+            this.imageList1.Images.SetKeyName(19, "Logo.ico");
+            this.imageList1.Images.SetKeyName(20, "Mai.png");
+            this.imageList1.Images.SetKeyName(21, "mario_64.png");
+            this.imageList1.Images.SetKeyName(22, "massage.png");
+            this.imageList1.Images.SetKeyName(23, "menu.png");
+            this.imageList1.Images.SetKeyName(24, "menu2.png");
+            this.imageList1.Images.SetKeyName(25, "mushroom.png");
+            this.imageList1.Images.SetKeyName(26, "pan.png");
+            this.imageList1.Images.SetKeyName(27, "present.png");
+            this.imageList1.Images.SetKeyName(28, "phonographe.png");
+            this.imageList1.Images.SetKeyName(29, "seat.png");
+            this.imageList1.Images.SetKeyName(30, "table.png");
+            this.imageList1.Images.SetKeyName(31, "table2.png");
+            this.imageList1.Images.SetKeyName(32, "table3.png");
+            this.imageList1.Images.SetKeyName(33, "ticket.png");
+            this.imageList1.Images.SetKeyName(34, "wine.png");
+            this.imageList1.Images.SetKeyName(35, "wizard.png");
+            // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
             // simpleButton1
             // 
+            this.simpleButton1.Cursor = System.Windows.Forms.Cursors.No;
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopLeft;
             this.simpleButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.simpleButton1.Location = new System.Drawing.Point(292, 164);
+            this.simpleButton1.Location = new System.Drawing.Point(292, 140);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
+            this.simpleButton1.Size = new System.Drawing.Size(116, 47);
+            toolTipItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            toolTipTitleItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            superToolTip1.Items.Add(toolTipItem1);
+            superToolTip1.Items.Add(toolTipSeparatorItem1);
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.simpleButton1.SuperTip = superToolTip1;
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "simpleButton1";
             // 
