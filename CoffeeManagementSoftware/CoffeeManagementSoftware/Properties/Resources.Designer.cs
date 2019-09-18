@@ -1303,6 +1303,7 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap reverssort_16x16 {
             get {
                 object obj = ResourceManager.GetObject("reverssort_16x16", resourceCulture);
@@ -1333,6 +1334,8 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+=======
+>>>>>>> parent of 2ba86d3... Next
         internal static System.Drawing.Bitmap seat {
             get {
                 object obj = ResourceManager.GetObject("seat", resourceCulture);
