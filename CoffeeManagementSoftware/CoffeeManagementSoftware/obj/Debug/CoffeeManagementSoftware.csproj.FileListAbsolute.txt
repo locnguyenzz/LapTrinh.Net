@@ -1,0 +1,11 @@
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\bin\Debug\CoffeeManagementSoftware.exe
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\bin\Debug\CoffeeManagementSoftware.pdb
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.csprojResolveAssemblyReference.cache
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmMain.resources
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.Properties.Resources.resources
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.csproj.GenerateResource.Cache
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.pdb
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe.licenses
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmUseService.resources
+C:\Users\DELL\Documents\GitHub\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe
