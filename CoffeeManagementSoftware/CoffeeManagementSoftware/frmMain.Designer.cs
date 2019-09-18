@@ -708,10 +708,10 @@
             // simpleButton1
             // 
             this.simpleButton1.Cursor = System.Windows.Forms.Cursors.No;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.ImageOptions.Image = global::CoffeeManagementSoftware.Properties.Resources.reverssort_32x32;
             this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopLeft;
             this.simpleButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.simpleButton1.Location = new System.Drawing.Point(292, 140);
+            this.simpleButton1.Location = new System.Drawing.Point(87, 117);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
             this.simpleButton1.Size = new System.Drawing.Size(116, 47);
