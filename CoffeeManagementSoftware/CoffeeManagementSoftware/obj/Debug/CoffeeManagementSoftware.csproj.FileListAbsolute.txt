@@ -8,3 +8,4 @@ D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\
 D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.pdb
 D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe.licenses
 D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmUseService.resources
+C:\Users\DELL\Documents\GitHub\LapTrinh.Net-a130224aca9b2f606514f4c1d28693cf3eb23f94\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe

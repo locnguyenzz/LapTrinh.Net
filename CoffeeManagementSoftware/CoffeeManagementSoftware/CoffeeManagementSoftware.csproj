@@ -52,6 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCustumer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustumer.Designer.cs">
+      <DependentUpon>frmCustumer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKhachhang.Designer.cs">
+      <DependentUpon>frmKhachhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +78,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCustumer.resx">
+      <DependentUpon>frmCustumer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKhachhang.resx">
+      <DependentUpon>frmKhachhang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -435,37 +453,15 @@
   <ItemGroup>
     <None Include="img\wizard.png" />
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
-<<<<<<< HEAD
-    <None Include="Resources\reverssort_32x32.png" />
+    <None Include="Resources\PenColor_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\reverssort_32x321.png" />
+    <None Include="Resources\Report2_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\reverssort_16x16.png" />
-=======
-    <None Include="Resources\pictureshapeoutlinecolor_32x32.png" />
+    <None Include="Resources\Article_32x32.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\open_16x16.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pencolor_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\gradientlightbluedatabar_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bolocalization_32x32.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\suggestion_32x32.png" />
->>>>>>> 2ba86d30fca700e35b12b28c542f050c67224b34
-  </ItemGroup>
-=======
->>>>>>> parent of 2ba86d3... Next
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

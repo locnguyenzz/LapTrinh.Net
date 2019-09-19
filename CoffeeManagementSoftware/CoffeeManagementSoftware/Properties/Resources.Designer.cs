@@ -193,6 +193,16 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Article_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Article_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Banner {
             get {
                 object obj = ResourceManager.GetObject("Banner", resourceCulture);
@@ -1133,6 +1143,16 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PenColor_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("PenColor_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap phonographe {
             get {
                 object obj = ResourceManager.GetObject("phonographe", resourceCulture);
@@ -1283,6 +1303,16 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Report2_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Report2_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Reset2_16x16 {
             get {
                 object obj = ResourceManager.GetObject("Reset2_16x16", resourceCulture);
@@ -1303,39 +1333,6 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
-        internal static System.Drawing.Bitmap reverssort_16x16 {
-            get {
-                object obj = ResourceManager.GetObject("reverssort_16x16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap reverssort_32x32 {
-            get {
-                object obj = ResourceManager.GetObject("reverssort_32x32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap reverssort_32x321 {
-            get {
-                object obj = ResourceManager.GetObject("reverssort_32x321", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-=======
->>>>>>> parent of 2ba86d3... Next
         internal static System.Drawing.Bitmap seat {
             get {
                 object obj = ResourceManager.GetObject("seat", resourceCulture);
