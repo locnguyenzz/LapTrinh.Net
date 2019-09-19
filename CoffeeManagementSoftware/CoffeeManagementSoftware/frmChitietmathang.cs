@@ -11,21 +11,11 @@ using DevExpress.XtraEditors;
 
 namespace CoffeeManagementSoftware
 {
-    public partial class frmDanhmucmathang : DevExpress.XtraEditors.XtraForm
+    public partial class frmChitietmathang : DevExpress.XtraEditors.XtraForm
     {
-        public frmDanhmucmathang()
+        public frmChitietmathang()
         {
             InitializeComponent();
-        }
-
-        private void toolStripButton6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripButton6_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
