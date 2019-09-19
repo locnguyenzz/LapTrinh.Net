@@ -46,7 +46,8 @@ namespace CoffeeManagementSoftware
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
+            frmUseService use = new frmUseService();
+            openForm(use);
         }
         private void tSBUseService_Click(object sender, EventArgs e)
         {
@@ -62,5 +63,15 @@ namespace CoffeeManagementSoftware
             }
         }
 
+        private void sửDụngDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tSBUseService.PerformClick();
+        }
+
+        private void danhMụcKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustumer use = new frmCustumer();
+            openForm(use);
+        }
     }
 }

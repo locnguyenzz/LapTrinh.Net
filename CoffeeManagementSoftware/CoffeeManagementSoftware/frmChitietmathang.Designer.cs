@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmChitietmathang
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmChitietmathang";
+            this.ClientSize = new System.Drawing.Size(1006, 710);
+            this.Name = "frmChitietmathang";
+            this.Text = "MẶT HÀNG";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

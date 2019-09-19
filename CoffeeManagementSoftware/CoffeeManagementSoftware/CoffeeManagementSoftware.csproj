@@ -90,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmChitietmathang.resx">
+      <DependentUpon>frmChitietmathang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustumer.resx">
       <DependentUpon>frmCustumer.cs</DependentUpon>
     </EmbeddedResource>

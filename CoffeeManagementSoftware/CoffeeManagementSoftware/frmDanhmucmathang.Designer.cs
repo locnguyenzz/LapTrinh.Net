@@ -30,15 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhmucmathang));
             this.pnlNhomhang = new System.Windows.Forms.Panel();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.pnlMathang = new System.Windows.Forms.Panel();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.h = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.n = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.s = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhomhangP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GianhapP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tSBThemmoi = new System.Windows.Forms.ToolStripButton();
             this.tSBChinhsua = new System.Windows.Forms.ToolStripButton();
             this.tSBXoa = new System.Windows.Forms.ToolStripButton();
@@ -46,10 +51,16 @@
             this.tSBLoc = new System.Windows.Forms.ToolStripButton();
             this.tSBDInhluong = new System.Windows.Forms.ToolStripButton();
             this.tSBCapnhatgia = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.pnlNhomhang.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.pnlMathang.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlNhomhang
@@ -60,6 +71,13 @@
             this.pnlNhomhang.Name = "pnlNhomhang";
             this.pnlNhomhang.Size = new System.Drawing.Size(334, 641);
             this.pnlNhomhang.TabIndex = 0;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(4, 31);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(326, 607);
+            this.treeView1.TabIndex = 1;
             // 
             // toolStrip1
             // 
@@ -78,10 +96,11 @@
             // 
             // pnlMathang
             // 
+            this.pnlMathang.Controls.Add(this.dataGridView1);
             this.pnlMathang.Controls.Add(this.toolStrip2);
             this.pnlMathang.Location = new System.Drawing.Point(353, 13);
             this.pnlMathang.Name = "pnlMathang";
-            this.pnlMathang.Size = new System.Drawing.Size(850, 641);
+            this.pnlMathang.Size = new System.Drawing.Size(1146, 641);
             this.pnlMathang.TabIndex = 1;
             // 
             // toolStrip2
@@ -97,61 +116,73 @@
             this.tSBCapnhatgia});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(850, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(1146, 27);
             this.toolStrip2.TabIndex = 0;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // toolStripButton1
+            // dataGridView1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.NameP,
+            this.p,
+            this.h,
+            this.i,
+            this.n,
+            this.s,
+            this.NhomhangP,
+            this.GianhapP});
+            this.dataGridView1.Location = new System.Drawing.Point(4, 31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1139, 607);
+            this.dataGridView1.TabIndex = 1;
             // 
-            // toolStripButton2
+            // ID
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::CoffeeManagementSoftware.Properties.Resources.PenColor_32x32;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.ID.HeaderText = "Mã hàng";
+            this.ID.Name = "ID";
             // 
-            // toolStripButton3
+            // NameP
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::CoffeeManagementSoftware.Properties.Resources.Article_32x32;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.NameP.HeaderText = "Tên hàng";
+            this.NameP.Name = "NameP";
             // 
-            // toolStripButton4
+            // p
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::CoffeeManagementSoftware.Properties.Resources.Report_32x32;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.p.HeaderText = "p";
+            this.p.Name = "p";
             // 
-            // toolStripButton5
+            // h
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.h.HeaderText = "h";
+            this.h.Name = "h";
             // 
-            // treeView1
+            // i
             // 
-            this.treeView1.Location = new System.Drawing.Point(4, 31);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(326, 607);
-            this.treeView1.TabIndex = 1;
+            this.i.HeaderText = "i";
+            this.i.Name = "i";
+            // 
+            // n
+            // 
+            this.n.HeaderText = "n";
+            this.n.Name = "n";
+            // 
+            // s
+            // 
+            this.s.HeaderText = "s";
+            this.s.Name = "s";
+            // 
+            // NhomhangP
+            // 
+            this.NhomhangP.HeaderText = "Nhóm hàng";
+            this.NhomhangP.Name = "NhomhangP";
+            // 
+            // GianhapP
+            // 
+            this.GianhapP.HeaderText = "Giá nhập";
+            this.GianhapP.Name = "GianhapP";
             // 
             // tSBThemmoi
             // 
@@ -210,11 +241,56 @@
             this.tSBCapnhatgia.Size = new System.Drawing.Size(173, 24);
             this.tSBCapnhatgia.Text = "Cập nhật giá từ excel";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::CoffeeManagementSoftware.Properties.Resources.PenColor_32x32;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::CoffeeManagementSoftware.Properties.Resources.Article_32x32;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton3.Text = "toolStripButton3";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = global::CoffeeManagementSoftware.Properties.Resources.Report_32x32;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton4.Text = "toolStripButton4";
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton5.Text = "toolStripButton5";
+            // 
             // frmDanhmucmathang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1215, 669);
+            this.ClientSize = new System.Drawing.Size(1501, 669);
             this.Controls.Add(this.pnlMathang);
             this.Controls.Add(this.pnlNhomhang);
             this.Name = "frmDanhmucmathang";
@@ -228,6 +304,7 @@
             this.pnlMathang.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,5 +328,15 @@
         private System.Windows.Forms.ToolStripButton tSBLoc;
         private System.Windows.Forms.ToolStripButton tSBDInhluong;
         private System.Windows.Forms.ToolStripButton tSBCapnhatgia;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p;
+        private System.Windows.Forms.DataGridViewTextBoxColumn h;
+        private System.Windows.Forms.DataGridViewTextBoxColumn i;
+        private System.Windows.Forms.DataGridViewTextBoxColumn n;
+        private System.Windows.Forms.DataGridViewTextBoxColumn s;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NhomhangP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GianhapP;
     }
 }
