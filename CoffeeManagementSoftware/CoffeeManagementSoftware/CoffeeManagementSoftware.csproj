@@ -58,6 +58,12 @@
     <Compile Include="frmCustumer.Designer.cs">
       <DependentUpon>frmCustumer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDanhmucmathang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhmucmathang.Designer.cs">
+      <DependentUpon>frmDanhmucmathang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCustumer.resx">
       <DependentUpon>frmCustumer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhmucmathang.resx">
+      <DependentUpon>frmDanhmucmathang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKhachhang.resx">
       <DependentUpon>frmKhachhang.cs</DependentUpon>
