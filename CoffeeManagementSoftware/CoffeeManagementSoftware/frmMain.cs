@@ -46,13 +46,14 @@ namespace CoffeeManagementSoftware
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
+            frmUseService use = new frmUseService();
+            openForm(use);
         }
         private void tSBUseService_Click(object sender, EventArgs e)
         {
             if (CheckExist("frmUseService"))
             {
-                XtraMessageBox.Show("Bạn Ðang Sử D?ng Chức Nang Này", "Thông báo");
+                XtraMessageBox.Show("Bạn Ðang Sử Dụng Chức Nang Này", "Thông báo");
                 return;
             }
             else
@@ -60,6 +61,17 @@ namespace CoffeeManagementSoftware
                 frmUseService use = new frmUseService();
                 openForm(use);
             }
+        }
+
+        private void sửDụngDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tSBUseService.PerformClick();
+        }
+
+        private void danhMụcKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCustumer use = new frmCustumer();
+            openForm(use);
         }
 
     }

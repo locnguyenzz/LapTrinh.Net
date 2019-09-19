@@ -10,3 +10,6 @@ D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\
 D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmUseService.resources
 C:\Users\DELL\Documents\GitHub\LapTrinh.Net-a130224aca9b2f606514f4c1d28693cf3eb23f94\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe
 C:\Users\DELL\Documents\GitHub\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmCustumer.resources
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmDanhmucmathang.resources
+D:\FILE CODE\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmKhachhang.resources
