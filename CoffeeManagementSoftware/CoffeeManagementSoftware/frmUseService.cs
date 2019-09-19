@@ -17,5 +17,10 @@ namespace CoffeeManagementSoftware
         {
             InitializeComponent();
         }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

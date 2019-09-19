@@ -193,6 +193,16 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrangegroups_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("arrangegroups_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Article_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Article_32x32", resourceCulture);
