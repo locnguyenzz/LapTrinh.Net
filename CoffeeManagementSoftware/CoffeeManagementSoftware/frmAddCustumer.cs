@@ -11,11 +11,16 @@ using DevExpress.XtraEditors;
 
 namespace CoffeeManagementSoftware
 {
-    public partial class frmKhachhang : DevExpress.XtraEditors.XtraForm
+    public partial class frmAddCustumer : DevExpress.XtraEditors.XtraForm
     {
-        public frmKhachhang()
+        public frmAddCustumer()
         {
             InitializeComponent();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

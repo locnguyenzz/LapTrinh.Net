@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeManagementSoftware", "CoffeeManagementSoftware\CoffeeManagementSoftware.csproj", "{63783BC6-3104-484E-A7E3-422401478153}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeLibrary", "CoffeeLibrary\CoffeeLibrary.csproj", "{507D516C-8041-4524-B7F7-19D2BBB4EA75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{63783BC6-3104-484E-A7E3-422401478153}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63783BC6-3104-484E-A7E3-422401478153}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63783BC6-3104-484E-A7E3-422401478153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{507D516C-8041-4524-B7F7-19D2BBB4EA75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{507D516C-8041-4524-B7F7-19D2BBB4EA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{507D516C-8041-4524-B7F7-19D2BBB4EA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{507D516C-8041-4524-B7F7-19D2BBB4EA75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

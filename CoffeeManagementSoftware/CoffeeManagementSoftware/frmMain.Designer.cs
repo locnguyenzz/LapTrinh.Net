@@ -105,7 +105,6 @@
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -387,30 +386,30 @@
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             // 
             // caLàmToolStripMenuItem
             // 
             this.caLàmToolStripMenuItem.Name = "caLàmToolStripMenuItem";
-            this.caLàmToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.caLàmToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.caLàmToolStripMenuItem.Text = "Ca làm";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(129, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(128, 6);
             // 
             // tạmỨngToolStripMenuItem
             // 
             this.tạmỨngToolStripMenuItem.Name = "tạmỨngToolStripMenuItem";
-            this.tạmỨngToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.tạmỨngToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.tạmỨngToolStripMenuItem.Text = "Tạm ứng ";
             // 
             // tínhLươngToolStripMenuItem
             // 
             this.tínhLươngToolStripMenuItem.Name = "tínhLươngToolStripMenuItem";
-            this.tínhLươngToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.tínhLươngToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.tínhLươngToolStripMenuItem.Text = "Tính lương";
             // 
             // quảnTrịToolStripMenuItem
@@ -490,7 +489,7 @@
             this.đăngKýBảnQuyềnToolStripMenuItem,
             this.thôngTinBảnQuyềnToolStripMenuItem});
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.trợGiúpToolStripMenuItem.Text = "&Trợ giúp";
             // 
             // hưỡngDẫnSửDụngToolStripMenuItem
@@ -653,7 +652,7 @@
             this.tSBExit.Image = global::CoffeeManagementSoftware.Properties.Resources.Close_16x16;
             this.tSBExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tSBExit.Name = "tSBExit";
-            this.tSBExit.Size = new System.Drawing.Size(62, 24);
+            this.tSBExit.Size = new System.Drawing.Size(61, 24);
             this.tSBExit.Text = "Thoát";
             // 
             // toolStripSeparator14
@@ -706,21 +705,11 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.Image = global::CoffeeManagementSoftware.Properties.Resources.printpreviewbrowser_16x16;
-            this.simpleButton1.Location = new System.Drawing.Point(219, 178);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 3;
-            this.simpleButton1.Text = "simpleButton1";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 562);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -816,7 +805,6 @@
         private System.Windows.Forms.ToolStripButton tSBExit;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator14;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
 
     }
 }

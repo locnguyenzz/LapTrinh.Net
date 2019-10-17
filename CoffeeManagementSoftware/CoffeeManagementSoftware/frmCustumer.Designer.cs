@@ -36,13 +36,23 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tV_Member = new System.Windows.Forms.TreeView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.tCtr_Customer = new System.Windows.Forms.TabControl();
             this.tP_Customer = new System.Windows.Forms.TabPage();
             this.tLP_DetailCus = new System.Windows.Forms.TableLayoutPanel();
             this.tS_Customer = new System.Windows.Forms.ToolStrip();
+            this.tSB_Add = new System.Windows.Forms.ToolStripButton();
+            this.tSP_Edit = new System.Windows.Forms.ToolStripButton();
+            this.tSB_Delete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.dGV_Customer = new System.Windows.Forms.DataGridView();
             this.ID_PROFILE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,16 +67,6 @@
             this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMS_GroupCus = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.thêmNhómToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.tSB_Add = new System.Windows.Forms.ToolStripButton();
-            this.tSP_Edit = new System.Windows.Forms.ToolStripButton();
-            this.tSB_Delete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.xóaNhómToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiTênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -159,15 +159,60 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::CoffeeManagementSoftware.Properties.Resources.PenColor_32x32;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::CoffeeManagementSoftware.Properties.Resources.Article_32x32;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton3.Text = "toolStripButton3";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = global::CoffeeManagementSoftware.Properties.Resources.Report_32x32;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton4.Text = "toolStripButton4";
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton5.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton5.Text = "toolStripButton5";
             // 
             // tCtr_Customer
             // 
@@ -221,10 +266,51 @@
             this.tS_Customer.TabIndex = 0;
             this.tS_Customer.Text = "toolStrip1";
             // 
+            // tSB_Add
+            // 
+            this.tSB_Add.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_16x16;
+            this.tSB_Add.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSB_Add.Name = "tSB_Add";
+            this.tSB_Add.Size = new System.Drawing.Size(81, 21);
+            this.tSB_Add.Text = "Thêm Mới";
+            this.tSB_Add.Click += new System.EventHandler(this.tSB_Add_Click);
+            // 
+            // tSP_Edit
+            // 
+            this.tSP_Edit.Image = global::CoffeeManagementSoftware.Properties.Resources.EditTask_16x16;
+            this.tSP_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSP_Edit.Name = "tSP_Edit";
+            this.tSP_Edit.Size = new System.Drawing.Size(81, 21);
+            this.tSP_Edit.Text = "Chỉnh Sửa";
+            // 
+            // tSB_Delete
+            // 
+            this.tSB_Delete.Image = global::CoffeeManagementSoftware.Properties.Resources.Delete_16x16;
+            this.tSB_Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSB_Delete.Name = "tSB_Delete";
+            this.tSB_Delete.Size = new System.Drawing.Size(47, 21);
+            this.tSB_Delete.Text = "Xóa";
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 24);
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(37, 21);
+            this.toolStripButton6.Text = "In";
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.Image = global::CoffeeManagementSoftware.Properties.Resources.Lookup_Reference_32x32;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(46, 21);
+            this.toolStripButton7.Text = "Lọc";
             // 
             // dGV_Customer
             // 
@@ -340,118 +426,33 @@
             this.refreshToolStripMenuItem,
             this.đổiTênToolStripMenuItem});
             this.cMS_GroupCus.Name = "cMS_GroupCus";
-            this.cMS_GroupCus.Size = new System.Drawing.Size(143, 92);
+            this.cMS_GroupCus.Size = new System.Drawing.Size(142, 92);
             // 
             // thêmNhómToolStripMenuItem
             // 
             this.thêmNhómToolStripMenuItem.Name = "thêmNhómToolStripMenuItem";
-            this.thêmNhómToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.thêmNhómToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.thêmNhómToolStripMenuItem.Text = "Thêm Nhóm";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = global::CoffeeManagementSoftware.Properties.Resources.PenColor_32x32;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::CoffeeManagementSoftware.Properties.Resources.Article_32x32;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::CoffeeManagementSoftware.Properties.Resources.Report_32x32;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "toolStripButton5";
-            // 
-            // tSB_Add
-            // 
-            this.tSB_Add.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_16x16;
-            this.tSB_Add.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSB_Add.Name = "tSB_Add";
-            this.tSB_Add.Size = new System.Drawing.Size(82, 21);
-            this.tSB_Add.Text = "Thêm Mới";
-            // 
-            // tSP_Edit
-            // 
-            this.tSP_Edit.Image = global::CoffeeManagementSoftware.Properties.Resources.EditTask_16x16;
-            this.tSP_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSP_Edit.Name = "tSP_Edit";
-            this.tSP_Edit.Size = new System.Drawing.Size(81, 21);
-            this.tSP_Edit.Text = "Chỉnh Sửa";
-            // 
-            // tSB_Delete
-            // 
-            this.tSB_Delete.Image = global::CoffeeManagementSoftware.Properties.Resources.Delete_16x16;
-            this.tSB_Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSB_Delete.Name = "tSB_Delete";
-            this.tSB_Delete.Size = new System.Drawing.Size(47, 21);
-            this.tSB_Delete.Text = "Xóa";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(37, 21);
-            this.toolStripButton6.Text = "In";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.Image = global::CoffeeManagementSoftware.Properties.Resources.Lookup_Reference_32x32;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(46, 21);
-            this.toolStripButton7.Text = "Lọc";
             // 
             // xóaNhómToolStripMenuItem
             // 
             this.xóaNhómToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Delete_16x16;
             this.xóaNhómToolStripMenuItem.Name = "xóaNhómToolStripMenuItem";
-            this.xóaNhómToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.xóaNhómToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.xóaNhómToolStripMenuItem.Text = "Xóa Nhóm";
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_16x16;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             // 
             // đổiTênToolStripMenuItem
             // 
             this.đổiTênToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.EditTask_16x16;
             this.đổiTênToolStripMenuItem.Name = "đổiTênToolStripMenuItem";
-            this.đổiTênToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.đổiTênToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.đổiTênToolStripMenuItem.Text = "Đổi tên";
             // 
             // frmCustumer

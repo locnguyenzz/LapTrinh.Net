@@ -59,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateService.cs" />
-    <Compile Include="Font.cs" />
     <Compile Include="frmChitietmathang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +77,11 @@
     <Compile Include="frmDanhmucmathang.Designer.cs">
       <DependentUpon>frmDanhmucmathang.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmKhachhang.cs">
+    <Compile Include="frmAddCustumer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKhachhang.Designer.cs">
-      <DependentUpon>frmKhachhang.cs</DependentUpon>
+    <Compile Include="frmAddCustumer.Designer.cs">
+      <DependentUpon>frmAddCustumer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -107,8 +106,8 @@
     <EmbeddedResource Include="frmDanhmucmathang.resx">
       <DependentUpon>frmDanhmucmathang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKhachhang.resx">
-      <DependentUpon>frmKhachhang.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddCustumer.resx">
+      <DependentUpon>frmAddCustumer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

@@ -20,8 +20,14 @@ namespace CoffeeManagementSoftware
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            frmKhachhang use = new frmKhachhang();
+            frmAddCustumer use = new frmAddCustumer();
             use.ShowDialog();
+        }
+
+        private void tSB_Add_Click(object sender, EventArgs e)
+        {
+            frmAddCustumer frm = new frmAddCustumer();
+            frm.ShowDialog();
         }
     }
 }

@@ -31,11 +31,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUseService));
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Node2");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2});
             this.btn_SerchCus = new DevExpress.XtraEditors.SimpleButton();
             this.txt_NameCus = new System.Windows.Forms.TextBox();
             this.lbl_Customer = new System.Windows.Forms.Label();
@@ -78,7 +78,9 @@
             this.btn_TimeStart = new DevExpress.XtraEditors.SimpleButton();
             this.xTCSale = new DevExpress.XtraTab.XtraTabControl();
             this.xTBGeneral = new DevExpress.XtraTab.XtraTabPage();
+            this.panel_KhuA = new System.Windows.Forms.Panel();
             this.xTPRetail = new DevExpress.XtraTab.XtraTabPage();
+            this.panel_KhuB = new System.Windows.Forms.Panel();
             this.tBL_Control = new System.Windows.Forms.TableLayoutPanel();
             this.btn_RemoveItem = new DevExpress.XtraEditors.SimpleButton();
             this.btn_MoveChair = new DevExpress.XtraEditors.SimpleButton();
@@ -95,8 +97,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txt_Item = new System.Windows.Forms.TextBox();
             this.dGV_Item = new System.Windows.Forms.DataGridView();
-            this.panel_KhuB = new System.Windows.Forms.Panel();
-            this.panel_KhuA = new System.Windows.Forms.Panel();
             this.cMS_Menu.SuspendLayout();
             this.tBL_UseService.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xTCSaleKhuC)).BeginInit();
@@ -355,7 +355,7 @@
             this.tSB_IncreaseItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tSB_IncreaseItem.Name = "tSB_IncreaseItem";
             this.tSB_IncreaseItem.Size = new System.Drawing.Size(23, 20);
-            this.tSB_IncreaseItem.Text = "toolStripButton1";
+            this.tSB_IncreaseItem.Text = "Tăng số lượng";
             // 
             // tSP_ReduceItem
             // 
@@ -364,7 +364,7 @@
             this.tSP_ReduceItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tSP_ReduceItem.Name = "tSP_ReduceItem";
             this.tSP_ReduceItem.Size = new System.Drawing.Size(23, 20);
-            this.tSP_ReduceItem.Text = "toolStripButton2";
+            this.tSP_ReduceItem.Text = "Giảm số lượng";
             // 
             // toolStripSeparator1
             // 
@@ -538,12 +538,30 @@
             this.xTBGeneral.Size = new System.Drawing.Size(531, 228);
             this.xTBGeneral.Text = "Khu A";
             // 
+            // panel_KhuA
+            // 
+            this.panel_KhuA.AutoScroll = true;
+            this.panel_KhuA.ContextMenuStrip = this.cMS_Menu;
+            this.panel_KhuA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_KhuA.Location = new System.Drawing.Point(0, 0);
+            this.panel_KhuA.Name = "panel_KhuA";
+            this.panel_KhuA.Size = new System.Drawing.Size(531, 228);
+            this.panel_KhuA.TabIndex = 0;
+            // 
             // xTPRetail
             // 
             this.xTPRetail.Controls.Add(this.panel_KhuB);
             this.xTPRetail.Name = "xTPRetail";
             this.xTPRetail.Size = new System.Drawing.Size(531, 228);
             this.xTPRetail.Text = "Khu B";
+            // 
+            // panel_KhuB
+            // 
+            this.panel_KhuB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_KhuB.Location = new System.Drawing.Point(0, 0);
+            this.panel_KhuB.Name = "panel_KhuB";
+            this.panel_KhuB.Size = new System.Drawing.Size(531, 228);
+            this.panel_KhuB.TabIndex = 0;
             // 
             // tBL_Control
             // 
@@ -703,14 +721,14 @@
             this.tV_GroupItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tV_GroupItem.Location = new System.Drawing.Point(3, 41);
             this.tV_GroupItem.Name = "tV_GroupItem";
-            treeNode7.Name = "Node1";
-            treeNode7.Text = "Node1";
-            treeNode8.Name = "Node2";
-            treeNode8.Text = "Node2";
-            treeNode9.Name = "Node0";
-            treeNode9.Text = "Node0";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Node1";
+            treeNode2.Name = "Node2";
+            treeNode2.Text = "Node2";
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "Node0";
             this.tV_GroupItem.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9});
+            treeNode3});
             this.tV_GroupItem.Size = new System.Drawing.Size(261, 212);
             this.tV_GroupItem.TabIndex = 0;
             // 
@@ -742,24 +760,6 @@
             this.dGV_Item.Name = "dGV_Item";
             this.dGV_Item.Size = new System.Drawing.Size(267, 315);
             this.dGV_Item.TabIndex = 17;
-            // 
-            // panel_KhuB
-            // 
-            this.panel_KhuB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_KhuB.Location = new System.Drawing.Point(0, 0);
-            this.panel_KhuB.Name = "panel_KhuB";
-            this.panel_KhuB.Size = new System.Drawing.Size(531, 228);
-            this.panel_KhuB.TabIndex = 0;
-            // 
-            // panel_KhuA
-            // 
-            this.panel_KhuA.AutoScroll = true;
-            this.panel_KhuA.ContextMenuStrip = this.cMS_Menu;
-            this.panel_KhuA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_KhuA.Location = new System.Drawing.Point(0, 0);
-            this.panel_KhuA.Name = "panel_KhuA";
-            this.panel_KhuA.Size = new System.Drawing.Size(531, 228);
-            this.panel_KhuA.TabIndex = 0;
             // 
             // frmUseService
             // 
