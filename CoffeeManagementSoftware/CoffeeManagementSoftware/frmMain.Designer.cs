@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem2 = new DevExpress.Utils.ToolTipSeparatorItem();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.heToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cơToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -234,7 +230,7 @@
             // 
             this.danhMụcKháchHàngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Customer_16x16;
             this.danhMụcKháchHàngToolStripMenuItem.Name = "danhMụcKháchHàngToolStripMenuItem";
-            this.danhMụcKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.danhMụcKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.danhMụcKháchHàngToolStripMenuItem.Text = "Danh mục khách hàng";
             this.danhMụcKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.danhMụcKháchHàngToolStripMenuItem_Click);
             // 
@@ -242,74 +238,74 @@
             // 
             this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xétDuyệtNângMứcThànhViênToolStripMenuItem.Image")));
             this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Name = "xétDuyệtNângMứcThànhViênToolStripMenuItem";
-            this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.xétDuyệtNângMứcThànhViênToolStripMenuItem.Text = "Xét duyệt nâng mức thành viên";
             // 
             // danhMụcMặtHàngToolStripMenuItem
             // 
             this.danhMụcMặtHàngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.coffee;
             this.danhMụcMặtHàngToolStripMenuItem.Name = "danhMụcMặtHàngToolStripMenuItem";
-            this.danhMụcMặtHàngToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.danhMụcMặtHàngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.danhMụcMặtHàngToolStripMenuItem.Text = "Danh mục mặt hàng";
             // 
             // danhMụcBànGhếKhuVựcToolStripMenuItem
             // 
             this.danhMụcBànGhếKhuVựcToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhMụcBànGhếKhuVựcToolStripMenuItem.Image")));
             this.danhMụcBànGhếKhuVựcToolStripMenuItem.Name = "danhMụcBànGhếKhuVựcToolStripMenuItem";
-            this.danhMụcBànGhếKhuVựcToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.danhMụcBànGhếKhuVựcToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.danhMụcBànGhếKhuVựcToolStripMenuItem.Text = "Danh mục bàn ghế, khu vực";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(241, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(237, 6);
             // 
             // sửDụngDịchVụToolStripMenuItem
             // 
             this.sửDụngDịchVụToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.User_16x16;
             this.sửDụngDịchVụToolStripMenuItem.Name = "sửDụngDịchVụToolStripMenuItem";
-            this.sửDụngDịchVụToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.sửDụngDịchVụToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.sửDụngDịchVụToolStripMenuItem.Text = "Sử dụng dịch vụ";
             this.sửDụngDịchVụToolStripMenuItem.Click += new System.EventHandler(this.sửDụngDịchVụToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(241, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(237, 6);
             // 
             // quảnLýBánHàngToolStripMenuItem
             // 
             this.quảnLýBánHàngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.BOSaleItem_16x16;
             this.quảnLýBánHàngToolStripMenuItem.Name = "quảnLýBánHàngToolStripMenuItem";
-            this.quảnLýBánHàngToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.quảnLýBánHàngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.quảnLýBánHàngToolStripMenuItem.Text = "Quản lý bán hàng";
             // 
             // kiểmSoátSốOrderToolStripMenuItem
             // 
             this.kiểmSoátSốOrderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kiểmSoátSốOrderToolStripMenuItem.Image")));
             this.kiểmSoátSốOrderToolStripMenuItem.Name = "kiểmSoátSốOrderToolStripMenuItem";
-            this.kiểmSoátSốOrderToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.kiểmSoátSốOrderToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.kiểmSoátSốOrderToolStripMenuItem.Text = "Kiểm soát số order";
             // 
             // lưuVếtHoạtĐộngToolStripMenuItem
             // 
             this.lưuVếtHoạtĐộngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("lưuVếtHoạtĐộngToolStripMenuItem.Image")));
             this.lưuVếtHoạtĐộngToolStripMenuItem.Name = "lưuVếtHoạtĐộngToolStripMenuItem";
-            this.lưuVếtHoạtĐộngToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.lưuVếtHoạtĐộngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.lưuVếtHoạtĐộngToolStripMenuItem.Text = "Lưu vết hoạt động";
             // 
             // thôngKêDoanhThuToolStripMenuItem
             // 
             this.thôngKêDoanhThuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thôngKêDoanhThuToolStripMenuItem.Image")));
             this.thôngKêDoanhThuToolStripMenuItem.Name = "thôngKêDoanhThuToolStripMenuItem";
-            this.thôngKêDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.thôngKêDoanhThuToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.thôngKêDoanhThuToolStripMenuItem.Text = "Thông kê doanh thu";
             // 
             // thốngKêĐồĂnuốngToolStripMenuItem
             // 
             this.thốngKêĐồĂnuốngToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thốngKêĐồĂnuốngToolStripMenuItem.Image")));
             this.thốngKêĐồĂnuốngToolStripMenuItem.Name = "thốngKêĐồĂnuốngToolStripMenuItem";
-            this.thốngKêĐồĂnuốngToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.thốngKêĐồĂnuốngToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
             this.thốngKêĐồĂnuốngToolStripMenuItem.Text = "Thống kê đồ ăn, uống";
             // 
             // khoHàngToolStripMenuItem
@@ -494,7 +490,7 @@
             this.đăngKýBảnQuyềnToolStripMenuItem,
             this.thôngTinBảnQuyềnToolStripMenuItem});
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.trợGiúpToolStripMenuItem.Text = "&Trợ giúp";
             // 
             // hưỡngDẫnSửDụngToolStripMenuItem
@@ -576,6 +572,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(1115, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // tSBUseService
             // 
@@ -711,22 +708,11 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Cursor = System.Windows.Forms.Cursors.No;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopLeft;
-            this.simpleButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.simpleButton1.Location = new System.Drawing.Point(292, 140);
+            this.simpleButton1.ImageOptions.Image = global::CoffeeManagementSoftware.Properties.Resources.printpreviewbrowser_16x16;
+            this.simpleButton1.Location = new System.Drawing.Point(219, 178);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.False;
-            this.simpleButton1.Size = new System.Drawing.Size(116, 47);
-            toolTipItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            toolTipTitleItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            superToolTip2.Items.Add(toolTipItem2);
-            superToolTip2.Items.Add(toolTipSeparatorItem2);
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            this.simpleButton1.SuperTip = superToolTip2;
-            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "simpleButton1";
             // 
             // frmMain
@@ -734,9 +720,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 562);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.simpleButton1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

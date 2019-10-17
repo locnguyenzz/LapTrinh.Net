@@ -29,240 +29,324 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Tất cả");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Chưa thiết lập");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Vàng");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Bạc");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Đồng");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("VIP");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Thùng rác");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustumer));
-            this.pnlThanhvien = new System.Windows.Forms.Panel();
-            this.trvThanhvien = new System.Windows.Forms.TreeView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.tLP_Customer = new System.Windows.Forms.TableLayoutPanel();
+            this.tCtr_Member = new System.Windows.Forms.TabControl();
+            this.tP_Member = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tV_Member = new System.Windows.Forms.TreeView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.pnlKhachhang = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddressC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RankC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FaxC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoteC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.tSBThemmoiC = new System.Windows.Forms.ToolStripButton();
-            this.tSBChinhsuaC = new System.Windows.Forms.ToolStripButton();
-            this.tSBDelC = new System.Windows.Forms.ToolStripButton();
-            this.tSBInC = new System.Windows.Forms.ToolStripButton();
-            this.tSBLocC = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tCtr_Customer = new System.Windows.Forms.TabControl();
+            this.tP_Customer = new System.Windows.Forms.TabPage();
+            this.tLP_DetailCus = new System.Windows.Forms.TableLayoutPanel();
+            this.tS_Customer = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.dGV_Customer = new System.Windows.Forms.DataGridView();
+            this.ID_PROFILE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_USER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDENFITICATION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SEX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SCORE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cMS_GroupCus = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.thêmNhómToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.pnlThanhvien.SuspendLayout();
+            this.tSB_Add = new System.Windows.Forms.ToolStripButton();
+            this.tSP_Edit = new System.Windows.Forms.ToolStripButton();
+            this.tSB_Delete = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.xóaNhómToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đổiTênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tLP_Customer.SuspendLayout();
+            this.tCtr_Member.SuspendLayout();
+            this.tP_Member.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.pnlKhachhang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.toolStrip2.SuspendLayout();
+            this.tCtr_Customer.SuspendLayout();
+            this.tP_Customer.SuspendLayout();
+            this.tLP_DetailCus.SuspendLayout();
+            this.tS_Customer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Customer)).BeginInit();
+            this.cMS_GroupCus.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlThanhvien
+            // tLP_Customer
             // 
-            this.pnlThanhvien.Controls.Add(this.trvThanhvien);
-            this.pnlThanhvien.Controls.Add(this.toolStrip1);
-            this.pnlThanhvien.Location = new System.Drawing.Point(13, 13);
-            this.pnlThanhvien.Name = "pnlThanhvien";
-            this.pnlThanhvien.Size = new System.Drawing.Size(266, 601);
-            this.pnlThanhvien.TabIndex = 0;
+            this.tLP_Customer.ColumnCount = 2;
+            this.tLP_Customer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
+            this.tLP_Customer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74F));
+            this.tLP_Customer.Controls.Add(this.tCtr_Member, 0, 0);
+            this.tLP_Customer.Controls.Add(this.tCtr_Customer, 1, 0);
+            this.tLP_Customer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tLP_Customer.Location = new System.Drawing.Point(0, 0);
+            this.tLP_Customer.Name = "tLP_Customer";
+            this.tLP_Customer.RowCount = 1;
+            this.tLP_Customer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tLP_Customer.Size = new System.Drawing.Size(1119, 534);
+            this.tLP_Customer.TabIndex = 0;
             // 
-            // trvThanhvien
+            // tCtr_Member
             // 
-            this.trvThanhvien.ImageIndex = 0;
-            this.trvThanhvien.ImageList = this.imageList1;
-            this.trvThanhvien.Location = new System.Drawing.Point(4, 31);
-            this.trvThanhvien.Name = "trvThanhvien";
-            treeNode1.Name = " trvTatca";
-            treeNode1.Text = "Tất cả";
-            treeNode2.ImageIndex = 1;
-            treeNode2.Name = "trvChuathietlap";
-            treeNode2.Text = "Chưa thiết lập";
-            treeNode3.ImageIndex = 2;
-            treeNode3.Name = "trvVang";
-            treeNode3.Text = "Vàng";
-            treeNode4.ImageIndex = 2;
-            treeNode4.Name = "trvBac";
-            treeNode4.Text = "Bạc";
-            treeNode5.ImageIndex = 2;
-            treeNode5.Name = "trvDong";
-            treeNode5.Text = "Đồng";
-            treeNode6.ImageIndex = 2;
-            treeNode6.Name = "trvVIP";
-            treeNode6.Text = "VIP";
-            treeNode7.ImageIndex = 3;
-            treeNode7.Name = "trvTrash";
-            treeNode7.Text = "Thùng rác";
-            this.trvThanhvien.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6,
-            treeNode7});
-            this.trvThanhvien.SelectedImageIndex = 0;
-            this.trvThanhvien.Size = new System.Drawing.Size(259, 567);
-            this.trvThanhvien.TabIndex = 1;
+            this.tCtr_Member.Controls.Add(this.tP_Member);
+            this.tCtr_Member.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tCtr_Member.Location = new System.Drawing.Point(3, 3);
+            this.tCtr_Member.Name = "tCtr_Member";
+            this.tCtr_Member.SelectedIndex = 0;
+            this.tCtr_Member.Size = new System.Drawing.Size(284, 528);
+            this.tCtr_Member.TabIndex = 0;
             // 
-            // imageList1
+            // tP_Member
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "Shape_32x32.png");
-            this.imageList1.Images.SetKeyName(1, "None_32x32.png");
-            this.imageList1.Images.SetKeyName(2, "BORole_16x16.png");
-            this.imageList1.Images.SetKeyName(3, "Trash_32x32.png");
+            this.tP_Member.Controls.Add(this.tableLayoutPanel1);
+            this.tP_Member.Location = new System.Drawing.Point(4, 22);
+            this.tP_Member.Name = "tP_Member";
+            this.tP_Member.Padding = new System.Windows.Forms.Padding(3);
+            this.tP_Member.Size = new System.Drawing.Size(276, 502);
+            this.tP_Member.TabIndex = 0;
+            this.tP_Member.Text = "Thành Viên";
+            this.tP_Member.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tV_Member, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.125678F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 94.87432F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(270, 496);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // tV_Member
+            // 
+            this.tV_Member.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tV_Member.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tV_Member.Location = new System.Drawing.Point(3, 28);
+            this.tV_Member.Name = "tV_Member";
+            this.tV_Member.Size = new System.Drawing.Size(264, 465);
+            this.tV_Member.TabIndex = 0;
             // 
             // toolStrip1
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
+            this.toolStripSeparator1,
             this.toolStripButton3,
             this.toolStripButton4,
+            this.toolStripSeparator2,
             this.toolStripButton5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(266, 27);
-            this.toolStrip1.TabIndex = 0;
+            this.toolStrip1.Size = new System.Drawing.Size(270, 25);
+            this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // pnlKhachhang
+            // toolStripSeparator1
             // 
-            this.pnlKhachhang.Controls.Add(this.dataGridView1);
-            this.pnlKhachhang.Controls.Add(this.toolStrip2);
-            this.pnlKhachhang.Location = new System.Drawing.Point(285, 13);
-            this.pnlKhachhang.Name = "pnlKhachhang";
-            this.pnlKhachhang.Size = new System.Drawing.Size(898, 601);
-            this.pnlKhachhang.TabIndex = 1;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // dataGridView1
+            // toolStripSeparator2
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.NameC,
-            this.AddressC,
-            this.PhoneC,
-            this.RankC,
-            this.EmailC,
-            this.FaxC,
-            this.NoteC});
-            this.dataGridView1.Location = new System.Drawing.Point(4, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(876, 570);
-            this.dataGridView1.TabIndex = 1;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // ID
+            // tCtr_Customer
             // 
-            this.ID.HeaderText = "Mã";
-            this.ID.Name = "ID";
+            this.tCtr_Customer.Controls.Add(this.tP_Customer);
+            this.tCtr_Customer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tCtr_Customer.Location = new System.Drawing.Point(293, 3);
+            this.tCtr_Customer.Name = "tCtr_Customer";
+            this.tCtr_Customer.SelectedIndex = 0;
+            this.tCtr_Customer.Size = new System.Drawing.Size(823, 528);
+            this.tCtr_Customer.TabIndex = 1;
             // 
-            // NameC
+            // tP_Customer
             // 
-            this.NameC.HeaderText = "Tên khách";
-            this.NameC.Name = "NameC";
+            this.tP_Customer.Controls.Add(this.tLP_DetailCus);
+            this.tP_Customer.Location = new System.Drawing.Point(4, 22);
+            this.tP_Customer.Name = "tP_Customer";
+            this.tP_Customer.Padding = new System.Windows.Forms.Padding(3);
+            this.tP_Customer.Size = new System.Drawing.Size(815, 502);
+            this.tP_Customer.TabIndex = 0;
+            this.tP_Customer.Text = "Khách Hàng";
+            this.tP_Customer.UseVisualStyleBackColor = true;
             // 
-            // AddressC
+            // tLP_DetailCus
             // 
-            this.AddressC.HeaderText = "Địa chỉ";
-            this.AddressC.Name = "AddressC";
+            this.tLP_DetailCus.ColumnCount = 1;
+            this.tLP_DetailCus.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tLP_DetailCus.Controls.Add(this.tS_Customer, 0, 0);
+            this.tLP_DetailCus.Controls.Add(this.dGV_Customer, 0, 1);
+            this.tLP_DetailCus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tLP_DetailCus.Location = new System.Drawing.Point(3, 3);
+            this.tLP_DetailCus.Name = "tLP_DetailCus";
+            this.tLP_DetailCus.RowCount = 2;
+            this.tLP_DetailCus.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tLP_DetailCus.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95F));
+            this.tLP_DetailCus.Size = new System.Drawing.Size(809, 496);
+            this.tLP_DetailCus.TabIndex = 0;
             // 
-            // PhoneC
+            // tS_Customer
             // 
-            this.PhoneC.HeaderText = "Phone";
-            this.PhoneC.Name = "PhoneC";
+            this.tS_Customer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tS_Customer.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tSB_Add,
+            this.tSP_Edit,
+            this.tSB_Delete,
+            this.toolStripSeparator3,
+            this.toolStripButton6,
+            this.toolStripButton7});
+            this.tS_Customer.Location = new System.Drawing.Point(0, 0);
+            this.tS_Customer.Name = "tS_Customer";
+            this.tS_Customer.Size = new System.Drawing.Size(809, 24);
+            this.tS_Customer.TabIndex = 0;
+            this.tS_Customer.Text = "toolStrip1";
             // 
-            // RankC
+            // toolStripSeparator3
             // 
-            this.RankC.HeaderText = "Thành viên";
-            this.RankC.Name = "RankC";
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 24);
             // 
-            // EmailC
+            // dGV_Customer
             // 
-            this.EmailC.HeaderText = "Email";
-            this.EmailC.Name = "EmailC";
+            this.dGV_Customer.AllowUserToAddRows = false;
+            this.dGV_Customer.AllowUserToDeleteRows = false;
+            this.dGV_Customer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGV_Customer.BackgroundColor = System.Drawing.Color.White;
+            this.dGV_Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_Customer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_PROFILE,
+            this.ID_USER,
+            this.IDENFITICATION,
+            this.LAST_NAME,
+            this.FIRST_NAME,
+            this.SEX,
+            this.PHONE,
+            this.ADDRESS,
+            this.SCORE,
+            this.NAME_TYPE,
+            this.STATUS});
+            this.dGV_Customer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGV_Customer.Location = new System.Drawing.Point(3, 27);
+            this.dGV_Customer.MultiSelect = false;
+            this.dGV_Customer.Name = "dGV_Customer";
+            this.dGV_Customer.ReadOnly = true;
+            this.dGV_Customer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_Customer.Size = new System.Drawing.Size(803, 466);
+            this.dGV_Customer.TabIndex = 1;
             // 
-            // FaxC
+            // ID_PROFILE
             // 
-            this.FaxC.HeaderText = "Fax";
-            this.FaxC.Name = "FaxC";
+            this.ID_PROFILE.DataPropertyName = "ID_PROFILE";
+            this.ID_PROFILE.HeaderText = "Mã Hồ Sơ";
+            this.ID_PROFILE.Name = "ID_PROFILE";
+            this.ID_PROFILE.ReadOnly = true;
             // 
-            // NoteC
+            // ID_USER
             // 
-            this.NoteC.HeaderText = "Ghi chú";
-            this.NoteC.Name = "NoteC";
+            this.ID_USER.DataPropertyName = "ID_USER";
+            this.ID_USER.HeaderText = "Mã Người Dùng";
+            this.ID_USER.Name = "ID_USER";
+            this.ID_USER.ReadOnly = true;
             // 
-            // toolStrip2
+            // IDENFITICATION
             // 
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tSBThemmoiC,
-            this.tSBChinhsuaC,
-            this.tSBDelC,
-            this.tSBInC,
-            this.tSBLocC});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(898, 27);
-            this.toolStrip2.TabIndex = 0;
-            this.toolStrip2.Text = "toolStrip2";
+            this.IDENFITICATION.DataPropertyName = "IDENFITICATION";
+            this.IDENFITICATION.HeaderText = "SỐ CMND";
+            this.IDENFITICATION.Name = "IDENFITICATION";
+            this.IDENFITICATION.ReadOnly = true;
             // 
-            // tSBThemmoiC
+            // LAST_NAME
             // 
-            this.tSBThemmoiC.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
-            this.tSBThemmoiC.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBThemmoiC.Name = "tSBThemmoiC";
-            this.tSBThemmoiC.Size = new System.Drawing.Size(150, 24);
-            this.tSBThemmoiC.Text = "Thêm mới (Insert)";
-            this.tSBThemmoiC.Click += new System.EventHandler(this.toolStripButton6_Click);
+            this.LAST_NAME.DataPropertyName = "LAST_NAME";
+            this.LAST_NAME.HeaderText = "Họ";
+            this.LAST_NAME.Name = "LAST_NAME";
+            this.LAST_NAME.ReadOnly = true;
             // 
-            // tSBChinhsuaC
+            // FIRST_NAME
             // 
-            this.tSBChinhsuaC.Image = global::CoffeeManagementSoftware.Properties.Resources.PenColor_32x32;
-            this.tSBChinhsuaC.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBChinhsuaC.Name = "tSBChinhsuaC";
-            this.tSBChinhsuaC.Size = new System.Drawing.Size(97, 24);
-            this.tSBChinhsuaC.Text = "Chỉnh sửa";
+            this.FIRST_NAME.DataPropertyName = "FIRST_NAME";
+            this.FIRST_NAME.HeaderText = "Tên";
+            this.FIRST_NAME.Name = "FIRST_NAME";
+            this.FIRST_NAME.ReadOnly = true;
             // 
-            // tSBDelC
+            // SEX
             // 
-            this.tSBDelC.Image = global::CoffeeManagementSoftware.Properties.Resources.Delete_16x16;
-            this.tSBDelC.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBDelC.Name = "tSBDelC";
-            this.tSBDelC.Size = new System.Drawing.Size(96, 24);
-            this.tSBDelC.Text = "Xóa (Del)";
+            this.SEX.DataPropertyName = "SEX";
+            this.SEX.HeaderText = "Giới Tính";
+            this.SEX.Name = "SEX";
+            this.SEX.ReadOnly = true;
             // 
-            // tSBInC
+            // PHONE
             // 
-            this.tSBInC.Image = ((System.Drawing.Image)(resources.GetObject("tSBInC.Image")));
-            this.tSBInC.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBInC.Name = "tSBInC";
-            this.tSBInC.Size = new System.Drawing.Size(45, 24);
-            this.tSBInC.Text = "In";
+            this.PHONE.DataPropertyName = "PHONE";
+            this.PHONE.HeaderText = "SDT";
+            this.PHONE.Name = "PHONE";
+            this.PHONE.ReadOnly = true;
             // 
-            // tSBLocC
+            // ADDRESS
             // 
-            this.tSBLocC.Image = global::CoffeeManagementSoftware.Properties.Resources.Lookup_Reference_32x32;
-            this.tSBLocC.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBLocC.Name = "tSBLocC";
-            this.tSBLocC.Size = new System.Drawing.Size(56, 24);
-            this.tSBLocC.Text = "Lọc";
+            this.ADDRESS.DataPropertyName = "ADDRESS";
+            this.ADDRESS.HeaderText = "Địa Chỉ";
+            this.ADDRESS.Name = "ADDRESS";
+            this.ADDRESS.ReadOnly = true;
+            // 
+            // SCORE
+            // 
+            this.SCORE.DataPropertyName = "SCORE";
+            this.SCORE.HeaderText = "Điểm TL";
+            this.SCORE.Name = "SCORE";
+            this.SCORE.ReadOnly = true;
+            // 
+            // NAME_TYPE
+            // 
+            this.NAME_TYPE.DataPropertyName = "NAME_TYPE";
+            this.NAME_TYPE.HeaderText = "Tên Loại";
+            this.NAME_TYPE.Name = "NAME_TYPE";
+            this.NAME_TYPE.ReadOnly = true;
+            this.NAME_TYPE.Visible = false;
+            // 
+            // STATUS
+            // 
+            this.STATUS.DataPropertyName = "STATUS";
+            this.STATUS.HeaderText = "Trạng Thái";
+            this.STATUS.Name = "STATUS";
+            this.STATUS.ReadOnly = true;
+            // 
+            // cMS_GroupCus
+            // 
+            this.cMS_GroupCus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmNhómToolStripMenuItem,
+            this.xóaNhómToolStripMenuItem,
+            this.refreshToolStripMenuItem,
+            this.đổiTênToolStripMenuItem});
+            this.cMS_GroupCus.Name = "cMS_GroupCus";
+            this.cMS_GroupCus.Size = new System.Drawing.Size(143, 92);
+            // 
+            // thêmNhómToolStripMenuItem
+            // 
+            this.thêmNhómToolStripMenuItem.Name = "thêmNhómToolStripMenuItem";
+            this.thêmNhómToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.thêmNhómToolStripMenuItem.Text = "Thêm Nhóm";
             // 
             // toolStripButton1
             // 
@@ -270,7 +354,7 @@
             this.toolStripButton1.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripButton2
@@ -279,7 +363,7 @@
             this.toolStripButton2.Image = global::CoffeeManagementSoftware.Properties.Resources.PenColor_32x32;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStripButton3
@@ -288,7 +372,7 @@
             this.toolStripButton3.Image = global::CoffeeManagementSoftware.Properties.Resources.Article_32x32;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
             // toolStripButton4
@@ -297,7 +381,7 @@
             this.toolStripButton4.Image = global::CoffeeManagementSoftware.Properties.Resources.Report_32x32;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
             // toolStripButton5
@@ -306,57 +390,138 @@
             this.toolStripButton5.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton5.Text = "toolStripButton5";
+            // 
+            // tSB_Add
+            // 
+            this.tSB_Add.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_16x16;
+            this.tSB_Add.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSB_Add.Name = "tSB_Add";
+            this.tSB_Add.Size = new System.Drawing.Size(82, 21);
+            this.tSB_Add.Text = "Thêm Mới";
+            // 
+            // tSP_Edit
+            // 
+            this.tSP_Edit.Image = global::CoffeeManagementSoftware.Properties.Resources.EditTask_16x16;
+            this.tSP_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSP_Edit.Name = "tSP_Edit";
+            this.tSP_Edit.Size = new System.Drawing.Size(81, 21);
+            this.tSP_Edit.Text = "Chỉnh Sửa";
+            // 
+            // tSB_Delete
+            // 
+            this.tSB_Delete.Image = global::CoffeeManagementSoftware.Properties.Resources.Delete_16x16;
+            this.tSB_Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSB_Delete.Name = "tSB_Delete";
+            this.tSB_Delete.Size = new System.Drawing.Size(47, 21);
+            this.tSB_Delete.Text = "Xóa";
+            // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(37, 21);
+            this.toolStripButton6.Text = "In";
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.Image = global::CoffeeManagementSoftware.Properties.Resources.Lookup_Reference_32x32;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(46, 21);
+            this.toolStripButton7.Text = "Lọc";
+            // 
+            // xóaNhómToolStripMenuItem
+            // 
+            this.xóaNhómToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Delete_16x16;
+            this.xóaNhómToolStripMenuItem.Name = "xóaNhómToolStripMenuItem";
+            this.xóaNhómToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.xóaNhómToolStripMenuItem.Text = "Xóa Nhóm";
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_16x16;
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            // 
+            // đổiTênToolStripMenuItem
+            // 
+            this.đổiTênToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.EditTask_16x16;
+            this.đổiTênToolStripMenuItem.Name = "đổiTênToolStripMenuItem";
+            this.đổiTênToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.đổiTênToolStripMenuItem.Text = "Đổi tên";
             // 
             // frmCustumer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 626);
-            this.Controls.Add(this.pnlKhachhang);
-            this.Controls.Add(this.pnlThanhvien);
+            this.ClientSize = new System.Drawing.Size(1119, 534);
+            this.Controls.Add(this.tLP_Customer);
             this.Name = "frmCustumer";
-            this.Text = "Khách hàng";
-            this.pnlThanhvien.ResumeLayout(false);
-            this.pnlThanhvien.PerformLayout();
+            this.Text = "Khách Hàng";
+            this.tLP_Customer.ResumeLayout(false);
+            this.tCtr_Member.ResumeLayout(false);
+            this.tP_Member.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.pnlKhachhang.ResumeLayout(false);
-            this.pnlKhachhang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
+            this.tCtr_Customer.ResumeLayout(false);
+            this.tP_Customer.ResumeLayout(false);
+            this.tLP_DetailCus.ResumeLayout(false);
+            this.tLP_DetailCus.PerformLayout();
+            this.tS_Customer.ResumeLayout(false);
+            this.tS_Customer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_Customer)).EndInit();
+            this.cMS_GroupCus.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlThanhvien;
+        private System.Windows.Forms.TableLayoutPanel tLP_Customer;
+        private System.Windows.Forms.TabControl tCtr_Member;
+        private System.Windows.Forms.TabPage tP_Member;
+        private System.Windows.Forms.TreeView tV_Member;
+        private System.Windows.Forms.TabControl tCtr_Customer;
+        private System.Windows.Forms.TabPage tP_Customer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ContextMenuStrip cMS_GroupCus;
+        private System.Windows.Forms.ToolStripMenuItem thêmNhómToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaNhómToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đổiTênToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tLP_DetailCus;
+        private System.Windows.Forms.ToolStrip tS_Customer;
+        private System.Windows.Forms.ToolStripButton tSB_Add;
+        private System.Windows.Forms.ToolStripButton tSP_Edit;
+        private System.Windows.Forms.ToolStripButton tSB_Delete;
+        private System.Windows.Forms.DataGridView dGV_Customer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PROFILE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_USER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDENFITICATION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LAST_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FIRST_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SEX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PHONE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADDRESS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SCORE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME_TYPE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.Panel pnlKhachhang;
-        private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.TreeView trvThanhvien;
-        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton tSBThemmoiC;
-        private System.Windows.Forms.ToolStripButton tSBChinhsuaC;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AddressC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhoneC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RankC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmailC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FaxC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoteC;
-        private System.Windows.Forms.ToolStripButton tSBDelC;
-        private System.Windows.Forms.ToolStripButton tSBInC;
-        private System.Windows.Forms.ToolStripButton tSBLocC;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
     }
 }

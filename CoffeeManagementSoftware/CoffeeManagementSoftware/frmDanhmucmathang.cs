@@ -22,5 +22,17 @@ namespace CoffeeManagementSoftware
         {
 
         }
+
+        private void toolStripButton6_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tSBThemmoi_Click(object sender, EventArgs e)
+        {
+            frmChitietmathang ct = new frmChitietmathang();
+            ct.ShowDialog();
+
+        }
     }
 }

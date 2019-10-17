@@ -53,7 +53,7 @@ namespace CoffeeManagementSoftware
         {
             if (CheckExist("frmUseService"))
             {
-                XtraMessageBox.Show("Bạn Ðang Sử Dụng Chức Nang Này", "Thông báo");
+                XtraMessageBox.Show("Bạn Ðang Sử Dụng Chức Năng Này", "Thông báo");
                 return;
             }
             else
@@ -74,5 +74,9 @@ namespace CoffeeManagementSoftware
             openForm(use);
         }
 
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

@@ -35,11 +35,17 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.2" />
     <Reference Include="DevExpress.Data.v17.2" />
+    <Reference Include="DevExpress.Dialogs.v17.2.Core, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
     <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.2" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateService.cs" />
+    <Compile Include="Font.cs" />
+    <Compile Include="frmChitietmathang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChitietmathang.Designer.cs">
+      <DependentUpon>frmChitietmathang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustumer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +98,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmChitietmathang.resx">
+      <DependentUpon>frmChitietmathang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCustumer.resx">
       <DependentUpon>frmCustumer.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,6 +487,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Article_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrangegroups_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showtestreport_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printpreviewbrowser_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
