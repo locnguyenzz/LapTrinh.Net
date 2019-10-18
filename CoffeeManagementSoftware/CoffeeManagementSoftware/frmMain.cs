@@ -78,5 +78,10 @@ namespace CoffeeManagementSoftware
         {
 
         }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.loginForm.Visible = true;
+        }
     }
 }

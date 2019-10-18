@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginUserControl));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnl_Banner = new System.Windows.Forms.Panel();
             this.lbl_UserName = new System.Windows.Forms.Label();
             this.lbl_Password = new System.Windows.Forms.Label();
             this.txt_Username = new System.Windows.Forms.TextBox();
@@ -36,7 +38,6 @@
             this.chk_RememberPass = new System.Windows.Forms.CheckBox();
             this.btn_Login = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Cancel = new DevExpress.XtraEditors.SimpleButton();
-            this.pnl_Banner = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_NameDataBase = new System.Windows.Forms.Label();
@@ -73,6 +74,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.75806F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(428, 248);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // pnl_Banner
+            // 
+            this.pnl_Banner.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_Banner.BackgroundImage")));
+            this.pnl_Banner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tableLayoutPanel1.SetColumnSpan(this.pnl_Banner, 5);
+            this.pnl_Banner.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Banner.Location = new System.Drawing.Point(3, 3);
+            this.pnl_Banner.Name = "pnl_Banner";
+            this.pnl_Banner.Size = new System.Drawing.Size(422, 107);
+            this.pnl_Banner.TabIndex = 0;
             // 
             // lbl_UserName
             // 
@@ -143,20 +155,9 @@
             this.btn_Cancel.Text = "Hủy bỏ";
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
-            // pnl_Banner
-            // 
-            this.pnl_Banner.BackgroundImage = global::CoffeeLibrary.Properties.Resources.Banner;
-            this.pnl_Banner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel1.SetColumnSpan(this.pnl_Banner, 5);
-            this.pnl_Banner.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Banner.Location = new System.Drawing.Point(3, 3);
-            this.pnl_Banner.Name = "pnl_Banner";
-            this.pnl_Banner.Size = new System.Drawing.Size(422, 107);
-            this.pnl_Banner.TabIndex = 0;
-            // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::CoffeeLibrary.Properties.Resources.Logo;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 116);

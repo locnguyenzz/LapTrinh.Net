@@ -141,6 +141,17 @@ namespace CoffeeLibrary
             if (r == DialogResult.Yes)
                 ParentForm.Close();
         }
+        private void LoginUserControl_Load(object sender, EventArgs e)
+        {
+            ParentForm.Show();
+            if (Properties.Settings.Default.RemeberPass)
+            {
+                txt_Username.Text = Properties.Settings.Default.UserName;
+                txt_Password.Text = Properties.Settings.Default.Password;
+                chk_RememberPass.Checked = true;
+            }
+            GetNameDatabase();
+        }
        
     }
 }

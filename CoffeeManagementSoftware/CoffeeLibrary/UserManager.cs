@@ -33,7 +33,7 @@ namespace CoffeeLibrary
         //Kiểm tra tài khoản, trả về số
         public int Check_User(string pUser, string pPass)
         {
-            SqlDataAdapter daUser = new SqlDataAdapter("select * from user where USER_NAME='" + pUser + "' and PASSWORD ='" + pPass + "'", Properties.Settings.Default.DB_CoffeeConnectionString);
+            SqlDataAdapter daUser = new SqlDataAdapter("select * from account where USERNAME='" + pUser + "' and PASSWORD ='" + pPass + "'", Properties.Settings.Default.DB_CoffeeConnectionString);
             DataTable dt = new DataTable();
             daUser.Fill(dt);
             if (dt.Rows.Count == 0)
@@ -64,7 +64,7 @@ namespace CoffeeLibrary
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter("select name from sys.databases",
-                    "Data Source=" + pServerName + ";Initial Catalog=" + "master" + ";User ID=" + pUser + ";pwd=" + pPass + "");
+                    "Data Source=" + pServerName + ";Initial Catalog=" + "master" + ";User ID=" + pUser + ";Password=" + pPass + "");
                 da.Fill(dt);
                 foreach (System.Data.DataRow r in dt.Rows)
                 {

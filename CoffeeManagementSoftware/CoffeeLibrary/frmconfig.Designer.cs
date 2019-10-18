@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmconfig));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_ServerName = new System.Windows.Forms.Label();
@@ -177,7 +178,7 @@
             // 
             // btn_SaveConfig
             // 
-            this.btn_SaveConfig.ImageOptions.Image = global::CoffeeLibrary.Properties.Resources.saveto_32x32;
+            this.btn_SaveConfig.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_SaveConfig.ImageOptions.Image")));
             this.btn_SaveConfig.Location = new System.Drawing.Point(90, 149);
             this.btn_SaveConfig.Name = "btn_SaveConfig";
             this.btn_SaveConfig.Size = new System.Drawing.Size(89, 30);
@@ -187,7 +188,7 @@
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.ImageOptions.Image = global::CoffeeLibrary.Properties.Resources.removepivotfield_32x32;
+            this.btn_Cancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.ImageOptions.Image")));
             this.btn_Cancel.Location = new System.Drawing.Point(188, 149);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(81, 30);

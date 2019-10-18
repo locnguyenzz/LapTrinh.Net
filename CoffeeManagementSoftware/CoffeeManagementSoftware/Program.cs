@@ -10,6 +10,8 @@ namespace CoffeeManagementSoftware
 {
     static class Program
     {
+        public static frmLogin loginForm = null;
+        public static frmMain mainForm = null;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -22,7 +24,8 @@ namespace CoffeeManagementSoftware
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new frmMain());
+            loginForm = new frmLogin();
+            Application.Run(new frmLogin());
         }
     }
 }
