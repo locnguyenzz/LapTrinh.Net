@@ -1,0 +1,5 @@
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\bin\Debug\CoffeeLibrary.dll
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\bin\Debug\CoffeeLibrary.pdb
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\obj\Debug\CoffeeLibrary.csprojResolveAssemblyReference.cache
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\obj\Debug\CoffeeLibrary.dll
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\obj\Debug\CoffeeLibrary.pdb

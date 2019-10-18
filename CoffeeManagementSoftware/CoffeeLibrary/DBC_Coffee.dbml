@@ -1,1 +1,245 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_Coffee" Class="DBC_CoffeeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TRUNGLOC\SQLEXPRESS;Initial Catalog=DB_Coffee;Persist Security Info=True;User ID=sa" SettingsObjectName="CoffeeLibrary.Properties.Settings" SettingsPropertyName="DB_CoffeeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.area" Member="areas">
+    <Type Name="area">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME_AREA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="area_table" Member="tables" ThisKey="ID" OtherKey="ID_AREA" Type="table" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[convert]" Member="converts">
+    <Type Name="convert">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME_UNIT_BEFORE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NUMBER_BEFORE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="NAME_UNIT_AFTER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NUMBER_AFTER" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.detail_receipt" Member="detail_receipts">
+    <Type Name="detail_receipt">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_RECEIPT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_TABLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUMBER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="item_detail_receipt" Member="item" ThisKey="ID_ITEM" OtherKey="ID" Type="item" IsForeignKey="true" />
+      <Association Name="receipt_detail_receipt" Member="receipt" ThisKey="ID_RECEIPT" OtherKey="ID" Type="receipt" IsForeignKey="true" />
+      <Association Name="table_detail_receipt" Member="table" ThisKey="ID_ITEM" OtherKey="ID" Type="table" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.detail_receipt_import" Member="detail_receipt_imports">
+    <Type Name="detail_receipt_import">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_RECEIPT_IMPORT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUMBER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="item_detail_receipt_import" Member="item" ThisKey="ID_ITEM" OtherKey="ID" Type="item" IsForeignKey="true" />
+      <Association Name="receipt_import_detail_receipt_import" Member="receipt_import" ThisKey="ID_RECEIPT_IMPORT" OtherKey="ID" Type="receipt_import" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.grant_right" Member="grant_rights">
+    <Type Name="grant_right">
+      <Column Name="ID_GROUP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_SCREEN" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ROLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="group_user_grant_right" Member="group_user" ThisKey="ID_GROUP" OtherKey="ID" Type="group_user" IsForeignKey="true" />
+      <Association Name="screen_grant_right" Member="screen" ThisKey="ID_SCREEN" OtherKey="ID" Type="screen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.group_user" Member="group_users">
+    <Type Name="group_user">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME_GROUP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="group_user_grant_right" Member="grant_rights" ThisKey="ID" OtherKey="ID_GROUP" Type="grant_right" />
+      <Association Name="group_user_user_group_user" Member="user_group_users" ThisKey="ID" OtherKey="ID_GROUP" Type="user_group_user" />
+    </Type>
+  </Table>
+  <Table Name="dbo.item" Member="items">
+    <Type Name="item">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME_ITEM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="UNIT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ID_TYPE_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_PRODUCER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_PRICE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEADLINE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DETAIL" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="item_detail_receipt" Member="detail_receipts" ThisKey="ID" OtherKey="ID_ITEM" Type="detail_receipt" />
+      <Association Name="item_detail_receipt_import" Member="detail_receipt_imports" ThisKey="ID" OtherKey="ID_ITEM" Type="detail_receipt_import" />
+      <Association Name="price_item" Member="price" ThisKey="ID_PRICE" OtherKey="ID" Type="price" IsForeignKey="true" />
+      <Association Name="producer_item" Member="producer" ThisKey="ID_PRODUCER" OtherKey="ID" Type="producer" IsForeignKey="true" />
+      <Association Name="type_item_item" Member="type_item" ThisKey="ID_TYPE_ITEM" OtherKey="ID" Type="type_item" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.price" Member="prices">
+    <Type Name="price">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRICE" Member="PRICE1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_AT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="price_item" Member="items" ThisKey="ID" OtherKey="ID_PRICE" Type="item" />
+    </Type>
+  </Table>
+  <Table Name="dbo.producer" Member="producers">
+    <Type Name="producer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CODE_PRODUCER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NAME_PRODUCER" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PHONE" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="WEBSITE" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="producer_item" Member="items" ThisKey="ID" OtherKey="ID_PRODUCER" Type="item" />
+    </Type>
+  </Table>
+  <Table Name="dbo.profile" Member="profiles">
+    <Type Name="profile">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_USER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDENTIFICATION" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="LAST_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FIRST_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PHONE" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SEX" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Association Name="profile_profile_customer" Member="profile_customers" ThisKey="ID" OtherKey="ID_PROFILE" Type="profile_customer" />
+      <Association Name="profile_profile_staff" Member="profile_staffs" ThisKey="ID" OtherKey="ID_PROFILE" Type="profile_staff" />
+      <Association Name="user_profile" Member="user" ThisKey="ID_USER" OtherKey="ID" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.profile_customer" Member="profile_customers">
+    <Type Name="profile_customer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_PROFILE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_TYPE_CUSTOMER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SCORE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="profile_profile_customer" Member="profile" ThisKey="ID_PROFILE" OtherKey="ID" Type="profile" IsForeignKey="true" />
+      <Association Name="type_customer_profile_customer" Member="type_customer" ThisKey="ID_TYPE_CUSTOMER" OtherKey="ID" Type="type_customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.profile_staff" Member="profile_staffs">
+    <Type Name="profile_staff">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_PROFILE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="POSITION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="profile_profile_staff" Member="profile" ThisKey="ID_PROFILE" OtherKey="ID" Type="profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.receipt" Member="receipts">
+    <Type Name="receipt">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CODE_RECEIPT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USER_STAFF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_USER_CUSTOMER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CREATE_AT" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SUM_MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="receipt_detail_receipt" Member="detail_receipts" ThisKey="ID" OtherKey="ID_RECEIPT" Type="detail_receipt" />
+      <Association Name="user_receipt" Member="user" ThisKey="ID_USER_STAFF" OtherKey="ID" Type="user" IsForeignKey="true" />
+      <Association Name="user_receipt1" Member="user1" ThisKey="ID_USER_CUSTOMER" OtherKey="ID" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.receipt_import" Member="receipt_imports">
+    <Type Name="receipt_import">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CODE_IMPORT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ID_SUPPLIER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_USER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CREATE_AT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SUM_MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="receipt_import_detail_receipt_import" Member="detail_receipt_imports" ThisKey="ID" OtherKey="ID_RECEIPT_IMPORT" Type="detail_receipt_import" />
+      <Association Name="supplier_receipt_import" Member="supplier" ThisKey="ID_SUPPLIER" OtherKey="ID" Type="supplier" IsForeignKey="true" />
+      <Association Name="user_receipt_import" Member="user" ThisKey="ID_USER" OtherKey="ID" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.screen" Member="screens">
+    <Type Name="screen">
+      <Column Name="ID" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME_SCREEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="screen_grant_right" Member="grant_rights" ThisKey="ID" OtherKey="ID_SCREEN" Type="grant_right" />
+    </Type>
+  </Table>
+  <Table Name="dbo.supplier" Member="suppliers">
+    <Type Name="supplier">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PHONE" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="supplier_receipt_import" Member="receipt_imports" ThisKey="ID" OtherKey="ID_SUPPLIER" Type="receipt_import" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[table]" Member="tables">
+    <Type Name="table">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_AREA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME_TABLE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="table_detail_receipt" Member="detail_receipts" ThisKey="ID" OtherKey="ID_ITEM" Type="detail_receipt" />
+      <Association Name="area_table" Member="area" ThisKey="ID_AREA" OtherKey="ID" Type="area" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.timekeeping" Member="timekeepings">
+    <Type Name="timekeeping">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_USER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="SHIFT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="user_timekeeping" Member="user" ThisKey="ID_USER" OtherKey="ID" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.type_customer" Member="type_customers">
+    <Type Name="type_customer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="type_customer_profile_customer" Member="profile_customers" ThisKey="ID" OtherKey="ID_TYPE_CUSTOMER" Type="profile_customer" />
+    </Type>
+  </Table>
+  <Table Name="dbo.type_item" Member="type_items">
+    <Type Name="type_item">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME_TYPE" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="type_item_item" Member="items" ThisKey="ID" OtherKey="ID_TYPE_ITEM" Type="item" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[user]" Member="users">
+    <Type Name="user">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="USER_NAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="user_profile" Member="profiles" ThisKey="ID" OtherKey="ID_USER" Type="profile" />
+      <Association Name="user_receipt" Member="receipts" ThisKey="ID" OtherKey="ID_USER_STAFF" Type="receipt" />
+      <Association Name="user_receipt1" Member="receipts1" ThisKey="ID" OtherKey="ID_USER_CUSTOMER" Type="receipt" />
+      <Association Name="user_receipt_import" Member="receipt_imports" ThisKey="ID" OtherKey="ID_USER" Type="receipt_import" />
+      <Association Name="user_timekeeping" Member="timekeepings" ThisKey="ID" OtherKey="ID_USER" Type="timekeeping" />
+      <Association Name="user_user_group_user" Member="user_group_users" ThisKey="ID" OtherKey="ID_USER" Type="user_group_user" />
+    </Type>
+  </Table>
+  <Table Name="dbo.user_group_user" Member="user_group_users">
+    <Type Name="user_group_user">
+      <Column Name="ID_USER" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_GROUP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="group_user_user_group_user" Member="group_user" ThisKey="ID_GROUP" OtherKey="ID" Type="group_user" IsForeignKey="true" />
+      <Association Name="user_user_group_user" Member="user" ThisKey="ID_USER" OtherKey="ID" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
