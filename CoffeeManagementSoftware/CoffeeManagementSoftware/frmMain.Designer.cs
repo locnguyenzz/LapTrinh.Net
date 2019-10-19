@@ -149,7 +149,7 @@
             this.phụcHồiCơSởDữLiệuToolStripMenuItem});
             this.cơToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Database_16x16;
             this.cơToolStripMenuItem.Name = "cơToolStripMenuItem";
-            this.cơToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.cơToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.cơToolStripMenuItem.Text = "&Cơ sở dữ liệu....";
             // 
             // tạoMớiCơSởDữLiệuToolStripMenuItem
@@ -178,24 +178,25 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(202, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(206, 6);
             // 
             // đổiMậtKhẩuĐăngNhậpToolStripMenuItem
             // 
             this.đổiMậtKhẩuĐăngNhậpToolStripMenuItem.Name = "đổiMậtKhẩuĐăngNhậpToolStripMenuItem";
-            this.đổiMậtKhẩuĐăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.đổiMậtKhẩuĐăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.đổiMậtKhẩuĐăngNhậpToolStripMenuItem.Text = "Đổi mật &khẩu đăng nhập";
+            this.đổiMậtKhẩuĐăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuĐăngNhậpToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(202, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(206, 6);
             // 
             // đăngXuấtKhỏiHệThốngToolStripMenuItem
             // 
             this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Outbox_16x16;
             this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Name = "đăngXuấtKhỏiHệThốngToolStripMenuItem";
-            this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.đăngXuấtKhỏiHệThốngToolStripMenuItem.Text = "Đă&ng xuất khỏi hệ thống";
             // 
             // thoátKhỏiHệThốngToolStripMenuItem
@@ -203,7 +204,7 @@
             this.thoátKhỏiHệThốngToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.thoátKhỏiHệThốngToolStripMenuItem.Image = global::CoffeeManagementSoftware.Properties.Resources.Cancel_16x16;
             this.thoátKhỏiHệThốngToolStripMenuItem.Name = "thoátKhỏiHệThốngToolStripMenuItem";
-            this.thoátKhỏiHệThốngToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.thoátKhỏiHệThốngToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.thoátKhỏiHệThốngToolStripMenuItem.Text = "&Thoát khỏi hệ thống";
             // 
             // hoạtĐộngToolStripMenuItem
@@ -571,7 +572,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(1115, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+
             // 
             // tSBUseService
             // 

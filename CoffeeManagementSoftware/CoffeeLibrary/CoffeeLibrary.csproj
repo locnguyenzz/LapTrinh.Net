@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C_Account.cs" />
     <Compile Include="DBC_Coffee.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,6 +87,7 @@
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="DBC_Coffee.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DBC_Coffee.designer.cs</LastGenOutput>
@@ -103,8 +105,6 @@
     <None Include="DBC_Coffee.dbml.layout">
       <DependentUpon>DBC_Coffee.dbml</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="frmconfig.resx">
       <DependentUpon>frmconfig.cs</DependentUpon>
     </EmbeddedResource>

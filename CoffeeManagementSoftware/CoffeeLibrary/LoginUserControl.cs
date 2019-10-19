@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 
 namespace CoffeeLibrary
 {
-    public partial class LoginUserControl : UserControl
+    public partial class LoginUserControl : System.Windows.Forms.UserControl
     {
         UserManager Config = new UserManager();
         private string nameAccount;//Giữ giá trị tên tài khoản gửi qua frmLogin
@@ -141,7 +141,7 @@ namespace CoffeeLibrary
             if (r == DialogResult.Yes)
                 ParentForm.Close();
         }
-        private void LoginUserControl_Load(object sender, EventArgs e)
+        private void LoginUserControl_Load_1(object sender, EventArgs e)
         {
             ParentForm.Show();
             if (Properties.Settings.Default.RemeberPass)

@@ -97,3 +97,4 @@ D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\De
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmLogin.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\bin\Debug\CoffeeLibrary.dll
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\bin\Debug\CoffeeLibrary.pdb
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmChangePass.resources

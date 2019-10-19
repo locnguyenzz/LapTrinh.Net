@@ -182,6 +182,8 @@
             // 
             this.lbl_NameDataBase.AutoSize = true;
             this.lbl_NameDataBase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_NameDataBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NameDataBase.ForeColor = System.Drawing.Color.Red;
             this.lbl_NameDataBase.Location = new System.Drawing.Point(103, 197);
             this.lbl_NameDataBase.Name = "lbl_NameDataBase";
             this.lbl_NameDataBase.Size = new System.Drawing.Size(78, 51);
@@ -196,6 +198,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "LoginUserControl";
             this.Size = new System.Drawing.Size(428, 248);
+            this.Load += new System.EventHandler(this.LoginUserControl_Load_1);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

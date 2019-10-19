@@ -69,17 +69,5 @@ namespace CoffeeLibrary.Properties {
                 this["RemeberPass"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Connect {
-            get {
-                return ((string)(this["Connect"]));
-            }
-            set {
-                this["Connect"] = value;
-            }
-        }
     }
 }

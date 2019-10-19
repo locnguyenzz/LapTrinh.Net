@@ -74,14 +74,16 @@ namespace CoffeeManagementSoftware
             openForm(use);
         }
 
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Program.loginForm.Visible = true;
+        }
+
+        private void đổiMậtKhẩuĐăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePass frm = new frmChangePass();
+            frm.ShowDialog();
         }
     }
 }

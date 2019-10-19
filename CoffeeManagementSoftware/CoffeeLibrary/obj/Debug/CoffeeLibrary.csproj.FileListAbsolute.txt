@@ -6,3 +6,4 @@ D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\obj\Debug\CoffeeL
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\obj\Debug\CoffeeLibrary.LoginUserControl.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\obj\Debug\CoffeeLibrary.csproj.GenerateResource.Cache
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\obj\Debug\CoffeeLibrary.Properties.Resources.resources
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeLibrary\bin\Debug\CoffeeLibrary.dll.config

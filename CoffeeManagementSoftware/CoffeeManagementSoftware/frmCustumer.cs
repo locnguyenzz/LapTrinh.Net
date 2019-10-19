@@ -29,5 +29,11 @@ namespace CoffeeManagementSoftware
             frmAddCustumer frm = new frmAddCustumer();
             frm.ShowDialog();
         }
+
+        private void tSP_Edit_Click(object sender, EventArgs e)
+        {
+            frmAddCustumer frm = new frmAddCustumer();
+            frm.ShowDialog();
+        }
     }
 }

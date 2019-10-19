@@ -282,6 +282,7 @@
             this.tSP_Edit.Name = "tSP_Edit";
             this.tSP_Edit.Size = new System.Drawing.Size(81, 21);
             this.tSP_Edit.Text = "Chỉnh Sửa";
+            this.tSP_Edit.Click += new System.EventHandler(this.tSP_Edit_Click);
             // 
             // tSB_Delete
             // 

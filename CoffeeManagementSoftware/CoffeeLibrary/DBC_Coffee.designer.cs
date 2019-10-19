@@ -30,6 +30,12 @@ namespace CoffeeLibrary
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void Insertaccount(account instance);
+    partial void Updateaccount(account instance);
+    partial void Deleteaccount(account instance);
+    partial void Insertuser_group_user(user_group_user instance);
+    partial void Updateuser_group_user(user_group_user instance);
+    partial void Deleteuser_group_user(user_group_user instance);
     partial void Insertarea(area instance);
     partial void Updatearea(area instance);
     partial void Deletearea(area instance);
@@ -87,12 +93,6 @@ namespace CoffeeLibrary
     partial void Inserttype_item(type_item instance);
     partial void Updatetype_item(type_item instance);
     partial void Deletetype_item(type_item instance);
-    partial void Insertuser(user instance);
-    partial void Updateuser(user instance);
-    partial void Deleteuser(user instance);
-    partial void Insertuser_group_user(user_group_user instance);
-    partial void Updateuser_group_user(user_group_user instance);
-    partial void Deleteuser_group_user(user_group_user instance);
     #endregion
 		
 		public DBC_CoffeeDataContext() : 
@@ -123,6 +123,22 @@ namespace CoffeeLibrary
 				base(connection, mappingSource)
 		{
 			OnCreated();
+		}
+		
+		public System.Data.Linq.Table<account> accounts
+		{
+			get
+			{
+				return this.GetTable<account>();
+			}
+		}
+		
+		public System.Data.Linq.Table<user_group_user> user_group_users
+		{
+			get
+			{
+				return this.GetTable<user_group_user>();
+			}
 		}
 		
 		public System.Data.Linq.Table<area> areas
@@ -284,20 +300,498 @@ namespace CoffeeLibrary
 				return this.GetTable<type_item>();
 			}
 		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.account")]
+	public partial class account : INotifyPropertyChanging, INotifyPropertyChanged
+	{
 		
-		public System.Data.Linq.Table<user> users
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _USERNAME;
+		
+		private string _PASSWORD;
+		
+		private System.Nullable<int> _STATUS;
+		
+		private EntitySet<user_group_user> _user_group_users;
+		
+		private EntitySet<profile> _profiles;
+		
+		private EntitySet<receipt> _receipts;
+		
+		private EntitySet<receipt> _receipts1;
+		
+		private EntitySet<receipt_import> _receipt_imports;
+		
+		private EntitySet<timekeeping> _timekeepings;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUSERNAMEChanging(string value);
+    partial void OnUSERNAMEChanged();
+    partial void OnPASSWORDChanging(string value);
+    partial void OnPASSWORDChanged();
+    partial void OnSTATUSChanging(System.Nullable<int> value);
+    partial void OnSTATUSChanged();
+    #endregion
+		
+		public account()
+		{
+			this._user_group_users = new EntitySet<user_group_user>(new Action<user_group_user>(this.attach_user_group_users), new Action<user_group_user>(this.detach_user_group_users));
+			this._profiles = new EntitySet<profile>(new Action<profile>(this.attach_profiles), new Action<profile>(this.detach_profiles));
+			this._receipts = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts), new Action<receipt>(this.detach_receipts));
+			this._receipts1 = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts1), new Action<receipt>(this.detach_receipts1));
+			this._receipt_imports = new EntitySet<receipt_import>(new Action<receipt_import>(this.attach_receipt_imports), new Action<receipt_import>(this.detach_receipt_imports));
+			this._timekeepings = new EntitySet<timekeeping>(new Action<timekeeping>(this.attach_timekeepings), new Action<timekeeping>(this.detach_timekeepings));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
 		{
 			get
 			{
-				return this.GetTable<user>();
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
 			}
 		}
 		
-		public System.Data.Linq.Table<user_group_user> user_group_users
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USERNAME", DbType="VarChar(50)")]
+		public string USERNAME
 		{
 			get
 			{
-				return this.GetTable<user_group_user>();
+				return this._USERNAME;
+			}
+			set
+			{
+				if ((this._USERNAME != value))
+				{
+					this.OnUSERNAMEChanging(value);
+					this.SendPropertyChanging();
+					this._USERNAME = value;
+					this.SendPropertyChanged("USERNAME");
+					this.OnUSERNAMEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD", DbType="VarChar(50)")]
+		public string PASSWORD
+		{
+			get
+			{
+				return this._PASSWORD;
+			}
+			set
+			{
+				if ((this._PASSWORD != value))
+				{
+					this.OnPASSWORDChanging(value);
+					this.SendPropertyChanging();
+					this._PASSWORD = value;
+					this.SendPropertyChanged("PASSWORD");
+					this.OnPASSWORDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
+		public System.Nullable<int> STATUS
+		{
+			get
+			{
+				return this._STATUS;
+			}
+			set
+			{
+				if ((this._STATUS != value))
+				{
+					this.OnSTATUSChanging(value);
+					this.SendPropertyChanging();
+					this._STATUS = value;
+					this.SendPropertyChanged("STATUS");
+					this.OnSTATUSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_user_group_user", Storage="_user_group_users", ThisKey="ID", OtherKey="ID_ACCOUNT")]
+		public EntitySet<user_group_user> user_group_users
+		{
+			get
+			{
+				return this._user_group_users;
+			}
+			set
+			{
+				this._user_group_users.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_profile", Storage="_profiles", ThisKey="ID", OtherKey="ID_ACCOUNT")]
+		public EntitySet<profile> profiles
+		{
+			get
+			{
+				return this._profiles;
+			}
+			set
+			{
+				this._profiles.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt", Storage="_receipts", ThisKey="ID", OtherKey="ID_ACCOUNT_STAFF")]
+		public EntitySet<receipt> receipts
+		{
+			get
+			{
+				return this._receipts;
+			}
+			set
+			{
+				this._receipts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt1", Storage="_receipts1", ThisKey="ID", OtherKey="ID_ACCOUNT_CUSTOMER")]
+		public EntitySet<receipt> receipts1
+		{
+			get
+			{
+				return this._receipts1;
+			}
+			set
+			{
+				this._receipts1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt_import", Storage="_receipt_imports", ThisKey="ID", OtherKey="ID_ACCOUNT")]
+		public EntitySet<receipt_import> receipt_imports
+		{
+			get
+			{
+				return this._receipt_imports;
+			}
+			set
+			{
+				this._receipt_imports.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_timekeeping", Storage="_timekeepings", ThisKey="ID", OtherKey="ID_ACCOUNT")]
+		public EntitySet<timekeeping> timekeepings
+		{
+			get
+			{
+				return this._timekeepings;
+			}
+			set
+			{
+				this._timekeepings.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_user_group_users(user_group_user entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = this;
+		}
+		
+		private void detach_user_group_users(user_group_user entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = null;
+		}
+		
+		private void attach_profiles(profile entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = this;
+		}
+		
+		private void detach_profiles(profile entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = null;
+		}
+		
+		private void attach_receipts(receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = this;
+		}
+		
+		private void detach_receipts(receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = null;
+		}
+		
+		private void attach_receipts1(receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.account1 = this;
+		}
+		
+		private void detach_receipts1(receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.account1 = null;
+		}
+		
+		private void attach_receipt_imports(receipt_import entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = this;
+		}
+		
+		private void detach_receipt_imports(receipt_import entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = null;
+		}
+		
+		private void attach_timekeepings(timekeeping entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = this;
+		}
+		
+		private void detach_timekeepings(timekeeping entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.user_group_user")]
+	public partial class user_group_user : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_ACCOUNT;
+		
+		private int _ID_GROUP;
+		
+		private System.Nullable<int> _STATUS;
+		
+		private EntityRef<account> _account;
+		
+		private EntityRef<group_user> _group_user;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_ACCOUNTChanging(int value);
+    partial void OnID_ACCOUNTChanged();
+    partial void OnID_GROUPChanging(int value);
+    partial void OnID_GROUPChanged();
+    partial void OnSTATUSChanging(System.Nullable<int> value);
+    partial void OnSTATUSChanged();
+    #endregion
+		
+		public user_group_user()
+		{
+			this._account = default(EntityRef<account>);
+			this._group_user = default(EntityRef<group_user>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_ACCOUNT
+		{
+			get
+			{
+				return this._ID_ACCOUNT;
+			}
+			set
+			{
+				if ((this._ID_ACCOUNT != value))
+				{
+					if (this._account.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_ACCOUNTChanging(value);
+					this.SendPropertyChanging();
+					this._ID_ACCOUNT = value;
+					this.SendPropertyChanged("ID_ACCOUNT");
+					this.OnID_ACCOUNTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_GROUP", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_GROUP
+		{
+			get
+			{
+				return this._ID_GROUP;
+			}
+			set
+			{
+				if ((this._ID_GROUP != value))
+				{
+					if (this._group_user.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_GROUPChanging(value);
+					this.SendPropertyChanging();
+					this._ID_GROUP = value;
+					this.SendPropertyChanged("ID_GROUP");
+					this.OnID_GROUPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
+		public System.Nullable<int> STATUS
+		{
+			get
+			{
+				return this._STATUS;
+			}
+			set
+			{
+				if ((this._STATUS != value))
+				{
+					this.OnSTATUSChanging(value);
+					this.SendPropertyChanging();
+					this._STATUS = value;
+					this.SendPropertyChanged("STATUS");
+					this.OnSTATUSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_user_group_user", Storage="_account", ThisKey="ID_ACCOUNT", OtherKey="ID", IsForeignKey=true)]
+		public account account
+		{
+			get
+			{
+				return this._account.Entity;
+			}
+			set
+			{
+				account previousValue = this._account.Entity;
+				if (((previousValue != value) 
+							|| (this._account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._account.Entity = null;
+						previousValue.user_group_users.Remove(this);
+					}
+					this._account.Entity = value;
+					if ((value != null))
+					{
+						value.user_group_users.Add(this);
+						this._ID_ACCOUNT = value.ID;
+					}
+					else
+					{
+						this._ID_ACCOUNT = default(int);
+					}
+					this.SendPropertyChanged("account");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="group_user_user_group_user", Storage="_group_user", ThisKey="ID_GROUP", OtherKey="ID", IsForeignKey=true)]
+		public group_user group_user
+		{
+			get
+			{
+				return this._group_user.Entity;
+			}
+			set
+			{
+				group_user previousValue = this._group_user.Entity;
+				if (((previousValue != value) 
+							|| (this._group_user.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._group_user.Entity = null;
+						previousValue.user_group_users.Remove(this);
+					}
+					this._group_user.Entity = value;
+					if ((value != null))
+					{
+						value.user_group_users.Add(this);
+						this._ID_GROUP = value.ID;
+					}
+					else
+					{
+						this._ID_GROUP = default(int);
+					}
+					this.SendPropertyChanged("group_user");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1183,9 +1677,9 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _STATUS;
 		
-		private EntitySet<grant_right> _grant_rights;
-		
 		private EntitySet<user_group_user> _user_group_users;
+		
+		private EntitySet<grant_right> _grant_rights;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1201,8 +1695,8 @@ namespace CoffeeLibrary
 		
 		public group_user()
 		{
-			this._grant_rights = new EntitySet<grant_right>(new Action<grant_right>(this.attach_grant_rights), new Action<grant_right>(this.detach_grant_rights));
 			this._user_group_users = new EntitySet<user_group_user>(new Action<user_group_user>(this.attach_user_group_users), new Action<user_group_user>(this.detach_user_group_users));
+			this._grant_rights = new EntitySet<grant_right>(new Action<grant_right>(this.attach_grant_rights), new Action<grant_right>(this.detach_grant_rights));
 			OnCreated();
 		}
 		
@@ -1266,19 +1760,6 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="group_user_grant_right", Storage="_grant_rights", ThisKey="ID", OtherKey="ID_GROUP")]
-		public EntitySet<grant_right> grant_rights
-		{
-			get
-			{
-				return this._grant_rights;
-			}
-			set
-			{
-				this._grant_rights.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="group_user_user_group_user", Storage="_user_group_users", ThisKey="ID", OtherKey="ID_GROUP")]
 		public EntitySet<user_group_user> user_group_users
 		{
@@ -1289,6 +1770,19 @@ namespace CoffeeLibrary
 			set
 			{
 				this._user_group_users.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="group_user_grant_right", Storage="_grant_rights", ThisKey="ID", OtherKey="ID_GROUP")]
+		public EntitySet<grant_right> grant_rights
+		{
+			get
+			{
+				return this._grant_rights;
+			}
+			set
+			{
+				this._grant_rights.Assign(value);
 			}
 		}
 		
@@ -1312,18 +1806,6 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		private void attach_grant_rights(grant_right entity)
-		{
-			this.SendPropertyChanging();
-			entity.group_user = this;
-		}
-		
-		private void detach_grant_rights(grant_right entity)
-		{
-			this.SendPropertyChanging();
-			entity.group_user = null;
-		}
-		
 		private void attach_user_group_users(user_group_user entity)
 		{
 			this.SendPropertyChanging();
@@ -1331,6 +1813,18 @@ namespace CoffeeLibrary
 		}
 		
 		private void detach_user_group_users(user_group_user entity)
+		{
+			this.SendPropertyChanging();
+			entity.group_user = null;
+		}
+		
+		private void attach_grant_rights(grant_right entity)
+		{
+			this.SendPropertyChanging();
+			entity.group_user = this;
+		}
+		
+		private void detach_grant_rights(grant_right entity)
 		{
 			this.SendPropertyChanging();
 			entity.group_user = null;
@@ -2194,7 +2688,7 @@ namespace CoffeeLibrary
 		
 		private int _ID;
 		
-		private int _ID_USER;
+		private int _ID_ACCOUNT;
 		
 		private string _IDENTIFICATION;
 		
@@ -2212,7 +2706,7 @@ namespace CoffeeLibrary
 		
 		private EntitySet<profile_staff> _profile_staffs;
 		
-		private EntityRef<user> _user;
+		private EntityRef<account> _account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2220,8 +2714,8 @@ namespace CoffeeLibrary
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnID_USERChanging(int value);
-    partial void OnID_USERChanged();
+    partial void OnID_ACCOUNTChanging(int value);
+    partial void OnID_ACCOUNTChanged();
     partial void OnIDENTIFICATIONChanging(string value);
     partial void OnIDENTIFICATIONChanged();
     partial void OnLAST_NAMEChanging(string value);
@@ -2240,7 +2734,7 @@ namespace CoffeeLibrary
 		{
 			this._profile_customers = new EntitySet<profile_customer>(new Action<profile_customer>(this.attach_profile_customers), new Action<profile_customer>(this.detach_profile_customers));
 			this._profile_staffs = new EntitySet<profile_staff>(new Action<profile_staff>(this.attach_profile_staffs), new Action<profile_staff>(this.detach_profile_staffs));
-			this._user = default(EntityRef<user>);
+			this._account = default(EntityRef<account>);
 			OnCreated();
 		}
 		
@@ -2264,26 +2758,26 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER", DbType="Int NOT NULL")]
-		public int ID_USER
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int NOT NULL")]
+		public int ID_ACCOUNT
 		{
 			get
 			{
-				return this._ID_USER;
+				return this._ID_ACCOUNT;
 			}
 			set
 			{
-				if ((this._ID_USER != value))
+				if ((this._ID_ACCOUNT != value))
 				{
-					if (this._user.HasLoadedOrAssignedValue)
+					if (this._account.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnID_USERChanging(value);
+					this.OnID_ACCOUNTChanging(value);
 					this.SendPropertyChanging();
-					this._ID_USER = value;
-					this.SendPropertyChanged("ID_USER");
-					this.OnID_USERChanged();
+					this._ID_ACCOUNT = value;
+					this.SendPropertyChanged("ID_ACCOUNT");
+					this.OnID_ACCOUNTChanged();
 				}
 			}
 		}
@@ -2434,36 +2928,36 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_profile", Storage="_user", ThisKey="ID_USER", OtherKey="ID", IsForeignKey=true)]
-		public user user
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_profile", Storage="_account", ThisKey="ID_ACCOUNT", OtherKey="ID", IsForeignKey=true)]
+		public account account
 		{
 			get
 			{
-				return this._user.Entity;
+				return this._account.Entity;
 			}
 			set
 			{
-				user previousValue = this._user.Entity;
+				account previousValue = this._account.Entity;
 				if (((previousValue != value) 
-							|| (this._user.HasLoadedOrAssignedValue == false)))
+							|| (this._account.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._user.Entity = null;
+						this._account.Entity = null;
 						previousValue.profiles.Remove(this);
 					}
-					this._user.Entity = value;
+					this._account.Entity = value;
 					if ((value != null))
 					{
 						value.profiles.Add(this);
-						this._ID_USER = value.ID;
+						this._ID_ACCOUNT = value.ID;
 					}
 					else
 					{
-						this._ID_USER = default(int);
+						this._ID_ACCOUNT = default(int);
 					}
-					this.SendPropertyChanged("user");
+					this.SendPropertyChanged("account");
 				}
 			}
 		}
@@ -2938,9 +3432,9 @@ namespace CoffeeLibrary
 		
 		private string _CODE_RECEIPT;
 		
-		private int _ID_USER_STAFF;
+		private int _ID_ACCOUNT_STAFF;
 		
-		private int _ID_USER_CUSTOMER;
+		private int _ID_ACCOUNT_CUSTOMER;
 		
 		private System.DateTime _CREATE_AT;
 		
@@ -2948,9 +3442,9 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _STATUS;
 		
-		private EntityRef<user> _user;
+		private EntityRef<account> _account;
 		
-		private EntityRef<user> _user1;
+		private EntityRef<account> _account1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2960,10 +3454,10 @@ namespace CoffeeLibrary
     partial void OnIDChanged();
     partial void OnCODE_RECEIPTChanging(string value);
     partial void OnCODE_RECEIPTChanged();
-    partial void OnID_USER_STAFFChanging(int value);
-    partial void OnID_USER_STAFFChanged();
-    partial void OnID_USER_CUSTOMERChanging(int value);
-    partial void OnID_USER_CUSTOMERChanged();
+    partial void OnID_ACCOUNT_STAFFChanging(int value);
+    partial void OnID_ACCOUNT_STAFFChanged();
+    partial void OnID_ACCOUNT_CUSTOMERChanging(int value);
+    partial void OnID_ACCOUNT_CUSTOMERChanged();
     partial void OnCREATE_ATChanging(System.DateTime value);
     partial void OnCREATE_ATChanged();
     partial void OnSUM_MONEYChanging(System.Nullable<double> value);
@@ -2974,8 +3468,8 @@ namespace CoffeeLibrary
 		
 		public receipt()
 		{
-			this._user = default(EntityRef<user>);
-			this._user1 = default(EntityRef<user>);
+			this._account = default(EntityRef<account>);
+			this._account1 = default(EntityRef<account>);
 			OnCreated();
 		}
 		
@@ -3019,50 +3513,50 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER_STAFF", DbType="Int NOT NULL")]
-		public int ID_USER_STAFF
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT_STAFF", DbType="Int NOT NULL")]
+		public int ID_ACCOUNT_STAFF
 		{
 			get
 			{
-				return this._ID_USER_STAFF;
+				return this._ID_ACCOUNT_STAFF;
 			}
 			set
 			{
-				if ((this._ID_USER_STAFF != value))
+				if ((this._ID_ACCOUNT_STAFF != value))
 				{
-					if (this._user.HasLoadedOrAssignedValue)
+					if (this._account.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnID_USER_STAFFChanging(value);
+					this.OnID_ACCOUNT_STAFFChanging(value);
 					this.SendPropertyChanging();
-					this._ID_USER_STAFF = value;
-					this.SendPropertyChanged("ID_USER_STAFF");
-					this.OnID_USER_STAFFChanged();
+					this._ID_ACCOUNT_STAFF = value;
+					this.SendPropertyChanged("ID_ACCOUNT_STAFF");
+					this.OnID_ACCOUNT_STAFFChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER_CUSTOMER", DbType="Int NOT NULL")]
-		public int ID_USER_CUSTOMER
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT_CUSTOMER", DbType="Int NOT NULL")]
+		public int ID_ACCOUNT_CUSTOMER
 		{
 			get
 			{
-				return this._ID_USER_CUSTOMER;
+				return this._ID_ACCOUNT_CUSTOMER;
 			}
 			set
 			{
-				if ((this._ID_USER_CUSTOMER != value))
+				if ((this._ID_ACCOUNT_CUSTOMER != value))
 				{
-					if (this._user1.HasLoadedOrAssignedValue)
+					if (this._account1.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnID_USER_CUSTOMERChanging(value);
+					this.OnID_ACCOUNT_CUSTOMERChanging(value);
 					this.SendPropertyChanging();
-					this._ID_USER_CUSTOMER = value;
-					this.SendPropertyChanged("ID_USER_CUSTOMER");
-					this.OnID_USER_CUSTOMERChanged();
+					this._ID_ACCOUNT_CUSTOMER = value;
+					this.SendPropertyChanged("ID_ACCOUNT_CUSTOMER");
+					this.OnID_ACCOUNT_CUSTOMERChanged();
 				}
 			}
 		}
@@ -3127,70 +3621,70 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_receipt", Storage="_user", ThisKey="ID_USER_STAFF", OtherKey="ID", IsForeignKey=true)]
-		public user user
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt", Storage="_account", ThisKey="ID_ACCOUNT_STAFF", OtherKey="ID", IsForeignKey=true)]
+		public account account
 		{
 			get
 			{
-				return this._user.Entity;
+				return this._account.Entity;
 			}
 			set
 			{
-				user previousValue = this._user.Entity;
+				account previousValue = this._account.Entity;
 				if (((previousValue != value) 
-							|| (this._user.HasLoadedOrAssignedValue == false)))
+							|| (this._account.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._user.Entity = null;
+						this._account.Entity = null;
 						previousValue.receipts.Remove(this);
 					}
-					this._user.Entity = value;
+					this._account.Entity = value;
 					if ((value != null))
 					{
 						value.receipts.Add(this);
-						this._ID_USER_STAFF = value.ID;
+						this._ID_ACCOUNT_STAFF = value.ID;
 					}
 					else
 					{
-						this._ID_USER_STAFF = default(int);
+						this._ID_ACCOUNT_STAFF = default(int);
 					}
-					this.SendPropertyChanged("user");
+					this.SendPropertyChanged("account");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_receipt1", Storage="_user1", ThisKey="ID_USER_CUSTOMER", OtherKey="ID", IsForeignKey=true)]
-		public user user1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt1", Storage="_account1", ThisKey="ID_ACCOUNT_CUSTOMER", OtherKey="ID", IsForeignKey=true)]
+		public account account1
 		{
 			get
 			{
-				return this._user1.Entity;
+				return this._account1.Entity;
 			}
 			set
 			{
-				user previousValue = this._user1.Entity;
+				account previousValue = this._account1.Entity;
 				if (((previousValue != value) 
-							|| (this._user1.HasLoadedOrAssignedValue == false)))
+							|| (this._account1.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._user1.Entity = null;
+						this._account1.Entity = null;
 						previousValue.receipts1.Remove(this);
 					}
-					this._user1.Entity = value;
+					this._account1.Entity = value;
 					if ((value != null))
 					{
 						value.receipts1.Add(this);
-						this._ID_USER_CUSTOMER = value.ID;
+						this._ID_ACCOUNT_CUSTOMER = value.ID;
 					}
 					else
 					{
-						this._ID_USER_CUSTOMER = default(int);
+						this._ID_ACCOUNT_CUSTOMER = default(int);
 					}
-					this.SendPropertyChanged("user1");
+					this.SendPropertyChanged("account1");
 				}
 			}
 		}
@@ -3228,7 +3722,7 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _ID_SUPPLIER;
 		
-		private System.Nullable<int> _ID_USER;
+		private System.Nullable<int> _ID_ACCOUNT;
 		
 		private System.Nullable<System.DateTime> _CREATE_AT;
 		
@@ -3238,9 +3732,9 @@ namespace CoffeeLibrary
 		
 		private EntitySet<detail_receipt_import> _detail_receipt_imports;
 		
-		private EntityRef<supplier> _supplier;
+		private EntityRef<account> _account;
 		
-		private EntityRef<user> _user;
+		private EntityRef<supplier> _supplier;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3252,8 +3746,8 @@ namespace CoffeeLibrary
     partial void OnCODE_IMPORTChanged();
     partial void OnID_SUPPLIERChanging(System.Nullable<int> value);
     partial void OnID_SUPPLIERChanged();
-    partial void OnID_USERChanging(System.Nullable<int> value);
-    partial void OnID_USERChanged();
+    partial void OnID_ACCOUNTChanging(System.Nullable<int> value);
+    partial void OnID_ACCOUNTChanged();
     partial void OnCREATE_ATChanging(System.Nullable<System.DateTime> value);
     partial void OnCREATE_ATChanged();
     partial void OnSUM_MONEYChanging(System.Nullable<double> value);
@@ -3265,8 +3759,8 @@ namespace CoffeeLibrary
 		public receipt_import()
 		{
 			this._detail_receipt_imports = new EntitySet<detail_receipt_import>(new Action<detail_receipt_import>(this.attach_detail_receipt_imports), new Action<detail_receipt_import>(this.detach_detail_receipt_imports));
+			this._account = default(EntityRef<account>);
 			this._supplier = default(EntityRef<supplier>);
-			this._user = default(EntityRef<user>);
 			OnCreated();
 		}
 		
@@ -3334,26 +3828,26 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER", DbType="Int")]
-		public System.Nullable<int> ID_USER
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int")]
+		public System.Nullable<int> ID_ACCOUNT
 		{
 			get
 			{
-				return this._ID_USER;
+				return this._ID_ACCOUNT;
 			}
 			set
 			{
-				if ((this._ID_USER != value))
+				if ((this._ID_ACCOUNT != value))
 				{
-					if (this._user.HasLoadedOrAssignedValue)
+					if (this._account.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnID_USERChanging(value);
+					this.OnID_ACCOUNTChanging(value);
 					this.SendPropertyChanging();
-					this._ID_USER = value;
-					this.SendPropertyChanged("ID_USER");
-					this.OnID_USERChanged();
+					this._ID_ACCOUNT = value;
+					this.SendPropertyChanged("ID_ACCOUNT");
+					this.OnID_ACCOUNTChanged();
 				}
 			}
 		}
@@ -3431,6 +3925,40 @@ namespace CoffeeLibrary
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt_import", Storage="_account", ThisKey="ID_ACCOUNT", OtherKey="ID", IsForeignKey=true)]
+		public account account
+		{
+			get
+			{
+				return this._account.Entity;
+			}
+			set
+			{
+				account previousValue = this._account.Entity;
+				if (((previousValue != value) 
+							|| (this._account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._account.Entity = null;
+						previousValue.receipt_imports.Remove(this);
+					}
+					this._account.Entity = value;
+					if ((value != null))
+					{
+						value.receipt_imports.Add(this);
+						this._ID_ACCOUNT = value.ID;
+					}
+					else
+					{
+						this._ID_ACCOUNT = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("account");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="supplier_receipt_import", Storage="_supplier", ThisKey="ID_SUPPLIER", OtherKey="ID", IsForeignKey=true)]
 		public supplier supplier
 		{
@@ -3461,40 +3989,6 @@ namespace CoffeeLibrary
 						this._ID_SUPPLIER = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("supplier");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_receipt_import", Storage="_user", ThisKey="ID_USER", OtherKey="ID", IsForeignKey=true)]
-		public user user
-		{
-			get
-			{
-				return this._user.Entity;
-			}
-			set
-			{
-				user previousValue = this._user.Entity;
-				if (((previousValue != value) 
-							|| (this._user.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._user.Entity = null;
-						previousValue.receipt_imports.Remove(this);
-					}
-					this._user.Entity = value;
-					if ((value != null))
-					{
-						value.receipt_imports.Add(this);
-						this._ID_USER = value.ID;
-					}
-					else
-					{
-						this._ID_USER = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("user");
 				}
 			}
 		}
@@ -4063,7 +4557,7 @@ namespace CoffeeLibrary
 		
 		private int _ID;
 		
-		private int _ID_USER;
+		private int _ID_ACCOUNT;
 		
 		private System.DateTime _DATE;
 		
@@ -4071,7 +4565,7 @@ namespace CoffeeLibrary
 		
 		private int _STATUS;
 		
-		private EntityRef<user> _user;
+		private EntityRef<account> _account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4079,8 +4573,8 @@ namespace CoffeeLibrary
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnID_USERChanging(int value);
-    partial void OnID_USERChanged();
+    partial void OnID_ACCOUNTChanging(int value);
+    partial void OnID_ACCOUNTChanged();
     partial void OnDATEChanging(System.DateTime value);
     partial void OnDATEChanged();
     partial void OnSHIFTChanging(int value);
@@ -4091,7 +4585,7 @@ namespace CoffeeLibrary
 		
 		public timekeeping()
 		{
-			this._user = default(EntityRef<user>);
+			this._account = default(EntityRef<account>);
 			OnCreated();
 		}
 		
@@ -4115,26 +4609,26 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER", DbType="Int NOT NULL")]
-		public int ID_USER
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int NOT NULL")]
+		public int ID_ACCOUNT
 		{
 			get
 			{
-				return this._ID_USER;
+				return this._ID_ACCOUNT;
 			}
 			set
 			{
-				if ((this._ID_USER != value))
+				if ((this._ID_ACCOUNT != value))
 				{
-					if (this._user.HasLoadedOrAssignedValue)
+					if (this._account.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnID_USERChanging(value);
+					this.OnID_ACCOUNTChanging(value);
 					this.SendPropertyChanging();
-					this._ID_USER = value;
-					this.SendPropertyChanged("ID_USER");
-					this.OnID_USERChanged();
+					this._ID_ACCOUNT = value;
+					this.SendPropertyChanged("ID_ACCOUNT");
+					this.OnID_ACCOUNTChanged();
 				}
 			}
 		}
@@ -4199,36 +4693,36 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_timekeeping", Storage="_user", ThisKey="ID_USER", OtherKey="ID", IsForeignKey=true)]
-		public user user
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_timekeeping", Storage="_account", ThisKey="ID_ACCOUNT", OtherKey="ID", IsForeignKey=true)]
+		public account account
 		{
 			get
 			{
-				return this._user.Entity;
+				return this._account.Entity;
 			}
 			set
 			{
-				user previousValue = this._user.Entity;
+				account previousValue = this._account.Entity;
 				if (((previousValue != value) 
-							|| (this._user.HasLoadedOrAssignedValue == false)))
+							|| (this._account.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._user.Entity = null;
+						this._account.Entity = null;
 						previousValue.timekeepings.Remove(this);
 					}
-					this._user.Entity = value;
+					this._account.Entity = value;
 					if ((value != null))
 					{
 						value.timekeepings.Add(this);
-						this._ID_USER = value.ID;
+						this._ID_ACCOUNT = value.ID;
 					}
 					else
 					{
-						this._ID_USER = default(int);
+						this._ID_ACCOUNT = default(int);
 					}
-					this.SendPropertyChanged("user");
+					this.SendPropertyChanged("account");
 				}
 			}
 		}
@@ -4527,500 +5021,6 @@ namespace CoffeeLibrary
 		{
 			this.SendPropertyChanging();
 			entity.type_item = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[user]")]
-	public partial class user : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _USER_NAME;
-		
-		private string _PASSWORD;
-		
-		private System.Nullable<int> _STATUS;
-		
-		private EntitySet<profile> _profiles;
-		
-		private EntitySet<receipt> _receipts;
-		
-		private EntitySet<receipt> _receipts1;
-		
-		private EntitySet<receipt_import> _receipt_imports;
-		
-		private EntitySet<timekeeping> _timekeepings;
-		
-		private EntitySet<user_group_user> _user_group_users;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUSER_NAMEChanging(string value);
-    partial void OnUSER_NAMEChanged();
-    partial void OnPASSWORDChanging(string value);
-    partial void OnPASSWORDChanged();
-    partial void OnSTATUSChanging(System.Nullable<int> value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public user()
-		{
-			this._profiles = new EntitySet<profile>(new Action<profile>(this.attach_profiles), new Action<profile>(this.detach_profiles));
-			this._receipts = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts), new Action<receipt>(this.detach_receipts));
-			this._receipts1 = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts1), new Action<receipt>(this.detach_receipts1));
-			this._receipt_imports = new EntitySet<receipt_import>(new Action<receipt_import>(this.attach_receipt_imports), new Action<receipt_import>(this.detach_receipt_imports));
-			this._timekeepings = new EntitySet<timekeeping>(new Action<timekeeping>(this.attach_timekeepings), new Action<timekeeping>(this.detach_timekeepings));
-			this._user_group_users = new EntitySet<user_group_user>(new Action<user_group_user>(this.attach_user_group_users), new Action<user_group_user>(this.detach_user_group_users));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_USER_NAME", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string USER_NAME
-		{
-			get
-			{
-				return this._USER_NAME;
-			}
-			set
-			{
-				if ((this._USER_NAME != value))
-				{
-					this.OnUSER_NAMEChanging(value);
-					this.SendPropertyChanging();
-					this._USER_NAME = value;
-					this.SendPropertyChanged("USER_NAME");
-					this.OnUSER_NAMEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PASSWORD", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string PASSWORD
-		{
-			get
-			{
-				return this._PASSWORD;
-			}
-			set
-			{
-				if ((this._PASSWORD != value))
-				{
-					this.OnPASSWORDChanging(value);
-					this.SendPropertyChanging();
-					this._PASSWORD = value;
-					this.SendPropertyChanged("PASSWORD");
-					this.OnPASSWORDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
-		public System.Nullable<int> STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_profile", Storage="_profiles", ThisKey="ID", OtherKey="ID_USER")]
-		public EntitySet<profile> profiles
-		{
-			get
-			{
-				return this._profiles;
-			}
-			set
-			{
-				this._profiles.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_receipt", Storage="_receipts", ThisKey="ID", OtherKey="ID_USER_STAFF")]
-		public EntitySet<receipt> receipts
-		{
-			get
-			{
-				return this._receipts;
-			}
-			set
-			{
-				this._receipts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_receipt1", Storage="_receipts1", ThisKey="ID", OtherKey="ID_USER_CUSTOMER")]
-		public EntitySet<receipt> receipts1
-		{
-			get
-			{
-				return this._receipts1;
-			}
-			set
-			{
-				this._receipts1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_receipt_import", Storage="_receipt_imports", ThisKey="ID", OtherKey="ID_USER")]
-		public EntitySet<receipt_import> receipt_imports
-		{
-			get
-			{
-				return this._receipt_imports;
-			}
-			set
-			{
-				this._receipt_imports.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_timekeeping", Storage="_timekeepings", ThisKey="ID", OtherKey="ID_USER")]
-		public EntitySet<timekeeping> timekeepings
-		{
-			get
-			{
-				return this._timekeepings;
-			}
-			set
-			{
-				this._timekeepings.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_user_group_user", Storage="_user_group_users", ThisKey="ID", OtherKey="ID_USER")]
-		public EntitySet<user_group_user> user_group_users
-		{
-			get
-			{
-				return this._user_group_users;
-			}
-			set
-			{
-				this._user_group_users.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_profiles(profile entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = this;
-		}
-		
-		private void detach_profiles(profile entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = null;
-		}
-		
-		private void attach_receipts(receipt entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = this;
-		}
-		
-		private void detach_receipts(receipt entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = null;
-		}
-		
-		private void attach_receipts1(receipt entity)
-		{
-			this.SendPropertyChanging();
-			entity.user1 = this;
-		}
-		
-		private void detach_receipts1(receipt entity)
-		{
-			this.SendPropertyChanging();
-			entity.user1 = null;
-		}
-		
-		private void attach_receipt_imports(receipt_import entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = this;
-		}
-		
-		private void detach_receipt_imports(receipt_import entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = null;
-		}
-		
-		private void attach_timekeepings(timekeeping entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = this;
-		}
-		
-		private void detach_timekeepings(timekeeping entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = null;
-		}
-		
-		private void attach_user_group_users(user_group_user entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = this;
-		}
-		
-		private void detach_user_group_users(user_group_user entity)
-		{
-			this.SendPropertyChanging();
-			entity.user = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.user_group_user")]
-	public partial class user_group_user : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_USER;
-		
-		private int _ID_GROUP;
-		
-		private System.Nullable<int> _STATUS;
-		
-		private EntityRef<group_user> _group_user;
-		
-		private EntityRef<user> _user;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_USERChanging(int value);
-    partial void OnID_USERChanged();
-    partial void OnID_GROUPChanging(int value);
-    partial void OnID_GROUPChanged();
-    partial void OnSTATUSChanging(System.Nullable<int> value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public user_group_user()
-		{
-			this._group_user = default(EntityRef<group_user>);
-			this._user = default(EntityRef<user>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_USER", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID_USER
-		{
-			get
-			{
-				return this._ID_USER;
-			}
-			set
-			{
-				if ((this._ID_USER != value))
-				{
-					if (this._user.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_USERChanging(value);
-					this.SendPropertyChanging();
-					this._ID_USER = value;
-					this.SendPropertyChanged("ID_USER");
-					this.OnID_USERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_GROUP", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID_GROUP
-		{
-			get
-			{
-				return this._ID_GROUP;
-			}
-			set
-			{
-				if ((this._ID_GROUP != value))
-				{
-					if (this._group_user.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_GROUPChanging(value);
-					this.SendPropertyChanging();
-					this._ID_GROUP = value;
-					this.SendPropertyChanged("ID_GROUP");
-					this.OnID_GROUPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
-		public System.Nullable<int> STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="group_user_user_group_user", Storage="_group_user", ThisKey="ID_GROUP", OtherKey="ID", IsForeignKey=true)]
-		public group_user group_user
-		{
-			get
-			{
-				return this._group_user.Entity;
-			}
-			set
-			{
-				group_user previousValue = this._group_user.Entity;
-				if (((previousValue != value) 
-							|| (this._group_user.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._group_user.Entity = null;
-						previousValue.user_group_users.Remove(this);
-					}
-					this._group_user.Entity = value;
-					if ((value != null))
-					{
-						value.user_group_users.Add(this);
-						this._ID_GROUP = value.ID;
-					}
-					else
-					{
-						this._ID_GROUP = default(int);
-					}
-					this.SendPropertyChanged("group_user");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="user_user_group_user", Storage="_user", ThisKey="ID_USER", OtherKey="ID", IsForeignKey=true)]
-		public user user
-		{
-			get
-			{
-				return this._user.Entity;
-			}
-			set
-			{
-				user previousValue = this._user.Entity;
-				if (((previousValue != value) 
-							|| (this._user.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._user.Entity = null;
-						previousValue.user_group_users.Remove(this);
-					}
-					this._user.Entity = value;
-					if ((value != null))
-					{
-						value.user_group_users.Add(this);
-						this._ID_USER = value.ID;
-					}
-					else
-					{
-						this._ID_USER = default(int);
-					}
-					this.SendPropertyChanged("user");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }
