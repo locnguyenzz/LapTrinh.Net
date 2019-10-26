@@ -59,6 +59,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateService.cs" />
+    <Compile Include="DS_Grand.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Grand.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUserToGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUserToGroup.Designer.cs">
+      <DependentUpon>frmAddUserToGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +120,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddUserToGroup.resx">
+      <DependentUpon>frmAddUserToGroup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChangePass.resx">
       <DependentUpon>frmChangePass.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +158,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
+    <None Include="DS_Grand.xsc">
+      <DependentUpon>DS_Grand.xsd</DependentUpon>
+    </None>
+    <None Include="DS_Grand.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Grand.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_Grand.xss">
+      <DependentUpon>DS_Grand.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -522,6 +548,12 @@
       <Project>{507d516c-8041-4524-b7f7-19d2bbb4ea75}</Project>
       <Name>CoffeeLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doublenext_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doubleprev_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -85,5 +85,11 @@ namespace CoffeeManagementSoftware
             frmChangePass frm = new frmChangePass();
             frm.ShowDialog();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAddUserToGroup frm = new frmAddUserToGroup();
+            frm.Show();
+        }
     }
 }
