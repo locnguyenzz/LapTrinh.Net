@@ -91,5 +91,11 @@ namespace CoffeeManagementSoftware
             frmAddUserToGroup frm = new frmAddUserToGroup();
             frm.Show();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmRole frm = new frmRole();
+            frm.Show();
+        }
     }
 }

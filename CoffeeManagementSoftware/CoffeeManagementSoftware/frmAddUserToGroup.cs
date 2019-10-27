@@ -30,8 +30,6 @@ namespace CoffeeManagementSoftware
 
         private void frmAddUserToGroup_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS_Grand1.user_group_userDK' table. You can move, or remove it, as needed.
-            this.user_group_userDKTableAdapter.Fill(this.dS_Grand1.user_group_userDK);
             // TODO: This line of code loads data into the 'dS_Grand1.user_group_user' table. You can move, or remove it, as needed.
             this.user_group_userTableAdapter.Fill(this.dS_Grand1.user_group_user);
             // TODO: This line of code loads data into the 'dS_Grand1.group_user' table. You can move, or remove it, as needed.
@@ -75,7 +73,7 @@ namespace CoffeeManagementSoftware
         private void btn_DeleteGrant_Click(object sender, EventArgs e)
         {
             try {
-                int? tmp = this.user_group_userTableAdapter.Delete(Int32.Parse(user_group_userDKDataGridView.CurrentRow.Cells[1].Value.ToString()), Int32.Parse(user_group_userDKDataGridView.CurrentRow.Cells[0].Value.ToString()), int.Parse(user_group_userDKDataGridView.CurrentRow.Cells[2].Value.ToString()));
+                int? tmp = this.user_group_userTableAdapter.Delete(Int32.Parse(user_group_userDKDataGridView.CurrentRow.Cells[0].Value.ToString()), Int32.Parse(user_group_userDKDataGridView.CurrentRow.Cells[1].Value.ToString()), int.Parse(user_group_userDKDataGridView.CurrentRow.Cells[2].Value.ToString()));
                 if (tmp == 1)
                 {
                     XtraMessageBox.Show("Xóa người dùng vào nhóm thành công!");
