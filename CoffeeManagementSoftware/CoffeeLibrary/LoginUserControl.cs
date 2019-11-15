@@ -68,7 +68,7 @@ namespace CoffeeLibrary
             flag = true;//Đánh dấu lại là Người dùng đã đăng nhập thành công và cho phép sử dụng frmMain
             nameAccount = txt_Username.Text;
             ParentForm.BackColor = Color.White;
-            //Bước tiếp: Sẽ có thêm các biến Lấy giá trị UserName, Pass, Quyền của người dùng gửi đến frmLogin -> frmMain
+           
         }
 
         public void Check_RememberPass()

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-
+using CoffeeLibrary;
 namespace CoffeeManagementSoftware
 {
     public partial class frmCustumer : DevExpress.XtraEditors.XtraForm
     {
+        Custumer_CL dll = new Custumer_CL();
         public frmCustumer()
         {
             InitializeComponent();
@@ -34,6 +35,11 @@ namespace CoffeeManagementSoftware
         {
             frmAddCustumer frm = new frmAddCustumer();
             frm.ShowDialog();
+        }
+
+        private void frmCustumer_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = dll.LoadCustumer();
         }
     }
 }

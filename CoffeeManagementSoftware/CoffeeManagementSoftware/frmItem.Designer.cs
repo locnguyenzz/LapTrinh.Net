@@ -1,6 +1,6 @@
 ﻿namespace CoffeeManagementSoftware
 {
-    partial class frmDanhmucmathang
+    partial class frmItem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhmucmathang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItem));
             this.pnlNhomhang = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -39,15 +39,6 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.pnlMathang = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.p = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.h = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.i = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.n = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.s = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NhomhangP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GianhapP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.tSBThemmoi = new System.Windows.Forms.ToolStripButton();
             this.tSBChinhsua = new System.Windows.Forms.ToolStripButton();
@@ -153,68 +144,15 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.NameP,
-            this.p,
-            this.h,
-            this.i,
-            this.n,
-            this.s,
-            this.NhomhangP,
-            this.GianhapP});
             this.dataGridView1.Location = new System.Drawing.Point(3, 25);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(976, 493);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "Mã hàng";
-            this.ID.Name = "ID";
-            // 
-            // NameP
-            // 
-            this.NameP.HeaderText = "Tên hàng";
-            this.NameP.Name = "NameP";
-            // 
-            // p
-            // 
-            this.p.HeaderText = "p";
-            this.p.Name = "p";
-            // 
-            // h
-            // 
-            this.h.HeaderText = "h";
-            this.h.Name = "h";
-            // 
-            // i
-            // 
-            this.i.HeaderText = "i";
-            this.i.Name = "i";
-            // 
-            // n
-            // 
-            this.n.HeaderText = "n";
-            this.n.Name = "n";
-            // 
-            // s
-            // 
-            this.s.HeaderText = "s";
-            this.s.Name = "s";
-            // 
-            // NhomhangP
-            // 
-            this.NhomhangP.HeaderText = "Nhóm hàng";
-            this.NhomhangP.Name = "NhomhangP";
-            // 
-            // GianhapP
-            // 
-            this.GianhapP.HeaderText = "Giá nhập";
-            this.GianhapP.Name = "GianhapP";
             // 
             // toolStrip2
             // 
@@ -238,7 +176,7 @@
             this.tSBThemmoi.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
             this.tSBThemmoi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tSBThemmoi.Name = "tSBThemmoi";
-            this.tSBThemmoi.Size = new System.Drawing.Size(126, 24);
+            this.tSBThemmoi.Size = new System.Drawing.Size(125, 24);
             this.tSBThemmoi.Text = "Thêm mới (Insert)";
             this.tSBThemmoi.Click += new System.EventHandler(this.tSBThemmoi_Click);
             // 
@@ -257,7 +195,6 @@
             this.tSBXoa.Name = "tSBXoa";
             this.tSBXoa.Size = new System.Drawing.Size(79, 24);
             this.tSBXoa.Text = "Xóa (Del)";
-            this.tSBXoa.Click += new System.EventHandler(this.toolStripButton6_Click_1);
             // 
             // tSBIn
             // 
@@ -288,10 +225,10 @@
             this.tSBCapnhatgia.Image = ((System.Drawing.Image)(resources.GetObject("tSBCapnhatgia.Image")));
             this.tSBCapnhatgia.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tSBCapnhatgia.Name = "tSBCapnhatgia";
-            this.tSBCapnhatgia.Size = new System.Drawing.Size(141, 24);
+            this.tSBCapnhatgia.Size = new System.Drawing.Size(142, 24);
             this.tSBCapnhatgia.Text = "Cập nhật giá từ excel";
             // 
-            // frmDanhmucmathang
+            // frmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -299,9 +236,10 @@
             this.Controls.Add(this.pnlMathang);
             this.Controls.Add(this.pnlNhomhang);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "frmDanhmucmathang";
+            this.Name = "frmItem";
             this.Text = "Danh mục mặt hàng";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmItem_Load);
             this.pnlNhomhang.ResumeLayout(false);
             this.pnlNhomhang.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -335,14 +273,5 @@
         private System.Windows.Forms.ToolStripButton tSBDInhluong;
         private System.Windows.Forms.ToolStripButton tSBCapnhatgia;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn p;
-        private System.Windows.Forms.DataGridViewTextBoxColumn h;
-        private System.Windows.Forms.DataGridViewTextBoxColumn i;
-        private System.Windows.Forms.DataGridViewTextBoxColumn n;
-        private System.Windows.Forms.DataGridViewTextBoxColumn s;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NhomhangP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GianhapP;
     }
 }

@@ -38,7 +38,7 @@
             this.lUC_Login.Location = new System.Drawing.Point(0, 0);
             this.lUC_Login.Name = "loginUserControl1";
             this.lUC_Login.NameAccount = null;
-            this.lUC_Login.NameDatabase = null;
+            this.lUC_Login.NameDatabase = "DB_Coffee";
             this.lUC_Login.NumberRole = 0;
             this.lUC_Login.Size = new System.Drawing.Size(434, 254);
             this.lUC_Login.TabIndex = 0;

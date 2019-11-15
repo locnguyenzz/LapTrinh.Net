@@ -70,6 +70,8 @@
             this.xóaNhómToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiTênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tLP_Customer.SuspendLayout();
             this.tCtr_Member.SuspendLayout();
             this.tP_Member.SuspendLayout();
@@ -81,6 +83,8 @@
             this.tS_Customer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Customer)).BeginInit();
             this.cMS_GroupCus.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tLP_Customer
@@ -217,6 +221,7 @@
             // tCtr_Customer
             // 
             this.tCtr_Customer.Controls.Add(this.tP_Customer);
+            this.tCtr_Customer.Controls.Add(this.tabPage1);
             this.tCtr_Customer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tCtr_Customer.Location = new System.Drawing.Point(293, 3);
             this.tCtr_Customer.Name = "tCtr_Customer";
@@ -456,6 +461,27 @@
             this.đổiTênToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.đổiTênToolStripMenuItem.Text = "Đổi tên";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(815, 502);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(809, 496);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // frmCustumer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,6 +490,7 @@
             this.Controls.Add(this.tLP_Customer);
             this.Name = "frmCustumer";
             this.Text = "Khách Hàng";
+            this.Load += new System.EventHandler(this.frmCustumer_Load);
             this.tLP_Customer.ResumeLayout(false);
             this.tCtr_Member.ResumeLayout(false);
             this.tP_Member.ResumeLayout(false);
@@ -479,6 +506,8 @@
             this.tS_Customer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Customer)).EndInit();
             this.cMS_GroupCus.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -525,5 +554,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

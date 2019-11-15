@@ -13,7 +13,6 @@ namespace CoffeeManagementSoftware
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        private bool checkFrm;//Dấu hiệu để frmMain biết là frmLogin có đăng nhập thành công.
         public string nameAccount;
         private string nameDatabase;
         public int numberRole;
@@ -36,11 +35,6 @@ namespace CoffeeManagementSoftware
             set { numberRole = value; }
         }
 
-        public bool CheckFrm
-        {
-            get { return checkFrm; }
-            set { checkFrm = value; }
-        }
         public frmLogin()
         {
             InitializeComponent();

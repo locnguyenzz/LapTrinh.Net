@@ -32,29 +32,29 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRole));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grant_rightDkDataGridView = new System.Windows.Forms.DataGridView();
-            this.group_userDataGridView = new System.Windows.Forms.DataGridView();
-            this.btn_ExitRole = new DevExpress.XtraEditors.SimpleButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_SaveRole = new DevExpress.XtraEditors.SimpleButton();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grant_rightDkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_Grand = new CoffeeManagementSoftware.DS_Grand();
+            this.group_userDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.group_userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_ExitRole = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_SaveRole = new DevExpress.XtraEditors.SimpleButton();
             this.group_userTableAdapter = new CoffeeManagementSoftware.DS_GrandTableAdapters.group_userTableAdapter();
             this.tableAdapterManager = new CoffeeManagementSoftware.DS_GrandTableAdapters.TableAdapterManager();
             this.grant_rightTableAdapter = new CoffeeManagementSoftware.DS_GrandTableAdapters.grant_rightTableAdapter();
             this.grant_rightBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grant_rightDKTableAdapter = new CoffeeManagementSoftware.DS_GrandTableAdapters.grant_rightDKTableAdapter();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grant_rightDkDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.group_userDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grant_rightDkBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Grand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.group_userDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.group_userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grant_rightBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +82,6 @@
             // grant_rightDkDataGridView
             // 
             this.grant_rightDkDataGridView.AllowUserToAddRows = false;
-            this.grant_rightDkDataGridView.AllowUserToDeleteRows = false;
             this.grant_rightDkDataGridView.AutoGenerateColumns = false;
             this.grant_rightDkDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grant_rightDkDataGridView.BackgroundColor = System.Drawing.Color.White;
@@ -97,10 +96,37 @@
             this.grant_rightDkDataGridView.Location = new System.Drawing.Point(404, 50);
             this.grant_rightDkDataGridView.MultiSelect = false;
             this.grant_rightDkDataGridView.Name = "grant_rightDkDataGridView";
-            this.grant_rightDkDataGridView.ReadOnly = true;
             this.grant_rightDkDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grant_rightDkDataGridView.Size = new System.Drawing.Size(414, 331);
             this.grant_rightDkDataGridView.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Mã Màn Hình";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "NAME_SCREEN";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Tên Màn Hình";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "ROLE";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Quyền";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // grant_rightDkBindingSource
+            // 
+            this.grant_rightDkBindingSource.DataMember = "grant_rightDk";
+            this.grant_rightDkBindingSource.DataSource = this.dS_Grand;
+            // 
+            // dS_Grand
+            // 
+            this.dS_Grand.DataSetName = "DS_Grand";
+            this.dS_Grand.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // group_userDataGridView
             // 
@@ -123,6 +149,32 @@
             this.group_userDataGridView.Size = new System.Drawing.Size(395, 331);
             this.group_userDataGridView.TabIndex = 3;
             this.group_userDataGridView.SelectionChanged += new System.EventHandler(this.group_userDataGridView_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Nhóm";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NAME_GROUP";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Nhóm";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "STATUS";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Trạng Thái";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // group_userBindingSource
+            // 
+            this.group_userBindingSource.DataMember = "group_user";
+            this.group_userBindingSource.DataSource = this.dS_Grand;
             // 
             // btn_ExitRole
             // 
@@ -158,42 +210,6 @@
             this.btn_SaveRole.Text = "Lưu";
             this.btn_SaveRole.Click += new System.EventHandler(this.btn_SaveRole_Click);
             // 
-            // grant_rightDkBindingSource
-            // 
-            this.grant_rightDkBindingSource.DataMember = "grant_rightDk";
-            this.grant_rightDkBindingSource.DataSource = this.dS_Grand;
-            // 
-            // dS_Grand
-            // 
-            this.dS_Grand.DataSetName = "DS_Grand";
-            this.dS_Grand.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Nhóm";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NAME_GROUP";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên Nhóm";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "STATUS";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Trạng Thái";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // group_userBindingSource
-            // 
-            this.group_userBindingSource.DataMember = "group_user";
-            this.group_userBindingSource.DataSource = this.dS_Grand;
-            // 
             // group_userTableAdapter
             // 
             this.group_userTableAdapter.ClearBeforeFill = true;
@@ -222,27 +238,6 @@
             // 
             this.grant_rightDKTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Mã Màn Hình";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "NAME_SCREEN";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Tên Màn Hình";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "ROLE";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Quyền";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
             // frmRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,9 +250,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grant_rightDkDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.group_userDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grant_rightDkBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Grand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.group_userDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.group_userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grant_rightBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -8,24 +8,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-
+using CoffeeLibrary;
 namespace CoffeeManagementSoftware
 {
-    public partial class frmDanhmucmathang : DevExpress.XtraEditors.XtraForm
+    public partial class frmItem : DevExpress.XtraEditors.XtraForm
     {
-        public frmDanhmucmathang()
+        Item_CL dll = new Item_CL();
+        public frmItem()
         {
             InitializeComponent();
         }
 
-        private void toolStripButton6_Click(object sender, EventArgs e)
+        public void LoadData()
         {
 
-        }
-
-        private void toolStripButton6_Click_1(object sender, EventArgs e)
-        {
-
+            dataGridView1.DataSource = dll.LoadItem();
         }
 
         private void tSBThemmoi_Click(object sender, EventArgs e)
@@ -33,6 +30,11 @@ namespace CoffeeManagementSoftware
             frmChitietmathang ct = new frmChitietmathang();
             ct.ShowDialog();
 
+        }
+
+        private void frmItem_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
     }
 }

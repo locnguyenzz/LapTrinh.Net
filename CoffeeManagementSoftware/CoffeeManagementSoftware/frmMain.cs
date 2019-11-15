@@ -46,6 +46,8 @@ namespace CoffeeManagementSoftware
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            tssShowAccount.Text = Program.loginForm.NameAccount;
+            
             frmUseService use = new frmUseService();
             openForm(use);
         }
@@ -70,8 +72,17 @@ namespace CoffeeManagementSoftware
 
         private void danhMụcKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCustumer use = new frmCustumer();
-            openForm(use);
+            if(CheckExist("frmCustumer"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!","Thong Bao");
+                return;
+            }
+            else
+            {
+                frmCustumer use = new frmCustumer();
+                openForm(use);
+            }
+            
         }
 
 
@@ -96,6 +107,34 @@ namespace CoffeeManagementSoftware
         {
             frmRole frm = new frmRole();
             frm.Show();
+        }
+
+        private void danhSáchNhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CheckExist("frmSupplier"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmSupplier use = new frmSupplier();
+                openForm(use);
+            }
+        }
+
+        private void danhMụcMặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CheckExist("frmItem"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmItem use = new frmItem();
+                openForm(use);
+            }
         }
     }
 }

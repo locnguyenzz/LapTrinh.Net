@@ -503,6 +503,16 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_16x161 {
+            get {
+                object obj = ResourceManager.GetObject("Close_16x161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Close_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Close_32x32", resourceCulture);
@@ -1263,6 +1273,16 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Refresh_16x161 {
+            get {
+                object obj = ResourceManager.GetObject("Refresh_16x161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Refresh_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Refresh_32x32", resourceCulture);
@@ -1313,9 +1333,29 @@ namespace CoffeeManagementSoftware.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Remove_16x161 {
+            get {
+                object obj = ResourceManager.GetObject("Remove_16x161", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Remove_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Remove_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap remove1 {
+            get {
+                object obj = ResourceManager.GetObject("remove1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
