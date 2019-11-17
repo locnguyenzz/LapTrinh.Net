@@ -51,12 +51,8 @@ namespace CoffeeManagementSoftware
 
         private void frmUseService_Load(object sender, EventArgs e)
         {
-                FlowLayoutPanel temp = new FlowLayoutPanel();
-                temp = createCtr.CreateFloor(1, panel_KhuA);
-                for (int j = 1; j < 8; j++)
-                {
-                    createCtr.CreateButtonChair(1, j, temp, cMS_Menu);
-                }          
+                
+                
         }
     }
 }

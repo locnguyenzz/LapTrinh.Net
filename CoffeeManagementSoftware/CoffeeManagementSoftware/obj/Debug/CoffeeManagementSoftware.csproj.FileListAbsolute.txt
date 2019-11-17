@@ -91,7 +91,6 @@ D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\De
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.Properties.Resources.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.csproj.GenerateResource.Cache
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.exe.licenses
-D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmAddCustumer.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.csprojResolveAssemblyReference.cache
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmLogin.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\bin\Debug\CoffeeLibrary.dll

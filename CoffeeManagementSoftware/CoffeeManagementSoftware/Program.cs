@@ -25,7 +25,8 @@ namespace CoffeeManagementSoftware
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
             loginForm = new frmLogin();
-            Application.Run(new frmLogin());
+            //Application.Run(loginForm);
+            Application.Run(new frmItem());
         }
     }
 }

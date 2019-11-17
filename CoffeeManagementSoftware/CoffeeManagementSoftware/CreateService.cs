@@ -10,27 +10,27 @@ namespace CoffeeManagementSoftware
 {
     class CreateService
     {
-        public FlowLayoutPanel CreateFloor(int numberFloor, Panel panelName)
-        {
-            //Thêm flowlayoutpanel
-            FlowLayoutPanel floor = new FlowLayoutPanel();
-            panelName.Controls.Add(floor);
-            floor.Name = "flp_floor" + numberFloor;
-            floor.Dock = DockStyle.Top;
-            floor.AutoSize = true;
-            //Thêm tên tầng
-            Label nameFloor = new Label();
-            nameFloor.Text = "Tầng " + numberFloor;
-            nameFloor.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nameFloor.ForeColor = System.Drawing.SystemColors.Highlight;
-            nameFloor.Name = "lbl_Floor" + numberFloor;
-            nameFloor.Dock = DockStyle.Top;
-            panelName.Controls.Add(nameFloor);
-            return floor;
-        }
+        //public FlowLayoutPanel CreateFloor(int numberFloor, Panel panelName)
+        //{
+        //    //Thêm flowlayoutpanel
+        //    FlowLayoutPanel floor = new FlowLayoutPanel();
+        //    panelName.Controls.Add(floor);
+        //    floor.Name = "flp_floor" + numberFloor;
+        //    floor.Dock = DockStyle.Top;
+        //    floor.AutoSize = true;
+        //    //Thêm tên khu
+        //    Label nameFloor = new Label();
+        //    nameFloor.Text = "Tầng " + numberFloor;
+        //    nameFloor.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //    nameFloor.ForeColor = System.Drawing.SystemColors.Highlight;
+        //    nameFloor.Name = "lbl_Floor" + numberFloor;
+        //    nameFloor.Dock = DockStyle.Top;
+        //    panelName.Controls.Add(nameFloor);
+        //    return floor;
+        //}
 
         //Create Button have chair icon
-        public SimpleButton CreateButtonChair(int numberFloor, int numberChair, FlowLayoutPanel nameFloor, ContextMenuStrip nameCMS)
+        public SimpleButton CreateButtonChair(string numberFloor, int numberChair, FlowLayoutPanel nameFloor, ContextMenuStrip nameCMS)
         {
             SimpleButton btnChair = new SimpleButton();
             nameFloor.Controls.Add(btnChair);
@@ -40,7 +40,7 @@ namespace CoffeeManagementSoftware
             btnChair.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             btnChair.Name = "btnChair" + numberFloor + "." + numberChair;
             btnChair.Size = new System.Drawing.Size(100, 80);
-            btnChair.Text = "Ghế " + numberFloor + "." + numberChair;
+            btnChair.Text = "Ban " + numberFloor + "." + numberChair;
             btnChair.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             //btnChair.Dock = DockStyle.Left;
             btnChair.Font = new Font("Tahoma", 10F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(0)));
