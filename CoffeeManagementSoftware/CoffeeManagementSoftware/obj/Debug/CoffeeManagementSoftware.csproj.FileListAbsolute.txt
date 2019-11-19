@@ -101,3 +101,5 @@ D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\De
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmRole.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmSupplier.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmItem.resources
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmWarehousing.resources
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmInventory.resources

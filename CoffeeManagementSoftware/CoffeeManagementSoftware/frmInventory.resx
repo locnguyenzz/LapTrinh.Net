@@ -117,29 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NAME_ITEM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ID_ITEM.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="UNIT.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NUMBER.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tsb_Add.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANjSURBVDhPVZNrTFNZFIWvkjjq/Kjzy8QfmhgfUYc6GmN8
-        JSaOo1V04oDYNJoQNRGMLywCU0SqgCLC2KKgGaSGQVCRVwW1XCiKCJIilfIqotIWyqNcsKUvyhTM8twz
-        TgI7WcnJPutbe9+be5lpNYtodoSS/TkqR5cardI3x2QbnJGqJnvsPZ0+Kvtt2lF5wVLiCfjunVGzlolE
-        P0RmNSpkytapvPo+VHaNQD/swXvOA/bDKB40WCH7R+8K/0sbTvxzeIaSpCh8OquxUlHRjfYvPhjsE9CN
-        +FBvG0cDUdPofz29zYO0si6czKitWCgU/sizfEBAhOL1rXR1F9odE2AtbmjMboTdYLH9VAFV2I0qsL0e
-        1PR50On0Q0kGHbvOphN2DhMS83DNmWTdVLPNiyKjA6UfnFB/dFFQ12LCu1YzPZd/dkP9yYkScq/nfJBe
-        rfSLjiuFzOEk9q6qugeF7XbktdhR0GZHoXGMQkPcGCanvtLzE6MTjzvH6P2jDgfy6iwQx5cqGIm82lCs
-        H8adRg6HkjXU/L8GOCfc4/4ZPTHx/N3EoaR1BKHyyg4mVK4dzdUNI/XlADU0tVnQ3N6Llk4r+jkXHO4J
-        dJs5dHwcRLdpGDvPP0F67RBUJCQ4ocrOHIhjXYpXViRX99OAwRE3nWpzjIMb88Hrm4TH54ebyEX6v0mL
-        kFIzgDQy8A+Zxs7slZa3JVV8xhWNFZJrVfg1spCadkUVY/CLl4btji7B3j/VCIp7imMZdUhi+5Hw1ATR
-        uVIDs+PEw6xz9/S4rOlDKknOqBvC7Tc2uo1p0Amn91+6dma9jfbTXw1ArunF2RwDtoVlpzGB++TrRdJy
-        /6VyM+KILlZYcOm5hQZwDi/s5B3wGyW86EP8MwsuEsnUJgQdz59cvjV8Lf8hzd14RJUVcvkl4gkcozYj
-        lqx3MFFDJ/Ow5LoWMhIey4vAIYm1WC/OvEXY+XzAbIFgyYINkvvs/ngtYkt7SIgJieSRUqqtuKa1knMv
-        LpSZIC36hN8TarBOnPOccAt4lg/gK0AgWPxTYPCdu1uCi/3i1AaceWBEdFkPAXtwKt+IQ6S3WVLgXbnn
-        ahTxC3iGktOKT5u/ZGvEplX7lZnCUFXranEuJwzJtQUezDas2Hfz9qK1Yb8Qzzyi738iw3wDQdBxp+Bl
-        UuQAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

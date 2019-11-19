@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace CoffeeLibrary
 {
-    public class C_Account
+    public class C_Account:DataContext
     {
        
-
         public int GetIDAccount(string pUserName)//Lay ra ID cua tai khoan
         {
             DataTable tb = new DataTable();
@@ -32,8 +31,8 @@ namespace CoffeeLibrary
         {
             try
             {
-                DBC_CoffeeDataContext dbc = new DBC_CoffeeDataContext();
-                var query = from acc in dbc.accounts
+               
+                var query = from acc in _Coffee.accounts
                             where string.Equals(acc.USERNAME, pUserName) == true
                             select acc;
 
@@ -48,7 +47,7 @@ namespace CoffeeLibrary
                         return false;
                     }
                 }
-                dbc.SubmitChanges();
+                _Coffee.SubmitChanges();
                 return true;//Cap nhat thanh cong
             }
             catch

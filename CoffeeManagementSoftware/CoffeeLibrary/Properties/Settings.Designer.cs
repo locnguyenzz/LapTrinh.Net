@@ -69,5 +69,16 @@ namespace CoffeeLibrary.Properties {
                 this["RemeberPass"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TRUNGLOC\\SQLEXPRESS;Initial Catalog=DB_Coffee;Persist Security Info=T" +
+            "rue;User ID=sa;Password=sa2012")]
+        public string DB_CoffeeConnectionString1 {
+            get {
+                return ((string)(this["DB_CoffeeConnectionString1"]));
+            }
+        }
     }
 }

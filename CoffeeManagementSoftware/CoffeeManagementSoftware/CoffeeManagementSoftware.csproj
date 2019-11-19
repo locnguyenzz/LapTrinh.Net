@@ -92,6 +92,12 @@
     <Compile Include="frmCustumer.Designer.cs">
       <DependentUpon>frmCustumer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
     <Compile Include="frmUseService.Designer.cs">
       <DependentUpon>frmUseService.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWarehousing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWarehousing.Designer.cs">
+      <DependentUpon>frmWarehousing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAddUserToGroup.resx">
@@ -141,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustumer.resx">
       <DependentUpon>frmCustumer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmItem.resx">
       <DependentUpon>frmItem.cs</DependentUpon>
@@ -159,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUseService.resx">
       <DependentUpon>frmUseService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWarehousing.resx">
+      <DependentUpon>frmWarehousing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

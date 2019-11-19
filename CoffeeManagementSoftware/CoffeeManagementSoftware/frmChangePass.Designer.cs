@@ -114,9 +114,9 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.txt_PassOld, 3);
             this.txt_PassOld.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_PassOld.Location = new System.Drawing.Point(129, 40);
+            this.txt_PassOld.Location = new System.Drawing.Point(128, 40);
             this.txt_PassOld.Name = "txt_PassOld";
-            this.txt_PassOld.Size = new System.Drawing.Size(264, 21);
+            this.txt_PassOld.Size = new System.Drawing.Size(265, 21);
             this.txt_PassOld.TabIndex = 4;
             this.txt_PassOld.UseSystemPasswordChar = true;
             // 
@@ -124,9 +124,9 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.txt_PassNew, 3);
             this.txt_PassNew.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_PassNew.Location = new System.Drawing.Point(129, 69);
+            this.txt_PassNew.Location = new System.Drawing.Point(128, 69);
             this.txt_PassNew.Name = "txt_PassNew";
-            this.txt_PassNew.Size = new System.Drawing.Size(264, 21);
+            this.txt_PassNew.Size = new System.Drawing.Size(265, 21);
             this.txt_PassNew.TabIndex = 5;
             this.txt_PassNew.UseSystemPasswordChar = true;
             // 
@@ -134,17 +134,17 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.txt_ConfirmPassNew, 3);
             this.txt_ConfirmPassNew.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_ConfirmPassNew.Location = new System.Drawing.Point(129, 101);
+            this.txt_ConfirmPassNew.Location = new System.Drawing.Point(128, 101);
             this.txt_ConfirmPassNew.Name = "txt_ConfirmPassNew";
-            this.txt_ConfirmPassNew.Size = new System.Drawing.Size(264, 21);
+            this.txt_ConfirmPassNew.Size = new System.Drawing.Size(265, 21);
             this.txt_ConfirmPassNew.TabIndex = 6;
             this.txt_ConfirmPassNew.UseSystemPasswordChar = true;
             // 
             // btn_Argee
             // 
             this.btn_Argee.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Argee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btn_Argee.Location = new System.Drawing.Point(129, 133);
+            this.btn_Argee.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Argee.ImageOptions.Image")));
+            this.btn_Argee.Location = new System.Drawing.Point(128, 133);
             this.btn_Argee.Name = "btn_Argee";
             this.btn_Argee.Size = new System.Drawing.Size(98, 37);
             this.btn_Argee.TabIndex = 7;
@@ -154,8 +154,8 @@
             // btn_Cancel
             // 
             this.btn_Cancel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_Cancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.btn_Cancel.Location = new System.Drawing.Point(233, 133);
+            this.btn_Cancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.ImageOptions.Image")));
+            this.btn_Cancel.Location = new System.Drawing.Point(232, 133);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(91, 37);
             this.btn_Cancel.TabIndex = 8;

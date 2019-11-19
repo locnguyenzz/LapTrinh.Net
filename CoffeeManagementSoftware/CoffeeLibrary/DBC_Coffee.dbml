@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_Coffee" Class="DBC_CoffeeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=TRUNGLOC\SQLEXPRESS;Initial Catalog=DB_Coffee;User ID=sa" SettingsObjectName="CoffeeLibrary.Properties.Settings" SettingsPropertyName="DB_CoffeeConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=TRUNGLOC\SQLEXPRESS;Initial Catalog=DB_Coffee;Persist Security Info=True;User ID=sa" SettingsObjectName="CoffeeLibrary.Properties.Settings" SettingsPropertyName="DB_CoffeeConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.account" Member="accounts">
     <Type Name="account">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -83,80 +83,43 @@
       <Association Name="group_user_grant_right" Member="grant_rights" ThisKey="ID" OtherKey="ID_GROUP" Type="grant_right" />
     </Type>
   </Table>
+  <Table Name="dbo.inventory" Member="inventories">
+    <Type Name="inventory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="item_inventory" Member="item" ThisKey="ID_ITEM" OtherKey="ID" Type="item" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.item" Member="items">
     <Type Name="item">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NAME_ITEM" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
       <Column Name="UNIT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PRICE_SELL" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PRICE_PURCHASE" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ID_TYPE_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_PRODUCER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_PRICE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DEADLINE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DETAIL" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="item_detail_receipt" Member="detail_receipts" ThisKey="ID" OtherKey="ID_ITEM" Type="detail_receipt" />
       <Association Name="item_detail_receipt_import" Member="detail_receipt_imports" ThisKey="ID" OtherKey="ID_ITEM" Type="detail_receipt_import" />
-      <Association Name="price_item" Member="price" ThisKey="ID_PRICE" OtherKey="ID" Type="price" IsForeignKey="true" />
-      <Association Name="producer_item" Member="producer" ThisKey="ID_PRODUCER" OtherKey="ID" Type="producer" IsForeignKey="true" />
+      <Association Name="item_inventory" Member="inventories" ThisKey="ID" OtherKey="ID_ITEM" Type="inventory" />
       <Association Name="type_item_item" Member="type_item" ThisKey="ID_TYPE_ITEM" OtherKey="ID" Type="type_item" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.price" Member="prices">
-    <Type Name="price">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PRICE" Member="PRICE1" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="CREATE_AT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="price_item" Member="items" ThisKey="ID" OtherKey="ID_PRICE" Type="item" />
-    </Type>
-  </Table>
-  <Table Name="dbo.producer" Member="producers">
-    <Type Name="producer">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="CODE_PRODUCER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NAME_PRODUCER" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="PHONE" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="WEBSITE" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="STATUS" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="producer_item" Member="items" ThisKey="ID" OtherKey="ID_PRODUCER" Type="item" />
     </Type>
   </Table>
   <Table Name="dbo.profile" Member="profiles">
     <Type Name="profile">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_ACCOUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ACCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_TYPE_CUSTOMER" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="IDENTIFICATION" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
       <Column Name="LAST_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="FIRST_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="PHONE" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SEX" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
-      <Association Name="profile_profile_customer" Member="profile_customers" ThisKey="ID" OtherKey="ID_PROFILE" Type="profile_customer" />
-      <Association Name="profile_profile_staff" Member="profile_staffs" ThisKey="ID" OtherKey="ID_PROFILE" Type="profile_staff" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="account_profile" Member="account" ThisKey="ID_ACCOUNT" OtherKey="ID" Type="account" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.profile_customer" Member="profile_customers">
-    <Type Name="profile_customer">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_PROFILE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_TYPE_CUSTOMER" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SCORE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="profile_profile_customer" Member="profile" ThisKey="ID_PROFILE" OtherKey="ID" Type="profile" IsForeignKey="true" />
-      <Association Name="type_customer_profile_customer" Member="type_customer" ThisKey="ID_TYPE_CUSTOMER" OtherKey="ID" Type="type_customer" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.profile_staff" Member="profile_staffs">
-    <Type Name="profile_staff">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_PROFILE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="POSITION" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="profile_profile_staff" Member="profile" ThisKey="ID_PROFILE" OtherKey="ID" Type="profile" IsForeignKey="true" />
+      <Association Name="type_customer_profile" Member="type_customer" ThisKey="ID_TYPE_CUSTOMER" OtherKey="ID" Type="type_customer" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.receipt" Member="receipts">
@@ -216,14 +179,36 @@
       <Association Name="area_table" Member="area" ThisKey="ID_AREA" OtherKey="ID" Type="area" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.thuchi" Member="thuchis">
+    <Type Name="thuchi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_TIMEKEEPING" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REASON" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="timekeeping_thuchi" Member="timekeeping" ThisKey="ID_TIMEKEEPING" OtherKey="ID" Type="timekeeping" IsForeignKey="true" />
+      <Association Name="type_ballot_thuchi" Member="type_ballot" ThisKey="ID_TYPE" OtherKey="ID" Type="type_ballot" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.timekeeping" Member="timekeepings">
     <Type Name="timekeeping">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_ACCOUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DATE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="SHIFT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ACCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STAFF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SHIFT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="timekeeping_thuchi" Member="thuchis" ThisKey="ID" OtherKey="ID_TIMEKEEPING" Type="thuchi" />
       <Association Name="account_timekeeping" Member="account" ThisKey="ID_ACCOUNT" OtherKey="ID" Type="account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.type_ballot" Member="type_ballots">
+    <Type Name="type_ballot">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NAME_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="type_ballot_thuchi" Member="thuchis" ThisKey="ID" OtherKey="ID_TYPE" Type="thuchi" />
     </Type>
   </Table>
   <Table Name="dbo.type_customer" Member="type_customers">
@@ -231,7 +216,7 @@
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NAME_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="type_customer_profile_customer" Member="profile_customers" ThisKey="ID" OtherKey="ID_TYPE_CUSTOMER" Type="profile_customer" />
+      <Association Name="type_customer_profile" Member="profiles" ThisKey="ID" OtherKey="ID_TYPE_CUSTOMER" Type="profile" />
     </Type>
   </Table>
   <Table Name="dbo.type_item" Member="type_items">

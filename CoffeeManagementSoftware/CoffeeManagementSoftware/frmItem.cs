@@ -15,7 +15,7 @@ namespace CoffeeManagementSoftware
     {
         Item_CL dll = new Item_CL();
         TypeItem_CL dti = new TypeItem_CL();
-        Price_CL dp = new Price_CL();
+        
         public frmItem()
         {
             InitializeComponent();
@@ -28,13 +28,6 @@ namespace CoffeeManagementSoftware
             cbo_NameType.ValueMember = "ID";
             cbo_NameType.DisplayMember = "NAME_TYPE";
         }
-        public void LoadPrice()
-        {
-
-            cbo_Price.DataSource = dp.LoadPrice();
-            cbo_Price.ValueMember = "ID";
-            cbo_Price.DisplayMember = "PRICE";
-        }
 
         public void LoadData()
         {
@@ -45,16 +38,18 @@ namespace CoffeeManagementSoftware
         
         private void tSBThemmoi_Click(object sender, EventArgs e)
         {
-            int _price = Int32.Parse(cbo_Price.SelectedValue.ToString());
+            
+            double _priceSell = Double.Parse(txt_PriceSell.Text);
+            double _pricePur = Double.Parse(txt_Purchase.Text);
             int _type = Int32.Parse(cbo_NameType.SelectedValue.ToString());
-            if (dll.AddNewItem(txt_Name.Text,txt_Unit.Text,_price,_type))
+            if (dll.AddNewItem(txt_Name.Text, txt_Unit.Text, _priceSell, _pricePur, _type))
             {
                 XtraMessageBox.Show("Them thanh cong!", "Thong Bao");
                 LoadData();
             }
             else
             {
-                XtraMessageBox.Show("Them tThat bai!", "Thong Bao");
+                XtraMessageBox.Show("Them that bai!", "Thong Bao");
             }
 
         }
@@ -62,29 +57,24 @@ namespace CoffeeManagementSoftware
         private void frmItem_Load(object sender, EventArgs e)
         {
             LoadItem();
-            LoadPrice();
             LoadData();
-            txt_ID.Text = dgv_Item.CurrentRow.Cells[0].Value.ToString();
+            txt_ID.Enabled = false;
+            dataGridView1.DataSource = dll.LoadItem();
+            txt_ID.Text = dgv_Item.CurrentRow.Cells["ID"].Value.ToString();
             txt_Name.Text = dgv_Item.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
             txt_Unit.Text = dgv_Item.CurrentRow.Cells["UNIT"].Value.ToString();
-            //cbo_Price.Text = dgv_Item.CurrentRow.Cells["BUY"].Value.ToString();
-            cbo_NameType.Text = dgv_Item.CurrentRow.Cells["NAME_TYPE"].Value.ToString();
-            if (dgv_Item.CurrentRow.Cells["STATUS"].Value.Equals(1))
-            {
-                chk_Status.Checked = true;
-            }
-            else
-            {
-                chk_Status.Checked = false;
-            }
+            txt_PriceSell.Text = dgv_Item.CurrentRow.Cells["PRICE_SELL"].Value.ToString();
+            txt_Purchase.Text = dgv_Item.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString();
+            cbo_NameType.Text = dgv_Item.CurrentRow.Cells["NAME_TYPE"].Value.ToString();   
         }
 
         private void tSBChinhsua_Click(object sender, EventArgs e)
         {
-            int _price = Int32.Parse(cbo_Price.SelectedValue.ToString());
             int _type = Int32.Parse(cbo_NameType.SelectedValue.ToString());
-            int check = 1;
-            if (chk_Status.Checked == true)
+            int check = Int32.Parse(dgv_Item.CurrentRow.Cells["STATUS"].Value.ToString());
+            double _priceSell = Double.Parse(txt_PriceSell.Text);
+            double _pricePur = Double.Parse(txt_Purchase.Text);
+            if (check == 1)
             {
                 check = 1;
             }
@@ -92,7 +82,7 @@ namespace CoffeeManagementSoftware
             {
                 check = 0;
             }
-            if (dll.EditItem(Int32.Parse(txt_ID.Text), txt_Name.Text, txt_Unit.Text, _price, _type, check))
+            if (dll.EditItem(Int32.Parse(txt_ID.Text), txt_Name.Text, txt_Unit.Text,_priceSell,_pricePur, _type, check))
             {
                 XtraMessageBox.Show("Sua thanh cong", "Thong Bao");
 
@@ -119,22 +109,12 @@ namespace CoffeeManagementSoftware
 
         private void dgv_Item_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_ID.Text = dgv_Item.CurrentRow.Cells[0].Value.ToString();
+            txt_ID.Text = dgv_Item.CurrentRow.Cells["ID"].Value.ToString();
             txt_Name.Text = dgv_Item.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
             txt_Unit.Text = dgv_Item.CurrentRow.Cells["UNIT"].Value.ToString();
-            //cbo_Price.Text = dgv_Item.CurrentRow.Cells["BUY"].Value.ToString();
-            cbo_NameType.Text = dgv_Item.CurrentRow.Cells["NAME_TYPE"].Value.ToString();
-            if (dgv_Item.CurrentRow.Cells["STATUS"].Value.Equals(1))
-            {
-                chk_Status.Checked = true;
-            }
-            else
-            {
-                chk_Status.Checked = false;
-            }
+            txt_PriceSell.Text = dgv_Item.CurrentRow.Cells["PRICE_SELL"].Value.ToString();
+            txt_Purchase.Text = dgv_Item.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString();
+            cbo_NameType.Text = dgv_Item.CurrentRow.Cells["NAME_TYPE"].Value.ToString();          
         }
-
-
-
     }
 }

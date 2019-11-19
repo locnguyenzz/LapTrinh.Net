@@ -54,21 +54,9 @@ namespace CoffeeLibrary
     partial void Insertitem(item instance);
     partial void Updateitem(item instance);
     partial void Deleteitem(item instance);
-    partial void Insertprice(price instance);
-    partial void Updateprice(price instance);
-    partial void Deleteprice(price instance);
-    partial void Insertproducer(producer instance);
-    partial void Updateproducer(producer instance);
-    partial void Deleteproducer(producer instance);
     partial void Insertprofile(profile instance);
     partial void Updateprofile(profile instance);
     partial void Deleteprofile(profile instance);
-    partial void Insertprofile_customer(profile_customer instance);
-    partial void Updateprofile_customer(profile_customer instance);
-    partial void Deleteprofile_customer(profile_customer instance);
-    partial void Insertprofile_staff(profile_staff instance);
-    partial void Updateprofile_staff(profile_staff instance);
-    partial void Deleteprofile_staff(profile_staff instance);
     partial void Insertreceipt(receipt instance);
     partial void Updatereceipt(receipt instance);
     partial void Deletereceipt(receipt instance);
@@ -84,9 +72,15 @@ namespace CoffeeLibrary
     partial void Inserttable(table instance);
     partial void Updatetable(table instance);
     partial void Deletetable(table instance);
+    partial void Insertthuchi(thuchi instance);
+    partial void Updatethuchi(thuchi instance);
+    partial void Deletethuchi(thuchi instance);
     partial void Inserttimekeeping(timekeeping instance);
     partial void Updatetimekeeping(timekeeping instance);
     partial void Deletetimekeeping(timekeeping instance);
+    partial void Inserttype_ballot(type_ballot instance);
+    partial void Updatetype_ballot(type_ballot instance);
+    partial void Deletetype_ballot(type_ballot instance);
     partial void Inserttype_customer(type_customer instance);
     partial void Updatetype_customer(type_customer instance);
     partial void Deletetype_customer(type_customer instance);
@@ -96,7 +90,7 @@ namespace CoffeeLibrary
     #endregion
 		
 		public DBC_CoffeeDataContext() : 
-				base(global::CoffeeLibrary.Properties.Settings.Default.DB_CoffeeConnectionString, mappingSource)
+				base(global::CoffeeLibrary.Properties.Settings.Default.DB_CoffeeConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -189,6 +183,14 @@ namespace CoffeeLibrary
 			}
 		}
 		
+		public System.Data.Linq.Table<inventory> inventories
+		{
+			get
+			{
+				return this.GetTable<inventory>();
+			}
+		}
+		
 		public System.Data.Linq.Table<item> items
 		{
 			get
@@ -197,43 +199,11 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		public System.Data.Linq.Table<price> prices
-		{
-			get
-			{
-				return this.GetTable<price>();
-			}
-		}
-		
-		public System.Data.Linq.Table<producer> producers
-		{
-			get
-			{
-				return this.GetTable<producer>();
-			}
-		}
-		
 		public System.Data.Linq.Table<profile> profiles
 		{
 			get
 			{
 				return this.GetTable<profile>();
-			}
-		}
-		
-		public System.Data.Linq.Table<profile_customer> profile_customers
-		{
-			get
-			{
-				return this.GetTable<profile_customer>();
-			}
-		}
-		
-		public System.Data.Linq.Table<profile_staff> profile_staffs
-		{
-			get
-			{
-				return this.GetTable<profile_staff>();
 			}
 		}
 		
@@ -277,11 +247,27 @@ namespace CoffeeLibrary
 			}
 		}
 		
+		public System.Data.Linq.Table<thuchi> thuchis
+		{
+			get
+			{
+				return this.GetTable<thuchi>();
+			}
+		}
+		
 		public System.Data.Linq.Table<timekeeping> timekeepings
 		{
 			get
 			{
 				return this.GetTable<timekeeping>();
+			}
+		}
+		
+		public System.Data.Linq.Table<type_ballot> type_ballots
+		{
+			get
+			{
+				return this.GetTable<type_ballot>();
 			}
 		}
 		
@@ -1831,6 +1817,69 @@ namespace CoffeeLibrary
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.inventory")]
+	public partial class inventory
+	{
+		
+		private int _ID;
+		
+		private System.Nullable<int> _ID_ITEM;
+		
+		private System.Nullable<int> _NUMBER;
+		
+		public inventory()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ITEM", DbType="Int")]
+		public System.Nullable<int> ID_ITEM
+		{
+			get
+			{
+				return this._ID_ITEM;
+			}
+			set
+			{
+				if ((this._ID_ITEM != value))
+				{
+					this._ID_ITEM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUMBER", DbType="Int")]
+		public System.Nullable<int> NUMBER
+		{
+			get
+			{
+				return this._NUMBER;
+			}
+			set
+			{
+				if ((this._NUMBER != value))
+				{
+					this._NUMBER = value;
+				}
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.item")]
 	public partial class item : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1843,23 +1892,15 @@ namespace CoffeeLibrary
 		
 		private string _UNIT;
 		
+		private System.Nullable<double> _PRICE_SELL;
+		
+		private System.Nullable<double> _PRICE_PURCHASE;
+		
 		private System.Nullable<int> _ID_TYPE_ITEM;
-		
-		private System.Nullable<int> _ID_PRODUCER;
-		
-		private System.Nullable<int> _ID_PRICE;
-		
-		private System.Nullable<System.DateTime> _DEADLINE;
-		
-		private string _DETAIL;
 		
 		private System.Nullable<int> _STATUS;
 		
 		private EntitySet<detail_receipt_import> _detail_receipt_imports;
-		
-		private EntityRef<price> _price;
-		
-		private EntityRef<producer> _producer;
 		
 		private EntityRef<type_item> _type_item;
 		
@@ -1873,16 +1914,12 @@ namespace CoffeeLibrary
     partial void OnNAME_ITEMChanged();
     partial void OnUNITChanging(string value);
     partial void OnUNITChanged();
+    partial void OnPRICE_SELLChanging(System.Nullable<double> value);
+    partial void OnPRICE_SELLChanged();
+    partial void OnPRICE_PURCHASEChanging(System.Nullable<double> value);
+    partial void OnPRICE_PURCHASEChanged();
     partial void OnID_TYPE_ITEMChanging(System.Nullable<int> value);
     partial void OnID_TYPE_ITEMChanged();
-    partial void OnID_PRODUCERChanging(System.Nullable<int> value);
-    partial void OnID_PRODUCERChanged();
-    partial void OnID_PRICEChanging(System.Nullable<int> value);
-    partial void OnID_PRICEChanged();
-    partial void OnDEADLINEChanging(System.Nullable<System.DateTime> value);
-    partial void OnDEADLINEChanged();
-    partial void OnDETAILChanging(string value);
-    partial void OnDETAILChanged();
     partial void OnSTATUSChanging(System.Nullable<int> value);
     partial void OnSTATUSChanged();
     #endregion
@@ -1890,8 +1927,6 @@ namespace CoffeeLibrary
 		public item()
 		{
 			this._detail_receipt_imports = new EntitySet<detail_receipt_import>(new Action<detail_receipt_import>(this.attach_detail_receipt_imports), new Action<detail_receipt_import>(this.detach_detail_receipt_imports));
-			this._price = default(EntityRef<price>);
-			this._producer = default(EntityRef<producer>);
 			this._type_item = default(EntityRef<type_item>);
 			OnCreated();
 		}
@@ -1956,6 +1991,46 @@ namespace CoffeeLibrary
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE_SELL", DbType="Float")]
+		public System.Nullable<double> PRICE_SELL
+		{
+			get
+			{
+				return this._PRICE_SELL;
+			}
+			set
+			{
+				if ((this._PRICE_SELL != value))
+				{
+					this.OnPRICE_SELLChanging(value);
+					this.SendPropertyChanging();
+					this._PRICE_SELL = value;
+					this.SendPropertyChanged("PRICE_SELL");
+					this.OnPRICE_SELLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PRICE_PURCHASE", DbType="Float")]
+		public System.Nullable<double> PRICE_PURCHASE
+		{
+			get
+			{
+				return this._PRICE_PURCHASE;
+			}
+			set
+			{
+				if ((this._PRICE_PURCHASE != value))
+				{
+					this.OnPRICE_PURCHASEChanging(value);
+					this.SendPropertyChanging();
+					this._PRICE_PURCHASE = value;
+					this.SendPropertyChanged("PRICE_PURCHASE");
+					this.OnPRICE_PURCHASEChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TYPE_ITEM", DbType="Int")]
 		public System.Nullable<int> ID_TYPE_ITEM
 		{
@@ -1976,94 +2051,6 @@ namespace CoffeeLibrary
 					this._ID_TYPE_ITEM = value;
 					this.SendPropertyChanged("ID_TYPE_ITEM");
 					this.OnID_TYPE_ITEMChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRODUCER", DbType="Int")]
-		public System.Nullable<int> ID_PRODUCER
-		{
-			get
-			{
-				return this._ID_PRODUCER;
-			}
-			set
-			{
-				if ((this._ID_PRODUCER != value))
-				{
-					if (this._producer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_PRODUCERChanging(value);
-					this.SendPropertyChanging();
-					this._ID_PRODUCER = value;
-					this.SendPropertyChanged("ID_PRODUCER");
-					this.OnID_PRODUCERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PRICE", DbType="Int")]
-		public System.Nullable<int> ID_PRICE
-		{
-			get
-			{
-				return this._ID_PRICE;
-			}
-			set
-			{
-				if ((this._ID_PRICE != value))
-				{
-					if (this._price.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_PRICEChanging(value);
-					this.SendPropertyChanging();
-					this._ID_PRICE = value;
-					this.SendPropertyChanged("ID_PRICE");
-					this.OnID_PRICEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DEADLINE", DbType="Date")]
-		public System.Nullable<System.DateTime> DEADLINE
-		{
-			get
-			{
-				return this._DEADLINE;
-			}
-			set
-			{
-				if ((this._DEADLINE != value))
-				{
-					this.OnDEADLINEChanging(value);
-					this.SendPropertyChanging();
-					this._DEADLINE = value;
-					this.SendPropertyChanged("DEADLINE");
-					this.OnDEADLINEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DETAIL", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string DETAIL
-		{
-			get
-			{
-				return this._DETAIL;
-			}
-			set
-			{
-				if ((this._DETAIL != value))
-				{
-					this.OnDETAILChanging(value);
-					this.SendPropertyChanging();
-					this._DETAIL = value;
-					this.SendPropertyChanged("DETAIL");
-					this.OnDETAILChanged();
 				}
 			}
 		}
@@ -2098,74 +2085,6 @@ namespace CoffeeLibrary
 			set
 			{
 				this._detail_receipt_imports.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="price_item", Storage="_price", ThisKey="ID_PRICE", OtherKey="ID", IsForeignKey=true)]
-		public price price
-		{
-			get
-			{
-				return this._price.Entity;
-			}
-			set
-			{
-				price previousValue = this._price.Entity;
-				if (((previousValue != value) 
-							|| (this._price.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._price.Entity = null;
-						previousValue.items.Remove(this);
-					}
-					this._price.Entity = value;
-					if ((value != null))
-					{
-						value.items.Add(this);
-						this._ID_PRICE = value.ID;
-					}
-					else
-					{
-						this._ID_PRICE = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("price");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="producer_item", Storage="_producer", ThisKey="ID_PRODUCER", OtherKey="ID", IsForeignKey=true)]
-		public producer producer
-		{
-			get
-			{
-				return this._producer.Entity;
-			}
-			set
-			{
-				producer previousValue = this._producer.Entity;
-				if (((previousValue != value) 
-							|| (this._producer.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._producer.Entity = null;
-						previousValue.items.Remove(this);
-					}
-					this._producer.Entity = value;
-					if ((value != null))
-					{
-						value.items.Add(this);
-						this._ID_PRODUCER = value.ID;
-					}
-					else
-					{
-						this._ID_PRODUCER = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("producer");
-				}
 			}
 		}
 		
@@ -2236,450 +2155,6 @@ namespace CoffeeLibrary
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.price")]
-	public partial class price : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<double> _PRICE1;
-		
-		private System.Nullable<int> _TYPE;
-		
-		private System.Nullable<System.DateTime> _CREATE_AT;
-		
-		private System.Nullable<int> _STATUS;
-		
-		private EntitySet<item> _items;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnPRICE1Changing(System.Nullable<double> value);
-    partial void OnPRICE1Changed();
-    partial void OnTYPEChanging(System.Nullable<int> value);
-    partial void OnTYPEChanged();
-    partial void OnCREATE_ATChanging(System.Nullable<System.DateTime> value);
-    partial void OnCREATE_ATChanged();
-    partial void OnSTATUSChanging(System.Nullable<int> value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public price()
-		{
-			this._items = new EntitySet<item>(new Action<item>(this.attach_items), new Action<item>(this.detach_items));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="PRICE", Storage="_PRICE1", DbType="Float")]
-		public System.Nullable<double> PRICE1
-		{
-			get
-			{
-				return this._PRICE1;
-			}
-			set
-			{
-				if ((this._PRICE1 != value))
-				{
-					this.OnPRICE1Changing(value);
-					this.SendPropertyChanging();
-					this._PRICE1 = value;
-					this.SendPropertyChanged("PRICE1");
-					this.OnPRICE1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TYPE", DbType="Int")]
-		public System.Nullable<int> TYPE
-		{
-			get
-			{
-				return this._TYPE;
-			}
-			set
-			{
-				if ((this._TYPE != value))
-				{
-					this.OnTYPEChanging(value);
-					this.SendPropertyChanging();
-					this._TYPE = value;
-					this.SendPropertyChanged("TYPE");
-					this.OnTYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CREATE_AT", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CREATE_AT
-		{
-			get
-			{
-				return this._CREATE_AT;
-			}
-			set
-			{
-				if ((this._CREATE_AT != value))
-				{
-					this.OnCREATE_ATChanging(value);
-					this.SendPropertyChanging();
-					this._CREATE_AT = value;
-					this.SendPropertyChanged("CREATE_AT");
-					this.OnCREATE_ATChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
-		public System.Nullable<int> STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="price_item", Storage="_items", ThisKey="ID", OtherKey="ID_PRICE")]
-		public EntitySet<item> items
-		{
-			get
-			{
-				return this._items;
-			}
-			set
-			{
-				this._items.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_items(item entity)
-		{
-			this.SendPropertyChanging();
-			entity.price = this;
-		}
-		
-		private void detach_items(item entity)
-		{
-			this.SendPropertyChanging();
-			entity.price = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.producer")]
-	public partial class producer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _CODE_PRODUCER;
-		
-		private string _NAME_PRODUCER;
-		
-		private string _ADDRESS;
-		
-		private string _PHONE;
-		
-		private string _EMAIL;
-		
-		private string _WEBSITE;
-		
-		private string _STATUS;
-		
-		private EntitySet<item> _items;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnCODE_PRODUCERChanging(string value);
-    partial void OnCODE_PRODUCERChanged();
-    partial void OnNAME_PRODUCERChanging(string value);
-    partial void OnNAME_PRODUCERChanged();
-    partial void OnADDRESSChanging(string value);
-    partial void OnADDRESSChanged();
-    partial void OnPHONEChanging(string value);
-    partial void OnPHONEChanged();
-    partial void OnEMAILChanging(string value);
-    partial void OnEMAILChanged();
-    partial void OnWEBSITEChanging(string value);
-    partial void OnWEBSITEChanged();
-    partial void OnSTATUSChanging(string value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public producer()
-		{
-			this._items = new EntitySet<item>(new Action<item>(this.attach_items), new Action<item>(this.detach_items));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODE_PRODUCER", DbType="VarChar(50)")]
-		public string CODE_PRODUCER
-		{
-			get
-			{
-				return this._CODE_PRODUCER;
-			}
-			set
-			{
-				if ((this._CODE_PRODUCER != value))
-				{
-					this.OnCODE_PRODUCERChanging(value);
-					this.SendPropertyChanging();
-					this._CODE_PRODUCER = value;
-					this.SendPropertyChanged("CODE_PRODUCER");
-					this.OnCODE_PRODUCERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_PRODUCER", DbType="NVarChar(100)")]
-		public string NAME_PRODUCER
-		{
-			get
-			{
-				return this._NAME_PRODUCER;
-			}
-			set
-			{
-				if ((this._NAME_PRODUCER != value))
-				{
-					this.OnNAME_PRODUCERChanging(value);
-					this.SendPropertyChanging();
-					this._NAME_PRODUCER = value;
-					this.SendPropertyChanged("NAME_PRODUCER");
-					this.OnNAME_PRODUCERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ADDRESS", DbType="NVarChar(100)")]
-		public string ADDRESS
-		{
-			get
-			{
-				return this._ADDRESS;
-			}
-			set
-			{
-				if ((this._ADDRESS != value))
-				{
-					this.OnADDRESSChanging(value);
-					this.SendPropertyChanging();
-					this._ADDRESS = value;
-					this.SendPropertyChanged("ADDRESS");
-					this.OnADDRESSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PHONE", DbType="Char(10)")]
-		public string PHONE
-		{
-			get
-			{
-				return this._PHONE;
-			}
-			set
-			{
-				if ((this._PHONE != value))
-				{
-					this.OnPHONEChanging(value);
-					this.SendPropertyChanging();
-					this._PHONE = value;
-					this.SendPropertyChanged("PHONE");
-					this.OnPHONEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(100)")]
-		public string EMAIL
-		{
-			get
-			{
-				return this._EMAIL;
-			}
-			set
-			{
-				if ((this._EMAIL != value))
-				{
-					this.OnEMAILChanging(value);
-					this.SendPropertyChanging();
-					this._EMAIL = value;
-					this.SendPropertyChanged("EMAIL");
-					this.OnEMAILChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WEBSITE", DbType="VarChar(500)")]
-		public string WEBSITE
-		{
-			get
-			{
-				return this._WEBSITE;
-			}
-			set
-			{
-				if ((this._WEBSITE != value))
-				{
-					this.OnWEBSITEChanging(value);
-					this.SendPropertyChanging();
-					this._WEBSITE = value;
-					this.SendPropertyChanged("WEBSITE");
-					this.OnWEBSITEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="NChar(10)")]
-		public string STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="producer_item", Storage="_items", ThisKey="ID", OtherKey="ID_PRODUCER")]
-		public EntitySet<item> items
-		{
-			get
-			{
-				return this._items;
-			}
-			set
-			{
-				this._items.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_items(item entity)
-		{
-			this.SendPropertyChanging();
-			entity.producer = this;
-		}
-		
-		private void detach_items(item entity)
-		{
-			this.SendPropertyChanging();
-			entity.producer = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.profile")]
 	public partial class profile : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2688,7 +2163,9 @@ namespace CoffeeLibrary
 		
 		private int _ID;
 		
-		private int _ID_ACCOUNT;
+		private System.Nullable<int> _ID_ACCOUNT;
+		
+		private System.Nullable<int> _ID_TYPE_CUSTOMER;
 		
 		private string _IDENTIFICATION;
 		
@@ -2702,11 +2179,11 @@ namespace CoffeeLibrary
 		
 		private string _SEX;
 		
-		private EntitySet<profile_customer> _profile_customers;
-		
-		private EntitySet<profile_staff> _profile_staffs;
+		private string _EMAIL;
 		
 		private EntityRef<account> _account;
+		
+		private EntityRef<type_customer> _type_customer;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2714,8 +2191,10 @@ namespace CoffeeLibrary
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnID_ACCOUNTChanging(int value);
+    partial void OnID_ACCOUNTChanging(System.Nullable<int> value);
     partial void OnID_ACCOUNTChanged();
+    partial void OnID_TYPE_CUSTOMERChanging(System.Nullable<int> value);
+    partial void OnID_TYPE_CUSTOMERChanged();
     partial void OnIDENTIFICATIONChanging(string value);
     partial void OnIDENTIFICATIONChanged();
     partial void OnLAST_NAMEChanging(string value);
@@ -2728,13 +2207,14 @@ namespace CoffeeLibrary
     partial void OnADDRESSChanged();
     partial void OnSEXChanging(string value);
     partial void OnSEXChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
     #endregion
 		
 		public profile()
 		{
-			this._profile_customers = new EntitySet<profile_customer>(new Action<profile_customer>(this.attach_profile_customers), new Action<profile_customer>(this.detach_profile_customers));
-			this._profile_staffs = new EntitySet<profile_staff>(new Action<profile_staff>(this.attach_profile_staffs), new Action<profile_staff>(this.detach_profile_staffs));
 			this._account = default(EntityRef<account>);
+			this._type_customer = default(EntityRef<type_customer>);
 			OnCreated();
 		}
 		
@@ -2758,8 +2238,8 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int NOT NULL")]
-		public int ID_ACCOUNT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int")]
+		public System.Nullable<int> ID_ACCOUNT
 		{
 			get
 			{
@@ -2778,6 +2258,30 @@ namespace CoffeeLibrary
 					this._ID_ACCOUNT = value;
 					this.SendPropertyChanged("ID_ACCOUNT");
 					this.OnID_ACCOUNTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TYPE_CUSTOMER", DbType="Int")]
+		public System.Nullable<int> ID_TYPE_CUSTOMER
+		{
+			get
+			{
+				return this._ID_TYPE_CUSTOMER;
+			}
+			set
+			{
+				if ((this._ID_TYPE_CUSTOMER != value))
+				{
+					if (this._type_customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_TYPE_CUSTOMERChanging(value);
+					this.SendPropertyChanging();
+					this._ID_TYPE_CUSTOMER = value;
+					this.SendPropertyChanged("ID_TYPE_CUSTOMER");
+					this.OnID_TYPE_CUSTOMERChanged();
 				}
 			}
 		}
@@ -2902,29 +2406,23 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="profile_profile_customer", Storage="_profile_customers", ThisKey="ID", OtherKey="ID_PROFILE")]
-		public EntitySet<profile_customer> profile_customers
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="NVarChar(50)")]
+		public string EMAIL
 		{
 			get
 			{
-				return this._profile_customers;
+				return this._EMAIL;
 			}
 			set
 			{
-				this._profile_customers.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="profile_profile_staff", Storage="_profile_staffs", ThisKey="ID", OtherKey="ID_PROFILE")]
-		public EntitySet<profile_staff> profile_staffs
-		{
-			get
-			{
-				return this._profile_staffs;
-			}
-			set
-			{
-				this._profile_staffs.Assign(value);
+				if ((this._EMAIL != value))
+				{
+					this.OnEMAILChanging(value);
+					this.SendPropertyChanging();
+					this._EMAIL = value;
+					this.SendPropertyChanged("EMAIL");
+					this.OnEMAILChanged();
+				}
 			}
 		}
 		
@@ -2955,244 +2453,14 @@ namespace CoffeeLibrary
 					}
 					else
 					{
-						this._ID_ACCOUNT = default(int);
+						this._ID_ACCOUNT = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("account");
 				}
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_profile_customers(profile_customer entity)
-		{
-			this.SendPropertyChanging();
-			entity.profile = this;
-		}
-		
-		private void detach_profile_customers(profile_customer entity)
-		{
-			this.SendPropertyChanging();
-			entity.profile = null;
-		}
-		
-		private void attach_profile_staffs(profile_staff entity)
-		{
-			this.SendPropertyChanging();
-			entity.profile = this;
-		}
-		
-		private void detach_profile_staffs(profile_staff entity)
-		{
-			this.SendPropertyChanging();
-			entity.profile = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.profile_customer")]
-	public partial class profile_customer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _ID_PROFILE;
-		
-		private System.Nullable<int> _ID_TYPE_CUSTOMER;
-		
-		private System.Nullable<int> _SCORE;
-		
-		private System.Nullable<int> _STATUS;
-		
-		private EntityRef<profile> _profile;
-		
-		private EntityRef<type_customer> _type_customer;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnID_PROFILEChanging(int value);
-    partial void OnID_PROFILEChanged();
-    partial void OnID_TYPE_CUSTOMERChanging(System.Nullable<int> value);
-    partial void OnID_TYPE_CUSTOMERChanged();
-    partial void OnSCOREChanging(System.Nullable<int> value);
-    partial void OnSCOREChanged();
-    partial void OnSTATUSChanging(System.Nullable<int> value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public profile_customer()
-		{
-			this._profile = default(EntityRef<profile>);
-			this._type_customer = default(EntityRef<type_customer>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PROFILE", DbType="Int NOT NULL")]
-		public int ID_PROFILE
-		{
-			get
-			{
-				return this._ID_PROFILE;
-			}
-			set
-			{
-				if ((this._ID_PROFILE != value))
-				{
-					if (this._profile.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_PROFILEChanging(value);
-					this.SendPropertyChanging();
-					this._ID_PROFILE = value;
-					this.SendPropertyChanged("ID_PROFILE");
-					this.OnID_PROFILEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TYPE_CUSTOMER", DbType="Int")]
-		public System.Nullable<int> ID_TYPE_CUSTOMER
-		{
-			get
-			{
-				return this._ID_TYPE_CUSTOMER;
-			}
-			set
-			{
-				if ((this._ID_TYPE_CUSTOMER != value))
-				{
-					if (this._type_customer.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_TYPE_CUSTOMERChanging(value);
-					this.SendPropertyChanging();
-					this._ID_TYPE_CUSTOMER = value;
-					this.SendPropertyChanged("ID_TYPE_CUSTOMER");
-					this.OnID_TYPE_CUSTOMERChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SCORE", DbType="Int")]
-		public System.Nullable<int> SCORE
-		{
-			get
-			{
-				return this._SCORE;
-			}
-			set
-			{
-				if ((this._SCORE != value))
-				{
-					this.OnSCOREChanging(value);
-					this.SendPropertyChanging();
-					this._SCORE = value;
-					this.SendPropertyChanged("SCORE");
-					this.OnSCOREChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
-		public System.Nullable<int> STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="profile_profile_customer", Storage="_profile", ThisKey="ID_PROFILE", OtherKey="ID", IsForeignKey=true)]
-		public profile profile
-		{
-			get
-			{
-				return this._profile.Entity;
-			}
-			set
-			{
-				profile previousValue = this._profile.Entity;
-				if (((previousValue != value) 
-							|| (this._profile.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._profile.Entity = null;
-						previousValue.profile_customers.Remove(this);
-					}
-					this._profile.Entity = value;
-					if ((value != null))
-					{
-						value.profile_customers.Add(this);
-						this._ID_PROFILE = value.ID;
-					}
-					else
-					{
-						this._ID_PROFILE = default(int);
-					}
-					this.SendPropertyChanged("profile");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_customer_profile_customer", Storage="_type_customer", ThisKey="ID_TYPE_CUSTOMER", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_customer_profile", Storage="_type_customer", ThisKey="ID_TYPE_CUSTOMER", OtherKey="ID", IsForeignKey=true)]
 		public type_customer type_customer
 		{
 			get
@@ -3209,12 +2477,12 @@ namespace CoffeeLibrary
 					if ((previousValue != null))
 					{
 						this._type_customer.Entity = null;
-						previousValue.profile_customers.Remove(this);
+						previousValue.profiles.Remove(this);
 					}
 					this._type_customer.Entity = value;
 					if ((value != null))
 					{
-						value.profile_customers.Add(this);
+						value.profiles.Add(this);
 						this._ID_TYPE_CUSTOMER = value.ID;
 					}
 					else
@@ -3222,181 +2490,6 @@ namespace CoffeeLibrary
 						this._ID_TYPE_CUSTOMER = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("type_customer");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.profile_staff")]
-	public partial class profile_staff : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private int _ID_PROFILE;
-		
-		private string _POSITION;
-		
-		private System.Nullable<int> _STATUS;
-		
-		private EntityRef<profile> _profile;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnID_PROFILEChanging(int value);
-    partial void OnID_PROFILEChanged();
-    partial void OnPOSITIONChanging(string value);
-    partial void OnPOSITIONChanged();
-    partial void OnSTATUSChanging(System.Nullable<int> value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public profile_staff()
-		{
-			this._profile = default(EntityRef<profile>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_PROFILE", DbType="Int NOT NULL")]
-		public int ID_PROFILE
-		{
-			get
-			{
-				return this._ID_PROFILE;
-			}
-			set
-			{
-				if ((this._ID_PROFILE != value))
-				{
-					if (this._profile.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_PROFILEChanging(value);
-					this.SendPropertyChanging();
-					this._ID_PROFILE = value;
-					this.SendPropertyChanged("ID_PROFILE");
-					this.OnID_PROFILEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_POSITION", DbType="NVarChar(50)")]
-		public string POSITION
-		{
-			get
-			{
-				return this._POSITION;
-			}
-			set
-			{
-				if ((this._POSITION != value))
-				{
-					this.OnPOSITIONChanging(value);
-					this.SendPropertyChanging();
-					this._POSITION = value;
-					this.SendPropertyChanged("POSITION");
-					this.OnPOSITIONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
-		public System.Nullable<int> STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="profile_profile_staff", Storage="_profile", ThisKey="ID_PROFILE", OtherKey="ID", IsForeignKey=true)]
-		public profile profile
-		{
-			get
-			{
-				return this._profile.Entity;
-			}
-			set
-			{
-				profile previousValue = this._profile.Entity;
-				if (((previousValue != value) 
-							|| (this._profile.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._profile.Entity = null;
-						previousValue.profile_staffs.Remove(this);
-					}
-					this._profile.Entity = value;
-					if ((value != null))
-					{
-						value.profile_staffs.Add(this);
-						this._ID_PROFILE = value.ID;
-					}
-					else
-					{
-						this._ID_PROFILE = default(int);
-					}
-					this.SendPropertyChanged("profile");
 				}
 			}
 		}
@@ -4549,6 +3642,294 @@ namespace CoffeeLibrary
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.thuchi")]
+	public partial class thuchi : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _ID_TIMEKEEPING;
+		
+		private System.Nullable<int> _ID_TYPE;
+		
+		private System.Nullable<System.DateTime> _DATE;
+		
+		private string _REASON;
+		
+		private System.Nullable<double> _MONEY;
+		
+		private System.Nullable<int> _STATUS;
+		
+		private EntityRef<timekeeping> _timekeeping;
+		
+		private EntityRef<type_ballot> _type_ballot;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnID_TIMEKEEPINGChanging(System.Nullable<int> value);
+    partial void OnID_TIMEKEEPINGChanged();
+    partial void OnID_TYPEChanging(System.Nullable<int> value);
+    partial void OnID_TYPEChanged();
+    partial void OnDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnDATEChanged();
+    partial void OnREASONChanging(string value);
+    partial void OnREASONChanged();
+    partial void OnMONEYChanging(System.Nullable<double> value);
+    partial void OnMONEYChanged();
+    partial void OnSTATUSChanging(System.Nullable<int> value);
+    partial void OnSTATUSChanged();
+    #endregion
+		
+		public thuchi()
+		{
+			this._timekeeping = default(EntityRef<timekeeping>);
+			this._type_ballot = default(EntityRef<type_ballot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TIMEKEEPING", DbType="Int")]
+		public System.Nullable<int> ID_TIMEKEEPING
+		{
+			get
+			{
+				return this._ID_TIMEKEEPING;
+			}
+			set
+			{
+				if ((this._ID_TIMEKEEPING != value))
+				{
+					if (this._timekeeping.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_TIMEKEEPINGChanging(value);
+					this.SendPropertyChanging();
+					this._ID_TIMEKEEPING = value;
+					this.SendPropertyChanged("ID_TIMEKEEPING");
+					this.OnID_TIMEKEEPINGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TYPE", DbType="Int")]
+		public System.Nullable<int> ID_TYPE
+		{
+			get
+			{
+				return this._ID_TYPE;
+			}
+			set
+			{
+				if ((this._ID_TYPE != value))
+				{
+					if (this._type_ballot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_TYPEChanging(value);
+					this.SendPropertyChanging();
+					this._ID_TYPE = value;
+					this.SendPropertyChanged("ID_TYPE");
+					this.OnID_TYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATE", DbType="Date")]
+		public System.Nullable<System.DateTime> DATE
+		{
+			get
+			{
+				return this._DATE;
+			}
+			set
+			{
+				if ((this._DATE != value))
+				{
+					this.OnDATEChanging(value);
+					this.SendPropertyChanging();
+					this._DATE = value;
+					this.SendPropertyChanged("DATE");
+					this.OnDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_REASON", DbType="NVarChar(50)")]
+		public string REASON
+		{
+			get
+			{
+				return this._REASON;
+			}
+			set
+			{
+				if ((this._REASON != value))
+				{
+					this.OnREASONChanging(value);
+					this.SendPropertyChanging();
+					this._REASON = value;
+					this.SendPropertyChanged("REASON");
+					this.OnREASONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MONEY", DbType="Float")]
+		public System.Nullable<double> MONEY
+		{
+			get
+			{
+				return this._MONEY;
+			}
+			set
+			{
+				if ((this._MONEY != value))
+				{
+					this.OnMONEYChanging(value);
+					this.SendPropertyChanging();
+					this._MONEY = value;
+					this.SendPropertyChanged("MONEY");
+					this.OnMONEYChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
+		public System.Nullable<int> STATUS
+		{
+			get
+			{
+				return this._STATUS;
+			}
+			set
+			{
+				if ((this._STATUS != value))
+				{
+					this.OnSTATUSChanging(value);
+					this.SendPropertyChanging();
+					this._STATUS = value;
+					this.SendPropertyChanged("STATUS");
+					this.OnSTATUSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="timekeeping_thuchi", Storage="_timekeeping", ThisKey="ID_TIMEKEEPING", OtherKey="ID", IsForeignKey=true)]
+		public timekeeping timekeeping
+		{
+			get
+			{
+				return this._timekeeping.Entity;
+			}
+			set
+			{
+				timekeeping previousValue = this._timekeeping.Entity;
+				if (((previousValue != value) 
+							|| (this._timekeeping.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._timekeeping.Entity = null;
+						previousValue.thuchis.Remove(this);
+					}
+					this._timekeeping.Entity = value;
+					if ((value != null))
+					{
+						value.thuchis.Add(this);
+						this._ID_TIMEKEEPING = value.ID;
+					}
+					else
+					{
+						this._ID_TIMEKEEPING = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("timekeeping");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_ballot_thuchi", Storage="_type_ballot", ThisKey="ID_TYPE", OtherKey="ID", IsForeignKey=true)]
+		public type_ballot type_ballot
+		{
+			get
+			{
+				return this._type_ballot.Entity;
+			}
+			set
+			{
+				type_ballot previousValue = this._type_ballot.Entity;
+				if (((previousValue != value) 
+							|| (this._type_ballot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._type_ballot.Entity = null;
+						previousValue.thuchis.Remove(this);
+					}
+					this._type_ballot.Entity = value;
+					if ((value != null))
+					{
+						value.thuchis.Add(this);
+						this._ID_TYPE = value.ID;
+					}
+					else
+					{
+						this._ID_TYPE = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("type_ballot");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.timekeeping")]
 	public partial class timekeeping : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4557,13 +3938,15 @@ namespace CoffeeLibrary
 		
 		private int _ID;
 		
-		private int _ID_ACCOUNT;
+		private System.Nullable<int> _ID_ACCOUNT;
 		
-		private System.DateTime _DATE;
+		private string _STAFF;
 		
-		private int _SHIFT;
+		private System.Nullable<int> _SHIFT;
 		
-		private int _STATUS;
+		private System.Nullable<int> _STATUS;
+		
+		private EntitySet<thuchi> _thuchis;
 		
 		private EntityRef<account> _account;
 		
@@ -4573,18 +3956,19 @@ namespace CoffeeLibrary
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnID_ACCOUNTChanging(int value);
+    partial void OnID_ACCOUNTChanging(System.Nullable<int> value);
     partial void OnID_ACCOUNTChanged();
-    partial void OnDATEChanging(System.DateTime value);
-    partial void OnDATEChanged();
-    partial void OnSHIFTChanging(int value);
+    partial void OnSTAFFChanging(string value);
+    partial void OnSTAFFChanged();
+    partial void OnSHIFTChanging(System.Nullable<int> value);
     partial void OnSHIFTChanged();
-    partial void OnSTATUSChanging(int value);
+    partial void OnSTATUSChanging(System.Nullable<int> value);
     partial void OnSTATUSChanged();
     #endregion
 		
 		public timekeeping()
 		{
+			this._thuchis = new EntitySet<thuchi>(new Action<thuchi>(this.attach_thuchis), new Action<thuchi>(this.detach_thuchis));
 			this._account = default(EntityRef<account>);
 			OnCreated();
 		}
@@ -4609,8 +3993,8 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int NOT NULL")]
-		public int ID_ACCOUNT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int")]
+		public System.Nullable<int> ID_ACCOUNT
 		{
 			get
 			{
@@ -4633,28 +4017,28 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATE", DbType="Date NOT NULL")]
-		public System.DateTime DATE
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STAFF", DbType="NVarChar(50)")]
+		public string STAFF
 		{
 			get
 			{
-				return this._DATE;
+				return this._STAFF;
 			}
 			set
 			{
-				if ((this._DATE != value))
+				if ((this._STAFF != value))
 				{
-					this.OnDATEChanging(value);
+					this.OnSTAFFChanging(value);
 					this.SendPropertyChanging();
-					this._DATE = value;
-					this.SendPropertyChanged("DATE");
-					this.OnDATEChanged();
+					this._STAFF = value;
+					this.SendPropertyChanged("STAFF");
+					this.OnSTAFFChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHIFT", DbType="Int NOT NULL")]
-		public int SHIFT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHIFT", DbType="Int")]
+		public System.Nullable<int> SHIFT
 		{
 			get
 			{
@@ -4673,8 +4057,8 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int NOT NULL")]
-		public int STATUS
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
+		public System.Nullable<int> STATUS
 		{
 			get
 			{
@@ -4690,6 +4074,19 @@ namespace CoffeeLibrary
 					this.SendPropertyChanged("STATUS");
 					this.OnSTATUSChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="timekeeping_thuchi", Storage="_thuchis", ThisKey="ID", OtherKey="ID_TIMEKEEPING")]
+		public EntitySet<thuchi> thuchis
+		{
+			get
+			{
+				return this._thuchis;
+			}
+			set
+			{
+				this._thuchis.Assign(value);
 			}
 		}
 		
@@ -4720,7 +4117,7 @@ namespace CoffeeLibrary
 					}
 					else
 					{
-						this._ID_ACCOUNT = default(int);
+						this._ID_ACCOUNT = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("account");
 				}
@@ -4746,10 +4143,22 @@ namespace CoffeeLibrary
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_thuchis(thuchi entity)
+		{
+			this.SendPropertyChanging();
+			entity.timekeeping = this;
+		}
+		
+		private void detach_thuchis(thuchi entity)
+		{
+			this.SendPropertyChanging();
+			entity.timekeeping = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.type_customer")]
-	public partial class type_customer : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.type_ballot")]
+	public partial class type_ballot : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -4760,7 +4169,7 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _STATUS;
 		
-		private EntitySet<profile_customer> _profile_customers;
+		private EntitySet<thuchi> _thuchis;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -4774,9 +4183,9 @@ namespace CoffeeLibrary
     partial void OnSTATUSChanged();
     #endregion
 		
-		public type_customer()
+		public type_ballot()
 		{
-			this._profile_customers = new EntitySet<profile_customer>(new Action<profile_customer>(this.attach_profile_customers), new Action<profile_customer>(this.detach_profile_customers));
+			this._thuchis = new EntitySet<thuchi>(new Action<thuchi>(this.attach_thuchis), new Action<thuchi>(this.detach_thuchis));
 			OnCreated();
 		}
 		
@@ -4840,16 +4249,16 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_customer_profile_customer", Storage="_profile_customers", ThisKey="ID", OtherKey="ID_TYPE_CUSTOMER")]
-		public EntitySet<profile_customer> profile_customers
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_ballot_thuchi", Storage="_thuchis", ThisKey="ID", OtherKey="ID_TYPE")]
+		public EntitySet<thuchi> thuchis
 		{
 			get
 			{
-				return this._profile_customers;
+				return this._thuchis;
 			}
 			set
 			{
-				this._profile_customers.Assign(value);
+				this._thuchis.Assign(value);
 			}
 		}
 		
@@ -4873,13 +4282,151 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		private void attach_profile_customers(profile_customer entity)
+		private void attach_thuchis(thuchi entity)
+		{
+			this.SendPropertyChanging();
+			entity.type_ballot = this;
+		}
+		
+		private void detach_thuchis(thuchi entity)
+		{
+			this.SendPropertyChanging();
+			entity.type_ballot = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.type_customer")]
+	public partial class type_customer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _NAME_TYPE;
+		
+		private System.Nullable<int> _STATUS;
+		
+		private EntitySet<profile> _profiles;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnNAME_TYPEChanging(string value);
+    partial void OnNAME_TYPEChanged();
+    partial void OnSTATUSChanging(System.Nullable<int> value);
+    partial void OnSTATUSChanged();
+    #endregion
+		
+		public type_customer()
+		{
+			this._profiles = new EntitySet<profile>(new Action<profile>(this.attach_profiles), new Action<profile>(this.detach_profiles));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_TYPE", DbType="NVarChar(50)")]
+		public string NAME_TYPE
+		{
+			get
+			{
+				return this._NAME_TYPE;
+			}
+			set
+			{
+				if ((this._NAME_TYPE != value))
+				{
+					this.OnNAME_TYPEChanging(value);
+					this.SendPropertyChanging();
+					this._NAME_TYPE = value;
+					this.SendPropertyChanged("NAME_TYPE");
+					this.OnNAME_TYPEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
+		public System.Nullable<int> STATUS
+		{
+			get
+			{
+				return this._STATUS;
+			}
+			set
+			{
+				if ((this._STATUS != value))
+				{
+					this.OnSTATUSChanging(value);
+					this.SendPropertyChanging();
+					this._STATUS = value;
+					this.SendPropertyChanged("STATUS");
+					this.OnSTATUSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_customer_profile", Storage="_profiles", ThisKey="ID", OtherKey="ID_TYPE_CUSTOMER")]
+		public EntitySet<profile> profiles
+		{
+			get
+			{
+				return this._profiles;
+			}
+			set
+			{
+				this._profiles.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_profiles(profile entity)
 		{
 			this.SendPropertyChanging();
 			entity.type_customer = this;
 		}
 		
-		private void detach_profile_customers(profile_customer entity)
+		private void detach_profiles(profile entity)
 		{
 			this.SendPropertyChanging();
 			entity.type_customer = null;

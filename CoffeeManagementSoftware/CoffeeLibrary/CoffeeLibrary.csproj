@@ -70,6 +70,9 @@
     <Compile Include="frmconfig.Designer.cs">
       <DependentUpon>frmconfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventory.cs" />
+    <Compile Include="Inventory_CL.cs" />
+    <Compile Include="item.cs" />
     <Compile Include="Item_CL.cs" />
     <Compile Include="LoginUserControl.cs">
       <SubType>UserControl</SubType>
@@ -83,6 +86,7 @@
     <Compile Include="MailTextBox.Designer.cs">
       <DependentUpon>MailTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -95,6 +99,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Supplier_CL.cs" />
+    <Compile Include="TypeCus_CL.cs" />
+    <Compile Include="TypeItem_CL.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
