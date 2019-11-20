@@ -41,8 +41,9 @@ namespace CoffeeManagementSoftware
             
             double _priceSell = Double.Parse(txt_PriceSell.Text);
             double _pricePur = Double.Parse(txt_Purchase.Text);
+            int _num = Int32.Parse(txt_Number.Text);
             int _type = Int32.Parse(cbo_NameType.SelectedValue.ToString());
-            if (dll.AddNewItem(txt_Name.Text, txt_Unit.Text, _priceSell, _pricePur, _type))
+            if (dll.AddNewItem(txt_Name.Text, txt_Unit.Text, _priceSell, _pricePur,_num, _type))
             {
                 XtraMessageBox.Show("Them thanh cong!", "Thong Bao");
                 LoadData();
@@ -65,6 +66,7 @@ namespace CoffeeManagementSoftware
             txt_Unit.Text = dgv_Item.CurrentRow.Cells["UNIT"].Value.ToString();
             txt_PriceSell.Text = dgv_Item.CurrentRow.Cells["PRICE_SELL"].Value.ToString();
             txt_Purchase.Text = dgv_Item.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString();
+            txt_Number.Text = dgv_Item.CurrentRow.Cells["NUMBER"].Value.ToString();
             cbo_NameType.Text = dgv_Item.CurrentRow.Cells["NAME_TYPE"].Value.ToString();   
         }
 
@@ -72,6 +74,7 @@ namespace CoffeeManagementSoftware
         {
             int _type = Int32.Parse(cbo_NameType.SelectedValue.ToString());
             int check = Int32.Parse(dgv_Item.CurrentRow.Cells["STATUS"].Value.ToString());
+            int _num = Int32.Parse(txt_Number.Text);
             double _priceSell = Double.Parse(txt_PriceSell.Text);
             double _pricePur = Double.Parse(txt_Purchase.Text);
             if (check == 1)
@@ -82,7 +85,7 @@ namespace CoffeeManagementSoftware
             {
                 check = 0;
             }
-            if (dll.EditItem(Int32.Parse(txt_ID.Text), txt_Name.Text, txt_Unit.Text,_priceSell,_pricePur, _type, check))
+            if (dll.EditItem(Int32.Parse(txt_ID.Text), txt_Name.Text, txt_Unit.Text,_priceSell,_pricePur,_num, _type, check))
             {
                 XtraMessageBox.Show("Sua thanh cong", "Thong Bao");
 
@@ -114,6 +117,7 @@ namespace CoffeeManagementSoftware
             txt_Unit.Text = dgv_Item.CurrentRow.Cells["UNIT"].Value.ToString();
             txt_PriceSell.Text = dgv_Item.CurrentRow.Cells["PRICE_SELL"].Value.ToString();
             txt_Purchase.Text = dgv_Item.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString();
+            txt_Number.Text = dgv_Item.CurrentRow.Cells["NUMBER"].Value.ToString();
             cbo_NameType.Text = dgv_Item.CurrentRow.Cells["NAME_TYPE"].Value.ToString();          
         }
     }

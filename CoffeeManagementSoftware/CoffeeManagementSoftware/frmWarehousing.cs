@@ -13,7 +13,7 @@ namespace CoffeeManagementSoftware
 {
     public partial class frmWarehousing : DevExpress.XtraEditors.XtraForm
     {
-        Inventory_CL dll = new Inventory_CL();
+        WareHousing_CL dll = new WareHousing_CL();
         Item_CL dli = new Item_CL();
         public frmWarehousing()
         {
@@ -27,8 +27,8 @@ namespace CoffeeManagementSoftware
         }
         public void LoadData()
         {
-            dgv_Right.DataSource = dll.LoadInventory();
-            dgv_Left.DataSource = dll.LoadInventory();
+            dgv_Right.DataSource = dll.LoadsWare();
+            dgv_Left.DataSource = dll.LoadsWare();
         }
         private void frmWarehousing_Load(object sender, EventArgs e)
         {
@@ -40,70 +40,70 @@ namespace CoffeeManagementSoftware
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             //double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-            //int _id = Int32.Parse(cbo_Item.SelectedValue.ToString());
-            //int num = Int32.Parse(txt_Number.Text);
-            //if (dll.AddNewInventory(_id, msk_Create.Text,num))
-            //{
-            //    dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
-            //    dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
-            //    XtraMessageBox.Show("Them thanh cong!", "Thong bao");
-            //    LoadData();
-            //}
-            //else
-            //{
-            //    XtraMessageBox.Show("Them that bai!", "Thong Bao");
-            //}
+            int _id = Int32.Parse(cbo_Item.SelectedValue.ToString());
+            int num = Int32.Parse(txt_Number.Text);
+            if (dll.AddNewImport(_id, msk_Create.Text, num))
+            {
+                //dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
+                //dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
+                XtraMessageBox.Show("Them thanh cong!", "Thong bao");
+                LoadData();
+            }
+            else
+            {
+                XtraMessageBox.Show("Them that bai!", "Thong Bao");
+            }
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            //if(dll.DeleteInventory(Int32.Parse(txt_ID.Text)))
-            //{
-            //    XtraMessageBox.Show("Xoa thanh cong!", "Thong bao");
-            //    LoadData();
-            //}
-            //else
-            //{
-            //    XtraMessageBox.Show("Xoa that bai!", "Thong Bao");
-            //}
+            if (dll.DeleteImport(Int32.Parse(txt_ID.Text)))
+            {
+                XtraMessageBox.Show("Xoa thanh cong!", "Thong bao");
+                LoadData();
+            }
+            else
+            {
+                XtraMessageBox.Show("Xoa that bai!", "Thong Bao");
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             //double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-            //int _id = Int32.Parse(cbo_Item.SelectedValue.ToString());
-            //int num = Int32.Parse(txt_Number.Text);
-            //if (dll.EditInventory(Int32.Parse(txt_ID.Text),_id,msk_Create.Text,num))
-            //{
-            //    dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
-            //    dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
-            //    XtraMessageBox.Show("Sua thanh cong!", "Thong bao");
-            //    LoadData();
-            //}
-            //else
-            //{
-            //    XtraMessageBox.Show("Sua that bai!", "Thong Bao");
-            //}
+            int _id = Int32.Parse(cbo_Item.SelectedValue.ToString());
+            int num = Int32.Parse(txt_Number.Text);
+            if (dll.EditImport(Int32.Parse(txt_ID.Text), _id, msk_Create.Text, num))
+            {
+                //dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
+                //dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
+                XtraMessageBox.Show("Sua thanh cong!", "Thong bao");
+                LoadData();
+            }
+            else
+            {
+                XtraMessageBox.Show("Sua that bai!", "Thong Bao");
+            }
         }
 
         private void dgv_Right_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-            //txt_ID.Text = dgv_Left.CurrentRow.Cells["ID"].Value.ToString();
-            //cbo_Item.Text = dgv_Right.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
-            //msk_Create.Text = dgv_Left.CurrentRow.Cells["CREATE_AT"].Value.ToString();
-            //txt_Number.Text = dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString();
-            //dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
+            double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
+            txt_ID.Text = dgv_Left.CurrentRow.Cells["ID"].Value.ToString();
+            cbo_Item.Text = dgv_Right.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
+            msk_Create.Text = dgv_Left.CurrentRow.Cells["CREATE_AT"].Value.ToString();
+            txt_Number.Text = dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString();
+            dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
         }
 
         private void dgv_Left_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-            //txt_ID.Text = dgv_Left.CurrentRow.Cells["ID"].Value.ToString();
-            //cbo_Item.Text = dgv_Right.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
-            //msk_Create.Text = dgv_Left.CurrentRow.Cells["CREATE_AT"].Value.ToString();
-            //txt_Number.Text = dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString();
-            //dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
+            double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
+            txt_ID.Text = dgv_Left.CurrentRow.Cells["ID"].Value.ToString();
+            cbo_Item.Text = dgv_Right.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
+            msk_Create.Text = dgv_Left.CurrentRow.Cells["CREATE_AT"].Value.ToString();
+            txt_Number.Text = dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString();
+            dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
         }
 
     }

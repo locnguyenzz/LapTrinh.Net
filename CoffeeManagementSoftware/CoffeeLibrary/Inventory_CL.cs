@@ -18,8 +18,7 @@ namespace CoffeeLibrary
                             q.ID,
                             i.NAME_ITEM,
                             i.UNIT,
-                            q.NUMBER,                          
-                            
+                            i.NUMBER,                                           
                         };
             var kq = query.ToList().ConvertAll(t => new inventory
             {
@@ -27,7 +26,6 @@ namespace CoffeeLibrary
                 NAME_ITEM = t.NAME_ITEM,
                 UNIT = t.UNIT,
                 NUMBER = t.NUMBER,
-                
             });
             return kq.ToList<inventory>();
         }
@@ -38,53 +36,6 @@ namespace CoffeeLibrary
             dt.Fill(check);
             return check.Rows.Count;
         }
-        public bool AddNewInventory(int pID_item)
-        {
-            try
-            {
-                inventory sp = new inventory();
-                sp.ID = MaxID() + 1;
-                sp.ID_ITEM = pID_item;
-                
-                _Coffee.inventories.InsertOnSubmit(sp);
-                _Coffee.SubmitChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-        public bool DeleteInventory(int pId)
-        {
-            try 
-            {
-                inventory sp = _Coffee.inventories.Where(t => t.ID.Equals(pId)).FirstOrDefault();
-                _Coffee.inventories.DeleteOnSubmit(sp);
-                _Coffee.SubmitChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-           
-        }
-
-       public bool EditInventory(int pId,int pID_item)
-        {
-           try
-           {
-               inventory sp = _Coffee.inventories.Where(t => t.ID.Equals(pId)).FirstOrDefault();
-               sp.ID_ITEM = pID_item;
-               _Coffee.SubmitChanges();
-               return true;
-
-           }
-           catch
-           {
-               return false;
-           }
-        }
+        
     }
 }

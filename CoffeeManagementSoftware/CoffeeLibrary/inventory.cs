@@ -10,7 +10,13 @@ namespace CoffeeLibrary
     {
         string name_item;
         string unit;
+        int? num;
 
+        public int? NUMBER
+        {
+            get { return num; }
+            set { num = value; }
+        }
         public string UNIT
         {
             get { return unit; }

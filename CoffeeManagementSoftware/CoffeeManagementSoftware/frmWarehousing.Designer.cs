@@ -34,21 +34,7 @@
             this.btn_Delete = new System.Windows.Forms.ToolStripButton();
             this.btn_Edit = new System.Windows.Forms.ToolStripButton();
             this.dgv_Right = new System.Windows.Forms.DataGridView();
-            this.NAME_ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE_PURCHASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MONEY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_Left = new System.Windows.Forms.DataGridView();
-            this.CREATE_AT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUM_MONEY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_T = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_ID = new System.Windows.Forms.TextBox();
@@ -57,6 +43,32 @@
             this.label4 = new System.Windows.Forms.Label();
             this.msk_Create = new System.Windows.Forms.MaskedTextBox();
             this.txt_Number = new System.Windows.Forms.TextBox();
+            this.CREATE_AT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_supp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUM_MONEY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_T = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME_ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CODE_IMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_SUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_ACCOUNT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.suplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.C = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE_PURCHASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MONEY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Right)).BeginInit();
@@ -148,6 +160,12 @@
             this.dgv_Right.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Right.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NAME_ITEM,
+            this.CODE_IMPORT,
+            this.ID_SUP,
+            this.ID_ACCOUNT,
+            this.STATUS,
+            this.account,
+            this.suplier,
             this.C,
             this.IDX,
             this.ID_ITEM,
@@ -164,52 +182,6 @@
             this.dgv_Right.TabIndex = 2;
             this.dgv_Right.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Right_CellClick);
             // 
-            // NAME_ITEM
-            // 
-            this.NAME_ITEM.DataPropertyName = "NAME_ITEM";
-            this.NAME_ITEM.HeaderText = "Mặt hàng";
-            this.NAME_ITEM.Name = "NAME_ITEM";
-            // 
-            // C
-            // 
-            this.C.DataPropertyName = "CREATE_AT";
-            this.C.HeaderText = "CREATE_AT";
-            this.C.Name = "C";
-            this.C.Visible = false;
-            // 
-            // IDX
-            // 
-            this.IDX.DataPropertyName = "ID";
-            this.IDX.HeaderText = "ID";
-            this.IDX.Name = "IDX";
-            this.IDX.Visible = false;
-            // 
-            // ID_ITEM
-            // 
-            this.ID_ITEM.DataPropertyName = "ID_ITEM";
-            this.ID_ITEM.HeaderText = "ID_ITEM";
-            this.ID_ITEM.Name = "ID_ITEM";
-            this.ID_ITEM.Visible = false;
-            // 
-            // NUMBER
-            // 
-            this.NUMBER.DataPropertyName = "NUMBER";
-            this.NUMBER.HeaderText = "Số lượng";
-            this.NUMBER.Name = "NUMBER";
-            // 
-            // PRICE_PURCHASE
-            // 
-            this.PRICE_PURCHASE.DataPropertyName = "PRICE_PURCHASE";
-            this.PRICE_PURCHASE.HeaderText = "Đơn giá";
-            this.PRICE_PURCHASE.Name = "PRICE_PURCHASE";
-            this.PRICE_PURCHASE.ReadOnly = true;
-            // 
-            // MONEY
-            // 
-            this.MONEY.HeaderText = "Thành tiền";
-            this.MONEY.Name = "MONEY";
-            this.MONEY.ReadOnly = true;
-            // 
             // dgv_Left
             // 
             this.dgv_Left.AllowUserToAddRows = false;
@@ -219,6 +191,12 @@
             this.dgv_Left.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Left.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CREATE_AT,
+            this.code,
+            this.id_supp,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
             this.SUM_MONEY,
             this.ID,
             this.ID_T,
@@ -233,52 +211,6 @@
             this.dgv_Left.Size = new System.Drawing.Size(294, 354);
             this.dgv_Left.TabIndex = 1;
             this.dgv_Left.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Left_CellClick);
-            // 
-            // CREATE_AT
-            // 
-            this.CREATE_AT.DataPropertyName = "CREATE_AT";
-            this.CREATE_AT.HeaderText = "Ngày";
-            this.CREATE_AT.Name = "CREATE_AT";
-            // 
-            // SUM_MONEY
-            // 
-            this.SUM_MONEY.HeaderText = "Thành Tiền";
-            this.SUM_MONEY.Name = "SUM_MONEY";
-            this.SUM_MONEY.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "Số phiếu";
-            this.ID.Name = "ID";
-            // 
-            // ID_T
-            // 
-            this.ID_T.DataPropertyName = "ID_ITEM";
-            this.ID_T.HeaderText = "ID_T";
-            this.ID_T.Name = "ID_T";
-            this.ID_T.Visible = false;
-            // 
-            // NAME
-            // 
-            this.NAME.DataPropertyName = "NAME_ITEM";
-            this.NAME.HeaderText = "NAME";
-            this.NAME.Name = "NAME";
-            this.NAME.Visible = false;
-            // 
-            // Num
-            // 
-            this.Num.DataPropertyName = "NUMBER";
-            this.Num.HeaderText = "Num";
-            this.Num.Name = "Num";
-            this.Num.Visible = false;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "PRICE_PURCHASE";
-            this.Price.HeaderText = "price";
-            this.Price.Name = "Price";
-            this.Price.Visible = false;
             // 
             // label1
             // 
@@ -359,6 +291,184 @@
             this.txt_Number.Size = new System.Drawing.Size(201, 21);
             this.txt_Number.TabIndex = 10;
             // 
+            // CREATE_AT
+            // 
+            this.CREATE_AT.DataPropertyName = "CREATE_AT";
+            this.CREATE_AT.HeaderText = "Ngày";
+            this.CREATE_AT.Name = "CREATE_AT";
+            // 
+            // code
+            // 
+            this.code.DataPropertyName = "CODE_IMPORT";
+            this.code.HeaderText = "code";
+            this.code.Name = "code";
+            this.code.Visible = false;
+            // 
+            // id_supp
+            // 
+            this.id_supp.DataPropertyName = "ID_SUPPLIER";
+            this.id_supp.HeaderText = "id_supp";
+            this.id_supp.Name = "id_supp";
+            this.id_supp.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "supplier";
+            this.Column1.HeaderText = "supp";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "STATUS";
+            this.Column2.HeaderText = "status";
+            this.Column2.Name = "Column2";
+            this.Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "account";
+            this.Column3.HeaderText = "account";
+            this.Column3.Name = "Column3";
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "ID_ACCOUNT";
+            this.Column4.HeaderText = "id_acc";
+            this.Column4.Name = "Column4";
+            this.Column4.Visible = false;
+            // 
+            // SUM_MONEY
+            // 
+            this.SUM_MONEY.DataPropertyName = "SUM_MONEY";
+            this.SUM_MONEY.HeaderText = "Thành Tiền";
+            this.SUM_MONEY.Name = "SUM_MONEY";
+            this.SUM_MONEY.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Số phiếu";
+            this.ID.Name = "ID";
+            // 
+            // ID_T
+            // 
+            this.ID_T.DataPropertyName = "ID_ITEM";
+            this.ID_T.HeaderText = "ID_T";
+            this.ID_T.Name = "ID_T";
+            this.ID_T.Visible = false;
+            // 
+            // NAME
+            // 
+            this.NAME.DataPropertyName = "NAME_ITEM";
+            this.NAME.HeaderText = "NAME";
+            this.NAME.Name = "NAME";
+            this.NAME.Visible = false;
+            // 
+            // Num
+            // 
+            this.Num.DataPropertyName = "NUMBER";
+            this.Num.HeaderText = "Num";
+            this.Num.Name = "Num";
+            this.Num.Visible = false;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "PRICE_PURCHASE";
+            this.Price.HeaderText = "price";
+            this.Price.Name = "Price";
+            this.Price.Visible = false;
+            // 
+            // NAME_ITEM
+            // 
+            this.NAME_ITEM.DataPropertyName = "NAME_ITEM";
+            this.NAME_ITEM.HeaderText = "Mặt hàng";
+            this.NAME_ITEM.Name = "NAME_ITEM";
+            // 
+            // CODE_IMPORT
+            // 
+            this.CODE_IMPORT.DataPropertyName = "CODE_IMPORT";
+            this.CODE_IMPORT.HeaderText = "CODE_IMPORT";
+            this.CODE_IMPORT.Name = "CODE_IMPORT";
+            this.CODE_IMPORT.Visible = false;
+            // 
+            // ID_SUP
+            // 
+            this.ID_SUP.DataPropertyName = "ID_SUPPLIER";
+            this.ID_SUP.HeaderText = "ID_SUP";
+            this.ID_SUP.Name = "ID_SUP";
+            this.ID_SUP.Visible = false;
+            // 
+            // ID_ACCOUNT
+            // 
+            this.ID_ACCOUNT.DataPropertyName = "ID_ACCOUNT";
+            this.ID_ACCOUNT.HeaderText = "ID_ACCOUNT";
+            this.ID_ACCOUNT.Name = "ID_ACCOUNT";
+            this.ID_ACCOUNT.Visible = false;
+            // 
+            // STATUS
+            // 
+            this.STATUS.DataPropertyName = "STATUS";
+            this.STATUS.HeaderText = "STATUS";
+            this.STATUS.Name = "STATUS";
+            this.STATUS.Visible = false;
+            // 
+            // account
+            // 
+            this.account.DataPropertyName = "account";
+            this.account.HeaderText = "acount";
+            this.account.Name = "account";
+            this.account.Visible = false;
+            // 
+            // suplier
+            // 
+            this.suplier.DataPropertyName = "supplier";
+            this.suplier.HeaderText = "supplier";
+            this.suplier.Name = "suplier";
+            this.suplier.Visible = false;
+            // 
+            // C
+            // 
+            this.C.DataPropertyName = "CREATE_AT";
+            this.C.HeaderText = "CREATE_AT";
+            this.C.Name = "C";
+            this.C.Visible = false;
+            // 
+            // IDX
+            // 
+            this.IDX.DataPropertyName = "ID";
+            this.IDX.HeaderText = "ID";
+            this.IDX.Name = "IDX";
+            this.IDX.Visible = false;
+            // 
+            // ID_ITEM
+            // 
+            this.ID_ITEM.DataPropertyName = "ID_ITEM";
+            this.ID_ITEM.HeaderText = "ID_ITEM";
+            this.ID_ITEM.Name = "ID_ITEM";
+            this.ID_ITEM.Visible = false;
+            // 
+            // NUMBER
+            // 
+            this.NUMBER.DataPropertyName = "NUMBER";
+            this.NUMBER.HeaderText = "Số lượng";
+            this.NUMBER.Name = "NUMBER";
+            // 
+            // PRICE_PURCHASE
+            // 
+            this.PRICE_PURCHASE.DataPropertyName = "PRICE_PURCHASE";
+            this.PRICE_PURCHASE.HeaderText = "Đơn giá";
+            this.PRICE_PURCHASE.Name = "PRICE_PURCHASE";
+            this.PRICE_PURCHASE.ReadOnly = true;
+            // 
+            // MONEY
+            // 
+            this.MONEY.DataPropertyName = "SUM_MONEY";
+            this.MONEY.HeaderText = "Thành tiền";
+            this.MONEY.Name = "MONEY";
+            this.MONEY.ReadOnly = true;
+            // 
             // frmWarehousing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,19 +505,31 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox msk_Create;
         private System.Windows.Forms.TextBox txt_Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NAME_ITEM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDX;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_ITEM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NUMBER;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRICE_PURCHASE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MONEY;
         private System.Windows.Forms.DataGridViewTextBoxColumn CREATE_AT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_supp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn SUM_MONEY;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_T;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn Num;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME_ITEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CODE_IMPORT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_SUP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_ACCOUNT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn account;
+        private System.Windows.Forms.DataGridViewTextBoxColumn suplier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn C;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_ITEM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NUMBER;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRICE_PURCHASE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MONEY;
     }
 }

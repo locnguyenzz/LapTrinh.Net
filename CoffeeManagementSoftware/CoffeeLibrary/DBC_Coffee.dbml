@@ -11,6 +11,7 @@
       <Association Name="account_receipt" Member="receipts" ThisKey="ID" OtherKey="ID_ACCOUNT_STAFF" Type="receipt" />
       <Association Name="account_receipt1" Member="receipts1" ThisKey="ID" OtherKey="ID_ACCOUNT_CUSTOMER" Type="receipt" />
       <Association Name="account_receipt_import" Member="receipt_imports" ThisKey="ID" OtherKey="ID_ACCOUNT" Type="receipt_import" />
+      <Association Name="account_thuchi" Member="thuchis" ThisKey="ID" OtherKey="ID_ACCOUNT" Type="thuchi" />
       <Association Name="account_timekeeping" Member="timekeepings" ThisKey="ID" OtherKey="ID_ACCOUNT" Type="timekeeping" />
     </Type>
   </Table>
@@ -87,7 +88,6 @@
     <Type Name="inventory">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ID_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="item_inventory" Member="item" ThisKey="ID_ITEM" OtherKey="ID" Type="item" IsForeignKey="true" />
     </Type>
   </Table>
@@ -99,6 +99,7 @@
       <Column Name="PRICE_SELL" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="PRICE_PURCHASE" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="ID_TYPE_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="item_detail_receipt" Member="detail_receipts" ThisKey="ID" OtherKey="ID_ITEM" Type="detail_receipt" />
       <Association Name="item_detail_receipt_import" Member="detail_receipt_imports" ThisKey="ID" OtherKey="ID_ITEM" Type="detail_receipt_import" />
@@ -120,6 +121,15 @@
       <Column Name="EMAIL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="account_profile" Member="account" ThisKey="ID_ACCOUNT" OtherKey="ID" Type="account" IsForeignKey="true" />
       <Association Name="type_customer_profile" Member="type_customer" ThisKey="ID_TYPE_CUSTOMER" OtherKey="ID" Type="type_customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.profile_staff" Member="profile_staffs">
+    <Type Name="profile_staff">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_TIMEKEEPING" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME_STAFF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="timekeeping_profile_staff" Member="timekeeping" ThisKey="ID_TIMEKEEPING" OtherKey="ID" Type="timekeeping" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.receipt" Member="receipts">
@@ -182,13 +192,13 @@
   <Table Name="dbo.thuchi" Member="thuchis">
     <Type Name="thuchi">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_TIMEKEEPING" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ACCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="REASON" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="timekeeping_thuchi" Member="timekeeping" ThisKey="ID_TIMEKEEPING" OtherKey="ID" Type="timekeeping" IsForeignKey="true" />
+      <Association Name="account_thuchi" Member="account" ThisKey="ID_ACCOUNT" OtherKey="ID" Type="account" IsForeignKey="true" />
       <Association Name="type_ballot_thuchi" Member="type_ballot" ThisKey="ID_TYPE" OtherKey="ID" Type="type_ballot" IsForeignKey="true" />
     </Type>
   </Table>
@@ -196,10 +206,9 @@
     <Type Name="timekeeping">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_ACCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="STAFF" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="SHIFT" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="timekeeping_thuchi" Member="thuchis" ThisKey="ID" OtherKey="ID_TIMEKEEPING" Type="thuchi" />
+      <Association Name="timekeeping_profile_staff" Member="profile_staffs" ThisKey="ID" OtherKey="ID_TIMEKEEPING" Type="profile_staff" />
       <Association Name="account_timekeeping" Member="account" ThisKey="ID_ACCOUNT" OtherKey="ID" Type="account" IsForeignKey="true" />
     </Type>
   </Table>

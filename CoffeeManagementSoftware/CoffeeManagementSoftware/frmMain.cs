@@ -93,20 +93,46 @@ namespace CoffeeManagementSoftware
 
         private void đổiMậtKhẩuĐăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmChangePass frm = new frmChangePass();
-            frm.ShowDialog();
+            if (CheckExist("frmChangePass"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmChangePass use = new frmChangePass();
+                openForm(use);
+            }
+            
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmAddUserToGroup frm = new frmAddUserToGroup();
-            frm.Show();
+            if (CheckExist("frmAddUserToGroup"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmAddUserToGroup use = new frmAddUserToGroup();
+                openForm(use);
+            }
+            
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            frmRole frm = new frmRole();
-            frm.Show();
+            if (CheckExist("frmRole"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmRole use = new frmRole();
+                openForm(use);
+            }
         }
 
         private void danhSáchNhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -133,6 +159,20 @@ namespace CoffeeManagementSoftware
             else
             {
                 frmItem use = new frmItem();
+                openForm(use);
+            }
+        }
+
+        private void tồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CheckExist("frmInventory"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmInventory use = new frmInventory();
                 openForm(use);
             }
         }

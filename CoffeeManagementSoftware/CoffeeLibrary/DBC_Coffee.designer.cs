@@ -57,6 +57,9 @@ namespace CoffeeLibrary
     partial void Insertprofile(profile instance);
     partial void Updateprofile(profile instance);
     partial void Deleteprofile(profile instance);
+    partial void Insertprofile_staff(profile_staff instance);
+    partial void Updateprofile_staff(profile_staff instance);
+    partial void Deleteprofile_staff(profile_staff instance);
     partial void Insertreceipt(receipt instance);
     partial void Updatereceipt(receipt instance);
     partial void Deletereceipt(receipt instance);
@@ -207,6 +210,14 @@ namespace CoffeeLibrary
 			}
 		}
 		
+		public System.Data.Linq.Table<profile_staff> profile_staffs
+		{
+			get
+			{
+				return this.GetTable<profile_staff>();
+			}
+		}
+		
 		public System.Data.Linq.Table<receipt> receipts
 		{
 			get
@@ -312,6 +323,8 @@ namespace CoffeeLibrary
 		
 		private EntitySet<receipt_import> _receipt_imports;
 		
+		private EntitySet<thuchi> _thuchis;
+		
 		private EntitySet<timekeeping> _timekeepings;
 		
     #region Extensibility Method Definitions
@@ -335,6 +348,7 @@ namespace CoffeeLibrary
 			this._receipts = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts), new Action<receipt>(this.detach_receipts));
 			this._receipts1 = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts1), new Action<receipt>(this.detach_receipts1));
 			this._receipt_imports = new EntitySet<receipt_import>(new Action<receipt_import>(this.attach_receipt_imports), new Action<receipt_import>(this.detach_receipt_imports));
+			this._thuchis = new EntitySet<thuchi>(new Action<thuchi>(this.attach_thuchis), new Action<thuchi>(this.detach_thuchis));
 			this._timekeepings = new EntitySet<timekeeping>(new Action<timekeeping>(this.attach_timekeepings), new Action<timekeeping>(this.detach_timekeepings));
 			OnCreated();
 		}
@@ -484,6 +498,19 @@ namespace CoffeeLibrary
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_thuchi", Storage="_thuchis", ThisKey="ID", OtherKey="ID_ACCOUNT")]
+		public EntitySet<thuchi> thuchis
+		{
+			get
+			{
+				return this._thuchis;
+			}
+			set
+			{
+				this._thuchis.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_timekeeping", Storage="_timekeepings", ThisKey="ID", OtherKey="ID_ACCOUNT")]
 		public EntitySet<timekeeping> timekeepings
 		{
@@ -572,6 +599,18 @@ namespace CoffeeLibrary
 		}
 		
 		private void detach_receipt_imports(receipt_import entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = null;
+		}
+		
+		private void attach_thuchis(thuchi entity)
+		{
+			this.SendPropertyChanging();
+			entity.account = this;
+		}
+		
+		private void detach_thuchis(thuchi entity)
 		{
 			this.SendPropertyChanging();
 			entity.account = null;
@@ -1825,8 +1864,6 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _ID_ITEM;
 		
-		private System.Nullable<int> _NUMBER;
-		
 		public inventory()
 		{
 		}
@@ -1862,22 +1899,6 @@ namespace CoffeeLibrary
 				}
 			}
 		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUMBER", DbType="Int")]
-		public System.Nullable<int> NUMBER
-		{
-			get
-			{
-				return this._NUMBER;
-			}
-			set
-			{
-				if ((this._NUMBER != value))
-				{
-					this._NUMBER = value;
-				}
-			}
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.item")]
@@ -1897,6 +1918,8 @@ namespace CoffeeLibrary
 		private System.Nullable<double> _PRICE_PURCHASE;
 		
 		private System.Nullable<int> _ID_TYPE_ITEM;
+		
+		private System.Nullable<int> _NUMBER;
 		
 		private System.Nullable<int> _STATUS;
 		
@@ -1920,6 +1943,8 @@ namespace CoffeeLibrary
     partial void OnPRICE_PURCHASEChanged();
     partial void OnID_TYPE_ITEMChanging(System.Nullable<int> value);
     partial void OnID_TYPE_ITEMChanged();
+    partial void OnNUMBERChanging(System.Nullable<int> value);
+    partial void OnNUMBERChanged();
     partial void OnSTATUSChanging(System.Nullable<int> value);
     partial void OnSTATUSChanged();
     #endregion
@@ -2051,6 +2076,26 @@ namespace CoffeeLibrary
 					this._ID_TYPE_ITEM = value;
 					this.SendPropertyChanged("ID_TYPE_ITEM");
 					this.OnID_TYPE_ITEMChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUMBER", DbType="Int")]
+		public System.Nullable<int> NUMBER
+		{
+			get
+			{
+				return this._NUMBER;
+			}
+			set
+			{
+				if ((this._NUMBER != value))
+				{
+					this.OnNUMBERChanging(value);
+					this.SendPropertyChanging();
+					this._NUMBER = value;
+					this.SendPropertyChanged("NUMBER");
+					this.OnNUMBERChanged();
 				}
 			}
 		}
@@ -2490,6 +2535,181 @@ namespace CoffeeLibrary
 						this._ID_TYPE_CUSTOMER = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("type_customer");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.profile_staff")]
+	public partial class profile_staff : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private System.Nullable<int> _ID_TIMEKEEPING;
+		
+		private string _NAME_STAFF;
+		
+		private System.Nullable<int> _STATUS;
+		
+		private EntityRef<timekeeping> _timekeeping;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnID_TIMEKEEPINGChanging(System.Nullable<int> value);
+    partial void OnID_TIMEKEEPINGChanged();
+    partial void OnNAME_STAFFChanging(string value);
+    partial void OnNAME_STAFFChanged();
+    partial void OnSTATUSChanging(System.Nullable<int> value);
+    partial void OnSTATUSChanged();
+    #endregion
+		
+		public profile_staff()
+		{
+			this._timekeeping = default(EntityRef<timekeeping>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TIMEKEEPING", DbType="Int")]
+		public System.Nullable<int> ID_TIMEKEEPING
+		{
+			get
+			{
+				return this._ID_TIMEKEEPING;
+			}
+			set
+			{
+				if ((this._ID_TIMEKEEPING != value))
+				{
+					if (this._timekeeping.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_TIMEKEEPINGChanging(value);
+					this.SendPropertyChanging();
+					this._ID_TIMEKEEPING = value;
+					this.SendPropertyChanged("ID_TIMEKEEPING");
+					this.OnID_TIMEKEEPINGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_STAFF", DbType="NVarChar(50)")]
+		public string NAME_STAFF
+		{
+			get
+			{
+				return this._NAME_STAFF;
+			}
+			set
+			{
+				if ((this._NAME_STAFF != value))
+				{
+					this.OnNAME_STAFFChanging(value);
+					this.SendPropertyChanging();
+					this._NAME_STAFF = value;
+					this.SendPropertyChanged("NAME_STAFF");
+					this.OnNAME_STAFFChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
+		public System.Nullable<int> STATUS
+		{
+			get
+			{
+				return this._STATUS;
+			}
+			set
+			{
+				if ((this._STATUS != value))
+				{
+					this.OnSTATUSChanging(value);
+					this.SendPropertyChanging();
+					this._STATUS = value;
+					this.SendPropertyChanged("STATUS");
+					this.OnSTATUSChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="timekeeping_profile_staff", Storage="_timekeeping", ThisKey="ID_TIMEKEEPING", OtherKey="ID", IsForeignKey=true)]
+		public timekeeping timekeeping
+		{
+			get
+			{
+				return this._timekeeping.Entity;
+			}
+			set
+			{
+				timekeeping previousValue = this._timekeeping.Entity;
+				if (((previousValue != value) 
+							|| (this._timekeeping.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._timekeeping.Entity = null;
+						previousValue.profile_staffs.Remove(this);
+					}
+					this._timekeeping.Entity = value;
+					if ((value != null))
+					{
+						value.profile_staffs.Add(this);
+						this._ID_TIMEKEEPING = value.ID;
+					}
+					else
+					{
+						this._ID_TIMEKEEPING = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("timekeeping");
 				}
 			}
 		}
@@ -3650,7 +3870,7 @@ namespace CoffeeLibrary
 		
 		private int _ID;
 		
-		private System.Nullable<int> _ID_TIMEKEEPING;
+		private System.Nullable<int> _ID_ACCOUNT;
 		
 		private System.Nullable<int> _ID_TYPE;
 		
@@ -3662,7 +3882,7 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _STATUS;
 		
-		private EntityRef<timekeeping> _timekeeping;
+		private EntityRef<account> _account;
 		
 		private EntityRef<type_ballot> _type_ballot;
 		
@@ -3672,8 +3892,8 @@ namespace CoffeeLibrary
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnID_TIMEKEEPINGChanging(System.Nullable<int> value);
-    partial void OnID_TIMEKEEPINGChanged();
+    partial void OnID_ACCOUNTChanging(System.Nullable<int> value);
+    partial void OnID_ACCOUNTChanged();
     partial void OnID_TYPEChanging(System.Nullable<int> value);
     partial void OnID_TYPEChanged();
     partial void OnDATEChanging(System.Nullable<System.DateTime> value);
@@ -3688,7 +3908,7 @@ namespace CoffeeLibrary
 		
 		public thuchi()
 		{
-			this._timekeeping = default(EntityRef<timekeeping>);
+			this._account = default(EntityRef<account>);
 			this._type_ballot = default(EntityRef<type_ballot>);
 			OnCreated();
 		}
@@ -3713,26 +3933,26 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TIMEKEEPING", DbType="Int")]
-		public System.Nullable<int> ID_TIMEKEEPING
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int")]
+		public System.Nullable<int> ID_ACCOUNT
 		{
 			get
 			{
-				return this._ID_TIMEKEEPING;
+				return this._ID_ACCOUNT;
 			}
 			set
 			{
-				if ((this._ID_TIMEKEEPING != value))
+				if ((this._ID_ACCOUNT != value))
 				{
-					if (this._timekeeping.HasLoadedOrAssignedValue)
+					if (this._account.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnID_TIMEKEEPINGChanging(value);
+					this.OnID_ACCOUNTChanging(value);
 					this.SendPropertyChanging();
-					this._ID_TIMEKEEPING = value;
-					this.SendPropertyChanged("ID_TIMEKEEPING");
-					this.OnID_TIMEKEEPINGChanged();
+					this._ID_ACCOUNT = value;
+					this.SendPropertyChanged("ID_ACCOUNT");
+					this.OnID_ACCOUNTChanged();
 				}
 			}
 		}
@@ -3841,36 +4061,36 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="timekeeping_thuchi", Storage="_timekeeping", ThisKey="ID_TIMEKEEPING", OtherKey="ID", IsForeignKey=true)]
-		public timekeeping timekeeping
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_thuchi", Storage="_account", ThisKey="ID_ACCOUNT", OtherKey="ID", IsForeignKey=true)]
+		public account account
 		{
 			get
 			{
-				return this._timekeeping.Entity;
+				return this._account.Entity;
 			}
 			set
 			{
-				timekeeping previousValue = this._timekeeping.Entity;
+				account previousValue = this._account.Entity;
 				if (((previousValue != value) 
-							|| (this._timekeeping.HasLoadedOrAssignedValue == false)))
+							|| (this._account.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._timekeeping.Entity = null;
+						this._account.Entity = null;
 						previousValue.thuchis.Remove(this);
 					}
-					this._timekeeping.Entity = value;
+					this._account.Entity = value;
 					if ((value != null))
 					{
 						value.thuchis.Add(this);
-						this._ID_TIMEKEEPING = value.ID;
+						this._ID_ACCOUNT = value.ID;
 					}
 					else
 					{
-						this._ID_TIMEKEEPING = default(Nullable<int>);
+						this._ID_ACCOUNT = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("timekeeping");
+					this.SendPropertyChanged("account");
 				}
 			}
 		}
@@ -3940,13 +4160,11 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _ID_ACCOUNT;
 		
-		private string _STAFF;
-		
 		private System.Nullable<int> _SHIFT;
 		
 		private System.Nullable<int> _STATUS;
 		
-		private EntitySet<thuchi> _thuchis;
+		private EntitySet<profile_staff> _profile_staffs;
 		
 		private EntityRef<account> _account;
 		
@@ -3958,8 +4176,6 @@ namespace CoffeeLibrary
     partial void OnIDChanged();
     partial void OnID_ACCOUNTChanging(System.Nullable<int> value);
     partial void OnID_ACCOUNTChanged();
-    partial void OnSTAFFChanging(string value);
-    partial void OnSTAFFChanged();
     partial void OnSHIFTChanging(System.Nullable<int> value);
     partial void OnSHIFTChanged();
     partial void OnSTATUSChanging(System.Nullable<int> value);
@@ -3968,7 +4184,7 @@ namespace CoffeeLibrary
 		
 		public timekeeping()
 		{
-			this._thuchis = new EntitySet<thuchi>(new Action<thuchi>(this.attach_thuchis), new Action<thuchi>(this.detach_thuchis));
+			this._profile_staffs = new EntitySet<profile_staff>(new Action<profile_staff>(this.attach_profile_staffs), new Action<profile_staff>(this.detach_profile_staffs));
 			this._account = default(EntityRef<account>);
 			OnCreated();
 		}
@@ -4017,26 +4233,6 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STAFF", DbType="NVarChar(50)")]
-		public string STAFF
-		{
-			get
-			{
-				return this._STAFF;
-			}
-			set
-			{
-				if ((this._STAFF != value))
-				{
-					this.OnSTAFFChanging(value);
-					this.SendPropertyChanging();
-					this._STAFF = value;
-					this.SendPropertyChanged("STAFF");
-					this.OnSTAFFChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHIFT", DbType="Int")]
 		public System.Nullable<int> SHIFT
 		{
@@ -4077,16 +4273,16 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="timekeeping_thuchi", Storage="_thuchis", ThisKey="ID", OtherKey="ID_TIMEKEEPING")]
-		public EntitySet<thuchi> thuchis
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="timekeeping_profile_staff", Storage="_profile_staffs", ThisKey="ID", OtherKey="ID_TIMEKEEPING")]
+		public EntitySet<profile_staff> profile_staffs
 		{
 			get
 			{
-				return this._thuchis;
+				return this._profile_staffs;
 			}
 			set
 			{
-				this._thuchis.Assign(value);
+				this._profile_staffs.Assign(value);
 			}
 		}
 		
@@ -4144,13 +4340,13 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		private void attach_thuchis(thuchi entity)
+		private void attach_profile_staffs(profile_staff entity)
 		{
 			this.SendPropertyChanging();
 			entity.timekeeping = this;
 		}
 		
-		private void detach_thuchis(thuchi entity)
+		private void detach_profile_staffs(profile_staff entity)
 		{
 			this.SendPropertyChanging();
 			entity.timekeeping = null;

@@ -98,10 +98,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="receipt_import.cs" />
     <Compile Include="Supplier_CL.cs" />
     <Compile Include="TypeCus_CL.cs" />
     <Compile Include="TypeItem_CL.cs" />
     <Compile Include="UserManager.cs" />
+    <Compile Include="WareHousing_CL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

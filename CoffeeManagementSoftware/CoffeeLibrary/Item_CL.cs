@@ -20,6 +20,7 @@ namespace CoffeeLibrary
                             p.PRICE_SELL,
                             p.PRICE_PURCHASE,
                             p.UNIT,
+                            p.NUMBER,
                             tc.NAME_TYPE,
                             p.STATUS
                         };
@@ -28,6 +29,7 @@ namespace CoffeeLibrary
                 ID = t.ID,
                 NAME_ITEM = t.NAME_ITEM,
                 UNIT = t.UNIT,
+                NUMBER = t.NUMBER,
                 PRICE_SELL = t.PRICE_SELL,
                 PRICE_PURCHASE = t.PRICE_PURCHASE,
                 NAME_TYPE = t.NAME_TYPE,
@@ -44,7 +46,7 @@ namespace CoffeeLibrary
             dt.Fill(check);
             return check.Rows.Count;
         }
-        public bool AddNewItem(string pName, string pUnit,double pPrice_Sell, double pPrice_Pur, int pItem)
+        public bool AddNewItem(string pName, string pUnit,double pPrice_Sell, double pPrice_Pur,int pNum, int pItem)
         {
             try
             {
@@ -55,6 +57,7 @@ namespace CoffeeLibrary
                 sp.PRICE_SELL = pPrice_Sell;
                 sp.PRICE_PURCHASE = pPrice_Pur;
                 sp.ID_TYPE_ITEM = pItem;
+                sp.NUMBER = pNum;
                 sp.STATUS = 1;
                 _Coffee.items.InsertOnSubmit(sp);
                 _Coffee.SubmitChanges();
@@ -79,7 +82,7 @@ namespace CoffeeLibrary
                 return false;
             }
         }
-        public bool EditItem(int pId, string pName, string pUnit, double pPrice_Sell, double pPrice_Pur, int pItem, int pStatus)
+        public bool EditItem(int pId, string pName, string pUnit, double pPrice_Sell, double pPrice_Pur,int pNum, int pItem, int pStatus)
         {
             try
             {
@@ -89,6 +92,7 @@ namespace CoffeeLibrary
                 sp.PRICE_SELL = pPrice_Sell;
                 sp.PRICE_PURCHASE = pPrice_Pur;
                 sp.ID_TYPE_ITEM = pItem;
+                sp.NUMBER = pNum;
                 sp.STATUS = pStatus;
                 _Coffee.SubmitChanges();
                 return true;

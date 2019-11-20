@@ -364,26 +364,27 @@
             // 
             this.danhSáchNhàCungCấpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("danhSáchNhàCungCấpToolStripMenuItem.Image")));
             this.danhSáchNhàCungCấpToolStripMenuItem.Name = "danhSáchNhàCungCấpToolStripMenuItem";
-            this.danhSáchNhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.danhSáchNhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.danhSáchNhàCungCấpToolStripMenuItem.Text = "Danh sách nhà cung cấp";
             this.danhSáchNhàCungCấpToolStripMenuItem.Click += new System.EventHandler(this.danhSáchNhàCungCấpToolStripMenuItem_Click);
             // 
             // nhậpHàngVàoKhoToolStripMenuItem
             // 
             this.nhậpHàngVàoKhoToolStripMenuItem.Name = "nhậpHàngVàoKhoToolStripMenuItem";
-            this.nhậpHàngVàoKhoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.nhậpHàngVàoKhoToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.nhậpHàngVàoKhoToolStripMenuItem.Text = "Nhập hàng vào kho";
             // 
             // tồnKhoToolStripMenuItem
             // 
             this.tồnKhoToolStripMenuItem.Name = "tồnKhoToolStripMenuItem";
-            this.tồnKhoToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.tồnKhoToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.tồnKhoToolStripMenuItem.Text = "Tồn kho";
+            this.tồnKhoToolStripMenuItem.Click += new System.EventHandler(this.tồnKhoToolStripMenuItem_Click);
             // 
             // báoCáoBánHàngToolStripMenuItem
             // 
             this.báoCáoBánHàngToolStripMenuItem.Name = "báoCáoBánHàngToolStripMenuItem";
-            this.báoCáoBánHàngToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.báoCáoBánHàngToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.báoCáoBánHàngToolStripMenuItem.Text = "Báo cáo bán hàng";
             // 
             // quỹToolStripMenuItem
