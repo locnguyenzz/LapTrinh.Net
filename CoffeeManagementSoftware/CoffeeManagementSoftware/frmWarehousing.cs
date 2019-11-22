@@ -35,17 +35,24 @@ namespace CoffeeManagementSoftware
             txt_ID.Enabled = false;
             LoadItem();
             LoadData();
+           
+            txt_ID.Text = dgv_Left.CurrentRow.Cells["ID"].Value.ToString();
+            cbo_Item.Text = dgv_Right.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
+            msk_Create.Text = dgv_Left.CurrentRow.Cells["CREATE_AT"].Value.ToString();
+            txt_Number.Text = dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString();
+            dgv_Right.CurrentRow.Cells["MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
+            dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            //double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
+            
             int _id = Int32.Parse(cbo_Item.SelectedValue.ToString());
             int num = Int32.Parse(txt_Number.Text);
             if (dll.AddNewImport(_id, msk_Create.Text, num))
             {
-                //dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
-                //dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
+                dgv_Right.CurrentRow.Cells["MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
+                dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
                 XtraMessageBox.Show("Them thanh cong!", "Thong bao");
                 LoadData();
             }
@@ -75,8 +82,8 @@ namespace CoffeeManagementSoftware
             int num = Int32.Parse(txt_Number.Text);
             if (dll.EditImport(Int32.Parse(txt_ID.Text), _id, msk_Create.Text, num))
             {
-                //dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
-                //dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
+                dgv_Right.CurrentRow.Cells["MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
+                dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
                 XtraMessageBox.Show("Sua thanh cong!", "Thong bao");
                 LoadData();
             }

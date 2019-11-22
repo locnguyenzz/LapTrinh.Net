@@ -34,28 +34,6 @@
             this.btn_Delete = new System.Windows.Forms.ToolStripButton();
             this.btn_Edit = new System.Windows.Forms.ToolStripButton();
             this.dgv_Right = new System.Windows.Forms.DataGridView();
-            this.dgv_Left = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_ID = new System.Windows.Forms.TextBox();
-            this.cbo_Item = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.msk_Create = new System.Windows.Forms.MaskedTextBox();
-            this.txt_Number = new System.Windows.Forms.TextBox();
-            this.CREATE_AT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_supp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUM_MONEY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_T = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NAME_ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CODE_IMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID_SUP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +47,28 @@
             this.NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE_PURCHASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MONEY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_Left = new System.Windows.Forms.DataGridView();
+            this.CREATE_AT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_supp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SUM_MONEY = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_T = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_ID = new System.Windows.Forms.TextBox();
+            this.cbo_Item = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.msk_Create = new System.Windows.Forms.MaskedTextBox();
+            this.txt_Number = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Right)).BeginInit();
@@ -182,6 +182,95 @@
             this.dgv_Right.TabIndex = 2;
             this.dgv_Right.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Right_CellClick);
             // 
+            // NAME_ITEM
+            // 
+            this.NAME_ITEM.DataPropertyName = "NAME_ITEM";
+            this.NAME_ITEM.HeaderText = "Mặt hàng";
+            this.NAME_ITEM.Name = "NAME_ITEM";
+            // 
+            // CODE_IMPORT
+            // 
+            this.CODE_IMPORT.DataPropertyName = "CODE_IMPORT";
+            this.CODE_IMPORT.HeaderText = "CODE_IMPORT";
+            this.CODE_IMPORT.Name = "CODE_IMPORT";
+            this.CODE_IMPORT.Visible = false;
+            // 
+            // ID_SUP
+            // 
+            this.ID_SUP.DataPropertyName = "ID_SUPPLIER";
+            this.ID_SUP.HeaderText = "ID_SUP";
+            this.ID_SUP.Name = "ID_SUP";
+            this.ID_SUP.Visible = false;
+            // 
+            // ID_ACCOUNT
+            // 
+            this.ID_ACCOUNT.DataPropertyName = "ID_ACCOUNT";
+            this.ID_ACCOUNT.HeaderText = "ID_ACCOUNT";
+            this.ID_ACCOUNT.Name = "ID_ACCOUNT";
+            this.ID_ACCOUNT.Visible = false;
+            // 
+            // STATUS
+            // 
+            this.STATUS.DataPropertyName = "STATUS";
+            this.STATUS.HeaderText = "STATUS";
+            this.STATUS.Name = "STATUS";
+            this.STATUS.Visible = false;
+            // 
+            // account
+            // 
+            this.account.DataPropertyName = "account";
+            this.account.HeaderText = "acount";
+            this.account.Name = "account";
+            this.account.Visible = false;
+            // 
+            // suplier
+            // 
+            this.suplier.DataPropertyName = "supplier";
+            this.suplier.HeaderText = "supplier";
+            this.suplier.Name = "suplier";
+            this.suplier.Visible = false;
+            // 
+            // C
+            // 
+            this.C.DataPropertyName = "CREATE_AT";
+            this.C.HeaderText = "CREATE_AT";
+            this.C.Name = "C";
+            this.C.Visible = false;
+            // 
+            // IDX
+            // 
+            this.IDX.DataPropertyName = "ID";
+            this.IDX.HeaderText = "ID";
+            this.IDX.Name = "IDX";
+            this.IDX.Visible = false;
+            // 
+            // ID_ITEM
+            // 
+            this.ID_ITEM.DataPropertyName = "ID_ITEM";
+            this.ID_ITEM.HeaderText = "ID_ITEM";
+            this.ID_ITEM.Name = "ID_ITEM";
+            this.ID_ITEM.Visible = false;
+            // 
+            // NUMBER
+            // 
+            this.NUMBER.DataPropertyName = "NUMBER";
+            this.NUMBER.HeaderText = "Số lượng";
+            this.NUMBER.Name = "NUMBER";
+            // 
+            // PRICE_PURCHASE
+            // 
+            this.PRICE_PURCHASE.DataPropertyName = "PRICE_PURCHASE";
+            this.PRICE_PURCHASE.HeaderText = "Đơn giá";
+            this.PRICE_PURCHASE.Name = "PRICE_PURCHASE";
+            this.PRICE_PURCHASE.ReadOnly = true;
+            // 
+            // MONEY
+            // 
+            this.MONEY.DataPropertyName = "SUM_MONEY";
+            this.MONEY.HeaderText = "Thành tiền";
+            this.MONEY.Name = "MONEY";
+            this.MONEY.ReadOnly = true;
+            // 
             // dgv_Left
             // 
             this.dgv_Left.AllowUserToAddRows = false;
@@ -211,85 +300,6 @@
             this.dgv_Left.Size = new System.Drawing.Size(294, 354);
             this.dgv_Left.TabIndex = 1;
             this.dgv_Left.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Left_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(303, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 26);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Số Phiếu";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(303, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 27);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Mã hàng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txt_ID
-            // 
-            this.txt_ID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_ID.Location = new System.Drawing.Point(460, 56);
-            this.txt_ID.Name = "txt_ID";
-            this.txt_ID.Size = new System.Drawing.Size(176, 21);
-            this.txt_ID.TabIndex = 5;
-            // 
-            // cbo_Item
-            // 
-            this.cbo_Item.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbo_Item.FormattingEnabled = true;
-            this.cbo_Item.Location = new System.Drawing.Point(460, 82);
-            this.cbo_Item.Name = "cbo_Item";
-            this.cbo_Item.Size = new System.Drawing.Size(176, 21);
-            this.cbo_Item.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(642, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 26);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Ngày";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(642, 79);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 27);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Số lương";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // msk_Create
-            // 
-            this.msk_Create.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.msk_Create.Location = new System.Drawing.Point(725, 56);
-            this.msk_Create.Mask = "00/00/0000";
-            this.msk_Create.Name = "msk_Create";
-            this.msk_Create.Size = new System.Drawing.Size(201, 21);
-            this.msk_Create.TabIndex = 9;
-            this.msk_Create.ValidatingType = typeof(System.DateTime);
-            // 
-            // txt_Number
-            // 
-            this.txt_Number.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Number.Location = new System.Drawing.Point(725, 82);
-            this.txt_Number.Name = "txt_Number";
-            this.txt_Number.Size = new System.Drawing.Size(201, 21);
-            this.txt_Number.TabIndex = 10;
             // 
             // CREATE_AT
             // 
@@ -380,94 +390,84 @@
             this.Price.Name = "Price";
             this.Price.Visible = false;
             // 
-            // NAME_ITEM
+            // label1
             // 
-            this.NAME_ITEM.DataPropertyName = "NAME_ITEM";
-            this.NAME_ITEM.HeaderText = "Mặt hàng";
-            this.NAME_ITEM.Name = "NAME_ITEM";
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(303, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 26);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Số Phiếu";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // CODE_IMPORT
+            // label2
             // 
-            this.CODE_IMPORT.DataPropertyName = "CODE_IMPORT";
-            this.CODE_IMPORT.HeaderText = "CODE_IMPORT";
-            this.CODE_IMPORT.Name = "CODE_IMPORT";
-            this.CODE_IMPORT.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(303, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(151, 27);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Mã hàng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // ID_SUP
+            // txt_ID
             // 
-            this.ID_SUP.DataPropertyName = "ID_SUPPLIER";
-            this.ID_SUP.HeaderText = "ID_SUP";
-            this.ID_SUP.Name = "ID_SUP";
-            this.ID_SUP.Visible = false;
+            this.txt_ID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_ID.Location = new System.Drawing.Point(460, 56);
+            this.txt_ID.Name = "txt_ID";
+            this.txt_ID.Size = new System.Drawing.Size(176, 21);
+            this.txt_ID.TabIndex = 5;
             // 
-            // ID_ACCOUNT
+            // cbo_Item
             // 
-            this.ID_ACCOUNT.DataPropertyName = "ID_ACCOUNT";
-            this.ID_ACCOUNT.HeaderText = "ID_ACCOUNT";
-            this.ID_ACCOUNT.Name = "ID_ACCOUNT";
-            this.ID_ACCOUNT.Visible = false;
+            this.cbo_Item.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_Item.FormattingEnabled = true;
+            this.cbo_Item.Location = new System.Drawing.Point(460, 82);
+            this.cbo_Item.Name = "cbo_Item";
+            this.cbo_Item.Size = new System.Drawing.Size(176, 21);
+            this.cbo_Item.TabIndex = 6;
             // 
-            // STATUS
+            // label3
             // 
-            this.STATUS.DataPropertyName = "STATUS";
-            this.STATUS.HeaderText = "STATUS";
-            this.STATUS.Name = "STATUS";
-            this.STATUS.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(642, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 26);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Ngày";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // account
+            // label4
             // 
-            this.account.DataPropertyName = "account";
-            this.account.HeaderText = "acount";
-            this.account.Name = "account";
-            this.account.Visible = false;
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(642, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 27);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Số lương";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // suplier
+            // msk_Create
             // 
-            this.suplier.DataPropertyName = "supplier";
-            this.suplier.HeaderText = "supplier";
-            this.suplier.Name = "suplier";
-            this.suplier.Visible = false;
+            this.msk_Create.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.msk_Create.Location = new System.Drawing.Point(725, 56);
+            this.msk_Create.Mask = "00/00/0000";
+            this.msk_Create.Name = "msk_Create";
+            this.msk_Create.Size = new System.Drawing.Size(201, 21);
+            this.msk_Create.TabIndex = 9;
+            this.msk_Create.ValidatingType = typeof(System.DateTime);
             // 
-            // C
+            // txt_Number
             // 
-            this.C.DataPropertyName = "CREATE_AT";
-            this.C.HeaderText = "CREATE_AT";
-            this.C.Name = "C";
-            this.C.Visible = false;
-            // 
-            // IDX
-            // 
-            this.IDX.DataPropertyName = "ID";
-            this.IDX.HeaderText = "ID";
-            this.IDX.Name = "IDX";
-            this.IDX.Visible = false;
-            // 
-            // ID_ITEM
-            // 
-            this.ID_ITEM.DataPropertyName = "ID_ITEM";
-            this.ID_ITEM.HeaderText = "ID_ITEM";
-            this.ID_ITEM.Name = "ID_ITEM";
-            this.ID_ITEM.Visible = false;
-            // 
-            // NUMBER
-            // 
-            this.NUMBER.DataPropertyName = "NUMBER";
-            this.NUMBER.HeaderText = "Số lượng";
-            this.NUMBER.Name = "NUMBER";
-            // 
-            // PRICE_PURCHASE
-            // 
-            this.PRICE_PURCHASE.DataPropertyName = "PRICE_PURCHASE";
-            this.PRICE_PURCHASE.HeaderText = "Đơn giá";
-            this.PRICE_PURCHASE.Name = "PRICE_PURCHASE";
-            this.PRICE_PURCHASE.ReadOnly = true;
-            // 
-            // MONEY
-            // 
-            this.MONEY.DataPropertyName = "SUM_MONEY";
-            this.MONEY.HeaderText = "Thành tiền";
-            this.MONEY.Name = "MONEY";
-            this.MONEY.ReadOnly = true;
+            this.txt_Number.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Number.Location = new System.Drawing.Point(725, 82);
+            this.txt_Number.Name = "txt_Number";
+            this.txt_Number.Size = new System.Drawing.Size(201, 21);
+            this.txt_Number.TabIndex = 10;
             // 
             // frmWarehousing
             // 

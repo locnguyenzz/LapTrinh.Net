@@ -176,5 +176,11 @@ namespace CoffeeManagementSoftware
                 openForm(use);
             }
         }
+
+        private void caLàmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTimeKeeping frm = new frmTimeKeeping();
+            frm.ShowDialog();
+        }
     }
 }

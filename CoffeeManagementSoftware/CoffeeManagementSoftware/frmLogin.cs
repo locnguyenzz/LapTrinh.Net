@@ -56,5 +56,10 @@ namespace CoffeeManagementSoftware
                 Program.mainForm.Show();
             }
         }
+
+        private void lUC_Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -75,15 +75,9 @@ namespace CoffeeLibrary
     partial void Inserttable(table instance);
     partial void Updatetable(table instance);
     partial void Deletetable(table instance);
-    partial void Insertthuchi(thuchi instance);
-    partial void Updatethuchi(thuchi instance);
-    partial void Deletethuchi(thuchi instance);
     partial void Inserttimekeeping(timekeeping instance);
     partial void Updatetimekeeping(timekeeping instance);
     partial void Deletetimekeeping(timekeeping instance);
-    partial void Inserttype_ballot(type_ballot instance);
-    partial void Updatetype_ballot(type_ballot instance);
-    partial void Deletetype_ballot(type_ballot instance);
     partial void Inserttype_customer(type_customer instance);
     partial void Updatetype_customer(type_customer instance);
     partial void Deletetype_customer(type_customer instance);
@@ -258,27 +252,11 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		public System.Data.Linq.Table<thuchi> thuchis
-		{
-			get
-			{
-				return this.GetTable<thuchi>();
-			}
-		}
-		
 		public System.Data.Linq.Table<timekeeping> timekeepings
 		{
 			get
 			{
 				return this.GetTable<timekeeping>();
-			}
-		}
-		
-		public System.Data.Linq.Table<type_ballot> type_ballots
-		{
-			get
-			{
-				return this.GetTable<type_ballot>();
 			}
 		}
 		
@@ -323,8 +301,6 @@ namespace CoffeeLibrary
 		
 		private EntitySet<receipt_import> _receipt_imports;
 		
-		private EntitySet<thuchi> _thuchis;
-		
 		private EntitySet<timekeeping> _timekeepings;
 		
     #region Extensibility Method Definitions
@@ -348,7 +324,6 @@ namespace CoffeeLibrary
 			this._receipts = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts), new Action<receipt>(this.detach_receipts));
 			this._receipts1 = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts1), new Action<receipt>(this.detach_receipts1));
 			this._receipt_imports = new EntitySet<receipt_import>(new Action<receipt_import>(this.attach_receipt_imports), new Action<receipt_import>(this.detach_receipt_imports));
-			this._thuchis = new EntitySet<thuchi>(new Action<thuchi>(this.attach_thuchis), new Action<thuchi>(this.detach_thuchis));
 			this._timekeepings = new EntitySet<timekeeping>(new Action<timekeeping>(this.attach_timekeepings), new Action<timekeeping>(this.detach_timekeepings));
 			OnCreated();
 		}
@@ -498,19 +473,6 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_thuchi", Storage="_thuchis", ThisKey="ID", OtherKey="ID_ACCOUNT")]
-		public EntitySet<thuchi> thuchis
-		{
-			get
-			{
-				return this._thuchis;
-			}
-			set
-			{
-				this._thuchis.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_timekeeping", Storage="_timekeepings", ThisKey="ID", OtherKey="ID_ACCOUNT")]
 		public EntitySet<timekeeping> timekeepings
 		{
@@ -599,18 +561,6 @@ namespace CoffeeLibrary
 		}
 		
 		private void detach_receipt_imports(receipt_import entity)
-		{
-			this.SendPropertyChanging();
-			entity.account = null;
-		}
-		
-		private void attach_thuchis(thuchi entity)
-		{
-			this.SendPropertyChanging();
-			entity.account = this;
-		}
-		
-		private void detach_thuchis(thuchi entity)
 		{
 			this.SendPropertyChanging();
 			entity.account = null;
@@ -3862,294 +3812,6 @@ namespace CoffeeLibrary
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.thuchi")]
-	public partial class thuchi : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private System.Nullable<int> _ID_ACCOUNT;
-		
-		private System.Nullable<int> _ID_TYPE;
-		
-		private System.Nullable<System.DateTime> _DATE;
-		
-		private string _REASON;
-		
-		private System.Nullable<double> _MONEY;
-		
-		private System.Nullable<int> _STATUS;
-		
-		private EntityRef<account> _account;
-		
-		private EntityRef<type_ballot> _type_ballot;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnID_ACCOUNTChanging(System.Nullable<int> value);
-    partial void OnID_ACCOUNTChanged();
-    partial void OnID_TYPEChanging(System.Nullable<int> value);
-    partial void OnID_TYPEChanged();
-    partial void OnDATEChanging(System.Nullable<System.DateTime> value);
-    partial void OnDATEChanged();
-    partial void OnREASONChanging(string value);
-    partial void OnREASONChanged();
-    partial void OnMONEYChanging(System.Nullable<double> value);
-    partial void OnMONEYChanged();
-    partial void OnSTATUSChanging(System.Nullable<int> value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public thuchi()
-		{
-			this._account = default(EntityRef<account>);
-			this._type_ballot = default(EntityRef<type_ballot>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int")]
-		public System.Nullable<int> ID_ACCOUNT
-		{
-			get
-			{
-				return this._ID_ACCOUNT;
-			}
-			set
-			{
-				if ((this._ID_ACCOUNT != value))
-				{
-					if (this._account.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_ACCOUNTChanging(value);
-					this.SendPropertyChanging();
-					this._ID_ACCOUNT = value;
-					this.SendPropertyChanged("ID_ACCOUNT");
-					this.OnID_ACCOUNTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_TYPE", DbType="Int")]
-		public System.Nullable<int> ID_TYPE
-		{
-			get
-			{
-				return this._ID_TYPE;
-			}
-			set
-			{
-				if ((this._ID_TYPE != value))
-				{
-					if (this._type_ballot.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_TYPEChanging(value);
-					this.SendPropertyChanging();
-					this._ID_TYPE = value;
-					this.SendPropertyChanged("ID_TYPE");
-					this.OnID_TYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATE", DbType="Date")]
-		public System.Nullable<System.DateTime> DATE
-		{
-			get
-			{
-				return this._DATE;
-			}
-			set
-			{
-				if ((this._DATE != value))
-				{
-					this.OnDATEChanging(value);
-					this.SendPropertyChanging();
-					this._DATE = value;
-					this.SendPropertyChanged("DATE");
-					this.OnDATEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_REASON", DbType="NVarChar(50)")]
-		public string REASON
-		{
-			get
-			{
-				return this._REASON;
-			}
-			set
-			{
-				if ((this._REASON != value))
-				{
-					this.OnREASONChanging(value);
-					this.SendPropertyChanging();
-					this._REASON = value;
-					this.SendPropertyChanged("REASON");
-					this.OnREASONChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MONEY", DbType="Float")]
-		public System.Nullable<double> MONEY
-		{
-			get
-			{
-				return this._MONEY;
-			}
-			set
-			{
-				if ((this._MONEY != value))
-				{
-					this.OnMONEYChanging(value);
-					this.SendPropertyChanging();
-					this._MONEY = value;
-					this.SendPropertyChanged("MONEY");
-					this.OnMONEYChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
-		public System.Nullable<int> STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_thuchi", Storage="_account", ThisKey="ID_ACCOUNT", OtherKey="ID", IsForeignKey=true)]
-		public account account
-		{
-			get
-			{
-				return this._account.Entity;
-			}
-			set
-			{
-				account previousValue = this._account.Entity;
-				if (((previousValue != value) 
-							|| (this._account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._account.Entity = null;
-						previousValue.thuchis.Remove(this);
-					}
-					this._account.Entity = value;
-					if ((value != null))
-					{
-						value.thuchis.Add(this);
-						this._ID_ACCOUNT = value.ID;
-					}
-					else
-					{
-						this._ID_ACCOUNT = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("account");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_ballot_thuchi", Storage="_type_ballot", ThisKey="ID_TYPE", OtherKey="ID", IsForeignKey=true)]
-		public type_ballot type_ballot
-		{
-			get
-			{
-				return this._type_ballot.Entity;
-			}
-			set
-			{
-				type_ballot previousValue = this._type_ballot.Entity;
-				if (((previousValue != value) 
-							|| (this._type_ballot.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._type_ballot.Entity = null;
-						previousValue.thuchis.Remove(this);
-					}
-					this._type_ballot.Entity = value;
-					if ((value != null))
-					{
-						value.thuchis.Add(this);
-						this._ID_TYPE = value.ID;
-					}
-					else
-					{
-						this._ID_TYPE = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("type_ballot");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.timekeeping")]
 	public partial class timekeeping : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4160,7 +3822,7 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _ID_ACCOUNT;
 		
-		private System.Nullable<int> _SHIFT;
+		private string _SHIFT;
 		
 		private System.Nullable<int> _STATUS;
 		
@@ -4176,7 +3838,7 @@ namespace CoffeeLibrary
     partial void OnIDChanged();
     partial void OnID_ACCOUNTChanging(System.Nullable<int> value);
     partial void OnID_ACCOUNTChanged();
-    partial void OnSHIFTChanging(System.Nullable<int> value);
+    partial void OnSHIFTChanging(string value);
     partial void OnSHIFTChanged();
     partial void OnSTATUSChanging(System.Nullable<int> value);
     partial void OnSTATUSChanged();
@@ -4233,8 +3895,8 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHIFT", DbType="Int")]
-		public System.Nullable<int> SHIFT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SHIFT", DbType="NVarChar(50)")]
+		public string SHIFT
 		{
 			get
 			{
@@ -4350,144 +4012,6 @@ namespace CoffeeLibrary
 		{
 			this.SendPropertyChanging();
 			entity.timekeeping = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.type_ballot")]
-	public partial class type_ballot : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _NAME_TYPE;
-		
-		private System.Nullable<int> _STATUS;
-		
-		private EntitySet<thuchi> _thuchis;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnNAME_TYPEChanging(string value);
-    partial void OnNAME_TYPEChanged();
-    partial void OnSTATUSChanging(System.Nullable<int> value);
-    partial void OnSTATUSChanged();
-    #endregion
-		
-		public type_ballot()
-		{
-			this._thuchis = new EntitySet<thuchi>(new Action<thuchi>(this.attach_thuchis), new Action<thuchi>(this.detach_thuchis));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NAME_TYPE", DbType="NVarChar(50)")]
-		public string NAME_TYPE
-		{
-			get
-			{
-				return this._NAME_TYPE;
-			}
-			set
-			{
-				if ((this._NAME_TYPE != value))
-				{
-					this.OnNAME_TYPEChanging(value);
-					this.SendPropertyChanging();
-					this._NAME_TYPE = value;
-					this.SendPropertyChanged("NAME_TYPE");
-					this.OnNAME_TYPEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_STATUS", DbType="Int")]
-		public System.Nullable<int> STATUS
-		{
-			get
-			{
-				return this._STATUS;
-			}
-			set
-			{
-				if ((this._STATUS != value))
-				{
-					this.OnSTATUSChanging(value);
-					this.SendPropertyChanging();
-					this._STATUS = value;
-					this.SendPropertyChanged("STATUS");
-					this.OnSTATUSChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="type_ballot_thuchi", Storage="_thuchis", ThisKey="ID", OtherKey="ID_TYPE")]
-		public EntitySet<thuchi> thuchis
-		{
-			get
-			{
-				return this._thuchis;
-			}
-			set
-			{
-				this._thuchis.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_thuchis(thuchi entity)
-		{
-			this.SendPropertyChanging();
-			entity.type_ballot = this;
-		}
-		
-		private void detach_thuchis(thuchi entity)
-		{
-			this.SendPropertyChanging();
-			entity.type_ballot = null;
 		}
 	}
 	

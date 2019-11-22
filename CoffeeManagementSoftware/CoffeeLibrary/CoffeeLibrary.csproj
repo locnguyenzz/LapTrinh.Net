@@ -87,6 +87,7 @@
       <DependentUpon>MailTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="profile.cs" />
+    <Compile Include="profile_staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -99,7 +100,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="receipt_import.cs" />
+    <Compile Include="Staff_CL.cs" />
     <Compile Include="Supplier_CL.cs" />
+    <Compile Include="TimeKeeping_CL.cs" />
     <Compile Include="TypeCus_CL.cs" />
     <Compile Include="TypeItem_CL.cs" />
     <Compile Include="UserManager.cs" />
