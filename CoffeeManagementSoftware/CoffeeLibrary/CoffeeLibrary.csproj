@@ -64,14 +64,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBC_Coffee.dbml</DependentUpon>
     </Compile>
+    <Compile Include="detail_receipt.cs" />
+    <Compile Include="detail_receipt_import.cs" />
+    <Compile Include="Detail_Receip_Import_CL.cs" />
+    <Compile Include="Detai_Receipt_CL.cs" />
     <Compile Include="frmconfig.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmconfig.Designer.cs">
       <DependentUpon>frmconfig.cs</DependentUpon>
     </Compile>
-    <Compile Include="inventory.cs" />
-    <Compile Include="Inventory_CL.cs" />
     <Compile Include="item.cs" />
     <Compile Include="Item_CL.cs" />
     <Compile Include="LoginUserControl.cs">
@@ -99,9 +101,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Receipt_CL.cs" />
     <Compile Include="receipt_import.cs" />
     <Compile Include="Staff_CL.cs" />
     <Compile Include="Supplier_CL.cs" />
+    <Compile Include="Table_CL.cs" />
     <Compile Include="TimeKeeping_CL.cs" />
     <Compile Include="TypeCus_CL.cs" />
     <Compile Include="TypeItem_CL.cs" />

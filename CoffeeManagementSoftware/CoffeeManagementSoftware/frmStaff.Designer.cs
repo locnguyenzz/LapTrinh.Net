@@ -30,15 +30,14 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.txt_ID = new System.Windows.Forms.TextBox();
-            this.cbo_Staff = new System.Windows.Forms.ComboBox();
             this.cbo_Time = new System.Windows.Forms.ComboBox();
             this.chk_Status = new System.Windows.Forms.CheckBox();
             this.dgv_Staff = new System.Windows.Forms.DataGridView();
@@ -48,6 +47,7 @@
             this.SHIFT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timekeeping = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_NhanVien = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Staff)).BeginInit();
@@ -66,19 +66,20 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.txt_ID, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cbo_Staff, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.cbo_Time, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.chk_Status, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.dgv_Staff, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txt_NhanVien, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.61181F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.08017F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.81435F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.87764F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.29956F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.50211F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.92827F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(493, 237);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -93,9 +94,36 @@
             this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(493, 37);
+            this.toolStrip1.Size = new System.Drawing.Size(493, 28);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(69, 34);
+            this.toolStripButton1.Text = "Thêm";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.Image = global::CoffeeManagementSoftware.Properties.Resources.Remove_16x161;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(56, 34);
+            this.toolStripButton2.Text = "Xóa";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(56, 34);
+            this.toolStripButton3.Text = "Sửa";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // label1
             // 
@@ -141,33 +169,6 @@
             this.label4.Text = "Trạng thái";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(69, 34);
-            this.toolStripButton1.Text = "Thêm";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = global::CoffeeManagementSoftware.Properties.Resources.Remove_16x161;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(56, 34);
-            this.toolStripButton2.Text = "Xóa";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(56, 34);
-            this.toolStripButton3.Text = "Sửa";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
             // txt_ID
             // 
             this.txt_ID.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -175,15 +176,6 @@
             this.txt_ID.Name = "txt_ID";
             this.txt_ID.Size = new System.Drawing.Size(170, 21);
             this.txt_ID.TabIndex = 5;
-            // 
-            // cbo_Staff
-            // 
-            this.cbo_Staff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbo_Staff.FormattingEnabled = true;
-            this.cbo_Staff.Location = new System.Drawing.Point(102, 109);
-            this.cbo_Staff.Name = "cbo_Staff";
-            this.cbo_Staff.Size = new System.Drawing.Size(170, 21);
-            this.cbo_Staff.TabIndex = 6;
             // 
             // cbo_Time
             // 
@@ -271,6 +263,14 @@
             this.timekeeping.ReadOnly = true;
             this.timekeeping.Visible = false;
             // 
+            // txt_NhanVien
+            // 
+            this.txt_NhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_NhanVien.Location = new System.Drawing.Point(102, 109);
+            this.txt_NhanVien.Name = "txt_NhanVien";
+            this.txt_NhanVien.Size = new System.Drawing.Size(170, 21);
+            this.txt_NhanVien.TabIndex = 10;
+            // 
             // frmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,7 +301,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.TextBox txt_ID;
-        private System.Windows.Forms.ComboBox cbo_Staff;
         private System.Windows.Forms.ComboBox cbo_Time;
         private System.Windows.Forms.CheckBox chk_Status;
         private System.Windows.Forms.DataGridView dgv_Staff;
@@ -311,5 +310,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SHIFT;
         private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
         private System.Windows.Forms.DataGridViewTextBoxColumn timekeeping;
+        private System.Windows.Forms.TextBox txt_NhanVien;
     }
 }

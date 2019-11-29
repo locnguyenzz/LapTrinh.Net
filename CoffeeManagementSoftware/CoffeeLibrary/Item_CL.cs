@@ -9,6 +9,22 @@ namespace CoffeeLibrary
 {
     public class Item_CL:DataContext
     {
+        public List<item> GetData()
+        {
+            return _Coffee.items.Select(t => t).ToList<item>();
+        }
+        public item LoadItemOne(int pItem)
+        {
+            try
+            {
+                item check = _Coffee.items.Where(t => t.ID.Equals(pItem)).FirstOrDefault();
+                return check;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public List<item> LoadItem()
         {
             var query = from p in _Coffee.items
@@ -37,6 +53,7 @@ namespace CoffeeLibrary
             });
             return kq.ToList<item>();  
         }
+
 
         //Lấy ID lớn nhất
         public int MaxID()
@@ -101,6 +118,20 @@ namespace CoffeeLibrary
             {
                 return false;
             }
+        }
+        public void UpdateNumber(int pId, int pNum)
+        {
+            item sp = _Coffee.items.Where(t => t.ID.Equals(pId)).FirstOrDefault();
+            sp.NUMBER = sp.NUMBER +  pNum;
+            //_Coffee.items.InsertOnSubmit(sp);
+            _Coffee.SubmitChanges();
+        }
+        public void DeleteNumber(int pID, int pNum)
+        {
+            item sp = _Coffee.items.Where(t => t.ID.Equals(pID)).FirstOrDefault();
+            sp.NUMBER = sp.NUMBER - pNum;
+            //_Coffee.items.InsertOnSubmit(sp);
+            _Coffee.SubmitChanges();
         }
     }
 

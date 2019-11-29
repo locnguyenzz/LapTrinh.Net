@@ -49,6 +49,12 @@
             this.mtx_Phone = new System.Windows.Forms.MaskedTextBox();
             this.chk_Status = new System.Windows.Forms.CheckBox();
             this.dgv_Supplier = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ADDRESS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PHONE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Email = new CoffeeLibrary.MailTextBox(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -259,8 +265,17 @@
             // 
             // dgv_Supplier
             // 
+            this.dgv_Supplier.AllowUserToAddRows = false;
+            this.dgv_Supplier.AllowUserToDeleteRows = false;
             this.dgv_Supplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Supplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.NAME,
+            this.ADDRESS,
+            this.PHONE,
+            this.Email,
+            this.STATUS});
             this.tableLayoutPanel1.SetColumnSpan(this.dgv_Supplier, 4);
             this.dgv_Supplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Supplier.Location = new System.Drawing.Point(3, 155);
@@ -269,6 +284,42 @@
             this.dgv_Supplier.Size = new System.Drawing.Size(846, 218);
             this.dgv_Supplier.TabIndex = 13;
             this.dgv_Supplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Supplier_CellClick);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã NCC";
+            this.ID.Name = "ID";
+            // 
+            // NAME
+            // 
+            this.NAME.DataPropertyName = "NAME";
+            this.NAME.HeaderText = "Tên NCC";
+            this.NAME.Name = "NAME";
+            // 
+            // ADDRESS
+            // 
+            this.ADDRESS.DataPropertyName = "ADDRESS";
+            this.ADDRESS.HeaderText = "Địa chỉ";
+            this.ADDRESS.Name = "ADDRESS";
+            // 
+            // PHONE
+            // 
+            this.PHONE.DataPropertyName = "PHONE";
+            this.PHONE.HeaderText = "Điện thoại";
+            this.PHONE.Name = "PHONE";
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            // 
+            // STATUS
+            // 
+            this.STATUS.DataPropertyName = "STATUS";
+            this.STATUS.HeaderText = "Trạng thái";
+            this.STATUS.Name = "STATUS";
             // 
             // txt_Email
             // 
@@ -318,6 +369,12 @@
         private System.Windows.Forms.CheckBox chk_Status;
         private System.Windows.Forms.DataGridView dgv_Supplier;
         private CoffeeLibrary.MailTextBox txt_Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ADDRESS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PHONE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STATUS;
 
     }
 }

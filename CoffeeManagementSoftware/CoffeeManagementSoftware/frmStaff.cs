@@ -20,12 +20,7 @@ namespace CoffeeManagementSoftware
         {
             InitializeComponent();
         }
-        public void LoadStaff()
-        {
-            cbo_Staff.DataSource = dll.Getdata();
-            cbo_Staff.DisplayMember = "NAME_STAFF";
-            cbo_Staff.ValueMember = "NAME_STAFF";
-        }
+        
         public void LoadTime()
         {
             cbo_Time.DataSource = dt.LoadShift();
@@ -38,12 +33,12 @@ namespace CoffeeManagementSoftware
         }
         private void frmStaff_Load(object sender, EventArgs e)
         {
-            LoadStaff();
+
             LoadTime();
             LoadData();
             txt_ID.Text = dgv_Staff.CurrentRow.Cells["ID"].Value.ToString();
             cbo_Time.Text = dgv_Staff.CurrentRow.Cells["SHIFT"].Value.ToString();
-            cbo_Staff.Text = dgv_Staff.CurrentRow.Cells["NAME_STAFF"].Value.ToString();
+            txt_NhanVien.Text = dgv_Staff.CurrentRow.Cells["NAME_STAFF"].Value.ToString();
             if (dgv_Staff.CurrentRow.Cells["STATUS"].Value.Equals(1))
             {
                 chk_Status.Checked = true;
@@ -56,7 +51,7 @@ namespace CoffeeManagementSoftware
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            if(dll.AddNewStaff(cbo_Staff.SelectedValue.ToString(),Int32.Parse(cbo_Time.SelectedValue.ToString())))
+            if(dll.AddNewStaff(txt_NhanVien.Text,Int32.Parse(cbo_Time.SelectedValue.ToString())))
             {
                 XtraMessageBox.Show("Them thanh cong", "Thong Bao");
                 LoadData();
@@ -91,7 +86,7 @@ namespace CoffeeManagementSoftware
             {
                 chk = 0;
             }
-            if (dll.EditStaff(Int32.Parse(txt_ID.Text),cbo_Staff.SelectedValue.ToString(), cbo_Time.SelectedValue.ToString(),chk))
+            if (dll.EditStaff(Int32.Parse(txt_ID.Text),txt_NhanVien.Text, cbo_Time.SelectedValue.ToString(),chk))
             {
                 XtraMessageBox.Show("Sua thanh cong", "Thong Bao");
                 LoadData();
@@ -106,7 +101,7 @@ namespace CoffeeManagementSoftware
         {
             txt_ID.Text = dgv_Staff.CurrentRow.Cells["ID"].Value.ToString();
             cbo_Time.Text = dgv_Staff.CurrentRow.Cells["SHIFT"].Value.ToString();
-            cbo_Staff.Text = dgv_Staff.CurrentRow.Cells["NAME_STAFF"].Value.ToString();
+            txt_NhanVien.Text = dgv_Staff.CurrentRow.Cells["NAME_STAFF"].Value.ToString();
             if(dgv_Staff.CurrentRow.Cells["STATUS"].Value.Equals(1))
             {
                 chk_Status.Checked = true;

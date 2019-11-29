@@ -13,104 +13,284 @@ namespace CoffeeManagementSoftware
 {
     public partial class frmWarehousing : DevExpress.XtraEditors.XtraForm
     {
-        WareHousing_CL dll = new WareHousing_CL();
-        Item_CL dli = new Item_CL();
+        
+        WareHousing_CL _pn = new WareHousing_CL();
+        Supplier_CL _ncc = new Supplier_CL();
+        Item_CL _sp = new Item_CL();
+        Detail_Receip_Import_CL _ctpn = new Detail_Receip_Import_CL();
         public frmWarehousing()
         {
             InitializeComponent();
         }
-        public void LoadItem()
+        //Load cbbNhaCC
+        //Load cbbMaPnn
+        //Load cbbMasp
+        public void LoadMaPN()
         {
-            cbo_Item.DataSource = dli.LoadItem();
-            cbo_Item.DisplayMember = "NAME_ITEM";
-            cbo_Item.ValueMember = "ID";
+            cbbMaPhieuNhap.DataSource = _pn.GetData();
+            cbbMaPhieuNhap.DisplayMember = "ID";
+            cbbMaPhieuNhap.ValueMember = "ID";
+        }
+        public void LoadNCC()
+        {
+            cbbNhaCC.DataSource = _ncc.LoadSupplier();//_ncc.GetData();
+            cbbNhaCC.DisplayMember = "NAME";
+            cbbNhaCC.ValueMember = "ID";
+        }
+
+        public void LoadSP()
+        {
+            cbbMaSanPham.DataSource = _sp.GetData();
+            cbbMaSanPham.DisplayMember = "NAME_ITEM";
+            cbbMaSanPham.ValueMember = "ID";
         }
         public void LoadData()
-        {
-            dgv_Right.DataSource = dll.LoadsWare();
-            dgv_Left.DataSource = dll.LoadsWare();
+        {            
+            LoadMaPN();
+            LoadNCC();
+            LoadSP();
+            txtMaPhieuNhap.Focus();
+            txtThanhTien.Text = "0";
+            txtSoLuong.Text = "0";
         }
+
+       
+        
+        public void LoadCTPN(int pMaPn)
+        {
+            dgvCTPN.DataSource = _ctpn.LoadPN_MaPN(pMaPn);
+        }
+
+
+        public double TinhThanhTien()
+        {
+            double sum = 0;
+            if (dgvCTPN.RowCount > 0)
+            {
+                for (int i = 0; i < dgvCTPN.Rows.Count; i++)
+                {
+                    int sl = Int32.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString());
+                    double dg = Double.Parse(txtDonGia.Text); //float.Parse(dgvCTPN.Rows[i].Cells["DonGia"].Value.ToString());
+                    sum += (sl * dg);
+                }
+            }
+            return sum;
+        }
+
+
+        public bool KiemTraSP_CTPN(string pMaSP)
+        {
+            for (int i = 0; i < dgvCTPN.Rows.Count; i++)
+            {
+                if (dgvCTPN.Rows[i].Cells["MaSanPham"].Value.ToString().Equals(pMaSP))
+                {
+                    return true;//Ton tai rai
+                }
+            }
+            return false;
+        }
+
+
+        private void cbbMaSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (cbbMaSanPham.Text != null)
+            //    {
+            //        //SanPham load = _sp.KiemSP(cbbMaSanPham.Text);
+            //        txtSoLuong.Text = load.SoLuong.ToString();
+            //        txtDonGia.Text = load.DonGia.ToString();
+            //    }
+            //}
+            //catch
+            //{
+            //    return;
+            //}
+        }
+
+        private void btnTaoPN_Click_1(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtMaPhieuNhap.Text))
+            {
+                MessageBox.Show("Ma phieu nhap khong duoc de trong!");
+                txtMaPhieuNhap.Focus();
+                return;
+            }
+            if (String.IsNullOrEmpty(txtNgayNhap.Text))
+            {
+                MessageBox.Show("Ngay nhap khong duoc de trong!");
+                txtMaPhieuNhap.Focus();
+                return;
+            }
+            bool flag = _pn.TaoPhieuNhap(Int32.Parse(txtMaPhieuNhap.Text), Int32.Parse(cbbNhaCC.SelectedValue.ToString()), txtNgayNhap.Text);
+            if (flag)
+            {
+                MessageBox.Show("Tao phieu nhap thanh cong !");
+                LoadMaPN();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Tao phieu nhap that bai !");
+            }
+        }
+
         private void frmWarehousing_Load(object sender, EventArgs e)
         {
-            txt_ID.Enabled = false;
-            LoadItem();
             LoadData();
-           
-            txt_ID.Text = dgv_Left.CurrentRow.Cells["ID"].Value.ToString();
-            cbo_Item.Text = dgv_Right.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
-            msk_Create.Text = dgv_Left.CurrentRow.Cells["CREATE_AT"].Value.ToString();
-            txt_Number.Text = dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString();
-            dgv_Right.CurrentRow.Cells["MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-            dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void dgvCTPN_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
-            int _id = Int32.Parse(cbo_Item.SelectedValue.ToString());
-            int num = Int32.Parse(txt_Number.Text);
-            if (dll.AddNewImport(_id, msk_Create.Text, num))
+            if (dgvCTPN.CurrentRow != null)
             {
-                dgv_Right.CurrentRow.Cells["MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-                dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-                XtraMessageBox.Show("Them thanh cong!", "Thong bao");
-                LoadData();
-            }
-            else
-            {
-                XtraMessageBox.Show("Them that bai!", "Thong Bao");
+                cbbMaPhieuNhap.Text = dgvCTPN.CurrentRow.Cells["MaPhieuNhap"].Value.ToString();
+                cbbMaSanPham.Text = dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString();
+                //txtDonGia.Text = dgvCTPN.CurrentRow.Cells["DonGia"].Value.ToString();
+                txtSoLuong.Text = dgvCTPN.CurrentRow.Cells["SoLuong"].Value.ToString();
             }
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
+        private void cbbMaPhieuNhap_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (dll.DeleteImport(Int32.Parse(txt_ID.Text)))
+            try
             {
-                XtraMessageBox.Show("Xoa thanh cong!", "Thong bao");
-                LoadData();
+                receipt_import pn = _pn.LoadTTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()));
+                
+                if (pn != null)
+                {
+                    txtMaPhieuNhap.Text = pn.ID.ToString();
+                    cbbNhaCC.Text = pn.ID_SUPPLIER.ToString();
+                    txtNgayNhap.Text = Convert.ToDateTime(pn.CREATE_AT).ToString("dd/MM/yyyy");
+                    txtThanhTien.Text = pn.SUM_MONEY.ToString();
+                    //Load them thong tin chi tiet phieu nhap o day
+                    LoadCTPN(pn.ID);
+                    txtThanhTien.Text = TinhThanhTien().ToString();
+                }
             }
-            else
+            catch
             {
-                XtraMessageBox.Show("Xoa that bai!", "Thong Bao");
-            }
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            //double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-            int _id = Int32.Parse(cbo_Item.SelectedValue.ToString());
-            int num = Int32.Parse(txt_Number.Text);
-            if (dll.EditImport(Int32.Parse(txt_ID.Text), _id, msk_Create.Text, num))
-            {
-                dgv_Right.CurrentRow.Cells["MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-                dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-                XtraMessageBox.Show("Sua thanh cong!", "Thong bao");
-                LoadData();
-            }
-            else
-            {
-                XtraMessageBox.Show("Sua that bai!", "Thong Bao");
+                return;
             }
         }
 
-        private void dgv_Right_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void cbbMaSanPham_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-            txt_ID.Text = dgv_Left.CurrentRow.Cells["ID"].Value.ToString();
-            cbo_Item.Text = dgv_Right.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
-            msk_Create.Text = dgv_Left.CurrentRow.Cells["CREATE_AT"].Value.ToString();
-            txt_Number.Text = dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString();
-            dgv_Right.CurrentRow.Cells["MONEY"].Value = sum.ToString();
+            //item it = _sp.LoadItemOne(Int32.Parse(cbbMaSanPham.SelectedValue.ToString()));
+            //if(it != null)
+            //{
+            //    txtDonGia.Text = it.PRICE_PURCHASE.ToString();
+            //}
         }
 
-        private void dgv_Left_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnThemSP_Click_1(object sender, EventArgs e)
         {
-            double sum = Double.Parse(dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString()) * Double.Parse(dgv_Right.CurrentRow.Cells["PRICE_PURCHASE"].Value.ToString());
-            txt_ID.Text = dgv_Left.CurrentRow.Cells["ID"].Value.ToString();
-            cbo_Item.Text = dgv_Right.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
-            msk_Create.Text = dgv_Left.CurrentRow.Cells["CREATE_AT"].Value.ToString();
-            txt_Number.Text = dgv_Right.CurrentRow.Cells["NUMBER"].Value.ToString();
-            dgv_Left.CurrentRow.Cells["SUM_MONEY"].Value = sum.ToString();
+            if (cbbMaSanPham.SelectedValue.ToString() != null)
+            {
+                string masp = cbbMaSanPham.SelectedValue.ToString();
+                if (KiemTraSP_CTPN(masp))
+                {
+                    //Cap nhat so luong, thanh tien
+                    for (int i = 0; i < dgvCTPN.Rows.Count; i++)
+                    {
+                        if (dgvCTPN.Rows[i].Cells["MaSanPham"].Value.ToString().Equals(masp))
+                        {
+                            dgvCTPN.Rows[i].Cells["SoLuong"].Value = (int.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString()) + Int32.Parse(txtSoLuong.Text)).ToString();
+                            //Goi ham cap nhat so luong ctpn
+                            bool capnhatsoluong = _ctpn.CapNhatCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()),Int32.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString()));
+                            //Ở đây cần tạo thêm hàm cập nhật số lượng trong kho(table: SanPham)
+                            _sp.UpdateNumber(int.Parse(cbbMaSanPham.SelectedValue.ToString()), int.Parse(txtSoLuong.Text));
+                        }
+                    }
+                    txtThanhTien.Text = TinhThanhTien().ToString();
+                    //Goi ham cap nhat thanh tien
+                    bool capnhatthanhtien = _pn.CapNhatThanhTien(int.Parse(cbbMaPhieuNhap.Text), double.Parse(txtThanhTien.Text));
+                    if (capnhatthanhtien)
+                    {
+                        MessageBox.Show("Cap nhat thanh cong !");
+                        dgvCTPN.CurrentRow.Cells["DonGia"].Value = double.Parse(txtDonGia.Text);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cap nhat that bai !");
+                        return;
+                    }
+                }
+                else
+                {
+                    //them moi ctpn, cap nhat thanh tien
+                    if (String.IsNullOrEmpty(txtSoLuong.Text))
+                    {
+                        MessageBox.Show("So luong khong de trong!");
+                        txtSoLuong.Focus();
+                        return;
+                    }
+                    if (String.IsNullOrEmpty(txtDonGia.Text))
+                    {
+                        MessageBox.Show("Don gia khong de trong!");
+                        txtDonGia.Focus();
+                        return;
+                    }
+                    bool themmoi = _ctpn.ThemMoiCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()),Int32.Parse( cbbMaSanPham.SelectedValue.ToString()),Double.Parse(txtDonGia.Text),Int32.Parse(txtSoLuong.Text));
+                    //goi ham them moi , sau do load lai dgvCTPN
+                    if (themmoi)
+                    {
+                        LoadCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()));
+                        txtThanhTien.Text = TinhThanhTien().ToString();
+                        bool capnhatthanhtien = _pn.CapNhatThanhTien(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()), Double.Parse(txtThanhTien.Text));
+                        MessageBox.Show("Them CTPN thanh cong");
+                        dgvCTPN.CurrentRow.Cells["DonGia"].Value = double.Parse(txtDonGia.Text);
+                        LoadData();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Them CTPN that bai");
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void xóaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (dgvCTPN.CurrentRow != null)
+            {
+                DialogResult r;
+                r = MessageBox.Show("Bạn có chắc muốn xóa sản phẩm có Mã: " + dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString(), "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                if (r == DialogResult.Yes)
+                {
+                    bool xoa = _ctpn.XoaCTNP(int.Parse(cbbMaPhieuNhap.Text));
+                    if (xoa)
+                    {
+                        LoadCTPN(int.Parse(cbbMaPhieuNhap.Text));
+                        txtThanhTien.Text = TinhThanhTien().ToString();
+                        bool capnhat = _pn.CapNhatThanhTien(int.Parse(cbbMaPhieuNhap.Text), double.Parse(txtThanhTien.Text));
+                        MessageBox.Show("Xoa CTPN thanh cong !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xoa CTPN that bai !");
+                    }
+                }
+            }
+        }
+
+        private void sửaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (dgvCTPN.CurrentRow != null)
+            {
+                //MessageBox.Show("Bạn đang sửa sản phẩm có Mã: "+dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString()+" bạn có thể sửa trực tiếp tại lưới danh sách hoặc trong các ô đơn giá, số lượng phía trên !");
+                bool sua = _ctpn.SuaCTNP(int.Parse(cbbMaPhieuNhap.Text),int.Parse (cbbMaSanPham.Text),  double.Parse (txtDonGia.Text), int.Parse(dgvCTPN.CurrentRow.Cells["SoLuong"].Value.ToString()));
+                if (sua)
+                {
+                    LoadCTPN(int.Parse(cbbMaPhieuNhap.Text));
+                    txtThanhTien.Text = TinhThanhTien().ToString();
+                    bool capnhat = _pn.CapNhatThanhTien(int.Parse(cbbMaPhieuNhap.Text), double.Parse( txtThanhTien.Text));
+                    MessageBox.Show("Sửa thành công sản phẩm Mã: " + dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString());
+                }
+            }
         }
 
     }

@@ -9,6 +9,65 @@ namespace CoffeeLibrary
 {
    public class WareHousing_CL:DataContext
     {
+       public List<receipt_import> GetData()
+       {
+           return _Coffee.receipt_imports.Select(t => t).ToList();
+       }
+       public receipt_import LoadTTPN(int pMaPN)
+       {
+           try
+           {
+               receipt_import check = _Coffee.receipt_imports.Where(t => t.ID.Equals(pMaPN)).FirstOrDefault();
+               return check;
+           }
+           catch
+           {
+               return null;
+           }
+       }
+       //Tao phieu nhap
+       public bool TaoPhieuNhap(int pMaPN, int pMaNCC, string pNgayNhap)
+       {
+           try
+           {
+               receipt_import check = _Coffee.receipt_imports.Where(t => t.ID.Equals(pMaPN)).FirstOrDefault();
+               if (check != null)
+               {
+                   return false;//ton tai ma pn
+               }
+               else
+               {
+                   DateTime dt = new DateTime();
+                   receipt_import add = new receipt_import();
+                   add.ID = pMaPN;
+                   add.ID_SUPPLIER = pMaNCC;
+                   add.CREATE_AT = Convert.ToDateTime(pNgayNhap);
+                   _Coffee.receipt_imports.InsertOnSubmit(add);
+                   _Coffee.SubmitChanges();
+                   return true;
+               }
+           }
+           catch
+           {
+               return false;
+           }
+       }
+       //Cap nhat thanh tien
+       public bool CapNhatThanhTien(int pMaPN, double pSum)
+       {
+           try
+           {
+               receipt_import check = _Coffee.receipt_imports.Where(t => t.ID.Equals(pMaPN)).FirstOrDefault();
+               check.SUM_MONEY = pSum;
+               _Coffee.SubmitChanges();
+               return true;
+           }
+           catch
+           {
+               return false;
+           }
+       }
+
        public List<receipt_import> LoadsWare()
        {
            var query = from q in _Coffee.receipt_imports

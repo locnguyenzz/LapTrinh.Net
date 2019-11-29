@@ -13,7 +13,7 @@ namespace CoffeeManagementSoftware
 {
     public partial class frmInventory : DevExpress.XtraEditors.XtraForm
     {
-        Inventory_CL dll = new Inventory_CL();
+        //Inventory_CL dll = new Inventory_CL();
         Item_CL dli = new Item_CL();
         public frmInventory()
         {
@@ -22,7 +22,7 @@ namespace CoffeeManagementSoftware
        
         public void LoadData()
         {
-            dgv_Inventory.DataSource = dll.LoadInventory();
+            dgv_Inventory.DataSource = dli.LoadItem();
         }
         private void frmInventory_Load(object sender, EventArgs e)
         {

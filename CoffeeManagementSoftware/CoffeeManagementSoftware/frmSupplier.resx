@@ -124,22 +124,40 @@
   <data name="tsb_Add.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANjSURBVDhPVZNrTFNZFIWvkjjq/Kjzy8QfmhgfUYc6GmN8
-        JSaOo1V04oDYNJoQNRGMLywCU0SqgCLC2KKgGaSGQVCRVwW1XCiKCJIilfIqotIWyqNcsKUvyhTM8twz
-        TgI7WcnJPutbe9+be5lpNYtodoSS/TkqR5cardI3x2QbnJGqJnvsPZ0+Kvtt2lF5wVLiCfjunVGzlolE
-        P0RmNSpkytapvPo+VHaNQD/swXvOA/bDKB40WCH7R+8K/0sbTvxzeIaSpCh8OquxUlHRjfYvPhjsE9CN
-        +FBvG0cDUdPofz29zYO0si6czKitWCgU/sizfEBAhOL1rXR1F9odE2AtbmjMboTdYLH9VAFV2I0qsL0e
-        1PR50On0Q0kGHbvOphN2DhMS83DNmWTdVLPNiyKjA6UfnFB/dFFQ12LCu1YzPZd/dkP9yYkScq/nfJBe
-        rfSLjiuFzOEk9q6qugeF7XbktdhR0GZHoXGMQkPcGCanvtLzE6MTjzvH6P2jDgfy6iwQx5cqGIm82lCs
-        H8adRg6HkjXU/L8GOCfc4/4ZPTHx/N3EoaR1BKHyyg4mVK4dzdUNI/XlADU0tVnQ3N6Llk4r+jkXHO4J
-        dJs5dHwcRLdpGDvPP0F67RBUJCQ4ocrOHIhjXYpXViRX99OAwRE3nWpzjIMb88Hrm4TH54ebyEX6v0mL
-        kFIzgDQy8A+Zxs7slZa3JVV8xhWNFZJrVfg1spCadkUVY/CLl4btji7B3j/VCIp7imMZdUhi+5Hw1ATR
-        uVIDs+PEw6xz9/S4rOlDKknOqBvC7Tc2uo1p0Amn91+6dma9jfbTXw1ArunF2RwDtoVlpzGB++TrRdJy
-        /6VyM+KILlZYcOm5hQZwDi/s5B3wGyW86EP8MwsuEsnUJgQdz59cvjV8Lf8hzd14RJUVcvkl4gkcozYj
-        lqx3MFFDJ/Ow5LoWMhIey4vAIYm1WC/OvEXY+XzAbIFgyYINkvvs/ngtYkt7SIgJieSRUqqtuKa1knMv
-        LpSZIC36hN8TarBOnPOccAt4lg/gK0AgWPxTYPCdu1uCi/3i1AaceWBEdFkPAXtwKt+IQ6S3WVLgXbnn
-        ahTxC3iGktOKT5u/ZGvEplX7lZnCUFXranEuJwzJtQUezDas2Hfz9qK1Yb8Qzzyi738iw3wDQdBxp+Bl
-        UuQAAAAASUVORK5CYII=
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANkSURBVDhPVZN7TFNnGMaPknjBP6p/mfiHJma6zI2iZjEq
+        S0yc2zpv2QRsGk2aaSIsimARsIgUwRvSraBcIlKDKCpyq6ArB4oigqRIR7kVUWkL5VIO2NIbZYXl2Xe+
+        aaJv8iRf3u/5Pe97Ts5hPqkFRAujs9lv4ov0mQlqQ0diodEVp253JN3UG+ILX2b9pihdSzxBH7yf1YIv
+        RKLFcXltKrmya76kZRh1/ZMwTHjxN+cF+3oKd1ptkN82uKP+0EUR/yKeoSQpCp/Ia6tT1Q6g570fRscs
+        9JN+tNhn0ErUPvV/z2D3Iqu6H7/nNNWuFAqX8SwfEBSten5NqelHj3MWrNUDrcUD6VUWO46XUkmv1oMd
+        8qJx2Is+VwDZZNCRK6ySsIuY8MR7X8ek6ec77D6Um5yoeu2C5o2bgvpOM151Wei55p0HmrcuVJJ7A+eH
+        7PzjgOhotpA5lMEWqBsGUdbjQEmnA6XdDpSZpik0zk1jbv5fen5ocuFB3zS9v9/rREmzFeKUKhUjUTQY
+        KwwTyG/jcPCClpo/apRzwTMT+KwnJp4b7RwquyYRqajrZSIVuqli/QQyn45SQ3u3FR09Q+jss2GEc8Pp
+        mcWAhUPvmzEMmCew69RDKJvGoSYhB1LrHcwvyaxb9cyGCw0jNGBs0kOn2p0z4Kb98Pnn4PUH4CFyk/4P
+        snJcbhxFFhn4q1zrYHbLarozat/hvNYGyaV6fB9XRk0/xldg7L2Phv2UUIndZzTYk/wIR3KakcGOIPWR
+        GaLYKiOz89i9vNibBqRph5FJknOax3H9hZ1uYx5zweX7h66d22KnfeWzUSi0QzhZZMR30sIsJmSvYrNI
+        VhM4V2NBMtHZWivOPbHSAM7pg4O8A36j1L+GkfLYirNEco0Ze6TFc+vCokL5D2nJlsPqvPC0p0ghcKLG
+        giSyXkS6lk7mYckVHeQkPIkXgcPTm7BZnHuNsMF8wEKBYM3ybyW32H0pOiRVDZIQM9LJI11usOGSzkbO
+        QzhdbYas/C32pzZik7joCeGW8ywfwFeQQLB6RciB/ILt+ysC4sxWxNwxIaF6kICDOH7XhIOkt01S6vvy
+        54vxxC/gGUp+Unxa8Jqw6K1f7cvOFUaquzaIizlheLE9JKLQuH7vn9dXhUo3Es9Sog9/IsP8BwYkcYu1
+        bUY6AAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="NAME.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ADDRESS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PHONE.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Email.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="STATUS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

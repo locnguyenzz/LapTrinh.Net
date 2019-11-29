@@ -42,6 +42,9 @@ namespace CoffeeLibrary
     partial void Insertconvert(convert instance);
     partial void Updateconvert(convert instance);
     partial void Deleteconvert(convert instance);
+    partial void Insertdetail_receipt(detail_receipt instance);
+    partial void Updatedetail_receipt(detail_receipt instance);
+    partial void Deletedetail_receipt(detail_receipt instance);
     partial void Insertdetail_receipt_import(detail_receipt_import instance);
     partial void Updatedetail_receipt_import(detail_receipt_import instance);
     partial void Deletedetail_receipt_import(detail_receipt_import instance);
@@ -297,8 +300,6 @@ namespace CoffeeLibrary
 		
 		private EntitySet<receipt> _receipts;
 		
-		private EntitySet<receipt> _receipts1;
-		
 		private EntitySet<receipt_import> _receipt_imports;
 		
 		private EntitySet<timekeeping> _timekeepings;
@@ -322,7 +323,6 @@ namespace CoffeeLibrary
 			this._user_group_users = new EntitySet<user_group_user>(new Action<user_group_user>(this.attach_user_group_users), new Action<user_group_user>(this.detach_user_group_users));
 			this._profiles = new EntitySet<profile>(new Action<profile>(this.attach_profiles), new Action<profile>(this.detach_profiles));
 			this._receipts = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts), new Action<receipt>(this.detach_receipts));
-			this._receipts1 = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts1), new Action<receipt>(this.detach_receipts1));
 			this._receipt_imports = new EntitySet<receipt_import>(new Action<receipt_import>(this.attach_receipt_imports), new Action<receipt_import>(this.detach_receipt_imports));
 			this._timekeepings = new EntitySet<timekeeping>(new Action<timekeeping>(this.attach_timekeepings), new Action<timekeeping>(this.detach_timekeepings));
 			OnCreated();
@@ -434,7 +434,7 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt", Storage="_receipts", ThisKey="ID", OtherKey="ID_ACCOUNT_STAFF")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt", Storage="_receipts", ThisKey="ID", OtherKey="ID_ACCOUNT")]
 		public EntitySet<receipt> receipts
 		{
 			get
@@ -444,19 +444,6 @@ namespace CoffeeLibrary
 			set
 			{
 				this._receipts.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt1", Storage="_receipts1", ThisKey="ID", OtherKey="ID_ACCOUNT_CUSTOMER")]
-		public EntitySet<receipt> receipts1
-		{
-			get
-			{
-				return this._receipts1;
-			}
-			set
-			{
-				this._receipts1.Assign(value);
 			}
 		}
 		
@@ -540,18 +527,6 @@ namespace CoffeeLibrary
 		{
 			this.SendPropertyChanging();
 			entity.account = null;
-		}
-		
-		private void attach_receipts1(receipt entity)
-		{
-			this.SendPropertyChanging();
-			entity.account1 = this;
-		}
-		
-		private void detach_receipts1(receipt entity)
-		{
-			this.SendPropertyChanging();
-			entity.account1 = null;
 		}
 		
 		private void attach_receipt_imports(receipt_import entity)
@@ -1092,14 +1067,16 @@ namespace CoffeeLibrary
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.detail_receipt")]
-	public partial class detail_receipt
+	public partial class detail_receipt : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
 		
-		private int _ID_RECEIPT;
+		private System.Nullable<int> _ID_RECEIPT;
 		
-		private int _ID_ITEM;
+		private System.Nullable<int> _ID_ITEM;
 		
 		private System.Nullable<int> _ID_TABLE;
 		
@@ -1107,11 +1084,39 @@ namespace CoffeeLibrary
 		
 		private int _STATUS;
 		
+		private EntityRef<item> _item;
+		
+		private EntityRef<receipt> _receipt;
+		
+		private EntityRef<table> _table;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnID_RECEIPTChanging(System.Nullable<int> value);
+    partial void OnID_RECEIPTChanged();
+    partial void OnID_ITEMChanging(System.Nullable<int> value);
+    partial void OnID_ITEMChanged();
+    partial void OnID_TABLEChanging(System.Nullable<int> value);
+    partial void OnID_TABLEChanged();
+    partial void OnNUMBERChanging(int value);
+    partial void OnNUMBERChanged();
+    partial void OnSTATUSChanging(int value);
+    partial void OnSTATUSChanged();
+    #endregion
+		
 		public detail_receipt()
 		{
+			this._item = default(EntityRef<item>);
+			this._receipt = default(EntityRef<receipt>);
+			this._table = default(EntityRef<table>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int ID
 		{
 			get
@@ -1122,13 +1127,17 @@ namespace CoffeeLibrary
 			{
 				if ((this._ID != value))
 				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
 					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECEIPT", DbType="Int NOT NULL")]
-		public int ID_RECEIPT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECEIPT", DbType="Int")]
+		public System.Nullable<int> ID_RECEIPT
 		{
 			get
 			{
@@ -1138,13 +1147,21 @@ namespace CoffeeLibrary
 			{
 				if ((this._ID_RECEIPT != value))
 				{
+					if (this._receipt.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_RECEIPTChanging(value);
+					this.SendPropertyChanging();
 					this._ID_RECEIPT = value;
+					this.SendPropertyChanged("ID_RECEIPT");
+					this.OnID_RECEIPTChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ITEM", DbType="Int NOT NULL")]
-		public int ID_ITEM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ITEM", DbType="Int")]
+		public System.Nullable<int> ID_ITEM
 		{
 			get
 			{
@@ -1154,7 +1171,15 @@ namespace CoffeeLibrary
 			{
 				if ((this._ID_ITEM != value))
 				{
+					if ((this._item.HasLoadedOrAssignedValue || this._table.HasLoadedOrAssignedValue))
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnID_ITEMChanging(value);
+					this.SendPropertyChanging();
 					this._ID_ITEM = value;
+					this.SendPropertyChanged("ID_ITEM");
+					this.OnID_ITEMChanged();
 				}
 			}
 		}
@@ -1170,7 +1195,11 @@ namespace CoffeeLibrary
 			{
 				if ((this._ID_TABLE != value))
 				{
+					this.OnID_TABLEChanging(value);
+					this.SendPropertyChanging();
 					this._ID_TABLE = value;
+					this.SendPropertyChanged("ID_TABLE");
+					this.OnID_TABLEChanged();
 				}
 			}
 		}
@@ -1186,7 +1215,11 @@ namespace CoffeeLibrary
 			{
 				if ((this._NUMBER != value))
 				{
+					this.OnNUMBERChanging(value);
+					this.SendPropertyChanging();
 					this._NUMBER = value;
+					this.SendPropertyChanged("NUMBER");
+					this.OnNUMBERChanged();
 				}
 			}
 		}
@@ -1202,8 +1235,134 @@ namespace CoffeeLibrary
 			{
 				if ((this._STATUS != value))
 				{
+					this.OnSTATUSChanging(value);
+					this.SendPropertyChanging();
 					this._STATUS = value;
+					this.SendPropertyChanged("STATUS");
+					this.OnSTATUSChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="item_detail_receipt", Storage="_item", ThisKey="ID_ITEM", OtherKey="ID", IsForeignKey=true)]
+		public item item
+		{
+			get
+			{
+				return this._item.Entity;
+			}
+			set
+			{
+				item previousValue = this._item.Entity;
+				if (((previousValue != value) 
+							|| (this._item.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._item.Entity = null;
+						previousValue.detail_receipts.Remove(this);
+					}
+					this._item.Entity = value;
+					if ((value != null))
+					{
+						value.detail_receipts.Add(this);
+						this._ID_ITEM = value.ID;
+					}
+					else
+					{
+						this._ID_ITEM = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("item");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="receipt_detail_receipt", Storage="_receipt", ThisKey="ID_RECEIPT", OtherKey="ID", IsForeignKey=true)]
+		public receipt receipt
+		{
+			get
+			{
+				return this._receipt.Entity;
+			}
+			set
+			{
+				receipt previousValue = this._receipt.Entity;
+				if (((previousValue != value) 
+							|| (this._receipt.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._receipt.Entity = null;
+						previousValue.detail_receipts.Remove(this);
+					}
+					this._receipt.Entity = value;
+					if ((value != null))
+					{
+						value.detail_receipts.Add(this);
+						this._ID_RECEIPT = value.ID;
+					}
+					else
+					{
+						this._ID_RECEIPT = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("receipt");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="table_detail_receipt", Storage="_table", ThisKey="ID_ITEM", OtherKey="ID", IsForeignKey=true)]
+		public table table
+		{
+			get
+			{
+				return this._table.Entity;
+			}
+			set
+			{
+				table previousValue = this._table.Entity;
+				if (((previousValue != value) 
+							|| (this._table.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._table.Entity = null;
+						previousValue.detail_receipts.Remove(this);
+					}
+					this._table.Entity = value;
+					if ((value != null))
+					{
+						value.detail_receipts.Add(this);
+						this._ID_ITEM = value.ID;
+					}
+					else
+					{
+						this._ID_ITEM = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("table");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1873,6 +2032,8 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _STATUS;
 		
+		private EntitySet<detail_receipt> _detail_receipts;
+		
 		private EntitySet<detail_receipt_import> _detail_receipt_imports;
 		
 		private EntityRef<type_item> _type_item;
@@ -1901,6 +2062,7 @@ namespace CoffeeLibrary
 		
 		public item()
 		{
+			this._detail_receipts = new EntitySet<detail_receipt>(new Action<detail_receipt>(this.attach_detail_receipts), new Action<detail_receipt>(this.detach_detail_receipts));
 			this._detail_receipt_imports = new EntitySet<detail_receipt_import>(new Action<detail_receipt_import>(this.attach_detail_receipt_imports), new Action<detail_receipt_import>(this.detach_detail_receipt_imports));
 			this._type_item = default(EntityRef<type_item>);
 			OnCreated();
@@ -2070,6 +2232,19 @@ namespace CoffeeLibrary
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="item_detail_receipt", Storage="_detail_receipts", ThisKey="ID", OtherKey="ID_ITEM")]
+		public EntitySet<detail_receipt> detail_receipts
+		{
+			get
+			{
+				return this._detail_receipts;
+			}
+			set
+			{
+				this._detail_receipts.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="item_detail_receipt_import", Storage="_detail_receipt_imports", ThisKey="ID", OtherKey="ID_ITEM")]
 		public EntitySet<detail_receipt_import> detail_receipt_imports
 		{
@@ -2135,6 +2310,18 @@ namespace CoffeeLibrary
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_detail_receipts(detail_receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.item = this;
+		}
+		
+		private void detach_detail_receipts(detail_receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.item = null;
 		}
 		
 		private void attach_detail_receipt_imports(detail_receipt_import entity)
@@ -2693,11 +2880,7 @@ namespace CoffeeLibrary
 		
 		private int _ID;
 		
-		private string _CODE_RECEIPT;
-		
-		private int _ID_ACCOUNT_STAFF;
-		
-		private int _ID_ACCOUNT_CUSTOMER;
+		private int _ID_ACCOUNT;
 		
 		private System.DateTime _CREATE_AT;
 		
@@ -2705,9 +2888,9 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _STATUS;
 		
-		private EntityRef<account> _account;
+		private EntitySet<detail_receipt> _detail_receipts;
 		
-		private EntityRef<account> _account1;
+		private EntityRef<account> _account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2715,12 +2898,8 @@ namespace CoffeeLibrary
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnCODE_RECEIPTChanging(string value);
-    partial void OnCODE_RECEIPTChanged();
-    partial void OnID_ACCOUNT_STAFFChanging(int value);
-    partial void OnID_ACCOUNT_STAFFChanged();
-    partial void OnID_ACCOUNT_CUSTOMERChanging(int value);
-    partial void OnID_ACCOUNT_CUSTOMERChanged();
+    partial void OnID_ACCOUNTChanging(int value);
+    partial void OnID_ACCOUNTChanged();
     partial void OnCREATE_ATChanging(System.DateTime value);
     partial void OnCREATE_ATChanged();
     partial void OnSUM_MONEYChanging(System.Nullable<double> value);
@@ -2731,8 +2910,8 @@ namespace CoffeeLibrary
 		
 		public receipt()
 		{
+			this._detail_receipts = new EntitySet<detail_receipt>(new Action<detail_receipt>(this.attach_detail_receipts), new Action<detail_receipt>(this.detach_detail_receipts));
 			this._account = default(EntityRef<account>);
-			this._account1 = default(EntityRef<account>);
 			OnCreated();
 		}
 		
@@ -2756,70 +2935,26 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODE_RECEIPT", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string CODE_RECEIPT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT", DbType="Int NOT NULL")]
+		public int ID_ACCOUNT
 		{
 			get
 			{
-				return this._CODE_RECEIPT;
+				return this._ID_ACCOUNT;
 			}
 			set
 			{
-				if ((this._CODE_RECEIPT != value))
-				{
-					this.OnCODE_RECEIPTChanging(value);
-					this.SendPropertyChanging();
-					this._CODE_RECEIPT = value;
-					this.SendPropertyChanged("CODE_RECEIPT");
-					this.OnCODE_RECEIPTChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT_STAFF", DbType="Int NOT NULL")]
-		public int ID_ACCOUNT_STAFF
-		{
-			get
-			{
-				return this._ID_ACCOUNT_STAFF;
-			}
-			set
-			{
-				if ((this._ID_ACCOUNT_STAFF != value))
+				if ((this._ID_ACCOUNT != value))
 				{
 					if (this._account.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnID_ACCOUNT_STAFFChanging(value);
+					this.OnID_ACCOUNTChanging(value);
 					this.SendPropertyChanging();
-					this._ID_ACCOUNT_STAFF = value;
-					this.SendPropertyChanged("ID_ACCOUNT_STAFF");
-					this.OnID_ACCOUNT_STAFFChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ACCOUNT_CUSTOMER", DbType="Int NOT NULL")]
-		public int ID_ACCOUNT_CUSTOMER
-		{
-			get
-			{
-				return this._ID_ACCOUNT_CUSTOMER;
-			}
-			set
-			{
-				if ((this._ID_ACCOUNT_CUSTOMER != value))
-				{
-					if (this._account1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnID_ACCOUNT_CUSTOMERChanging(value);
-					this.SendPropertyChanging();
-					this._ID_ACCOUNT_CUSTOMER = value;
-					this.SendPropertyChanged("ID_ACCOUNT_CUSTOMER");
-					this.OnID_ACCOUNT_CUSTOMERChanged();
+					this._ID_ACCOUNT = value;
+					this.SendPropertyChanged("ID_ACCOUNT");
+					this.OnID_ACCOUNTChanged();
 				}
 			}
 		}
@@ -2884,7 +3019,20 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt", Storage="_account", ThisKey="ID_ACCOUNT_STAFF", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="receipt_detail_receipt", Storage="_detail_receipts", ThisKey="ID", OtherKey="ID_RECEIPT")]
+		public EntitySet<detail_receipt> detail_receipts
+		{
+			get
+			{
+				return this._detail_receipts;
+			}
+			set
+			{
+				this._detail_receipts.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt", Storage="_account", ThisKey="ID_ACCOUNT", OtherKey="ID", IsForeignKey=true)]
 		public account account
 		{
 			get
@@ -2907,47 +3055,13 @@ namespace CoffeeLibrary
 					if ((value != null))
 					{
 						value.receipts.Add(this);
-						this._ID_ACCOUNT_STAFF = value.ID;
+						this._ID_ACCOUNT = value.ID;
 					}
 					else
 					{
-						this._ID_ACCOUNT_STAFF = default(int);
+						this._ID_ACCOUNT = default(int);
 					}
 					this.SendPropertyChanged("account");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="account_receipt1", Storage="_account1", ThisKey="ID_ACCOUNT_CUSTOMER", OtherKey="ID", IsForeignKey=true)]
-		public account account1
-		{
-			get
-			{
-				return this._account1.Entity;
-			}
-			set
-			{
-				account previousValue = this._account1.Entity;
-				if (((previousValue != value) 
-							|| (this._account1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._account1.Entity = null;
-						previousValue.receipts1.Remove(this);
-					}
-					this._account1.Entity = value;
-					if ((value != null))
-					{
-						value.receipts1.Add(this);
-						this._ID_ACCOUNT_CUSTOMER = value.ID;
-					}
-					else
-					{
-						this._ID_ACCOUNT_CUSTOMER = default(int);
-					}
-					this.SendPropertyChanged("account1");
 				}
 			}
 		}
@@ -2971,6 +3085,18 @@ namespace CoffeeLibrary
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_detail_receipts(detail_receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.receipt = this;
+		}
+		
+		private void detach_detail_receipts(detail_receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.receipt = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.receipt_import")]
@@ -2980,8 +3106,6 @@ namespace CoffeeLibrary
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _ID;
-		
-		private string _CODE_IMPORT;
 		
 		private System.Nullable<int> _ID_SUPPLIER;
 		
@@ -3005,8 +3129,6 @@ namespace CoffeeLibrary
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnCODE_IMPORTChanging(string value);
-    partial void OnCODE_IMPORTChanged();
     partial void OnID_SUPPLIERChanging(System.Nullable<int> value);
     partial void OnID_SUPPLIERChanged();
     partial void OnID_ACCOUNTChanging(System.Nullable<int> value);
@@ -3043,26 +3165,6 @@ namespace CoffeeLibrary
 					this._ID = value;
 					this.SendPropertyChanged("ID");
 					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CODE_IMPORT", DbType="VarChar(50)")]
-		public string CODE_IMPORT
-		{
-			get
-			{
-				return this._CODE_IMPORT;
-			}
-			set
-			{
-				if ((this._CODE_IMPORT != value))
-				{
-					this.OnCODE_IMPORTChanging(value);
-					this.SendPropertyChanging();
-					this._CODE_IMPORT = value;
-					this.SendPropertyChanged("CODE_IMPORT");
-					this.OnCODE_IMPORTChanged();
 				}
 			}
 		}
@@ -3651,6 +3753,8 @@ namespace CoffeeLibrary
 		
 		private System.Nullable<int> _STATUS;
 		
+		private EntitySet<detail_receipt> _detail_receipts;
+		
 		private EntityRef<area> _area;
 		
     #region Extensibility Method Definitions
@@ -3669,6 +3773,7 @@ namespace CoffeeLibrary
 		
 		public table()
 		{
+			this._detail_receipts = new EntitySet<detail_receipt>(new Action<detail_receipt>(this.attach_detail_receipts), new Action<detail_receipt>(this.detach_detail_receipts));
 			this._area = default(EntityRef<area>);
 			OnCreated();
 		}
@@ -3757,6 +3862,19 @@ namespace CoffeeLibrary
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="table_detail_receipt", Storage="_detail_receipts", ThisKey="ID", OtherKey="ID_ITEM")]
+		public EntitySet<detail_receipt> detail_receipts
+		{
+			get
+			{
+				return this._detail_receipts;
+			}
+			set
+			{
+				this._detail_receipts.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="area_table", Storage="_area", ThisKey="ID_AREA", OtherKey="ID", IsForeignKey=true)]
 		public area area
 		{
@@ -3809,6 +3927,18 @@ namespace CoffeeLibrary
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_detail_receipts(detail_receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.table = this;
+		}
+		
+		private void detach_detail_receipts(detail_receipt entity)
+		{
+			this.SendPropertyChanging();
+			entity.table = null;
 		}
 	}
 	

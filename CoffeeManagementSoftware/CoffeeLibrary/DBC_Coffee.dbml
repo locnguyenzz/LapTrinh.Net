@@ -8,8 +8,7 @@
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="account_user_group_user" Member="user_group_users" ThisKey="ID" OtherKey="ID_ACCOUNT" Type="user_group_user" />
       <Association Name="account_profile" Member="profiles" ThisKey="ID" OtherKey="ID_ACCOUNT" Type="profile" />
-      <Association Name="account_receipt" Member="receipts" ThisKey="ID" OtherKey="ID_ACCOUNT_STAFF" Type="receipt" />
-      <Association Name="account_receipt1" Member="receipts1" ThisKey="ID" OtherKey="ID_ACCOUNT_CUSTOMER" Type="receipt" />
+      <Association Name="account_receipt" Member="receipts" ThisKey="ID" OtherKey="ID_ACCOUNT" Type="receipt" />
       <Association Name="account_receipt_import" Member="receipt_imports" ThisKey="ID" OtherKey="ID_ACCOUNT" Type="receipt_import" />
       <Association Name="account_timekeeping" Member="timekeepings" ThisKey="ID" OtherKey="ID_ACCOUNT" Type="timekeeping" />
     </Type>
@@ -43,9 +42,9 @@
   </Table>
   <Table Name="dbo.detail_receipt" Member="detail_receipts">
     <Type Name="detail_receipt">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_RECEIPT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_RECEIPT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_TABLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NUMBER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -134,21 +133,17 @@
   <Table Name="dbo.receipt" Member="receipts">
     <Type Name="receipt">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="CODE_RECEIPT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ID_ACCOUNT_STAFF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ID_ACCOUNT_CUSTOMER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ACCOUNT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CREATE_AT" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="SUM_MONEY" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="receipt_detail_receipt" Member="detail_receipts" ThisKey="ID" OtherKey="ID_RECEIPT" Type="detail_receipt" />
-      <Association Name="account_receipt" Member="account" ThisKey="ID_ACCOUNT_STAFF" OtherKey="ID" Type="account" IsForeignKey="true" />
-      <Association Name="account_receipt1" Member="account1" ThisKey="ID_ACCOUNT_CUSTOMER" OtherKey="ID" Type="account" IsForeignKey="true" />
+      <Association Name="account_receipt" Member="account" ThisKey="ID_ACCOUNT" OtherKey="ID" Type="account" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.receipt_import" Member="receipt_imports">
     <Type Name="receipt_import">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="CODE_IMPORT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ID_SUPPLIER" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ID_ACCOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CREATE_AT" Type="System.DateTime" DbType="Date" CanBeNull="true" />

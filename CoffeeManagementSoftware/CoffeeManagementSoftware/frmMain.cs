@@ -182,5 +182,61 @@ namespace CoffeeManagementSoftware
             frmTimeKeeping frm = new frmTimeKeeping();
             frm.ShowDialog();
         }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CheckExist("frmStaff"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmStaff use = new frmStaff();
+                openForm(use);
+            }
+        }
+
+        private void nhậpHàngVàoKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CheckExist("frmWarehousing"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmWarehousing use = new frmWarehousing();
+                openForm(use);
+            }
+        }
+
+        private void quảnLýBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CheckExist("frmSell"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmSell use = new frmSell();
+                openForm(use);
+            }
+        }
+
+        private void tSBMangamentSale_Click(object sender, EventArgs e)
+        {
+            if (CheckExist("frmSell"))
+            {
+                XtraMessageBox.Show("Chuc nang nay dang su dung!", "Thong Bao");
+                return;
+            }
+            else
+            {
+                frmSell use = new frmSell();
+                openForm(use);
+            }
+        }
     }
 }
