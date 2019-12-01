@@ -48,8 +48,7 @@ namespace CoffeeManagementSoftware
         {
             tssShowAccount.Text = Program.loginForm.NameAccount;
             
-            frmUseService use = new frmUseService();
-            openForm(use);
+            
         }
         private void tSBUseService_Click(object sender, EventArgs e)
         {

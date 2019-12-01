@@ -36,7 +36,7 @@ namespace CoffeeLibrary
                 }
                 else
                 {
-                    DateTime dt = new DateTime();
+                    
                     receipt add = new receipt();
                     add.ID = pID;
                     add.ID_ACCOUNT = 1;

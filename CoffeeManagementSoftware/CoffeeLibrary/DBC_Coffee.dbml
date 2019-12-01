@@ -42,9 +42,8 @@
   </Table>
   <Table Name="dbo.detail_receipt" Member="detail_receipts">
     <Type Name="detail_receipt">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_RECEIPT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_RECEIPT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="ID_TABLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="NUMBER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -55,9 +54,8 @@
   </Table>
   <Table Name="dbo.detail_receipt_import" Member="detail_receipt_imports">
     <Type Name="detail_receipt_import">
-      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ID_RECEIPT_IMPORT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_RECEIPT_IMPORT" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID_ITEM" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NUMBER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="item_detail_receipt_import" Member="item" ThisKey="ID_ITEM" OtherKey="ID" Type="item" IsForeignKey="true" />

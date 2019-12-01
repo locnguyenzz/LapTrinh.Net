@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -228,19 +228,19 @@
             this.sửaToolStripMenuItem,
             this.xóaToolStripMenuItem});
             this.ctm.Name = "ctm";
-            this.ctm.Size = new System.Drawing.Size(153, 70);
+            this.ctm.Size = new System.Drawing.Size(95, 48);
             // 
             // sửaToolStripMenuItem
             // 
             this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.sửaToolStripMenuItem.Text = "Sửa";
             this.sửaToolStripMenuItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click_1);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.xóaToolStripMenuItem.Text = "Xóa";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click_1);
             // 
@@ -314,9 +314,9 @@
             // 
             // MaPhieuNhap
             // 
-            this.MaPhieuNhap.DataPropertyName = "ID";
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Aqua;
-            this.MaPhieuNhap.DefaultCellStyle = dataGridViewCellStyle17;
+            this.MaPhieuNhap.DataPropertyName = "ID_RECEIPT_IMPORT";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
+            this.MaPhieuNhap.DefaultCellStyle = dataGridViewCellStyle1;
             this.MaPhieuNhap.HeaderText = "Mã Phiếu Nhập";
             this.MaPhieuNhap.Name = "MaPhieuNhap";
             this.MaPhieuNhap.ReadOnly = true;
@@ -352,8 +352,8 @@
             // MaSanPham
             // 
             this.MaSanPham.DataPropertyName = "ID_ITEM";
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Aqua;
-            this.MaSanPham.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
+            this.MaSanPham.DefaultCellStyle = dataGridViewCellStyle2;
             this.MaSanPham.HeaderText = "Mã Sản Phẩm";
             this.MaSanPham.Name = "MaSanPham";
             this.MaSanPham.ReadOnly = true;
@@ -361,16 +361,16 @@
             // SoLuong
             // 
             this.SoLuong.DataPropertyName = "NUMBER";
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Yellow;
-            this.SoLuong.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Yellow;
+            this.SoLuong.DefaultCellStyle = dataGridViewCellStyle3;
             this.SoLuong.HeaderText = "Số Lượng";
             this.SoLuong.Name = "SoLuong";
             // 
             // DonGia
             // 
             this.DonGia.DataPropertyName = "PRICE_PURCHASE";
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.Yellow;
-            this.DonGia.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Yellow;
+            this.DonGia.DefaultCellStyle = dataGridViewCellStyle4;
             this.DonGia.HeaderText = "Đơn Giá";
             this.DonGia.Name = "DonGia";
             // 

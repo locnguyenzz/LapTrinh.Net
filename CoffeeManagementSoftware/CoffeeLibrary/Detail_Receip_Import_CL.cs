@@ -8,17 +8,18 @@ namespace CoffeeLibrary
 {
     public class Detail_Receip_Import_CL:DataContext
     {
+        Item_CL dll = new Item_CL();
         public List<detail_receipt_import> LoadPN_MaPN(int pMaPN)
         {
-            return _Coffee.detail_receipt_imports.Where(t => t.ID.Equals(pMaPN)).ToList();
+            return _Coffee.detail_receipt_imports.Where(t => t.ID_RECEIPT_IMPORT.Equals(pMaPN)).ToList();
         }
 
         //Cap nhat ctpn
-        public bool CapNhatCTPN(int pMaPN, int pNum)
+        public bool CapNhatCTPN(int pMaPN,int pMaSp, int pNum)
         {
             try
             {
-                detail_receipt_import check = _Coffee.detail_receipt_imports.Where(t => t.ID.Equals(pMaPN)).FirstOrDefault();
+                detail_receipt_import check = _Coffee.detail_receipt_imports.Where(t => t.ID_RECEIPT_IMPORT.Equals(pMaPN) && t.ID_ITEM.Equals(pMaSp)).FirstOrDefault();
                 check.NUMBER = pNum;
                 _Coffee.SubmitChanges();
                 return true;
@@ -33,7 +34,7 @@ namespace CoffeeLibrary
         {
             try
             {
-                detail_receipt_import check = _Coffee.detail_receipt_imports.Where(t => t.ID.Equals(pMaPN)).FirstOrDefault();
+                detail_receipt_import check = _Coffee.detail_receipt_imports.Where(t => t.ID_RECEIPT_IMPORT.Equals(pMaPN) && t.ID_ITEM.Equals(pMaSp)).FirstOrDefault();
                 if (check != null)
                 {
                     return false;
@@ -41,7 +42,7 @@ namespace CoffeeLibrary
                 else
                 {
                     detail_receipt_import add = new detail_receipt_import();
-                    add.ID = pMaPN;
+                    add.ID_RECEIPT_IMPORT = pMaPN;
                     add.ID_ITEM = pMaSp;
                     add.PRICE_PURCHASE = pDonGia;
                     add.NUMBER = pNum;
@@ -58,11 +59,11 @@ namespace CoffeeLibrary
         }
 
         //Xoa chi tiet pn
-        public bool XoaCTNP(int pMaPN)
+        public bool XoaCTNP(int pMaPN, int pMaSp)
         {
             try
             {
-                detail_receipt_import check = _Coffee.detail_receipt_imports.Where(t => t.ID.Equals(pMaPN)).FirstOrDefault();
+                detail_receipt_import check = _Coffee.detail_receipt_imports.Where(t => t.ID_RECEIPT_IMPORT.Equals(pMaPN) && t.ID_ITEM.Equals(pMaSp)).FirstOrDefault();
                 if (check != null)
                 {
                     _Coffee.detail_receipt_imports.DeleteOnSubmit(check);
@@ -85,12 +86,14 @@ namespace CoffeeLibrary
         {
             try
             {
-                detail_receipt_import check = _Coffee.detail_receipt_imports.Where(t => t.ID.Equals(pMaPN)).FirstOrDefault();
+                detail_receipt_import check = _Coffee.detail_receipt_imports.Where(t => t.ID_RECEIPT_IMPORT.Equals(pMaPN) && t.ID_ITEM.Equals(pMaSp)).FirstOrDefault();
                 if (check != null)
                 {
+                    int numchang = pNum - check.NUMBER;
                     check.ID_ITEM = pMaSp;
                     check.NUMBER = pNum;
                     check.PRICE_PURCHASE = pDonGia;
+                    dll.UpdateNumber(pMaSp, numchang);
                     _Coffee.SubmitChanges();
                     return true;
                 }

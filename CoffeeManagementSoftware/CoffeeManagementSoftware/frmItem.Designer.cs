@@ -30,6 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItem));
             this.dgv_Item = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME_ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE_SELL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRICE_PURCHASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NAME_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,26 +61,15 @@
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.txt_Unit = new System.Windows.Forms.TextBox();
             this.txt_PriceSell = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbo_NameType = new System.Windows.Forms.ComboBox();
             this.txt_PricePur = new System.Windows.Forms.Label();
             this.txt_Purchase = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbo_NameType = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_Number = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME_ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE_SELL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRICE_PURCHASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NAME_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_AddNewType = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Item)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -100,307 +101,15 @@
             this.Column10});
             this.tableLayoutPanel1.SetColumnSpan(this.dgv_Item, 4);
             this.dgv_Item.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Item.Location = new System.Drawing.Point(3, 184);
+            this.dgv_Item.Location = new System.Drawing.Point(3, 155);
             this.dgv_Item.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Item.Name = "dgv_Item";
             this.dgv_Item.ReadOnly = true;
             this.dgv_Item.RowTemplate.Height = 24;
             this.dgv_Item.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Item.Size = new System.Drawing.Size(1267, 326);
+            this.dgv_Item.Size = new System.Drawing.Size(1267, 355);
             this.dgv_Item.TabIndex = 1;
             this.dgv_Item.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Item_CellClick);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1287, 544);
-            this.tabControl1.TabIndex = 2;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1279, 518);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Mặt hàng";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.58287F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.16732F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.29065F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.8806F));
-            this.tableLayoutPanel1.Controls.Add(this.toolStrip2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dgv_Item, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txt_ID, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Name, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Unit, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txt_PriceSell, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txt_PricePur, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Purchase, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbo_NameType, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txt_Number, 3, 4);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.470841F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.451272F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.216047F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.09326F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1273, 512);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // toolStrip2
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip2, 4);
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tSBThemmoi,
-            this.tSBChinhsua,
-            this.tSBXoa,
-            this.tSBIn,
-            this.tSBLoc,
-            this.tSBDInhluong,
-            this.tSBCapnhatgia});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1273, 32);
-            this.toolStrip2.TabIndex = 0;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // tSBThemmoi
-            // 
-            this.tSBThemmoi.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
-            this.tSBThemmoi.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBThemmoi.Name = "tSBThemmoi";
-            this.tSBThemmoi.Size = new System.Drawing.Size(125, 29);
-            this.tSBThemmoi.Text = "Thêm mới (Insert)";
-            this.tSBThemmoi.Click += new System.EventHandler(this.tSBThemmoi_Click);
-            // 
-            // tSBChinhsua
-            // 
-            this.tSBChinhsua.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
-            this.tSBChinhsua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBChinhsua.Name = "tSBChinhsua";
-            this.tSBChinhsua.Size = new System.Drawing.Size(84, 29);
-            this.tSBChinhsua.Text = "Chỉnh sửa";
-            this.tSBChinhsua.Click += new System.EventHandler(this.tSBChinhsua_Click);
-            // 
-            // tSBXoa
-            // 
-            this.tSBXoa.Image = global::CoffeeManagementSoftware.Properties.Resources.Delete_16x16;
-            this.tSBXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBXoa.Name = "tSBXoa";
-            this.tSBXoa.Size = new System.Drawing.Size(79, 29);
-            this.tSBXoa.Text = "Xóa (Del)";
-            this.tSBXoa.Click += new System.EventHandler(this.tSBXoa_Click);
-            // 
-            // tSBIn
-            // 
-            this.tSBIn.Image = ((System.Drawing.Image)(resources.GetObject("tSBIn.Image")));
-            this.tSBIn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBIn.Name = "tSBIn";
-            this.tSBIn.Size = new System.Drawing.Size(41, 29);
-            this.tSBIn.Text = "In";
-            // 
-            // tSBLoc
-            // 
-            this.tSBLoc.Image = global::CoffeeManagementSoftware.Properties.Resources.Lookup_Reference_32x32;
-            this.tSBLoc.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBLoc.Name = "tSBLoc";
-            this.tSBLoc.Size = new System.Drawing.Size(50, 29);
-            this.tSBLoc.Text = "Lọc";
-            // 
-            // tSBDInhluong
-            // 
-            this.tSBDInhluong.Image = ((System.Drawing.Image)(resources.GetObject("tSBDInhluong.Image")));
-            this.tSBDInhluong.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBDInhluong.Name = "tSBDInhluong";
-            this.tSBDInhluong.Size = new System.Drawing.Size(128, 29);
-            this.tSBDInhluong.Text = "Import định lượng";
-            // 
-            // tSBCapnhatgia
-            // 
-            this.tSBCapnhatgia.Image = ((System.Drawing.Image)(resources.GetObject("tSBCapnhatgia.Image")));
-            this.tSBCapnhatgia.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tSBCapnhatgia.Name = "tSBCapnhatgia";
-            this.tSBCapnhatgia.Size = new System.Drawing.Size(142, 29);
-            this.tSBCapnhatgia.Text = "Cập nhật giá từ excel";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(587, 33);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Mã hàng";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(587, 38);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tên hàng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(3, 135);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(587, 47);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Đơn vị tính";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(840, 64);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 33);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Giá bán";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txt_ID
-            // 
-            this.txt_ID.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_ID.Location = new System.Drawing.Point(596, 67);
-            this.txt_ID.Name = "txt_ID";
-            this.txt_ID.Size = new System.Drawing.Size(238, 21);
-            this.txt_ID.TabIndex = 8;
-            // 
-            // txt_Name
-            // 
-            this.txt_Name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Name.Location = new System.Drawing.Point(596, 100);
-            this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(238, 21);
-            this.txt_Name.TabIndex = 9;
-            // 
-            // txt_Unit
-            // 
-            this.txt_Unit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Unit.Location = new System.Drawing.Point(596, 138);
-            this.txt_Unit.Name = "txt_Unit";
-            this.txt_Unit.Size = new System.Drawing.Size(238, 21);
-            this.txt_Unit.TabIndex = 10;
-            // 
-            // txt_PriceSell
-            // 
-            this.txt_PriceSell.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_PriceSell.Location = new System.Drawing.Point(971, 67);
-            this.txt_PriceSell.Name = "txt_PriceSell";
-            this.txt_PriceSell.Size = new System.Drawing.Size(299, 21);
-            this.txt_PriceSell.TabIndex = 11;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(840, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 32);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Nhóm hàng";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // cbo_NameType
-            // 
-            this.cbo_NameType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbo_NameType.FormattingEnabled = true;
-            this.cbo_NameType.Location = new System.Drawing.Point(971, 35);
-            this.cbo_NameType.Name = "cbo_NameType";
-            this.cbo_NameType.Size = new System.Drawing.Size(299, 21);
-            this.cbo_NameType.TabIndex = 13;
-            // 
-            // txt_PricePur
-            // 
-            this.txt_PricePur.AutoSize = true;
-            this.txt_PricePur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_PricePur.Location = new System.Drawing.Point(840, 97);
-            this.txt_PricePur.Name = "txt_PricePur";
-            this.txt_PricePur.Size = new System.Drawing.Size(125, 38);
-            this.txt_PricePur.TabIndex = 17;
-            this.txt_PricePur.Text = "Giá nhập";
-            this.txt_PricePur.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txt_Purchase
-            // 
-            this.txt_Purchase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Purchase.Location = new System.Drawing.Point(971, 100);
-            this.txt_Purchase.Name = "txt_Purchase";
-            this.txt_Purchase.Size = new System.Drawing.Size(299, 21);
-            this.txt_Purchase.TabIndex = 12;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(956, 518);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(950, 512);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(840, 135);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 47);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Số lượng";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txt_Number
-            // 
-            this.txt_Number.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Number.Location = new System.Drawing.Point(971, 138);
-            this.txt_Number.Name = "txt_Number";
-            this.txt_Number.Size = new System.Drawing.Size(299, 21);
-            this.txt_Number.TabIndex = 19;
             // 
             // ID
             // 
@@ -491,6 +200,308 @@
             this.Column10.ReadOnly = true;
             this.Column10.Visible = false;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1287, 544);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1279, 518);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Mặt hàng";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.58287F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.16732F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.29065F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.8806F));
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgv_Item, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txt_ID, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Name, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Unit, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cbo_NameType, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_PricePur, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txt_PriceSell, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Purchase, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txt_Number, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btn_AddNewType, 2, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.470841F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.664063F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.92188F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1273, 512);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // toolStrip2
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.toolStrip2, 4);
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tSBThemmoi,
+            this.tSBChinhsua,
+            this.tSBXoa,
+            this.tSBIn,
+            this.tSBLoc,
+            this.tSBDInhluong,
+            this.tSBCapnhatgia});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(1273, 31);
+            this.toolStrip2.TabIndex = 0;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // tSBThemmoi
+            // 
+            this.tSBThemmoi.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
+            this.tSBThemmoi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBThemmoi.Name = "tSBThemmoi";
+            this.tSBThemmoi.Size = new System.Drawing.Size(125, 28);
+            this.tSBThemmoi.Text = "Thêm mới (Insert)";
+            this.tSBThemmoi.Click += new System.EventHandler(this.tSBThemmoi_Click);
+            // 
+            // tSBChinhsua
+            // 
+            this.tSBChinhsua.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
+            this.tSBChinhsua.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBChinhsua.Name = "tSBChinhsua";
+            this.tSBChinhsua.Size = new System.Drawing.Size(84, 28);
+            this.tSBChinhsua.Text = "Chỉnh sửa";
+            this.tSBChinhsua.Click += new System.EventHandler(this.tSBChinhsua_Click);
+            // 
+            // tSBXoa
+            // 
+            this.tSBXoa.Image = global::CoffeeManagementSoftware.Properties.Resources.Delete_16x16;
+            this.tSBXoa.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBXoa.Name = "tSBXoa";
+            this.tSBXoa.Size = new System.Drawing.Size(79, 28);
+            this.tSBXoa.Text = "Xóa (Del)";
+            this.tSBXoa.Click += new System.EventHandler(this.tSBXoa_Click);
+            // 
+            // tSBIn
+            // 
+            this.tSBIn.Image = ((System.Drawing.Image)(resources.GetObject("tSBIn.Image")));
+            this.tSBIn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBIn.Name = "tSBIn";
+            this.tSBIn.Size = new System.Drawing.Size(41, 28);
+            this.tSBIn.Text = "In";
+            // 
+            // tSBLoc
+            // 
+            this.tSBLoc.Image = global::CoffeeManagementSoftware.Properties.Resources.Lookup_Reference_32x32;
+            this.tSBLoc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBLoc.Name = "tSBLoc";
+            this.tSBLoc.Size = new System.Drawing.Size(50, 28);
+            this.tSBLoc.Text = "Lọc";
+            // 
+            // tSBDInhluong
+            // 
+            this.tSBDInhluong.Image = ((System.Drawing.Image)(resources.GetObject("tSBDInhluong.Image")));
+            this.tSBDInhluong.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBDInhluong.Name = "tSBDInhluong";
+            this.tSBDInhluong.Size = new System.Drawing.Size(128, 28);
+            this.tSBDInhluong.Text = "Import định lượng";
+            // 
+            // tSBCapnhatgia
+            // 
+            this.tSBCapnhatgia.Image = ((System.Drawing.Image)(resources.GetObject("tSBCapnhatgia.Image")));
+            this.tSBCapnhatgia.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tSBCapnhatgia.Name = "tSBCapnhatgia";
+            this.tSBCapnhatgia.Size = new System.Drawing.Size(142, 28);
+            this.tSBCapnhatgia.Text = "Cập nhật giá từ excel";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(587, 31);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Mã hàng";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(587, 32);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tên hàng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(3, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(587, 28);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Đơn vị tính";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(840, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 31);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Giá bán";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txt_ID
+            // 
+            this.txt_ID.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_ID.Location = new System.Drawing.Point(596, 34);
+            this.txt_ID.Name = "txt_ID";
+            this.txt_ID.Size = new System.Drawing.Size(238, 21);
+            this.txt_ID.TabIndex = 8;
+            // 
+            // txt_Name
+            // 
+            this.txt_Name.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Name.Location = new System.Drawing.Point(596, 65);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(238, 21);
+            this.txt_Name.TabIndex = 9;
+            // 
+            // txt_Unit
+            // 
+            this.txt_Unit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Unit.Location = new System.Drawing.Point(596, 97);
+            this.txt_Unit.Name = "txt_Unit";
+            this.txt_Unit.Size = new System.Drawing.Size(238, 21);
+            this.txt_Unit.TabIndex = 10;
+            // 
+            // txt_PriceSell
+            // 
+            this.txt_PriceSell.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_PriceSell.Location = new System.Drawing.Point(971, 34);
+            this.txt_PriceSell.Name = "txt_PriceSell";
+            this.txt_PriceSell.Size = new System.Drawing.Size(299, 21);
+            this.txt_PriceSell.TabIndex = 11;
+            // 
+            // txt_PricePur
+            // 
+            this.txt_PricePur.AutoSize = true;
+            this.txt_PricePur.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_PricePur.Location = new System.Drawing.Point(840, 62);
+            this.txt_PricePur.Name = "txt_PricePur";
+            this.txt_PricePur.Size = new System.Drawing.Size(125, 32);
+            this.txt_PricePur.TabIndex = 17;
+            this.txt_PricePur.Text = "Giá nhập";
+            this.txt_PricePur.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txt_Purchase
+            // 
+            this.txt_Purchase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Purchase.Location = new System.Drawing.Point(971, 65);
+            this.txt_Purchase.Name = "txt_Purchase";
+            this.txt_Purchase.Size = new System.Drawing.Size(299, 21);
+            this.txt_Purchase.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Location = new System.Drawing.Point(3, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(587, 31);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Nhóm hàng";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // cbo_NameType
+            // 
+            this.cbo_NameType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbo_NameType.FormattingEnabled = true;
+            this.cbo_NameType.Location = new System.Drawing.Point(596, 125);
+            this.cbo_NameType.Name = "cbo_NameType";
+            this.cbo_NameType.Size = new System.Drawing.Size(238, 21);
+            this.cbo_NameType.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Location = new System.Drawing.Point(840, 94);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(125, 28);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Số lượng";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txt_Number
+            // 
+            this.txt_Number.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Number.Location = new System.Drawing.Point(971, 97);
+            this.txt_Number.Name = "txt_Number";
+            this.txt_Number.Size = new System.Drawing.Size(299, 21);
+            this.txt_Number.TabIndex = 19;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1279, 518);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1273, 512);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // btn_AddNewType
+            // 
+            this.btn_AddNewType.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_AddNewType.Location = new System.Drawing.Point(840, 125);
+            this.btn_AddNewType.Name = "btn_AddNewType";
+            this.btn_AddNewType.Size = new System.Drawing.Size(45, 25);
+            this.btn_AddNewType.TabIndex = 20;
+            this.btn_AddNewType.Text = "...";
+            this.btn_AddNewType.Click += new System.EventHandler(this.btn_AddNewType_Click);
+            // 
             // frmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,5 +568,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private DevExpress.XtraEditors.SimpleButton btn_AddNewType;
     }
 }

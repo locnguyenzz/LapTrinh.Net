@@ -120,5 +120,12 @@ namespace CoffeeManagementSoftware
             txt_Number.Text = dgv_Item.CurrentRow.Cells["NUMBER"].Value.ToString();
             cbo_NameType.Text = dgv_Item.CurrentRow.Cells["NAME_TYPE"].Value.ToString();          
         }
+
+        private void btn_AddNewType_Click(object sender, EventArgs e)
+        {
+            frmTypeItem use = new frmTypeItem();
+            use.ShowDialog();
+            LoadItem();
+        }
     }
 }

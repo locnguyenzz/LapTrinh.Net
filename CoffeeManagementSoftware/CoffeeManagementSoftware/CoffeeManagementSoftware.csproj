@@ -146,6 +146,12 @@
     <Compile Include="frmTimeKeeping.Designer.cs">
       <DependentUpon>frmTimeKeeping.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTypeItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTypeItem.Designer.cs">
+      <DependentUpon>frmTypeItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmUseService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimeKeeping.resx">
       <DependentUpon>frmTimeKeeping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTypeItem.resx">
+      <DependentUpon>frmTypeItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUseService.resx">
       <DependentUpon>frmUseService.cs</DependentUpon>

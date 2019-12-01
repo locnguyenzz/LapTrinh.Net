@@ -13,7 +13,7 @@ namespace CoffeeManagementSoftware
 {
     public partial class frmWarehousing : DevExpress.XtraEditors.XtraForm
     {
-        
+
         WareHousing_CL _pn = new WareHousing_CL();
         Supplier_CL _ncc = new Supplier_CL();
         Item_CL _sp = new Item_CL();
@@ -45,17 +45,16 @@ namespace CoffeeManagementSoftware
             cbbMaSanPham.ValueMember = "ID";
         }
         public void LoadData()
-        {            
+        {
             LoadMaPN();
             LoadNCC();
             LoadSP();
             txtMaPhieuNhap.Focus();
-            txtThanhTien.Text = "0";
-            txtSoLuong.Text = "0";
+
         }
 
-       
-        
+
+
         public void LoadCTPN(int pMaPn)
         {
             dgvCTPN.DataSource = _ctpn.LoadPN_MaPN(pMaPn);
@@ -156,7 +155,7 @@ namespace CoffeeManagementSoftware
             try
             {
                 receipt_import pn = _pn.LoadTTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()));
-                
+
                 if (pn != null)
                 {
                     txtMaPhieuNhap.Text = pn.ID.ToString();
@@ -197,7 +196,7 @@ namespace CoffeeManagementSoftware
                         {
                             dgvCTPN.Rows[i].Cells["SoLuong"].Value = (int.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString()) + Int32.Parse(txtSoLuong.Text)).ToString();
                             //Goi ham cap nhat so luong ctpn
-                            bool capnhatsoluong = _ctpn.CapNhatCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()),Int32.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString()));
+                            bool capnhatsoluong = _ctpn.CapNhatCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()),int.Parse(cbbMaSanPham.SelectedValue.ToString()), Int32.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString()));
                             //Ở đây cần tạo thêm hàm cập nhật số lượng trong kho(table: SanPham)
                             _sp.UpdateNumber(int.Parse(cbbMaSanPham.SelectedValue.ToString()), int.Parse(txtSoLuong.Text));
                         }
@@ -232,15 +231,17 @@ namespace CoffeeManagementSoftware
                         txtDonGia.Focus();
                         return;
                     }
-                    bool themmoi = _ctpn.ThemMoiCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()),Int32.Parse( cbbMaSanPham.SelectedValue.ToString()),Double.Parse(txtDonGia.Text),Int32.Parse(txtSoLuong.Text));
+                    bool themmoi = _ctpn.ThemMoiCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()), Int32.Parse(cbbMaSanPham.SelectedValue.ToString()), Double.Parse(txtDonGia.Text), Int32.Parse(txtSoLuong.Text));
                     //goi ham them moi , sau do load lai dgvCTPN
                     if (themmoi)
                     {
-                        LoadCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()));
+                        LoadData();
                         txtThanhTien.Text = TinhThanhTien().ToString();
                         bool capnhatthanhtien = _pn.CapNhatThanhTien(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()), Double.Parse(txtThanhTien.Text));
                         MessageBox.Show("Them CTPN thanh cong");
                         dgvCTPN.CurrentRow.Cells["DonGia"].Value = double.Parse(txtDonGia.Text);
+                        _sp.UpdateNumber(int.Parse(cbbMaSanPham.SelectedValue.ToString()), int.Parse(txtSoLuong.Text));
+                        LoadCTPN(Int32.Parse(cbbMaPhieuNhap.SelectedValue.ToString()));
                         LoadData();
                         return;
                     }
@@ -261,13 +262,14 @@ namespace CoffeeManagementSoftware
                 r = MessageBox.Show("Bạn có chắc muốn xóa sản phẩm có Mã: " + dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString(), "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (r == DialogResult.Yes)
                 {
-                    bool xoa = _ctpn.XoaCTNP(int.Parse(cbbMaPhieuNhap.Text));
+                    bool xoa = _ctpn.XoaCTNP(int.Parse(cbbMaPhieuNhap.Text),int.Parse(cbbMaSanPham.Text));
                     if (xoa)
                     {
-                        LoadCTPN(int.Parse(cbbMaPhieuNhap.Text));
+
                         txtThanhTien.Text = TinhThanhTien().ToString();
                         bool capnhat = _pn.CapNhatThanhTien(int.Parse(cbbMaPhieuNhap.Text), double.Parse(txtThanhTien.Text));
                         MessageBox.Show("Xoa CTPN thanh cong !");
+                        LoadCTPN(int.Parse(cbbMaPhieuNhap.Text));
                     }
                     else
                     {
@@ -279,18 +281,28 @@ namespace CoffeeManagementSoftware
 
         private void sửaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (dgvCTPN.CurrentRow != null)
+            try
             {
-                //MessageBox.Show("Bạn đang sửa sản phẩm có Mã: "+dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString()+" bạn có thể sửa trực tiếp tại lưới danh sách hoặc trong các ô đơn giá, số lượng phía trên !");
-                bool sua = _ctpn.SuaCTNP(int.Parse(cbbMaPhieuNhap.Text),int.Parse (cbbMaSanPham.Text),  double.Parse (txtDonGia.Text), int.Parse(dgvCTPN.CurrentRow.Cells["SoLuong"].Value.ToString()));
-                if (sua)
+                if (dgvCTPN.CurrentRow != null)
                 {
-                    LoadCTPN(int.Parse(cbbMaPhieuNhap.Text));
-                    txtThanhTien.Text = TinhThanhTien().ToString();
-                    bool capnhat = _pn.CapNhatThanhTien(int.Parse(cbbMaPhieuNhap.Text), double.Parse( txtThanhTien.Text));
-                    MessageBox.Show("Sửa thành công sản phẩm Mã: " + dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString());
+                    //MessageBox.Show("Bạn đang sửa sản phẩm có Mã: "+dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString()+" bạn có thể sửa trực tiếp tại lưới danh sách hoặc trong các ô đơn giá, số lượng phía trên !");
+                    bool sua = _ctpn.SuaCTNP(int.Parse(cbbMaPhieuNhap.Text), int.Parse(cbbMaSanPham.Text), double.Parse(txtDonGia.Text), int.Parse(txtSoLuong.Text));
+                    if (sua)
+                    {
+                        txtThanhTien.Text = TinhThanhTien().ToString();
+                        bool capnhat = _pn.CapNhatThanhTien(int.Parse(cbbMaPhieuNhap.Text), double.Parse(txtThanhTien.Text));
+                        MessageBox.Show("Sửa thành công sản phẩm Mã: " + dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString());
+
+                        LoadCTPN(int.Parse(cbbMaPhieuNhap.Text));
+                    }
                 }
             }
+            catch
+            {
+                XtraMessageBox.Show("Co loi");
+                return;
+            }
+
         }
 
     }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgv_Inventory = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE_SELL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE_PURCHASE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +40,8 @@
             this.ID_ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UNIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_Refresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Inventory)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,29 +66,11 @@
             this.NUMBER});
             this.tableLayoutPanel1.SetColumnSpan(this.dgv_Inventory, 3);
             this.dgv_Inventory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_Inventory.Location = new System.Drawing.Point(3, 27);
+            this.dgv_Inventory.Location = new System.Drawing.Point(3, 42);
             this.dgv_Inventory.Name = "dgv_Inventory";
             this.dgv_Inventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Inventory.Size = new System.Drawing.Size(720, 377);
+            this.dgv_Inventory.Size = new System.Drawing.Size(720, 362);
             this.dgv_Inventory.TabIndex = 0;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.52342F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.31405F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.16253F));
-            this.tableLayoutPanel1.Controls.Add(this.dgv_Inventory, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.142506F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.85749F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(726, 407);
-            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ID
             // 
@@ -162,6 +145,36 @@
             this.NUMBER.HeaderText = "Tồn";
             this.NUMBER.Name = "NUMBER";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.52342F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.31405F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.16253F));
+            this.tableLayoutPanel1.Controls.Add(this.dgv_Inventory, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btn_Refresh, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.82801F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.17199F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(726, 407);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Refresh.ImageOptions.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh2_32x32;
+            this.btn_Refresh.Location = new System.Drawing.Point(3, 3);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(143, 33);
+            this.btn_Refresh.TabIndex = 1;
+            this.btn_Refresh.Text = "Refresh";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
+            // 
             // frmInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,5 +205,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_ITEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn UNIT;
         private System.Windows.Forms.DataGridViewTextBoxColumn NUMBER;
+        private DevExpress.XtraEditors.SimpleButton btn_Refresh;
     }
 }

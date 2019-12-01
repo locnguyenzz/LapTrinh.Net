@@ -1072,11 +1072,9 @@ namespace CoffeeLibrary
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _ID;
+		private int _ID_RECEIPT;
 		
-		private System.Nullable<int> _ID_RECEIPT;
-		
-		private System.Nullable<int> _ID_ITEM;
+		private int _ID_ITEM;
 		
 		private System.Nullable<int> _ID_TABLE;
 		
@@ -1094,11 +1092,9 @@ namespace CoffeeLibrary
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnID_RECEIPTChanging(System.Nullable<int> value);
+    partial void OnID_RECEIPTChanging(int value);
     partial void OnID_RECEIPTChanged();
-    partial void OnID_ITEMChanging(System.Nullable<int> value);
+    partial void OnID_ITEMChanging(int value);
     partial void OnID_ITEMChanged();
     partial void OnID_TABLEChanging(System.Nullable<int> value);
     partial void OnID_TABLEChanged();
@@ -1116,28 +1112,8 @@ namespace CoffeeLibrary
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECEIPT", DbType="Int")]
-		public System.Nullable<int> ID_RECEIPT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECEIPT", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_RECEIPT
 		{
 			get
 			{
@@ -1160,8 +1136,8 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ITEM", DbType="Int")]
-		public System.Nullable<int> ID_ITEM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ITEM", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_ITEM
 		{
 			get
 			{
@@ -1271,7 +1247,7 @@ namespace CoffeeLibrary
 					}
 					else
 					{
-						this._ID_ITEM = default(Nullable<int>);
+						this._ID_ITEM = default(int);
 					}
 					this.SendPropertyChanged("item");
 				}
@@ -1305,7 +1281,7 @@ namespace CoffeeLibrary
 					}
 					else
 					{
-						this._ID_RECEIPT = default(Nullable<int>);
+						this._ID_RECEIPT = default(int);
 					}
 					this.SendPropertyChanged("receipt");
 				}
@@ -1339,7 +1315,7 @@ namespace CoffeeLibrary
 					}
 					else
 					{
-						this._ID_ITEM = default(Nullable<int>);
+						this._ID_ITEM = default(int);
 					}
 					this.SendPropertyChanged("table");
 				}
@@ -1373,11 +1349,9 @@ namespace CoffeeLibrary
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _ID;
+		private int _ID_RECEIPT_IMPORT;
 		
-		private System.Nullable<int> _ID_RECEIPT_IMPORT;
-		
-		private System.Nullable<int> _ID_ITEM;
+		private int _ID_ITEM;
 		
 		private int _NUMBER;
 		
@@ -1391,11 +1365,9 @@ namespace CoffeeLibrary
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnID_RECEIPT_IMPORTChanging(System.Nullable<int> value);
+    partial void OnID_RECEIPT_IMPORTChanging(int value);
     partial void OnID_RECEIPT_IMPORTChanged();
-    partial void OnID_ITEMChanging(System.Nullable<int> value);
+    partial void OnID_ITEMChanging(int value);
     partial void OnID_ITEMChanged();
     partial void OnNUMBERChanging(int value);
     partial void OnNUMBERChanged();
@@ -1410,28 +1382,8 @@ namespace CoffeeLibrary
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECEIPT_IMPORT", DbType="Int")]
-		public System.Nullable<int> ID_RECEIPT_IMPORT
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_RECEIPT_IMPORT", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_RECEIPT_IMPORT
 		{
 			get
 			{
@@ -1454,8 +1406,8 @@ namespace CoffeeLibrary
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ITEM", DbType="Int")]
-		public System.Nullable<int> ID_ITEM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_ITEM", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int ID_ITEM
 		{
 			get
 			{
@@ -1545,7 +1497,7 @@ namespace CoffeeLibrary
 					}
 					else
 					{
-						this._ID_ITEM = default(Nullable<int>);
+						this._ID_ITEM = default(int);
 					}
 					this.SendPropertyChanged("item");
 				}
@@ -1579,7 +1531,7 @@ namespace CoffeeLibrary
 					}
 					else
 					{
-						this._ID_RECEIPT_IMPORT = default(Nullable<int>);
+						this._ID_RECEIPT_IMPORT = default(int);
 					}
 					this.SendPropertyChanged("receipt_import");
 				}

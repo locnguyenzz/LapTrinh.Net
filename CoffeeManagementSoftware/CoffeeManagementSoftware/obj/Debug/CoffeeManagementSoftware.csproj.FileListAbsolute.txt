@@ -106,3 +106,4 @@ D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\De
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmTimeKeeping.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmStaff.resources
 D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmSell.resources
+D:\CODE\C#\LapTrinh.Net\CoffeeManagementSoftware\CoffeeManagementSoftware\obj\Debug\CoffeeManagementSoftware.frmTypeItem.resources

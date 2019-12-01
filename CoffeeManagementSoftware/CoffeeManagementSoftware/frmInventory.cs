@@ -28,5 +28,10 @@ namespace CoffeeManagementSoftware
         {
             LoadData();
         }
+
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }

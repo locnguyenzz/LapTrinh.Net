@@ -244,12 +244,14 @@
             this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
             this.sửaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.sửaToolStripMenuItem.Text = "Sửa";
+            this.sửaToolStripMenuItem.Click += new System.EventHandler(this.sửaToolStripMenuItem_Click);
             // 
             // xóaToolStripMenuItem
             // 
             this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
             this.xóaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.xóaToolStripMenuItem.Text = "Xóa";
+            this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
             // 
             // txtSoLuong
             // 
@@ -325,7 +327,7 @@
             // 
             // MaPhieuBan
             // 
-            this.MaPhieuBan.DataPropertyName = "ID";
+            this.MaPhieuBan.DataPropertyName = "ID_RECEIPT";
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
             this.MaPhieuBan.DefaultCellStyle = dataGridViewCellStyle1;
             this.MaPhieuBan.HeaderText = "Mã Phiếu Xuất";
