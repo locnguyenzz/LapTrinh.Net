@@ -54,12 +54,12 @@ namespace CoffeeManagementSoftware
             LoadPX();
             LoadSP();
             txtMaPhieuBan.Focus();
-            
+
         }
         private void frmSell_Load(object sender, EventArgs e)
         {
             LoadData();
-            
+
             txtThanhTien.Enabled = false;
         }
 
@@ -77,7 +77,7 @@ namespace CoffeeManagementSoftware
                 txtNgayBan.Focus();
                 return;
             }
-            bool flag = _px.TaoPhieuXuat(Int32.Parse(txtMaPhieuBan.Text),  txtNgayBan.Text);
+            bool flag = _px.TaoPhieuXuat(Int32.Parse(txtMaPhieuBan.Text), txtNgayBan.Text);
             if (flag)
             {
                 MessageBox.Show("Tao phieu nhap thanh cong !");
@@ -131,7 +131,7 @@ namespace CoffeeManagementSoftware
                         {
                             dgvCTPN.Rows[i].Cells["SoLuong"].Value = (int.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString()) + Int32.Parse(txtSoLuong.Text)).ToString();
                             //Goi ham cap nhat so luong ctpn
-                            bool capnhatsoluong = _ctpx.CapNhatCTPX(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()),int.Parse(cbbMaSanPham.SelectedValue.ToString()), Int32.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString()));
+                            bool capnhatsoluong = _ctpx.CapNhatCTPX(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()), int.Parse(cbbMaSanPham.SelectedValue.ToString()), Int32.Parse(dgvCTPN.Rows[i].Cells["SoLuong"].Value.ToString()));
                             //Ở đây cần tạo thêm hàm cập nhật số lượng trong kho(table: SanPham)
                             _sp.DeleteNumber(int.Parse(cbbMaSanPham.SelectedValue.ToString()), int.Parse(txtSoLuong.Text));
                         }
@@ -167,24 +167,35 @@ namespace CoffeeManagementSoftware
                         txtDonGia.Focus();
                         return;
                     }
-                    bool themmoi = _ctpx.ThemMoiCTPX(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()),int.Parse(cbo_Ban.SelectedValue.ToString()), Int32.Parse(cbbMaSanPham.SelectedValue.ToString()), Double.Parse(txtDonGia.Text), Int32.Parse(txtSoLuong.Text));
+
                     //goi ham them moi , sau do load lai dgvCTPN
-                    if (themmoi)
+
+
+                    if (_sp.IsCheckNumItem(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()), int.Parse(txtSoLuong.Text)))
                     {
-                        LoadData();
-                        txtThanhTien.Text = TinhThanhTien().ToString();
-                        bool capnhatthanhtien = _px.CapNhatThanhTien(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()), Double.Parse(txtThanhTien.Text));
-                        MessageBox.Show("Them CTPX thanh cong");
-                        dgvCTPN.CurrentRow.Cells["DonGia"].Value = double.Parse(txtDonGia.Text);
-                        _sp.DeleteNumber(int.Parse(cbbMaSanPham.SelectedValue.ToString()), int.Parse(txtSoLuong.Text));                        
-                        LoadCTPX(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()));
-                        LoadData();
-                        return;
+                        bool themmoi = _ctpx.ThemMoiCTPX(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()), int.Parse(cbo_Ban.SelectedValue.ToString()), Int32.Parse(cbbMaSanPham.SelectedValue.ToString()), Double.Parse(txtDonGia.Text), Int32.Parse(txtSoLuong.Text));
+                        if (themmoi)
+                        {
+                            LoadData();
+                            txtThanhTien.Text = TinhThanhTien().ToString();
+                            bool capnhatthanhtien = _px.CapNhatThanhTien(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()), Double.Parse(txtThanhTien.Text));
+                            MessageBox.Show("Them CTPX thanh cong");
+                            dgvCTPN.CurrentRow.Cells["DonGia"].Value = double.Parse(txtDonGia.Text);
+                            _sp.DeleteNumber(int.Parse(cbbMaSanPham.SelectedValue.ToString()), int.Parse(txtSoLuong.Text));
+
+                            LoadCTPX(Int32.Parse(cbo_MaPhieuBan.SelectedValue.ToString()));
+                            LoadData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Them CTPX that bai");
+                            return;
+                        }
+
                     }
                     else
                     {
-                        MessageBox.Show("Them CTPX that bai");
-                        return;
+                        MessageBox.Show("Số lượng mặt hàng không đủ để bán!!", "Thông báo");
                     }
                 }
             }
@@ -210,7 +221,7 @@ namespace CoffeeManagementSoftware
                 if (pn != null)
                 {
                     txtMaPhieuBan.Text = pn.ID.ToString();
-                    
+
                     txtNgayBan.Text = Convert.ToDateTime(pn.CREATE_AT).ToString("dd/MM/yyyy");
                     txtThanhTien.Text = pn.SUM_MONEY.ToString();
                     //Load them thong tin chi tiet phieu nhap o day
@@ -228,15 +239,23 @@ namespace CoffeeManagementSoftware
         {
             if (dgvCTPN.CurrentRow != null)
             {
-                //MessageBox.Show("Bạn đang sửa sản phẩm có Mã: "+dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString()+" bạn có thể sửa trực tiếp tại lưới danh sách hoặc trong các ô đơn giá, số lượng phía trên !");
-                bool sua = _ctpx.SuaCTNP(int.Parse(cbo_MaPhieuBan.Text), int.Parse(cbbMaSanPham.Text), double.Parse(txtDonGia.Text), int.Parse(txtSoLuong.Text));
-                if (sua)
+                if (_sp.IsCheckNumItem(int.Parse(cbbMaSanPham.Text), int.Parse(txtSoLuong.Text)))
                 {
+                    //MessageBox.Show("Bạn đang sửa sản phẩm có Mã: "+dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString()+" bạn có thể sửa trực tiếp tại lưới danh sách hoặc trong các ô đơn giá, số lượng phía trên !");
+                    bool sua = _ctpx.SuaCTNX(int.Parse(cbo_MaPhieuBan.Text), int.Parse(cbbMaSanPham.Text), double.Parse(txtDonGia.Text), int.Parse(txtSoLuong.Text));
+                    if (sua)
+                    {
 
-                    txtThanhTien.Text = TinhThanhTien().ToString();
-                    bool capnhat = _px.CapNhatThanhTien(int.Parse(cbo_MaPhieuBan.Text), double.Parse(txtThanhTien.Text));
-                    MessageBox.Show("Sửa thành công sản phẩm Mã: " + dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString());
-                    LoadCTPX(int.Parse(cbo_MaPhieuBan.Text));
+                        txtThanhTien.Text = TinhThanhTien().ToString();
+                        bool capnhat = _px.CapNhatThanhTien(int.Parse(cbo_MaPhieuBan.Text), double.Parse(txtThanhTien.Text));
+                        MessageBox.Show("Sửa thành công sản phẩm Mã: " + dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString());
+                        LoadCTPX(int.Parse(cbo_MaPhieuBan.Text));
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Câp nhật đơn hàng không thành công do số lượng bán lớn hơn số lượng còn!!");
+                    return;
                 }
             }
         }
@@ -249,18 +268,18 @@ namespace CoffeeManagementSoftware
                 r = MessageBox.Show("Bạn có chắc muốn xóa sản phẩm có Mã: " + dgvCTPN.CurrentRow.Cells["MaSanPham"].Value.ToString(), "Thong bao", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
                 if (r == DialogResult.Yes)
                 {
-                    bool xoa = _ctpx.XoaCTNP(int.Parse(cbo_MaPhieuBan.Text),int.Parse(cbbMaSanPham.Text));
+                    bool xoa = _ctpx.XoaCTNX(int.Parse(cbo_MaPhieuBan.Text), int.Parse(cbbMaSanPham.Text));
                     if (xoa)
                     {
 
                         txtThanhTien.Text = TinhThanhTien().ToString();
                         bool capnhat = _px.CapNhatThanhTien(int.Parse(cbo_MaPhieuBan.Text), double.Parse(txtThanhTien.Text));
-                        MessageBox.Show("Xoa CTPN thanh cong !");
+                        MessageBox.Show("Xoa CTPX thanh cong !");
                         LoadCTPX(int.Parse(cbo_MaPhieuBan.Text));
                     }
                     else
                     {
-                        MessageBox.Show("Xoa CTPN that bai !");
+                        MessageBox.Show("Xoa CTPX that bai !");
                     }
                 }
             }

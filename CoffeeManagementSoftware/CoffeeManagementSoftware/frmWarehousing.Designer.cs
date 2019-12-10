@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +47,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnThemSP = new System.Windows.Forms.Button();
             this.dgvCTPN = new System.Windows.Forms.DataGridView();
+            this.MaPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_RECEIPT_IMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.receipt_import = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ctm = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,18 +66,12 @@
             this.cbbMaSanPham = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbbMaPhieuNhap = new System.Windows.Forms.ComboBox();
-            this.MaPhieuNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_RECEIPT_IMPORT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.receipt_import = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTPN)).BeginInit();
             this.ctm.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -82,9 +85,10 @@
             this.groupBox1.Controls.Add(this.cbbNhaCC);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtNgayNhap);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(556, 159);
+            this.groupBox1.Size = new System.Drawing.Size(594, 165);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Phiếu Nhập";
@@ -133,10 +137,11 @@
             // 
             // btnTaoPN
             // 
+            this.btnTaoPN.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
             this.btnTaoPN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaoPN.Location = new System.Drawing.Point(31, 112);
+            this.btnTaoPN.Location = new System.Drawing.Point(16, 112);
             this.btnTaoPN.Name = "btnTaoPN";
-            this.btnTaoPN.Size = new System.Drawing.Size(115, 36);
+            this.btnTaoPN.Size = new System.Drawing.Size(130, 36);
             this.btnTaoPN.TabIndex = 3;
             this.btnTaoPN.Text = "Tạo Phiếu Nhập";
             this.btnTaoPN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -181,15 +186,17 @@
             this.groupBox2.Controls.Add(this.cbbMaSanPham);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cbbMaPhieuNhap);
-            this.groupBox2.Location = new System.Drawing.Point(13, 178);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 174);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(555, 264);
+            this.groupBox2.Size = new System.Drawing.Size(594, 277);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết phiếu nhập";
             // 
             // btnThemSP
             // 
+            this.btnThemSP.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
             this.btnThemSP.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnThemSP.Location = new System.Drawing.Point(6, 104);
             this.btnThemSP.Name = "btnThemSP";
@@ -203,7 +210,10 @@
             // dgvCTPN
             // 
             this.dgvCTPN.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvCTPN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCTPN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCTPN.BackgroundColor = System.Drawing.Color.White;
             this.dgvCTPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCTPN.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhieuNhap,
@@ -221,6 +231,68 @@
             this.dgvCTPN.Size = new System.Drawing.Size(463, 160);
             this.dgvCTPN.TabIndex = 15;
             this.dgvCTPN.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTPN_CellClick_1);
+            // 
+            // MaPhieuNhap
+            // 
+            this.MaPhieuNhap.DataPropertyName = "ID_RECEIPT_IMPORT";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
+            this.MaPhieuNhap.DefaultCellStyle = dataGridViewCellStyle2;
+            this.MaPhieuNhap.HeaderText = "Mã Phiếu Nhập";
+            this.MaPhieuNhap.Name = "MaPhieuNhap";
+            this.MaPhieuNhap.ReadOnly = true;
+            // 
+            // item
+            // 
+            this.item.DataPropertyName = "item";
+            this.item.HeaderText = "Column1";
+            this.item.Name = "item";
+            this.item.Visible = false;
+            // 
+            // ID_RECEIPT_IMPORT
+            // 
+            this.ID_RECEIPT_IMPORT.DataPropertyName = "ID_RECEIPT_IMPORT";
+            this.ID_RECEIPT_IMPORT.HeaderText = "Column1";
+            this.ID_RECEIPT_IMPORT.Name = "ID_RECEIPT_IMPORT";
+            this.ID_RECEIPT_IMPORT.Visible = false;
+            // 
+            // receipt_import
+            // 
+            this.receipt_import.DataPropertyName = "receipt_import";
+            this.receipt_import.HeaderText = "Column1";
+            this.receipt_import.Name = "receipt_import";
+            this.receipt_import.Visible = false;
+            // 
+            // STATUS
+            // 
+            this.STATUS.DataPropertyName = "STATUS";
+            this.STATUS.HeaderText = "Column1";
+            this.STATUS.Name = "STATUS";
+            this.STATUS.Visible = false;
+            // 
+            // MaSanPham
+            // 
+            this.MaSanPham.DataPropertyName = "ID_ITEM";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Aqua;
+            this.MaSanPham.DefaultCellStyle = dataGridViewCellStyle3;
+            this.MaSanPham.HeaderText = "Mã Sản Phẩm";
+            this.MaSanPham.Name = "MaSanPham";
+            this.MaSanPham.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.DataPropertyName = "NUMBER";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Yellow;
+            this.SoLuong.DefaultCellStyle = dataGridViewCellStyle4;
+            this.SoLuong.HeaderText = "Số Lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // DonGia
+            // 
+            this.DonGia.DataPropertyName = "PRICE_PURCHASE";
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Yellow;
+            this.DonGia.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DonGia.HeaderText = "Đơn Giá";
+            this.DonGia.Name = "DonGia";
             // 
             // ctm
             // 
@@ -312,75 +384,27 @@
             this.cbbMaPhieuNhap.TabIndex = 17;
             this.cbbMaPhieuNhap.SelectedIndexChanged += new System.EventHandler(this.cbbMaPhieuNhap_SelectedIndexChanged_1);
             // 
-            // MaPhieuNhap
+            // tableLayoutPanel1
             // 
-            this.MaPhieuNhap.DataPropertyName = "ID_RECEIPT_IMPORT";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
-            this.MaPhieuNhap.DefaultCellStyle = dataGridViewCellStyle1;
-            this.MaPhieuNhap.HeaderText = "Mã Phiếu Nhập";
-            this.MaPhieuNhap.Name = "MaPhieuNhap";
-            this.MaPhieuNhap.ReadOnly = true;
-            // 
-            // item
-            // 
-            this.item.DataPropertyName = "item";
-            this.item.HeaderText = "Column1";
-            this.item.Name = "item";
-            this.item.Visible = false;
-            // 
-            // ID_RECEIPT_IMPORT
-            // 
-            this.ID_RECEIPT_IMPORT.DataPropertyName = "ID_RECEIPT_IMPORT";
-            this.ID_RECEIPT_IMPORT.HeaderText = "Column1";
-            this.ID_RECEIPT_IMPORT.Name = "ID_RECEIPT_IMPORT";
-            this.ID_RECEIPT_IMPORT.Visible = false;
-            // 
-            // receipt_import
-            // 
-            this.receipt_import.DataPropertyName = "receipt_import";
-            this.receipt_import.HeaderText = "Column1";
-            this.receipt_import.Name = "receipt_import";
-            this.receipt_import.Visible = false;
-            // 
-            // STATUS
-            // 
-            this.STATUS.DataPropertyName = "STATUS";
-            this.STATUS.HeaderText = "Column1";
-            this.STATUS.Name = "STATUS";
-            this.STATUS.Visible = false;
-            // 
-            // MaSanPham
-            // 
-            this.MaSanPham.DataPropertyName = "ID_ITEM";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
-            this.MaSanPham.DefaultCellStyle = dataGridViewCellStyle2;
-            this.MaSanPham.HeaderText = "Mã Sản Phẩm";
-            this.MaSanPham.Name = "MaSanPham";
-            this.MaSanPham.ReadOnly = true;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "NUMBER";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Yellow;
-            this.SoLuong.DefaultCellStyle = dataGridViewCellStyle3;
-            this.SoLuong.HeaderText = "Số Lượng";
-            this.SoLuong.Name = "SoLuong";
-            // 
-            // DonGia
-            // 
-            this.DonGia.DataPropertyName = "PRICE_PURCHASE";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Yellow;
-            this.DonGia.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.Name = "DonGia";
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.6652F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.3348F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 454);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // frmWarehousing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 454);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(600, 454);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -394,6 +418,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTPN)).EndInit();
             this.ctm.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -432,5 +457,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSanPham;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

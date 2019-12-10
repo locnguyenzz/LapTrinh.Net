@@ -60,7 +60,7 @@ namespace CoffeeManagementSoftware
             LoadItem();
             LoadData();
             txt_ID.Enabled = false;
-            dataGridView1.DataSource = dll.LoadItem();
+            dgv_Item.DataSource = dll.LoadItem();
             txt_ID.Text = dgv_Item.CurrentRow.Cells["ID"].Value.ToString();
             txt_Name.Text = dgv_Item.CurrentRow.Cells["NAME_ITEM"].Value.ToString();
             txt_Unit.Text = dgv_Item.CurrentRow.Cells["UNIT"].Value.ToString();

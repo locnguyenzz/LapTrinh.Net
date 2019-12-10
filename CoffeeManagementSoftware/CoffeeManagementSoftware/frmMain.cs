@@ -7,13 +7,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using CoffeeLibrary;
 namespace CoffeeManagementSoftware
 {
+   
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
+        
         public frmMain()
         {
+           
             InitializeComponent();
         }
         public Boolean CheckExist(string frmName)// Kiểm tra xem nut do co ton tai hay chua
@@ -47,9 +50,18 @@ namespace CoffeeManagementSoftware
         private void frmMain_Load(object sender, EventArgs e)
         {
             tssShowAccount.Text = Program.loginForm.NameAccount;
-            
-            
+            tssDatabase.Text = Program.loginForm.NameDatabase;
+            if(Program.loginForm.NameAccount == "admin")
+            {
+                Program.mainForm.FromActivity.Visible = false;
+                
+            }
+            else
+            {
+                Program.mainForm.FormSystem.Visible = false;
+            }
         }
+        
         private void tSBUseService_Click(object sender, EventArgs e)
         {
             if (CheckExist("frmUseService"))
@@ -236,6 +248,10 @@ namespace CoffeeManagementSoftware
                 frmSell use = new frmSell();
                 openForm(use);
             }
+        }
+
+        private void đăngXuấtKhỏiHệThốngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }

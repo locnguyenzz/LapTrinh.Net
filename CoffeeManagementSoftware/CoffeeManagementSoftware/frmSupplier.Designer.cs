@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupplier));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsb_Add = new System.Windows.Forms.ToolStripButton();
@@ -267,7 +268,10 @@
             // 
             this.dgv_Supplier.AllowUserToAddRows = false;
             this.dgv_Supplier.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            this.dgv_Supplier.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Supplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Supplier.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Supplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -103,7 +104,7 @@
             this.toolStripButton1.Image = global::CoffeeManagementSoftware.Properties.Resources.Add_32x32;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(69, 34);
+            this.toolStripButton1.Size = new System.Drawing.Size(69, 25);
             this.toolStripButton1.Text = "Thêm";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -112,7 +113,7 @@
             this.toolStripButton2.Image = global::CoffeeManagementSoftware.Properties.Resources.Remove_16x161;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(56, 34);
+            this.toolStripButton2.Size = new System.Drawing.Size(56, 25);
             this.toolStripButton2.Text = "Xóa";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -121,7 +122,7 @@
             this.toolStripButton3.Image = global::CoffeeManagementSoftware.Properties.Resources.Refresh_32x32;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(56, 34);
+            this.toolStripButton3.Size = new System.Drawing.Size(56, 25);
             this.toolStripButton3.Text = "Sửa";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -200,7 +201,10 @@
             // 
             this.dgv_Staff.AllowUserToAddRows = false;
             this.dgv_Staff.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            this.dgv_Staff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Staff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Staff.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Staff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Staff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,

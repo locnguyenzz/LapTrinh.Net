@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItem));
             this.dgv_Item = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,33 +57,31 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txt_ID = new System.Windows.Forms.TextBox();
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.txt_Unit = new System.Windows.Forms.TextBox();
-            this.txt_PriceSell = new System.Windows.Forms.TextBox();
-            this.txt_PricePur = new System.Windows.Forms.Label();
-            this.txt_Purchase = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbo_NameType = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_PricePur = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.txt_PriceSell = new System.Windows.Forms.TextBox();
+            this.txt_Purchase = new System.Windows.Forms.TextBox();
             this.txt_Number = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_AddNewType = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Item)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_Item
             // 
             this.dgv_Item.AllowUserToAddRows = false;
             this.dgv_Item.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            this.dgv_Item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Item.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Item.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Item.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -203,7 +202,6 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -370,17 +368,6 @@
             this.label3.Text = "Đơn vị tính";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(840, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 31);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Giá bán";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // txt_ID
             // 
             this.txt_ID.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -405,33 +392,6 @@
             this.txt_Unit.Size = new System.Drawing.Size(238, 21);
             this.txt_Unit.TabIndex = 10;
             // 
-            // txt_PriceSell
-            // 
-            this.txt_PriceSell.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_PriceSell.Location = new System.Drawing.Point(971, 34);
-            this.txt_PriceSell.Name = "txt_PriceSell";
-            this.txt_PriceSell.Size = new System.Drawing.Size(299, 21);
-            this.txt_PriceSell.TabIndex = 11;
-            // 
-            // txt_PricePur
-            // 
-            this.txt_PricePur.AutoSize = true;
-            this.txt_PricePur.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_PricePur.Location = new System.Drawing.Point(840, 62);
-            this.txt_PricePur.Name = "txt_PricePur";
-            this.txt_PricePur.Size = new System.Drawing.Size(125, 32);
-            this.txt_PricePur.TabIndex = 17;
-            this.txt_PricePur.Text = "Giá nhập";
-            this.txt_PricePur.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txt_Purchase
-            // 
-            this.txt_Purchase.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_Purchase.Location = new System.Drawing.Point(971, 65);
-            this.txt_Purchase.Name = "txt_Purchase";
-            this.txt_Purchase.Size = new System.Drawing.Size(299, 21);
-            this.txt_Purchase.TabIndex = 12;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -452,6 +412,28 @@
             this.cbo_NameType.Size = new System.Drawing.Size(238, 21);
             this.cbo_NameType.TabIndex = 13;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(840, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 31);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Giá bán";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txt_PricePur
+            // 
+            this.txt_PricePur.AutoSize = true;
+            this.txt_PricePur.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_PricePur.Location = new System.Drawing.Point(840, 62);
+            this.txt_PricePur.Name = "txt_PricePur";
+            this.txt_PricePur.Size = new System.Drawing.Size(125, 32);
+            this.txt_PricePur.TabIndex = 17;
+            this.txt_PricePur.Text = "Giá nhập";
+            this.txt_PricePur.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -463,6 +445,22 @@
             this.label6.Text = "Số lượng";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // txt_PriceSell
+            // 
+            this.txt_PriceSell.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_PriceSell.Location = new System.Drawing.Point(971, 34);
+            this.txt_PriceSell.Name = "txt_PriceSell";
+            this.txt_PriceSell.Size = new System.Drawing.Size(299, 21);
+            this.txt_PriceSell.TabIndex = 11;
+            // 
+            // txt_Purchase
+            // 
+            this.txt_Purchase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Purchase.Location = new System.Drawing.Point(971, 65);
+            this.txt_Purchase.Name = "txt_Purchase";
+            this.txt_Purchase.Size = new System.Drawing.Size(299, 21);
+            this.txt_Purchase.TabIndex = 12;
+            // 
             // txt_Number
             // 
             this.txt_Number.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -470,27 +468,6 @@
             this.txt_Number.Name = "txt_Number";
             this.txt_Number.Size = new System.Drawing.Size(299, 21);
             this.txt_Number.TabIndex = 19;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1279, 518);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1273, 512);
-            this.dataGridView1.TabIndex = 0;
             // 
             // btn_AddNewType
             // 
@@ -520,8 +497,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,8 +516,6 @@
         private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.TextBox txt_Unit;
         private System.Windows.Forms.ComboBox cbo_NameType;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton tSBThemmoi;
         private System.Windows.Forms.ToolStripButton tSBChinhsua;

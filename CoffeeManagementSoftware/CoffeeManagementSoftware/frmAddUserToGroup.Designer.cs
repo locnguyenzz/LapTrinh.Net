@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.group_userComboBox = new System.Windows.Forms.ComboBox();
             this.group_userBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -119,6 +121,8 @@
             // 
             this.user_group_userDKDataGridView.AllowUserToAddRows = false;
             this.user_group_userDKDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            this.user_group_userDKDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.user_group_userDKDataGridView.AutoGenerateColumns = false;
             this.user_group_userDKDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.user_group_userDKDataGridView.BackgroundColor = System.Drawing.Color.White;
@@ -180,6 +184,8 @@
             // 
             this.accountDataGridView.AllowUserToAddRows = false;
             this.accountDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Yellow;
+            this.accountDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.accountDataGridView.AutoGenerateColumns = false;
             this.accountDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.accountDataGridView.BackgroundColor = System.Drawing.Color.White;

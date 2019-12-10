@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustumer));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tLP_Customer = new System.Windows.Forms.TableLayoutPanel();
             this.tCtr_Member = new System.Windows.Forms.TabControl();
             this.tP_Member = new System.Windows.Forms.TabPage();
@@ -394,6 +395,8 @@
             // 
             this.dGV_Customer.AllowUserToAddRows = false;
             this.dGV_Customer.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Yellow;
+            this.dGV_Customer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dGV_Customer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_Customer.BackgroundColor = System.Drawing.Color.White;
             this.dGV_Customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
